@@ -1,4 +1,5 @@
-{"room":
+{
+	"room":
 	{
 		"position": [0, 0],
 		"isroom": {
@@ -7,5 +8,28 @@
 			"exits":[0,0,0,0]
 		},
 		"inventory": []
+	},
+
+
+	"sword":
+	{
+		"descriptor": "None",
+		"weapon": {
+			"type"      : "Sword",
+			"mod"       : "str",
+			"mod_amount": 0
+		}
+	},
+
+
+	"bow":
+	{
+		"descriptor": "None",
+		"weapon": {
+			"type"	    : "Bow",
+			"mod"	    : "str",
+			"mod_amount": 0
+		}
 	}
 }
+

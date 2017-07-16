@@ -138,6 +138,15 @@ class Dungeon_Generator():
         return temp_neighbors
 
 
+
+
+class Dungeon_Spicer:
+    def __init__(self):
+        pass
+
+
+
+
 #delete when on production
 w  = World()
 dg = Dungeon_Generator(w)

@@ -21,6 +21,27 @@
 		"name"	: "A Room",
 		"desc"  : "None",
 		"exits" : [0,0,0,0]
+	},
+
+
+	"stats":{
+		"health" : 20,
+		"mana"   : 10,
+		"o_mod"  : 30,
+		"a_mod"  : 0,
+		"str"    : 5,
+		"int"    : 5,
+		"con"    : 5
+	},
+
+	"weapon": {
+		"type"       : "None",
+		"mod" 	     : "str",
+		"mod_amount" : 1
+	},
+
+	"monster": {
+		"type" : "None"
 	}
 }
 

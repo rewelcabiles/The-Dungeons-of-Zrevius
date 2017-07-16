@@ -1,0 +1,117 @@
+{
+"names" :{
+	"monsters" :{
+		"Goblin" : [
+			"Rurnk",
+			"Bish",
+			"Omzonk",
+			"Gubme",
+			"Ebbawg",
+			"Nigbesh",
+			"Nabbuvmug",
+			"Judgugbik",
+			"Giphlissems"
+		],
+		"Kobold" : [
+			"Ate",
+			"Kigi",
+			"Okbi",
+			"Vedu",
+			"Girn",
+			"Muss",
+			"Vogs",
+			"Mohru",
+			"Rihle"
+		],
+		"Orc": [
+			"Dugok The Mad",
+			"Otrukk The Merciless",
+			"Nagvud The Warped",
+			"Ghogvuk The Gargantuan",
+			"Zhabag The Arrogant",
+			"Amzak Talon Axe",
+			"Bukk The Barbarian",
+			"Bhub Skull Axe"
+		]
+	},
+
+
+	"Npcs":{
+		"Human" : [
+			"Déaglán Mac Cumhaighe",
+			"Bob",
+			"Conchubhar Ó Fuaráin",
+			"Vivaldo Pelle",
+			"Gael Dieudonne",
+			"Akpolat Akdemir",
+			"Legget Behring",
+			"Augustinus Knottley",
+			"Waller Oakley",
+			"Rayce Breeden",
+			"Sven Shelley",
+			"Justice Harrington",
+			"Paul Dumlao",
+			"Rewel Cabiles"
+		],
+		"Objects" : [
+			" the Lesser",
+			" the Greater",
+			" the Sharp",
+			" the Witty",
+			" the Smelly",
+			" the Greatest",
+			" the small",
+			" the Zen",
+			" of the Hills",
+			" of the Deep",
+			" of the Skulls",
+			" of the Minor Truths",
+			" of the Budder"
+		]
+
+	},
+
+
+	"objects" :{
+		"swords" :{
+			"unique" : [
+				"Persuasion",
+				"Silver Saber",
+				"Requiem of the Lost",
+				"Extinction Broadsword",
+				"Mageblade of the Falling Sky",
+				"-???-"
+			],
+			"common" : [
+				"Dull Sword",
+				"Long Sword",
+				"Steel Sword",
+				"Old Sword",
+				"Dusty Sword",
+				"Sword Sword",
+				"Common Sword"
+			]
+		},
+		"bows" :{
+			"unique" : [
+				"Bristleblitz",
+				"Calamity",
+				"Last Vision",
+				"Bronzed Striker",
+				"Token of the Plague",
+				"-???-"
+			],
+			"common" :[
+				"Short Bow",
+				"Long Bow",
+				"Bow Bow",
+				"Loose Bow",
+				"Old Bow",
+				"Recurve Bow",
+				"Hunting Bow"
+			]
+		}
+
+	}
+}
+}
