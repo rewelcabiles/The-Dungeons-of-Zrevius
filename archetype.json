@@ -1,0 +1,11 @@
+{"room":
+	{
+		"position": [0, 0],
+		"isroom": {
+			"name": "A Room",
+			"desc": "Quite Roomy",
+			"exits":[0,0,0,0]
+		},
+		"inventory": []
+	}
+}

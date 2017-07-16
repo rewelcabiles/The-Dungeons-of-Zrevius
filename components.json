@@ -1,0 +1,26 @@
+{
+	"position":{
+		"x": 0,
+		"y": 0
+	},
+
+
+	"inventory":{
+		"name" : "Container",
+		"items": []
+	},
+
+
+	"descriptor":{
+		"name" : "None",
+		"desc" : "None"
+	},
+
+
+	"isroom":{
+		"name"	: "A Room",
+		"desc"  : "None",
+		"exits" : [0,0,0,0]
+	}
+}
+
