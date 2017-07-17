@@ -1,20 +1,8 @@
 #!/usr/bin/env python
 import random
-from math import *
-from ecs_components import *
 from ecs_systems import *
-#PLACE == room/location the character is in
-#Initially Make it pythonic, afterwards save to json format
-#When loading a save, convert from json to pythonic
 
 
-#class PLACE():
-#    def __init__(self):
-#        self.loc        = position()
-#        self.name       = "NULL"
-#        self.exits      = [0,0,0,0]
-#        self.isroom     = Null
-#        self.inventory  = inventory()
 
 class Dungeon_Generator():
     def __init__(self, world):
@@ -28,7 +16,6 @@ class Dungeon_Generator():
         self.unvisited  = []
         self.generation_inits()
         self.randomize_maze()
-
 
 
     #Creates empty maps, creates unvisited list... etc.
