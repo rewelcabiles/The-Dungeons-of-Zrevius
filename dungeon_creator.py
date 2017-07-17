@@ -34,7 +34,6 @@ class Dungeon_Generator():
     #Creates empty maps, creates unvisited list... etc.
     def generation_inits(self):
         print("Initializing Maps...")
-        mask = (self.world.COMPS['position'] | self.world.COMPS['isroom'])
         for x in range(self.d_xsize):
             for y in range(self.d_ysize):
                 ent_id =  self.world.factory.room_creator(x, y)

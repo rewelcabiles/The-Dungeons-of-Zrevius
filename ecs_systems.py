@@ -3,7 +3,6 @@ import json
 
 class World():
     def __init__(self):
-        self.factory = Factory(self)
         #To add to the mask  , do: self.WORLD['mask'][entity_id] |= self.COMPS[compname]
         #To test for the mask, First, Create mask:
         #                          mask = (self.COMPS['position'] | self.comps['isroom'])
@@ -34,7 +33,7 @@ class World():
                 "monster"    : {}
         }
         self.entity_id_max = 1000
-
+        self.factory = Factory(self)
 
     def assign_entity_id(self):
         while True:
