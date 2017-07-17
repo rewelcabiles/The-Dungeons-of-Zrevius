@@ -8,12 +8,12 @@ class Dungeon_Generator():
     def __init__(self, world):
         self.world = world
 
-
+    #Sets up initial maze variables
     def create_maze(self, sizex, sizey):
-        self.d_xsize    = sizex
-        self.d_ysize    = sizey
-        self.d_map      = {}
-        self.unvisited  = []
+        self.d_xsize    = sizex                 # Width of maze (In terms of rooms) ex. d_xsize = 6 = six rooms from the leftmost side to the right
+        self.d_ysize    = sizey                 # Same as above, but for height
+        self.d_map      = {}                    # Map of maze, instead of using a 2d array, I use a dictionary. You will understand why later.
+        self.unvisited  = []                    # The algorithm used to generate a random maze can be found in the "Maze Generation" Wikipedia
         self.generation_inits()
         self.randomize_maze()
 
@@ -21,37 +21,36 @@ class Dungeon_Generator():
     #Creates empty maps, creates unvisited list... etc.
     def generation_inits(self):
         print("Initializing Maps...")
-        for x in range(self.d_xsize):
+        for x in range(self.d_xsize):                               # These two for loops get the coordinates for the different rooms in the maze
             for y in range(self.d_ysize):
-                ent_id =  self.world.factory.room_creator(x, y)
-                #place_node = PLACE()
-                #place_node.loc.x = x
-                #place_node.loc.y = y
-                self.unvisited.append(ent_id)
-                self.d_map[x, y] = ent_id
+                ent_id =  self.world.factory.room_creator(x, y)     # Creates an entity ID for the room, in the background, this also adds it to the WORLD dictionary
+                self.unvisited.append(ent_id)                       # Adds the created room entities into a List called Unvisited, this is part of the maze generation algorithm
+                self.d_map[x, y] = ent_id                           # The coordinates of each room is the key to the dictionary, while ent_id is the value.
+                                                                    # If someone wanted to get the properties of a room. They would just have to do:
+                                                                    # self.world.WORLD[component_needed][entity_id]         Where component needed is the name of the component.
 
 
     def randomize_maze(self):
-        WORLD = self.world.WORLD
-        print("Maze Randomization Started.")
-        #Choose random starting cell
-        dfs_x = random.randint(0, self.d_xsize -1)
+        WORLD = self.world.WORLD                                    # Shortcut so I dont have to repeatedly type "self.world.WORLD"
+        print("Maze Randomization Started.")                        # Since this is a text game, all the current print statements right now are temporary, and used for debugging
+        dfs_x = random.randint(0, self.d_xsize -1)                  # The first part of the Algorithm requires that we get a random starting cell/node/room/place.
         dfs_y = random.randint(0, self.d_ysize -1)
-        current = self.d_map[dfs_x, dfs_y]
+        current = self.d_map[dfs_x, dfs_y]                          # Sets the random cell as current.
         print("Choosing Random Place: ", dfs_x, dfs_y)
-        self.unvisited.remove(current)
-        place_stack = []
-        while len(self.unvisited) > 0:
+        self.unvisited.remove(current)                              # Remove current cell from unvisited list
+        place_stack = []                                            # Initiates empty stack. This stack is used by the maze generator to backtrack to previously visited nodes.
+
+        while len(self.unvisited) > 0:                              # While there are still nodes inside the unvisited list.
+
             print "Current Node: ", WORLD['position'][current]['x'], WORLD['position'][current]['y']
-            if self.has_unvisited_neighbor(current) == True:
 
-                place_stack.append(current)
-                tmp = self.get_random_unvisited_neighbor(current)
+            if self.has_unvisited_neighbor(current) == True:                                            # Check if current node has unvisited neighbors
+                place_stack.append(current)                                                             # If true: add current to the stack.
 
-                #Connect exits between current and new current
+                tmp = self.get_random_unvisited_neighbor(current)                                       # Get random unvisited neighbor
                 temp_current = self.d_map[tmp[1]]
-
-                if tmp[0] == "up":
+                                                                                                        # The following if statements connect the current node, and the random neighbor chosen
+                if tmp[0] == "up":                                                                      # By editing the 'exit' properties in their 'isroom' component
                     print "Going Up!"
                     WORLD['isroom'][temp_current]['exits'][2] = current
                     WORLD['isroom'][current]['exits'][0]      = temp_current
@@ -71,14 +70,17 @@ class Dungeon_Generator():
                     WORLD['isroom'][temp_current]['exits'][1] = current
                     WORLD['isroom'][current]['exits'][3]      = temp_current
 
-                current = temp_current
-                self.unvisited.remove(current)
-            else:
-                if len(place_stack) != 0:
-                    print 'taking a step back!'
-                    current = place_stack.pop()
+                current = temp_current                                                      # Afterwards, set the randomly chosen neighbor as the current node
+                self.unvisited.remove(current)                                              # remove the (new) current node from the unvisited stack (Therby making it visited)
+
+            else:                                           # If the current node doesn't have any unvisited neighbors
+                if len(place_stack) != 0:                   # If there are more nodes in the stack:
+                    print 'taking a step back!'             # The generator backtracks
+                    current = place_stack.pop()             # It gets the topmost node from the stack and set it to current
+                                                            # If the current node has no unvisited neighbors and the stack is empty. The maze is done generating
 
 
+                                                            # Various helper functions.
 
     def get_random_unvisited_neighbor(self, place):
         temp = []
