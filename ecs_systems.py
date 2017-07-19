@@ -69,17 +69,18 @@ class Factory():
         monster_mask = (self.world.COMPS['monster'])
         weapon_mask  = (self.world.COMPS['weapon'])
 
-        if (self.world.WORLD['masks'][ent_id] & monster_mask) == monster_mask:
-            monster_type = self.WORLD['monster']['type']
-            self.WORLD['descriptor']['name'] = random.choice(self.descriptors['names']['monsters'][monster_type])
+        if (self.world.WORLD['mask'][ent_id] & monster_mask) == monster_mask:
+            monster_type = self.WORLD['monster'][ent_id]['type']
+            self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['monsters'][monster_type])
 
-        if (self.world.WORLD['masks'][ent_id] & weapon_mask) == weapon_mask:
-            weapon_type = self.WORLD['weapon']['type']
-            if random.randrange(1,100) <= 2:
-                rarity = 'common'
-            else:
+        if (self.world.WORLD['mask'][ent_id] & weapon_mask) == weapon_mask:
+            weapon_type = self.WORLD['weapon'][ent_id]['type']
+            if random.randrange(1,100) <= 10:
                 rarity = 'unique'
-            self.WORLD['descriptor']['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
+            else:
+                rarity = 'common'
+            print rarity
+            self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
 
 
 
@@ -105,6 +106,7 @@ class Factory():
         self.create_components('monster',ent_id)
         self.create_components('inventory',ent_id)
         self.WORLD['monster'][ent_id]['type'] = monster_type
+        self.lorify(ent_id)
         return ent_id
 
     def weapon_creator(self, weapon_type = "random"):
@@ -112,16 +114,16 @@ class Factory():
         if weapon_type == 'random':
             weapon_type = random.choice(self.descriptors['names']['objects'].keys())
 
-        self.WORLD['weapon'][ent_id] =  self.archetypes['bow']['weapon'].copy()
-
         #Same as monster_creator
-        self.create_components('descriptor')
-        self.create_components('weapon')
+        self.create_components('descriptor',ent_id)
+        self.create_components('weapon', ent_id)
 
+        self.WORLD['weapon'][ent_id] =  self.archetypes[weapon_type]['weapon'].copy()
+        self.lorify(ent_id)
         return ent_id
 
-#w = World()
-#f = Factory(w)
+w = World()
+f = Factory(w)
 
 
 
