@@ -68,11 +68,18 @@ class Factory():
     def lorify(self,ent_id):
         monster_mask = (self.world.COMPS['monster'])
         weapon_mask  = (self.world.COMPS['weapon'])
+
         if (self.world.WORLD['masks'][ent_id] & monster_mask) == monster_mask:
             monster_type = self.WORLD['monster']['type']
+            self.WORLD['descriptor']['name'] = random.choice(self.descriptors['names']['monsters'][monster_type])
 
         if (self.world.WORLD['masks'][ent_id] & weapon_mask) == weapon_mask:
-            pass
+            weapon_type = self.WORLD['weapon']['type']
+            if random.randrange(1,100) <= 2:
+                rarity = 'common'
+            else:
+                rarity = 'unique'
+            self.WORLD['descriptor']['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
 
 
 
@@ -97,7 +104,6 @@ class Factory():
         self.create_components('descriptor',ent_id)
         self.create_components('monster',ent_id)
         self.create_components('inventory',ent_id)
-
         self.WORLD['monster'][ent_id]['type'] = monster_type
         return ent_id
 
