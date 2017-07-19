@@ -17,21 +17,28 @@ class World():
             "stats"      : 1L << 5,
             "weapon"     : 1L << 6,
             "monster"    : 1L << 7,
-            "p"          : 1L << 8,
+            "equipment"  : 1L << 8,
             "p"          : 1L << 9,
             "p"          : 1L << 10,
 
         }
-        self.WORLD = {
-                "mask"       : {},
-                "position"   : {},
-                "inventory"  : {},
-                "descriptor" : {},
-                "isroom"     : {},
-                "stats"      : {},
-                "weapon"     : {},
-                "monster"    : {}
-        }
+        self.WORLD = {}
+        #self.WORLD = {
+        #        "mask"       : {},
+        #        "position"   : {},
+        #        "inventory"  : {},
+        #        "descriptor" : {},
+        #        "isroom"     : {},
+        #        "stats"      : {},
+        #        "weapon"     : {},
+        #        "monster"    : {}
+        #}
+        with open ('components.json') as component_files:
+            components = json.load(component_files)
+
+        for key in components:
+            self.WORLD[key] = {}
+
         self.entity_id_max = 1000
         self.factory = Factory(self)
 
@@ -99,12 +106,16 @@ class Factory():
         if monster_type == 'random':
             monster_type = random.choice(self.descriptors['names']['monsters'].keys())
 
-        #Possibly move this into the Archetype json as a generic monster
+        #Possibly move this into the Archetype json as a generic monster (DONE)
         #Add special/unqiue/random components afterwards.
-        self.create_components('stats',ent_id)
-        self.create_components('descriptor',ent_id)
-        self.create_components('monster',ent_id)
-        self.create_components('inventory',ent_id)
+
+        for component in self.archetypes['monster'].keys():
+            self.create_components(component, ent_id)
+
+        #self.create_components('stats',ent_id)
+        #self.create_components('descriptor',ent_id)
+        #self.create_components('monster',ent_id)
+        #self.create_components('inventory',ent_id)
         self.WORLD['monster'][ent_id]['type'] = monster_type
         self.lorify(ent_id)
         return ent_id
