@@ -10,6 +10,13 @@
 		"items": []
 	},
 
+	"equipment": {
+		"armor" : "None",
+		"weapon": "None",
+		"ring01": "None",
+		"ring02": "None"
+
+	},
 
 	"descriptor":{
 		"name" : "None",
