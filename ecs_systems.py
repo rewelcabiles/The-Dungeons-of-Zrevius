@@ -96,29 +96,24 @@ class Factory():
         ent_id = self.world.assign_entity_id()
         for component in self.archetypes['room'].keys():
             self.create_components(component, ent_id)
+
         self.WORLD['position'][ent_id]['x'] = x
         self.WORLD['position'][ent_id]['y'] = y
-
         return ent_id
+
 
     def monster_creator(self, monster_type = 'random'):
         ent_id = self.world.assign_entity_id()
         if monster_type == 'random':
             monster_type = random.choice(self.descriptors['names']['monsters'].keys())
 
-        #Possibly move this into the Archetype json as a generic monster (DONE)
-        #Add special/unqiue/random components afterwards.
-
         for component in self.archetypes['monster'].keys():
             self.create_components(component, ent_id)
 
-        #self.create_components('stats',ent_id)
-        #self.create_components('descriptor',ent_id)
-        #self.create_components('monster',ent_id)
-        #self.create_components('inventory',ent_id)
         self.WORLD['monster'][ent_id]['type'] = monster_type
         self.lorify(ent_id)
         return ent_id
+
 
     def weapon_creator(self, weapon_type = "random"):
         ent_id = self.world.assign_entity_id()

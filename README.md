@@ -6,15 +6,15 @@ A VERY early WIP text rougelike game. Theres still nothing to see in terms of an
 ## Will feature:
 
 
-  Random Dungeon Generation      (Backend already finished)
+  Random Dungeon Generation      (Maze generation is done, currently working on populating it with monsters / loot)
 
-  Semi-Random Monster Generation (Imagine the same fantasy monsters, but with different attributes, skills each game)
+  Semi-Random Monster Generation (24% Finished)
 
-  Semi-Random Loot
+  Semi-Random Loot ( Still working on it )
 
-  Quests
+  Quests (Havn't Started yet)
 
-  Different Modes (Story, Endless Dungeon, etc..)
+  Different Modes (Story, Endless Dungeon, etc..) ( Definitely havn't started on yet.)
 
   (Will add more features as I start to finish the game more. Practicing not to feature creep :) )
 
