@@ -73,7 +73,7 @@
 
 
 	"objects" :{
-		"swords" :{
+		"sword" :{
 			"unique" : [
 				"Persuasion",
 				"Silver Saber",
@@ -92,7 +92,7 @@
 				"Common Sword"
 			]
 		},
-		"bows" :{
+		"bow" :{
 			"unique" : [
 				"Bristleblitz",
 				"Calamity",
