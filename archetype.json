@@ -30,6 +30,15 @@
 			"mod"	    : "str",
 			"mod_amount": 0
 		}
+	},
+
+	"monster":
+	{
+		"descriptor": "None",
+		"stats"     : "None",
+		"inventory" : "None",
+		"equipment" : "None",
+		"monster"   : "None"
 	}
 }
 
