@@ -64,28 +64,12 @@ class Factory():
         self.WORLD[comp][ent_id] = self.components[comp].copy()
         self.WORLD['mask'][ent_id] |= self.world.COMPS[comp]
 
-        #if   comp == "descriptor":
-        #    WORLD['descriptor'][ent_id] = self.components['descriptor'].copy()
-        #    WORLD['mask'][ent_id] |= self.world.COMPS['descriptor']
-        #elif comp == "position":
-        #    WORLD['position'][ent_id]  = self.components['position'].copy()
-        #    WORLD['mask'][ent_id] |= self.world.COMPS['position']
-        #elif comp == 'isroom':
-        #    WORLD['isroom'][ent_id] = self.components['isroom'].copy()
-        #    WORLD['mask'][ent_id] |= self.world.COMPS['isroom']
-        #elif comp == 'inventory':
-        #    WORLD['inventory'][ent_id] = self.components['inventory'].copy()
-        #    WORLD['mask'][ent_id] |= self.world.COMPS['inventory']
-        #else:
-        #    print "ERROR: No Known Component Name!"
-
 
     def lorify(self,ent_id):
         monster_mask = (self.world.COMPS['monster'])
         weapon_mask  = (self.world.COMPS['weapon'])
         if (self.world.WORLD['masks'][ent_id] & monster_mask) == monster_mask:
             monster_type = self.WORLD['monster']['type']
-
 
         if (self.world.WORLD['masks'][ent_id] & weapon_mask) == weapon_mask:
             pass
@@ -99,6 +83,7 @@ class Factory():
             self.create_components(component, ent_id)
         self.WORLD['position'][ent_id]['x'] = x
         self.WORLD['position'][ent_id]['y'] = y
+
         return ent_id
 
     def monster_creator(self, monster_type = 'random'):
@@ -106,6 +91,8 @@ class Factory():
         if monster_type == 'random':
             monster_type = random.choice(self.descriptors['names']['monsters'].keys())
 
+        #Possibly move this into the Archetype json as a generic monster
+        #Add special/unqiue/random components afterwards.
         self.create_components('stats',ent_id)
         self.create_components('descriptor',ent_id)
         self.create_components('monster',ent_id)
@@ -116,6 +103,14 @@ class Factory():
 
     def weapon_creator(self, weapon_type = "random"):
         ent_id = self.world.assign_entity_id()
+        if weapon_type == 'random':
+            weapon_type = random.choice(self.descriptors['names']['objects'].keys())
+
+        self.WORLD['weapon'][ent_id] =  self.archetypes['bow']['weapon'].copy()
+
+        #Same as monster_creator
+        self.create_components('descriptor')
+        self.create_components('weapon')
 
         return ent_id
 

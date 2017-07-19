@@ -127,9 +127,8 @@ class Dungeon_Generator():
 
 
 
-
-class Dungeon_Spicer:                           # This class will eventually be the one that populates the current empty maze, with monsters/loot/lore/npcs/quests
-    def __init__(self):                         # For now I still have to implement the monsters/loot/lore/npcs/quests
+class Dungeon_Spicer:
+    def __init__(self):
         pass
 
 
