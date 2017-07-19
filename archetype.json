@@ -15,7 +15,7 @@
 	{
 		"descriptor": "None",
 		"weapon": {
-			"type"      : "Sword",
+			"type"      : "sword",
 			"mod"       : "str",
 			"mod_amount": 0
 		}
@@ -26,7 +26,7 @@
 	{
 		"descriptor": "None",
 		"weapon": {
-			"type"	    : "Bow",
+			"type"	    : "bow",
 			"mod"	    : "str",
 			"mod_amount": 0
 		}
