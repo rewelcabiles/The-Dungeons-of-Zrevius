@@ -18,3 +18,8 @@ A VERY early WIP text rougelike game. Theres still nothing to see in terms of an
 
   (Will add more features as I start to finish the game more. Practicing not to feature creep :) )
 
+
+
+  All the names(Except a few) are from http://www.fantasynamegenerators.com/
+
+  Thanks for saving me an hour of thinking up of names!
