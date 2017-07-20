@@ -28,9 +28,12 @@
 	"isroom":{
 		"name"	: "A Room",
 		"desc"  : "None",
+		"type"  : "common",
 		"exits" : [0,0,0,0]
 	},
-
+	"area":{
+		"rooms" : []
+	},
 
 	"stats":{
 		"level"  : 1,

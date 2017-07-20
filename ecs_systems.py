@@ -42,13 +42,17 @@ class World():
 
         # This is where all the specific component dicts reside, inside the WORLD dictionary
         self.WORLD = {}
-
+        self.COMPS = {}
         # This creates the specific dictionaries where the actual components resides in
         # The keys inside WORLD would be the names of each available component in the components.json file.
         # The values will be an empty dictionary
         # The Dictionaries are where all the actual entity components of the specific type will reside.
+        self.COMPS['none'] = 1L << 0
+        iterator = 1
         for key in components:
             self.WORLD[key] = {}
+            self.COMPS[key] = 1L << iterator
+            iterator += 1
 
         self.entity_id_max = 1000
         self.factory = Factory(self)
@@ -126,6 +130,11 @@ class Factory():
         self.lorify(ent_id)
         return ent_id
 
+    def area_creator(self):
+        ent_id = self.world.assign_entity_id()
+        for component in self.archetypes['area'].keys():
+            self.create_components(component, ent_id)
+        return ent_id
 
     def weapon_creator(self, weapon_type = "random"):
         ent_id = self.world.assign_entity_id()
