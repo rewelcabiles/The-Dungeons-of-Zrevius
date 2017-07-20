@@ -3,11 +3,24 @@ import json
 
 class World():
     def __init__(self):
-        #To add to the mask  , do: self.WORLD['mask'][entity_id] |= self.COMPS[compname]
-        #To test for the mask, First, Create mask:
-        #                          mask = (self.COMPS['position'] | self.comps['isroom'])
-        #                      Then, Compare:
-        #                          (self.WORLD['masks'][entity_id] & mask) == mask
+
+
+        # This is part of the component bit mask system.
+        # It's used to check if an entity has a specific component
+        # When an entity is first created, it comp mask will be self.COMPS['none'], or just none for short.
+        # When components are added to or removed from an entity the masks gets updated to reflect the change
+        #
+        # To add a component to the component mask of an entity, it is done by using the following line.
+        # For this example we will be adding a monster component to an entities component mask.
+        #
+        #           self.WORLD['mask'][entity_id] |= self.COMPS["monster"]
+        #
+        # To remove an entity from the component mask:
+        #
+        #           self.WORLD['mask'][entity_id] &= ~self.COMPS["monster"]
+        #
+        # Since the masks are just used as an easy way for systems to check for components.
+        # You actually have to remove the component from the world as well, not just the masks.
         self.COMPS = {
             "none"       : 1L << 0,
             "position"   : 1L << 1,
@@ -22,20 +35,18 @@ class World():
             "p"          : 1L << 10,
 
         }
-        self.WORLD = {}
-        #self.WORLD = {
-        #        "mask"       : {},
-        #        "position"   : {},
-        #        "inventory"  : {},
-        #        "descriptor" : {},
-        #        "isroom"     : {},
-        #        "stats"      : {},
-        #        "weapon"     : {},
-        #        "monster"    : {}
-        #}
-        with open ('components.json') as component_files:
-            components = json.load(component_files)
 
+
+        with open ('components.json') as component_files:
+           components = json.load(component_files)
+
+        # This is where all the specific component dicts reside, inside the WORLD dictionary
+        self.WORLD = {}
+
+        # This creates the specific dictionaries where the actual components resides in
+        # The keys inside WORLD would be the names of each available component in the components.json file.
+        # The values will be an empty dictionary
+        # The Dictionaries are where all the actual entity components of the specific type will reside.
         for key in components:
             self.WORLD[key] = {}
 
@@ -44,14 +55,15 @@ class World():
 
     def assign_entity_id(self):
         while True:
-            entity_id = random.randint(1, self.entity_id_max)
-            if entity_id not in self.WORLD['mask'].keys():
-                self.WORLD['mask'][entity_id] = self.COMPS['none']
-                return entity_id
+            entity_id = random.randint(1, self.entity_id_max)       # Generates a random id for an entity
+            if entity_id not in self.WORLD['mask'].keys():          # Checks if the id is already in use.
+                self.WORLD['mask'][entity_id] = self.COMPS['none']  # If not, create a mask with nothing in it.
+                return entity_id                                    # Returns the id to whatever called the-
+                                                                    # function.
 
 
     def destroy_entity(entity_id):
-        self.all_entities.remove(entity_id)
+        self.all_entities.remove(entity_id) # This hasn't been updated to the new system yet.
 
 
 
