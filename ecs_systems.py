@@ -1,5 +1,6 @@
 import random
 import json
+import copy
 
 class World():
     def __init__(self):
@@ -84,7 +85,7 @@ class Factory():
             self.descriptors= json.load(descriptor_files)
 
     def create_components(self, comp, ent_id):
-        self.WORLD[comp][ent_id] = self.components[comp].copy()
+        self.WORLD[comp][ent_id] = copy.deepcopy(self.components[comp])
         self.WORLD['mask'][ent_id] |= self.world.COMPS[comp]
 
 
@@ -149,8 +150,8 @@ class Factory():
         self.lorify(ent_id)
         return ent_id
 
-w = World()
-f = Factory(w)
+#w = World()
+#f = Factory(w)
 
 
 
