@@ -83,6 +83,9 @@ class Factory():
             self.components = json.load(component_files)
         with open('descriptors.json') as descriptor_files:
             self.descriptors= json.load(descriptor_files)
+    def create_from_archetype(self,ent_id, archetype_name):
+        for component in self.archetypes[archetype_name].keys():
+            self.create_components(component, ent_id)
 
     def create_components(self, comp, ent_id):
         self.WORLD[comp][ent_id] = copy.deepcopy(self.components[comp])
@@ -111,9 +114,7 @@ class Factory():
     #MAKE ALL CREATORS USE ARCHETYPE.JSON FILE ATTRIBUTES.
     def room_creator(self,x ,y):
         ent_id = self.world.assign_entity_id()
-        for component in self.archetypes['room'].keys():
-            self.create_components(component, ent_id)
-
+        self.create_from_archetype(ent_id, 'room')
         self.WORLD['position'][ent_id]['x'] = x
         self.WORLD['position'][ent_id]['y'] = y
         return ent_id
@@ -136,6 +137,11 @@ class Factory():
         for component in self.archetypes['area'].keys():
             self.create_components(component, ent_id)
         return ent_id
+
+    def door_creator(self, targets):
+        ent_id = self.world.assign_entity_id()
+        self.create_from_archetype(ent_id, 'door')
+        self.WORLD['transition'][ent_id]['target'] = targets
 
     def weapon_creator(self, weapon_type = "random"):
         ent_id = self.world.assign_entity_id()

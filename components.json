@@ -55,6 +55,10 @@
 
 	"monster": {
 		"type" : "None"
+	},
+
+	"transition": {
+		"target" : "None"
 	}
 }
 

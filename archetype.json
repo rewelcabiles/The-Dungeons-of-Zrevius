@@ -43,6 +43,17 @@
 		"inventory" : "None",
 		"equipment" : "None",
 		"monster"   : "None"
+	},
+
+	"door":
+	{
+		"descriptor":
+		{
+			"name" : "Door",
+			"descriptor": "Its very.... Doory"
+		},
+		"transition": "None"
 	}
+
 }
 
