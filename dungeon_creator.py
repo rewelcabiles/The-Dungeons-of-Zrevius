@@ -58,21 +58,25 @@ class Dungeon_Generator():
                     print "Going Up!"
                     WORLD['isroom'][temp_current]['exits'][2] = current
                     WORLD['isroom'][current]['exits'][0]      = temp_current
+                    self.connect_rooms(current, temp_current, "up")
 
                 elif tmp[0] == "right":
                     print "Going Right!"
                     WORLD['isroom'][temp_current]['exits'][3] = current
                     WORLD['isroom'][current]['exits'][1]      = temp_current
+                    self.connect_rooms(current, temp_current, "right")
 
                 elif tmp[0] == "down":
                     print "Going Down!"
                     WORLD['isroom'][temp_current]['exits'][0] = current
                     WORLD['isroom'][current]['exits'][2]      = temp_current
+                    self.connect_rooms(current, temp_current, "down")
 
                 elif tmp[0] == "left":
                     print "Going Left!"
                     WORLD['isroom'][temp_current]['exits'][1] = current
                     WORLD['isroom'][current]['exits'][3]      = temp_current
+                    self.connect_rooms(current, temp_current, "left")
 
                 current = temp_current
                 self.unvisited.remove(current)
@@ -81,6 +85,23 @@ class Dungeon_Generator():
                     print 'taking a step back!'             # The generator backtracks
                     current = place_stack.pop()             # It gets the topmost node from the stack and set it to current
 
+
+    def connect_rooms(self, current_room, temp_room, direction):
+        if direction == "up":
+            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "forward"))
+            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "back"))
+
+        elif direction == "right":
+            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "right"))
+            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "left"))
+
+        elif direction == "down":
+            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "back"))
+            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "forward"))
+
+        elif direction == "left":
+            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "left"))
+            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "right"))
 
 
 
@@ -140,7 +161,7 @@ class Dungeon_Spicer:
 
 
 #delete when on production
-#w  = World()
-#dg = Dungeon_Generator(w)
-#dg.create_dungeon(3)
+w  = World()
+dg = Dungeon_Generator(w)
+dg.create_dungeon(3)
 

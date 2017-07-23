@@ -138,10 +138,13 @@ class Factory():
             self.create_components(component, ent_id)
         return ent_id
 
-    def door_creator(self, targets):
+    def door_creator(self, targets, direction):
         ent_id = self.world.assign_entity_id()
         self.create_from_archetype(ent_id, 'door')
         self.WORLD['transition'][ent_id]['target'] = targets
+        self.WORLD['descriptor'][ent_id]['descriptor'] = "The door goes",direction
+        return ent_id
+
 
     def weapon_creator(self, weapon_type = "random"):
         ent_id = self.world.assign_entity_id()
