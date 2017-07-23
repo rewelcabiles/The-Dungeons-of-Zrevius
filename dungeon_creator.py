@@ -24,6 +24,8 @@ class Dungeon_Generator():
             self.randomize_maze()
             d_map[floor] = self.f_map
             complexity += 1
+
+        self.connect_floors(d_map)
         return d_map
 
 
@@ -38,6 +40,7 @@ class Dungeon_Generator():
                 self.world.WORLD['area'][area_id]['rooms'].append(ent_id)
                 self.unvisited.append(ent_id)
                 self.f_map[x, y] = ent_id
+
 
     def randomize_maze(self):
         print "Randomizing new floor"
@@ -55,25 +58,21 @@ class Dungeon_Generator():
                 temp_current = self.f_map[tmp[1]]
 
                 if tmp[0] == "up":
-                    print "Going Up!"
                     WORLD['isroom'][temp_current]['exits'][2] = current
                     WORLD['isroom'][current]['exits'][0]      = temp_current
-                    self.connect_rooms(current, temp_current, "up")
+                    self.connect_rooms(current, temp_current, "forward")
 
                 elif tmp[0] == "right":
-                    print "Going Right!"
                     WORLD['isroom'][temp_current]['exits'][3] = current
                     WORLD['isroom'][current]['exits'][1]      = temp_current
                     self.connect_rooms(current, temp_current, "right")
 
                 elif tmp[0] == "down":
-                    print "Going Down!"
                     WORLD['isroom'][temp_current]['exits'][0] = current
                     WORLD['isroom'][current]['exits'][2]      = temp_current
-                    self.connect_rooms(current, temp_current, "down")
+                    self.connect_rooms(current, temp_current, "back")
 
                 elif tmp[0] == "left":
-                    print "Going Left!"
                     WORLD['isroom'][temp_current]['exits'][1] = current
                     WORLD['isroom'][current]['exits'][3]      = temp_current
                     self.connect_rooms(current, temp_current, "left")
@@ -82,12 +81,25 @@ class Dungeon_Generator():
                 self.unvisited.remove(current)
             else:                                           # If the current node doesn't have any unvisited neighbors
                 if len(place_stack) != 0:                   # If there are more nodes in the stack:
-                    print 'taking a step back!'             # The generator backtracks
                     current = place_stack.pop()             # It gets the topmost node from the stack and set it to current
 
 
+    def connect_floors(self, d_map):
+        temp_dict = {}
+        for floor in d_map:
+            start = random.choice(d_map[floor].values())
+            end   = random.choice(d_map[floor].values())
+            if start != end:
+                temp_dict[floor] = [start, end]
+
+        for floor in temp_dict:
+            if floor != temp_dict.keys()[-1]:
+                self.connect_rooms(temp_dict[floor][1], temp_dict[floor + 1][0], "down")
+
+
+
     def connect_rooms(self, current_room, temp_room, direction):
-        if direction == "up":
+        if direction == "forward":
             self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "forward"))
             self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "back"))
 
@@ -95,13 +107,21 @@ class Dungeon_Generator():
             self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "right"))
             self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "left"))
 
-        elif direction == "down":
+        elif direction == "back":
             self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "back"))
             self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "forward"))
 
         elif direction == "left":
             self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "left"))
             self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "right"))
+
+        elif direction == "up":
+            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "Upwards"))
+            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "Downwards"))
+
+        elif direction == "down":
+            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "Downwards"))
+            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "Upwards"))
 
 
 
@@ -156,12 +176,28 @@ class Dungeon_Spicer:
         self.WORLD = self.world.WORLD
         dungeon_generator = Dungeon_Generator(self.world)
         self.dungeon = dungeon_generator.create_dungeon(4)
+        self.populate_dungeon()
+    def populate_dungeon(self):
+        for f in self.dungeon:
+            for r in self.dungeon[f].values():
+                self.add_furniture(r)
+
+    def add_furniture(self, room_id): # f_ where f refers to furniture
+        for i in range(random.randrange(0, 5)):
+            ent_id, f_type = self.world.factory.furniture_creator()
+            if f_type == 'containers':
+                self.add_items(ent_id)
+
+            self.WORLD['inventory'][room_id]['items'].append(ent_id)
 
 
-
+    def add_items(self, inv_id, i_type = "random"):
+        for i in range(random.randrange(1, 3)):
+            if random.randrange(0, 100) <= 80: # For weapons
+                self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.weapon_creator())
 
 #delete when on production
-w  = World()
-dg = Dungeon_Generator(w)
-dg.create_dungeon(3)
+#w  = World()
+#dg = Dungeon_Generator(w)
+#d_map = dg.create_dungeon(3)
 

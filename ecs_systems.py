@@ -138,11 +138,28 @@ class Factory():
             self.create_components(component, ent_id)
         return ent_id
 
+    def furniture_creator(self, f_type = "random", f_name = 'random'):
+        ent_id = self.world.assign_entity_id()
+        if f_type == "random":
+            f_type = random.choice(self.archetypes['furniture'].keys())
+            f_name = random.choice(self.archetypes['furniture'][f_type].keys())
+        print "Creating Furniture!"
+        print f_type
+        print f_name
+        for component in self.archetypes['furniture'][f_type][f_name].keys():
+           self.create_components(component, ent_id)
+        return ent_id, f_type
+
     def door_creator(self, targets, direction):
         ent_id = self.world.assign_entity_id()
         self.create_from_archetype(ent_id, 'door')
         self.WORLD['transition'][ent_id]['target'] = targets
-        self.WORLD['descriptor'][ent_id]['descriptor'] = "The door goes",direction
+        if direction == "up" or direction == "down":
+            self.WORLD['descriptor'][ent_id]['name'] = "Stairs"
+            self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go", direction
+        else:
+            self.WORLD['descriptor'][ent_id]['desc'] = "The door goes",direction
+
         return ent_id
 
 
