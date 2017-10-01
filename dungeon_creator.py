@@ -171,16 +171,18 @@ class Dungeon_Generator():
 
 
 class Dungeon_Spicer:
-    def __init__(self):
-        self.world = World()
+    def __init__(self,world):
+        self.world = world
         self.WORLD = self.world.WORLD
         dungeon_generator = Dungeon_Generator(self.world)
         self.dungeon = dungeon_generator.create_dungeon(4)
         self.populate_dungeon()
+
     def populate_dungeon(self):
         for f in self.dungeon:
             for r in self.dungeon[f].values():
                 self.add_furniture(r)
+        return self.world
 
     def add_furniture(self, room_id): # f_ where f refers to furniture
         for i in range(random.randrange(0, 5)):
@@ -196,8 +198,5 @@ class Dungeon_Spicer:
             if random.randrange(0, 100) <= 80: # For weapons
                 self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.weapon_creator())
 
-#delete when on production
-#w  = World()
-#dg = Dungeon_Generator(w)
-#d_map = dg.create_dungeon(3)
+
 

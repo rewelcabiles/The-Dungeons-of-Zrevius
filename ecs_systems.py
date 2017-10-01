@@ -3,25 +3,8 @@ import json
 import copy
 
 class World():
+
     def __init__(self):
-
-
-        # This is part of the component bit mask system.
-        # It's used to check if an entity has a specific component
-        # When an entity is first created, it comp mask will be self.COMPS['none'], or just none for short.
-        # When components are added to or removed from an entity the masks gets updated to reflect the change
-        #
-        # To add a component to the component mask of an entity, it is done by using the following line.
-        # For this example we will be adding a monster component to an entities component mask.
-        #
-        #           self.WORLD['mask'][entity_id] |= self.COMPS["monster"]
-        #
-        # To remove an entity from the component mask:
-        #
-        #           self.WORLD['mask'][entity_id] &= ~self.COMPS["monster"]
-        #
-        # Since the masks are just used as an easy way for systems to check for components.
-        # You actually have to remove the component from the world as well, not just the masks.
         self.COMPS = {
             "none"       : 1L << 0,
             "position"   : 1L << 1,
@@ -45,26 +28,23 @@ class World():
         self.WORLD = {}
         self.COMPS = {}
         # This creates the specific dictionaries where the actual components resides in
-        # The keys inside WORLD would be the names of each available component in the components.json file.
-        # The values will be an empty dictionary
-        # The Dictionaries are where all the actual entity components of the specific type will reside.
         self.COMPS['none'] = 1L << 0
         iterator = 1
         for key in components:
             self.WORLD[key] = {}
             self.COMPS[key] = 1L << iterator
             iterator += 1
-
         self.entity_id_max = 1000
         self.factory = Factory(self)
 
+
     def assign_entity_id(self):
         while True:
-            entity_id = random.randint(1, self.entity_id_max)       # Generates a random id for an entity
-            if entity_id not in self.WORLD['mask'].keys():          # Checks if the id is already in use.
-                self.WORLD['mask'][entity_id] = self.COMPS['none']  # If not, create a mask with nothing in it.
-                return entity_id                                    # Returns the id to whatever called the-
-                                                                    # function.
+            entity_id = random.randint(1, self.entity_id_max)
+            if entity_id not in self.WORLD['mask'].keys():
+                self.WORLD['mask'][entity_id] = self.COMPS['none']
+                return entity_id
+
 
 
     def destroy_entity(entity_id):
@@ -86,6 +66,7 @@ class Factory():
     def create_from_archetype(self,ent_id, archetype_name):
         for component in self.archetypes[archetype_name].keys():
             self.create_components(component, ent_id)
+
 
     def create_components(self, comp, ent_id):
         self.WORLD[comp][ent_id] = copy.deepcopy(self.components[comp])
@@ -111,7 +92,6 @@ class Factory():
 
 
 
-    #MAKE ALL CREATORS USE ARCHETYPE.JSON FILE ATTRIBUTES.
     def room_creator(self,x ,y):
         ent_id = self.world.assign_entity_id()
         self.create_from_archetype(ent_id, 'room')
@@ -132,11 +112,13 @@ class Factory():
         self.lorify(ent_id)
         return ent_id
 
+
     def area_creator(self):
         ent_id = self.world.assign_entity_id()
         for component in self.archetypes['area'].keys():
             self.create_components(component, ent_id)
         return ent_id
+
 
     def furniture_creator(self, f_type = "random", f_name = 'random'):
         ent_id = self.world.assign_entity_id()
@@ -150,6 +132,7 @@ class Factory():
            self.create_components(component, ent_id)
         return ent_id, f_type
 
+
     def door_creator(self, targets, direction):
         ent_id = self.world.assign_entity_id()
         self.create_from_archetype(ent_id, 'door')
@@ -159,7 +142,6 @@ class Factory():
             self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go", direction
         else:
             self.WORLD['descriptor'][ent_id]['desc'] = "The door goes",direction
-
         return ent_id
 
 
