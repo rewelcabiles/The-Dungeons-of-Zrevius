@@ -14,7 +14,7 @@ class Dungeon_Generator():
         self.d_xsize    = complexity + 1
         self.d_ysize    = complexity + 1
         # Dungeons will have floors will have rooms
-        d_map      = {}
+        d_map      = {} #Dict of floors where [key] = floor: [Value] = floor map
         for floor in range(floors):
             self.d_xsize = complexity
             self.d_ysize = complexity
@@ -26,7 +26,9 @@ class Dungeon_Generator():
             complexity += 1
 
         self.connect_floors(d_map)
-        return d_map
+        Dungeon_Spicer(self.world, d_map)
+
+        #return d_map
 
 
 
@@ -171,11 +173,11 @@ class Dungeon_Generator():
 
 
 class Dungeon_Spicer:
-    def __init__(self,world):
+    def __init__(self,world, d_map):
         self.world = world
         self.WORLD = self.world.WORLD
-        dungeon_generator = Dungeon_Generator(self.world)
-        self.dungeon = dungeon_generator.create_dungeon(4)
+        #dungeon_generator = Dungeon_Generator(self.world)
+        self.dungeon = d_map
         self.populate_dungeon()
 
     def populate_dungeon(self):
