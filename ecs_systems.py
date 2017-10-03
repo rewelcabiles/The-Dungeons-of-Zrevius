@@ -5,29 +5,15 @@ import copy
 class World():
 
     def __init__(self):
-        self.COMPS = {
-            "none"       : 1L << 0,
-            "position"   : 1L << 1,
-            "inventory"  : 1L << 2,
-            "descriptor" : 1L << 3,
-            "isroom"     : 1L << 4,
-            "stats"      : 1L << 5,
-            "weapon"     : 1L << 6,
-            "monster"    : 1L << 7,
-            "equipment"  : 1L << 8,
-            "p"          : 1L << 9,
-            "p"          : 1L << 10,
 
-        }
-
-
+        #Loads the files that contains all components
         with open ('components.json') as component_files:
            components = json.load(component_files)
 
         # This is where all the specific component dicts reside, inside the WORLD dictionary
         self.WORLD = {}
         self.COMPS = {}
-        # This creates the specific dictionaries where the actual components resides in
+        # Creates the dictionaries for each component in the components.json files
         self.COMPS['none'] = 1L << 0
         iterator = 1
         for key in components:
