@@ -2,7 +2,6 @@
 import random
 from ecs_systems import *
 
-## REPLACE ROOM EXITS WITH DOOR ENTITIES
 
 class Dungeon_Generator():
     def __init__(self, world):
@@ -37,7 +36,7 @@ class Dungeon_Generator():
         area_id = self.world.factory.area_creator()
         for x in range(self.d_xsize):
             for y in range(self.d_ysize):
-                print area_id
+                print(area_id)
                 ent_id =  self.world.factory.room_creator(x, y)
                 self.world.WORLD['area'][area_id]['rooms'].append(ent_id)
                 self.unvisited.append(ent_id)
@@ -45,7 +44,7 @@ class Dungeon_Generator():
 
 
     def randomize_maze(self):
-        print "Randomizing new floor"
+        print("Randomizing new floor")
         WORLD = self.world.WORLD
         dfs_x = random.randint(0, self.d_xsize -1)
         dfs_y = random.randint(0, self.d_ysize -1)
@@ -89,13 +88,13 @@ class Dungeon_Generator():
     def connect_floors(self, d_map):
         temp_dict = {}
         for floor in d_map:
-            start = random.choice(d_map[floor].values())
-            end   = random.choice(d_map[floor].values())
+            start = random.choice(list(d_map[floor].values()))
+            end   = random.choice(list(d_map[floor].values()))
             if start != end:
                 temp_dict[floor] = [start, end]
 
         for floor in temp_dict:
-            if floor != temp_dict.keys()[-1]:
+            if floor != list(temp_dict.keys())[-1]:
                 self.connect_rooms(temp_dict[floor][1], temp_dict[floor + 1][0], "down")
 
 
@@ -182,7 +181,7 @@ class Dungeon_Spicer:
 
     def populate_dungeon(self):
         for f in self.dungeon:
-            for r in self.dungeon[f].values():
+            for r in list(self.dungeon[f].values()):
                 self.add_furniture(r)
         return self.world
 

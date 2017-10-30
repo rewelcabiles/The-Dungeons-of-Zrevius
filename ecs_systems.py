@@ -14,11 +14,11 @@ class World():
         self.WORLD = {}
         self.COMPS = {}
         # Creates the dictionaries for each component in the components.json files
-        self.COMPS['none'] = 1L << 0
+        self.COMPS['none'] = 1 << 0
         iterator = 1
         for key in components:
             self.WORLD[key] = {}
-            self.COMPS[key] = 1L << iterator
+            self.COMPS[key] = 1 << iterator
             iterator += 1
         self.entity_id_max = 1000
         self.factory = Factory(self)
@@ -27,7 +27,7 @@ class World():
     def assign_entity_id(self):
         while True:
             entity_id = random.randint(1, self.entity_id_max)
-            if entity_id not in self.WORLD['mask'].keys():
+            if entity_id not in list(self.WORLD['mask'].keys()):
                 self.WORLD['mask'][entity_id] = self.COMPS['none']
                 return entity_id
 
@@ -50,7 +50,7 @@ class Factory():
         with open('descriptors.json') as descriptor_files:
             self.descriptors= json.load(descriptor_files)
     def create_from_archetype(self,ent_id, archetype_name):
-        for component in self.archetypes[archetype_name].keys():
+        for component in list(self.archetypes[archetype_name].keys()):
             self.create_components(component, ent_id)
 
 
@@ -73,7 +73,7 @@ class Factory():
                 rarity = 'unique'
             else:
                 rarity = 'common'
-            print rarity
+            print(rarity)
             self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
 
 
@@ -89,9 +89,9 @@ class Factory():
     def monster_creator(self, monster_type = 'random'):
         ent_id = self.world.assign_entity_id()
         if monster_type == 'random':
-            monster_type = random.choice(self.descriptors['names']['monsters'].keys())
+            monster_type = random.choice(list(self.descriptors['names']['monsters'].keys()))
 
-        for component in self.archetypes['monster'].keys():
+        for component in list(self.archetypes['monster'].keys()):
             self.create_components(component, ent_id)
 
         self.WORLD['monster'][ent_id]['type'] = monster_type
@@ -101,7 +101,7 @@ class Factory():
 
     def area_creator(self):
         ent_id = self.world.assign_entity_id()
-        for component in self.archetypes['area'].keys():
+        for component in list(self.archetypes['area'].keys()):
             self.create_components(component, ent_id)
         return ent_id
 
@@ -109,12 +109,12 @@ class Factory():
     def furniture_creator(self, f_type = "random", f_name = 'random'):
         ent_id = self.world.assign_entity_id()
         if f_type == "random":
-            f_type = random.choice(self.archetypes['furniture'].keys())
-            f_name = random.choice(self.archetypes['furniture'][f_type].keys())
-        print "Creating Furniture!"
-        print f_type
-        print f_name
-        for component in self.archetypes['furniture'][f_type][f_name].keys():
+            f_type = random.choice(list(self.archetypes['furniture'].keys()))
+            f_name = random.choice(list(self.archetypes['furniture'][f_type].keys()))
+        print("Creating Furniture!")
+        print(f_type)
+        print(f_name)
+        for component in list(self.archetypes['furniture'][f_type][f_name].keys()):
            self.create_components(component, ent_id)
         return ent_id, f_type
 
@@ -134,7 +134,7 @@ class Factory():
     def weapon_creator(self, weapon_type = "random"):
         ent_id = self.world.assign_entity_id()
         if weapon_type == 'random':
-            weapon_type = random.choice(self.descriptors['names']['objects'].keys())
+            weapon_type = random.choice(list(self.descriptors['names']['objects'].keys()))
 
         #Same as monster_creator
         self.create_components('descriptor',ent_id)

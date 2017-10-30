@@ -1,0 +1,10 @@
+{
+	"menu":{
+		"main_menu": [
+			"Generic Text RPG!",
+			"1) Start New Game",
+			"2) Load Game"
+		]
+	}
+
+}
