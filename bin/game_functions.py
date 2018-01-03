@@ -14,16 +14,21 @@ class GameFunctions:
 		self.init_world()
 		self.interface = WorldInterface(self.world)
 		self.current_pos = random.choice(list(self.world.WORLD['isroom'].keys()))
-
+		print(self.current_pos)
+		
 	def game_loop(self):
 		while(True):
-			user = input("Health: >>")
-			if user == "look":
-				print(self.interface.get_descriptor(self.current_pos)['name']+'\n')
-				print(self.interface.get_descriptor(self.current_pos)['desc'])
+			user = input("Health: >>").split(" ")
+
+			if user[0] == "look":
+				for lookables in self.interface.get_all_room_objects(self.current_pos):
+					self.pretty_look(self.interface.get_descriptor(lookables))
 			elif user == "break":
 				break
 
+	def pretty_look(self, descriptor):
+		print(descriptor['name'])
+		print(descriptor['desc'])
 
 	def init_world(self):
 		dg = dun_gen()
@@ -41,6 +46,21 @@ class WorldInterface():
     def __init__(self, world):
         self.world_class = world
         self.WORLD       = self.world_class.WORLD
+
+    def create_dynamic_mask(self, component_list):
+    	temp_mask = 0
+    	for comps in component_list:
+    		temp_mask |= self.world_class.COMPS[comps]
+    	return temp_mask
+
+
+    def get_all_room_objects(self, room_id):
+    	descriptor_mask = self.create_dynamic_mask(['descriptor'])
+    	temp = []
+    	for ent_id in list(self.WORLD['inventory'][room_id]['items']):
+    		if((self.WORLD['mask'][ent_id] & descriptor_mask) == descriptor_mask):
+    			temp.append(ent_id)
+    	return temp
 
     def get_area(self):
         return list(self.WORLD['area'].keys())
