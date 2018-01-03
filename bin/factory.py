@@ -43,7 +43,8 @@ class Factory():
                 rarity = 'common'
             print(rarity)
             self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
-
+            self.WORLD['descriptor'][ent_id]['desc'] = "A "+rarity+" "+ weapon_type
+            self.WORLD['item'][ent_id]['rarity']     = rarity
 
 
     def room_creator(self,x ,y):
@@ -104,8 +105,7 @@ class Factory():
             weapon_type = random.choice(list(self.descriptors['names']['objects'].keys()))
 
         #Same as monster_creator
-        self.create_components('descriptor',ent_id)
-        self.create_components('weapon', ent_id)
+        self.create_from_archetype(ent_id, weapon_type)
 
         self.WORLD['weapon'][ent_id] =  self.archetypes[weapon_type]['weapon'].copy()
         self.lorify(ent_id)
