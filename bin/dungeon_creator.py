@@ -199,7 +199,7 @@ class Dungeon_Spicer:
         return self.world
 
     def add_furniture(self, room_id): # f_ where f refers to furniture
-        for i in range(random.randrange(0, 5)):
+        for i in range(random.randrange(0, 3)):
             ent_id, f_type = self.world.factory.furniture_creator()
             if f_type == 'containers':
                 self.add_items(ent_id)
