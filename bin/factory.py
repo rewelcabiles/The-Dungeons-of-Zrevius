@@ -16,6 +16,7 @@ class Factory():
             self.components = json.load(component_files)
         with open('data/descriptors.json') as descriptor_files:
             self.descriptors= json.load(descriptor_files)
+
     def create_from_archetype(self,ent_id, archetype_name):
         for component in list(self.archetypes[archetype_name].keys()):
             self.create_components(component, ent_id)
@@ -78,11 +79,9 @@ class Factory():
         if f_type == "random":
             f_type = random.choice(list(self.archetypes['furniture'].keys()))
             f_name = random.choice(list(self.archetypes['furniture'][f_type].keys()))
-        print("Creating Furniture!")
-        print(f_type)
-        print(f_name)
         for component in list(self.archetypes['furniture'][f_type][f_name].keys()):
            self.create_components(component, ent_id)
+        self.WORLD['descriptor'][ent_id] = self.archetypes['furniture'][f_type][f_name]["descriptor"]
         return ent_id, f_type
 
 
@@ -92,9 +91,10 @@ class Factory():
         self.WORLD['transition'][ent_id]['target'] = targets
         if direction == "up" or direction == "down":
             self.WORLD['descriptor'][ent_id]['name'] = "Stairs"
-            self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go", direction
+            self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go "+ direction
         else:
-            self.WORLD['descriptor'][ent_id]['desc'] = "The door goes",direction
+            self.WORLD['descriptor'][ent_id]['name'] = "A Door!"
+            self.WORLD['descriptor'][ent_id]['desc'] = "The door goes "+direction
         return ent_id
 
 
