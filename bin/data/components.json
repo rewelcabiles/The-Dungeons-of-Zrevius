@@ -7,7 +7,6 @@
 
 
 	"inventory":{
-		"name" : "Container",
 		"items": []
 	},
 
@@ -26,9 +25,6 @@
 
 
 	"isroom":{
-		"name"	: "A Room",
-		"desc"  : "None",
-		"type"  : "common",
 		"exits" : [0,0,0,0]
 	},
 	"area":{
