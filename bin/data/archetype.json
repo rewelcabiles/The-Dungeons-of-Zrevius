@@ -21,6 +21,10 @@
 	"sword":
 	{
 		"descriptor": "None",
+		"item":{
+			"rarity": "Common",
+			"value" : 1
+		},
 		"weapon": {
 			"type"      : "sword",
 			"mod"       : "str",
@@ -32,6 +36,10 @@
 	"bow":
 	{
 		"descriptor": "None",
+		"item":{
+			"rarity": "Common",
+			"value" : 1
+		},
 		"weapon": {
 			"type"	    : "bow",
 			"mod"	    : "str",

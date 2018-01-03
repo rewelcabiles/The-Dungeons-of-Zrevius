@@ -49,6 +49,11 @@
 		"mod_amount" : 1
 	},
 
+	"item":{
+		"rarity"	 : "Common",
+		"value"      : 1
+	},
+
 	"monster": {
 		"type" : "None"
 	},
