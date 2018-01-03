@@ -20,8 +20,7 @@ class GameFunctions:
 
 	def game_loop(self):
 		while(True):
-			user = input("Health: >>")
-			self.command.do(user)
+			self.command.do()
 
 	def pretty_look(self, descriptor):
 		print(descriptor['name'])
