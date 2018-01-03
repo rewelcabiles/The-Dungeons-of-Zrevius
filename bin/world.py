@@ -22,7 +22,6 @@ class World():
         self.entity_id_max = 1000
         self.factory = factory.Factory(self)
 
-
     def assign_entity_id(self):
         while True:
             entity_id = random.randint(1, self.entity_id_max)
