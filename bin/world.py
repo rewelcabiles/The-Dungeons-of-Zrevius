@@ -3,7 +3,21 @@ import random
 import factory
 
 class WorldInterface():
-    pass
+    def __init__(self, world):
+        self.world_class = world
+        self.WORLD       = self.world_class.WORLD
+
+    def get_area(self):
+
+        return list(self.WORLD['area'].keys())
+        
+    def get_rooms_in_area(self, area_id):
+        return list(self.WORLD['area'][area_id]['rooms'].keys())
+
+    def get_room_data(self, room_id):
+        return list(self.WORLD['isroom'][room_id])
+
+
 
 class World():
 
