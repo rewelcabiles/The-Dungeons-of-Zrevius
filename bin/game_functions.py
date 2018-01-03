@@ -1,6 +1,7 @@
 #/usr/bin/env python
 
 from dungeon_creator import Dungeon_Generator as dun_gen
+from game_commands import Command
 import json
 import random
 # This is where we add functions that interface with the world object
@@ -14,17 +15,13 @@ class GameFunctions:
 		self.init_world()
 		self.interface = WorldInterface(self.world)
 		self.current_pos = random.choice(list(self.world.WORLD['isroom'].keys()))
+		self.command = Command(self)
 		print(self.current_pos)
-		
+
 	def game_loop(self):
 		while(True):
-			user = input("Health: >>").split(" ")
-
-			if user[0] == "look":
-				for lookables in self.interface.get_all_room_objects(self.current_pos):
-					self.pretty_look(self.interface.get_descriptor(lookables))
-			elif user == "break":
-				break
+			user = input("Health: >>")
+			self.command.do(user)
 
 	def pretty_look(self, descriptor):
 		print(descriptor['name'])
@@ -73,3 +70,6 @@ class WorldInterface():
 
     def get_room_data(self, room_id):
         return list(self.WORLD['isroom'][room_id])
+
+test = GameFunctions()
+test.game_loop()
