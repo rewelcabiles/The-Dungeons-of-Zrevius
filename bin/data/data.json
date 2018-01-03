@@ -1,3504 +1,2544 @@
 {
     "area": {
-        "33": {
+        "202": {
             "rooms": [
-                461,
-                982,
-                84,
                 841,
-                312,
-                230,
-                985,
-                866,
-                709
+                365,
+                253,
+                551,
+                450,
+                219,
+                643,
+                535,
+                763
             ]
         },
-        "152": {
+        "206": {
             "rooms": [
-                902,
-                298,
-                692,
-                538,
-                313,
-                873,
-                713,
-                239,
-                114,
-                310,
-                97,
-                349,
-                218,
-                32,
-                249,
-                942
-            ]
-        },
-        "177": {
-            "rooms": [
-                768,
-                571,
-                637,
-                440,
+                139,
+                485,
+                133,
+                4,
+                152,
+                728,
+                633,
+                355,
+                817,
+                517,
+                877,
                 804,
-                226,
-                479,
-                270,
-                594,
-                910,
-                36,
-                266,
-                968,
-                896,
-                89,
-                943,
-                806,
-                268,
-                750,
-                951,
+                24,
+                627,
+                483,
+                421,
+                586,
+                439,
                 738,
-                242,
-                704,
-                12,
-                933
+                158,
+                116,
+                21,
+                998,
+                744,
+                616
+            ]
+        },
+        "507": {
+            "rooms": [
+                401,
+                321,
+                163,
+                605,
+                110,
+                861,
+                598,
+                210,
+                143,
+                395,
+                652,
+                859,
+                830,
+                522,
+                356,
+                126
             ]
         }
     },
     "descriptor": {
-        "2": {
-            "desc": "None",
-            "name": "None"
-        },
-        "5": {
-            "desc": "None",
-            "name": "None"
-        },
-        "7": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "10": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "14": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "15": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "17": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "18": {
-            "desc": "None",
-            "name": "None"
-        },
-        "19": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
         "25": {
-            "desc": "None",
-            "name": "None"
+            "desc": "The door goes back",
+            "name": "Door"
         },
-        "28": {
-            "desc": "None",
-            "name": "None"
+        "27": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
         },
-        "29": {
-            "desc": "None",
-            "name": "None"
+        "31": {
+            "desc": "The door goes forward",
+            "name": "Door"
         },
-        "40": {
-            "desc": "None",
-            "name": "None"
+        "34": {
+            "desc": "The door goes Downwards",
+            "name": "Door"
         },
-        "44": {
-            "desc": "The door goes right",
-            "name": "A Door!"
+        "39": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
         },
         "47": {
             "desc": "None",
-            "name": "Short Bow"
-        },
-        "48": {
-            "desc": "None",
-            "name": "Dusty Sword"
-        },
-        "53": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "57": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "60": {
-            "desc": "None",
-            "name": "None"
-        },
-        "66": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "70": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "72": {
-            "desc": "None",
-            "name": "Recurve Bow"
-        },
-        "77": {
-            "desc": "None",
-            "name": "None"
-        },
-        "85": {
-            "desc": "None",
-            "name": "None"
-        },
-        "95": {
-            "desc": "None",
-            "name": "None"
-        },
-        "96": {
-            "desc": "None",
-            "name": "Long Bow"
-        },
-        "100": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "103": {
-            "desc": "None",
-            "name": "Short Bow"
-        },
-        "104": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "105": {
-            "desc": "None",
-            "name": "None"
-        },
-        "106": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "109": {
-            "desc": "None",
-            "name": "None"
-        },
-        "110": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "111": {
-            "desc": "None",
-            "name": "None"
-        },
-        "113": {
-            "desc": "None",
-            "name": "Long Bow"
-        },
-        "116": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "119": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "121": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "122": {
-            "desc": "None",
-            "name": "Dull Sword"
-        },
-        "124": {
-            "desc": "None",
-            "name": "None"
-        },
-        "128": {
-            "desc": "None",
-            "name": "Dusty Sword"
-        },
-        "129": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "130": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "132": {
-            "desc": "None",
-            "name": "None"
-        },
-        "133": {
-            "desc": "None",
-            "name": "None"
-        },
-        "136": {
-            "desc": "None",
-            "name": "Bronzed Striker"
-        },
-        "139": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "140": {
-            "desc": "None",
-            "name": "None"
-        },
-        "147": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "154": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "163": {
-            "desc": "None",
-            "name": "None"
-        },
-        "166": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "172": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "174": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "180": {
-            "desc": "None",
-            "name": "Long Bow"
-        },
-        "181": {
-            "desc": "None",
-            "name": "None"
-        },
-        "189": {
-            "desc": "None",
-            "name": "Dull Sword"
-        },
-        "199": {
-            "desc": "None",
-            "name": "Requiem of the Lost"
-        },
-        "201": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "202": {
-            "desc": "None",
-            "name": "None"
-        },
-        "204": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "209": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "213": {
-            "desc": "The door goes Upwards",
-            "name": "A Door!"
-        },
-        "222": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "227": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "231": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "233": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "247": {
-            "desc": "None",
-            "name": "None"
-        },
-        "248": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "260": {
-            "desc": "None",
-            "name": "None"
-        },
-        "261": {
-            "desc": "None",
-            "name": "None"
-        },
-        "262": {
-            "desc": "None",
             "name": "Loose Bow"
         },
-        "264": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "271": {
-            "desc": "None",
-            "name": "None"
-        },
-        "272": {
-            "desc": "None",
-            "name": "None"
-        },
-        "273": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "274": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "275": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "280": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "285": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "286": {
-            "desc": "None",
-            "name": "Dull Sword"
-        },
-        "288": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "293": {
-            "desc": "None",
-            "name": "None"
-        },
-        "294": {
-            "desc": "None",
-            "name": "None"
-        },
-        "296": {
-            "desc": "None",
-            "name": "None"
-        },
-        "299": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "300": {
-            "desc": "None",
-            "name": "Common Sword"
-        },
-        "302": {
-            "desc": "None",
-            "name": "None"
-        },
-        "307": {
-            "desc": "None",
-            "name": "None"
-        },
-        "318": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "320": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "323": {
-            "desc": "None",
-            "name": "Old Bow"
-        },
-        "324": {
-            "desc": "None",
-            "name": "Old Bow"
-        },
-        "325": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "326": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "331": {
-            "desc": "None",
-            "name": "Old Bow"
-        },
-        "333": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "334": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "337": {
-            "desc": "None",
-            "name": "Short Bow"
-        },
-        "340": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "345": {
-            "desc": "None",
-            "name": "None"
-        },
-        "346": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "351": {
-            "desc": "None",
-            "name": "None"
-        },
-        "353": {
-            "desc": "None",
-            "name": "None"
-        },
-        "360": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "363": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "365": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "367": {
-            "desc": "None",
-            "name": "Common Sword"
-        },
-        "368": {
-            "desc": "None",
-            "name": "Common Sword"
-        },
-        "369": {
-            "desc": "None",
-            "name": "Common Sword"
-        },
-        "370": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "372": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "377": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "378": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "380": {
-            "desc": "None",
-            "name": "None"
-        },
-        "381": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "387": {
-            "desc": "None",
-            "name": "None"
-        },
-        "393": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "395": {
-            "desc": "None",
-            "name": "None"
-        },
-        "397": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "399": {
-            "desc": "None",
-            "name": "Recurve Bow"
-        },
-        "401": {
-            "desc": "None",
-            "name": "None"
-        },
-        "404": {
-            "desc": "None",
-            "name": "None"
-        },
-        "405": {
-            "desc": "None",
-            "name": "Mageblade of the Falling Sky"
-        },
-        "406": {
-            "desc": "None",
-            "name": "None"
-        },
-        "409": {
-            "desc": "The door goes Upwards",
-            "name": "A Door!"
-        },
-        "415": {
-            "desc": "None",
-            "name": "None"
-        },
-        "416": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "419": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "420": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "421": {
-            "desc": "None",
-            "name": "Common Sword"
-        },
-        "425": {
-            "desc": "None",
-            "name": "None"
-        },
-        "426": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "427": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "432": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "433": {
-            "desc": "None",
-            "name": "None"
-        },
-        "437": {
-            "desc": "None",
-            "name": "None"
-        },
-        "444": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "448": {
-            "desc": "None",
-            "name": "Recurve Bow"
-        },
-        "452": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "453": {
-            "desc": "None",
-            "name": "None"
-        },
-        "454": {
-            "desc": "None",
-            "name": "None"
-        },
-        "457": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "470": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "473": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "475": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "481": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "482": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "483": {
-            "desc": "None",
-            "name": "None"
-        },
-        "484": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "485": {
-            "desc": "None",
-            "name": "None"
-        },
-        "487": {
-            "desc": "None",
-            "name": "None"
-        },
-        "489": {
-            "desc": "None",
-            "name": "None"
-        },
-        "492": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "493": {
-            "desc": "None",
-            "name": "Persuasion"
-        },
-        "500": {
-            "desc": "None",
-            "name": "None"
-        },
-        "501": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "503": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "504": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "510": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "518": {
-            "desc": "None",
-            "name": "None"
-        },
-        "520": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "522": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "523": {
-            "desc": "None",
-            "name": "None"
-        },
-        "524": {
-            "desc": "None",
-            "name": "None"
-        },
-        "528": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "533": {
-            "desc": "None",
-            "name": "Long Bow"
-        },
-        "535": {
-            "desc": "None",
-            "name": "None"
-        },
-        "536": {
-            "desc": "None",
-            "name": "Short Bow"
-        },
-        "539": {
-            "desc": "None",
-            "name": "None"
-        },
-        "544": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "548": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "550": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "555": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "557": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "559": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "560": {
-            "desc": "None",
-            "name": "None"
-        },
-        "561": {
-            "desc": "None",
-            "name": "Dusty Sword"
-        },
-        "565": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "566": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "568": {
-            "desc": "The door goes Downwards",
-            "name": "A Door!"
-        },
-        "569": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "570": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "572": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "573": {
-            "desc": "None",
-            "name": "Dull Sword"
-        },
-        "574": {
-            "desc": "None",
-            "name": "None"
-        },
-        "575": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "577": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "578": {
-            "desc": "None",
-            "name": "None"
-        },
-        "580": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "582": {
-            "desc": "None",
-            "name": "None"
-        },
-        "583": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "585": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "586": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "587": {
-            "desc": "None",
-            "name": "Old Bow"
-        },
-        "588": {
-            "desc": "None",
-            "name": "Recurve Bow"
-        },
-        "590": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "591": {
-            "desc": "None",
-            "name": "None"
-        },
-        "593": {
-            "desc": "None",
-            "name": "None"
-        },
-        "595": {
-            "desc": "The door goes Downwards",
-            "name": "A Door!"
-        },
-        "599": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "601": {
-            "desc": "None",
-            "name": "None"
-        },
-        "602": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "604": {
-            "desc": "None",
-            "name": "None"
-        },
-        "610": {
-            "desc": "None",
-            "name": "Persuasion"
-        },
-        "623": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "625": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "626": {
-            "desc": "The door goes forward",
-            "name": "A Door!"
-        },
-        "628": {
-            "desc": "None",
-            "name": "Last Vision"
-        },
-        "632": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "635": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "641": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "642": {
-            "desc": "None",
-            "name": "Long Bow"
-        },
-        "646": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "648": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "650": {
-            "desc": "None",
-            "name": "Steel Sword"
-        },
-        "654": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "657": {
-            "desc": "None",
-            "name": "None"
-        },
-        "662": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "663": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "666": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "667": {
-            "desc": "None",
-            "name": "Dull Sword"
-        },
-        "668": {
-            "desc": "None",
-            "name": "None"
-        },
-        "670": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "677": {
-            "desc": "None",
-            "name": "None"
-        },
-        "680": {
-            "desc": "None",
-            "name": "Silver Saber"
-        },
-        "685": {
-            "desc": "None",
-            "name": "None"
-        },
-        "686": {
-            "desc": "None",
-            "name": "None"
-        },
-        "687": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "693": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "694": {
-            "desc": "None",
-            "name": "None"
-        },
-        "697": {
-            "desc": "None",
-            "name": "None"
-        },
-        "698": {
-            "desc": "None",
-            "name": "Long Bow"
-        },
-        "702": {
-            "desc": "None",
-            "name": "None"
-        },
-        "711": {
-            "desc": "None",
-            "name": "Recurve Bow"
-        },
-        "714": {
+        "49": {
             "desc": "None",
             "name": "Token of the Plague"
         },
-        "715": {
+        "52": {
             "desc": "None",
-            "name": "-???-"
+            "name": "Steel Sword"
         },
-        "719": {
+        "53": {
+            "desc": "None",
+            "name": "Sword Sword"
+        },
+        "59": {
             "desc": "The door goes back",
-            "name": "A Door!"
+            "name": "Door"
         },
-        "722": {
-            "desc": "None",
-            "name": "None"
+        "66": {
+            "desc": "The door goes left",
+            "name": "Door"
         },
-        "724": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "729": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "730": {
-            "desc": "None",
-            "name": "Dull Sword"
-        },
-        "733": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "734": {
+        "67": {
             "desc": "The door goes forward",
-            "name": "A Door!"
+            "name": "Door"
         },
-        "736": {
-            "desc": "None",
-            "name": "Dusty Sword"
-        },
-        "740": {
-            "desc": "None",
-            "name": "None"
-        },
-        "744": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "760": {
-            "desc": "None",
-            "name": "None"
-        },
-        "762": {
-            "desc": "None",
-            "name": "Old Bow"
-        },
-        "766": {
-            "desc": "None",
-            "name": "None"
-        },
-        "771": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "774": {
-            "desc": "None",
-            "name": "None"
-        },
-        "778": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "779": {
-            "desc": "None",
-            "name": "Long Bow"
-        },
-        "781": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "784": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "787": {
-            "desc": "None",
-            "name": "None"
-        },
-        "789": {
-            "desc": "None",
-            "name": "None"
-        },
-        "795": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "797": {
-            "desc": "None",
-            "name": "Mageblade of the Falling Sky"
-        },
-        "799": {
-            "desc": "None",
-            "name": "None"
-        },
-        "802": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "803": {
-            "desc": "None",
-            "name": "None"
-        },
-        "807": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "808": {
-            "desc": "None",
-            "name": "None"
-        },
-        "813": {
-            "desc": "None",
-            "name": "None"
-        },
-        "819": {
-            "desc": "None",
-            "name": "None"
-        },
-        "824": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "828": {
-            "desc": "None",
-            "name": "Bristleblitz"
-        },
-        "833": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "837": {
-            "desc": "None",
-            "name": "Loose Bow"
-        },
-        "840": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "844": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "850": {
-            "desc": "None",
-            "name": "None"
-        },
-        "851": {
-            "desc": "None",
-            "name": "None"
-        },
-        "852": {
-            "desc": "The door goes back",
-            "name": "A Door!"
-        },
-        "858": {
-            "desc": "None",
-            "name": "None"
-        },
-        "862": {
-            "desc": "None",
-            "name": "None"
-        },
-        "864": {
-            "desc": "None",
-            "name": "Sword Sword"
-        },
-        "867": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "868": {
-            "desc": "None",
-            "name": "Recurve Bow"
-        },
-        "870": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "871": {
-            "desc": "None",
-            "name": "None"
-        },
-        "875": {
+        "69": {
             "desc": "None",
             "name": "Silver Saber"
         },
-        "877": {
-            "desc": "The door goes right",
-            "name": "A Door!"
+        "74": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
         },
-        "878": {
-            "desc": "None",
-            "name": "Short Bow"
+        "75": {
+            "desc": "The door goes Upwards",
+            "name": "Door"
         },
-        "879": {
-            "desc": "The door goes right",
-            "name": "A Door!"
-        },
-        "882": {
-            "desc": "None",
-            "name": "None"
-        },
-        "887": {
-            "desc": "None",
-            "name": "Old Sword"
-        },
-        "889": {
-            "desc": "None",
-            "name": "Long Sword"
-        },
-        "891": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "904": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "911": {
-            "desc": "None",
-            "name": "Bow Bow"
-        },
-        "913": {
-            "desc": "None",
-            "name": "None"
-        },
-        "914": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "916": {
-            "desc": "None",
-            "name": "Hunting Bow"
-        },
-        "917": {
-            "desc": "None",
-            "name": "None"
-        },
-        "918": {
-            "desc": "None",
-            "name": "Old Bow"
-        },
-        "924": {
-            "desc": "The door goes left",
-            "name": "A Door!"
-        },
-        "926": {
-            "desc": "None",
-            "name": "None"
-        },
-        "930": {
-            "desc": "None",
-            "name": "Dusty Sword"
-        },
-        "935": {
-            "desc": "None",
-            "name": "None"
-        },
-        "940": {
-            "desc": "None",
-            "name": "None"
-        },
-        "953": {
+        "76": {
             "desc": "None",
             "name": "Dull Sword"
         },
-        "957": {
+        "78": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "97": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "101": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "106": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "113": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "115": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "118": {
             "desc": "None",
-            "name": "Short Bow"
+            "name": "Dusty Sword"
         },
-        "961": {
-            "desc": "The door goes right",
-            "name": "A Door!"
+        "122": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
         },
-        "964": {
-            "desc": "None",
-            "name": "Bow Bow"
+        "132": {
+            "desc": "The door goes back",
+            "name": "Door"
         },
-        "976": {
+        "148": {
             "desc": "None",
             "name": "Old Bow"
         },
-        "983": {
+        "150": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "151": {
+            "desc": "None",
+            "name": "Silver Saber"
+        },
+        "153": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "155": {
+            "desc": "None",
+            "name": "Old Sword"
+        },
+        "161": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "188": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "200": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "204": {
+            "desc": "None",
+            "name": "Bow Bow"
+        },
+        "215": {
+            "desc": "None",
+            "name": "Old Sword"
+        },
+        "218": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "225": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "240": {
+            "desc": "None",
+            "name": "Loose Bow"
+        },
+        "241": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "243": {
+            "desc": "None",
+            "name": "Dusty Sword"
+        },
+        "252": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "256": {
+            "desc": "None",
+            "name": "Loose Bow"
+        },
+        "260": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "261": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "262": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "263": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "274": {
             "desc": "The door goes forward",
-            "name": "A Door!"
+            "name": "Door"
+        },
+        "275": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "293": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "294": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "300": {
+            "desc": "None",
+            "name": "Bow Bow"
+        },
+        "311": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "312": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "313": {
+            "desc": "None",
+            "name": "Dusty Sword"
+        },
+        "316": {
+            "desc": "None",
+            "name": "-???-"
+        },
+        "327": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "330": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "331": {
+            "desc": "None",
+            "name": "Long Sword"
+        },
+        "332": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "340": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "342": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "343": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "347": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "362": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "363": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "364": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "371": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "374": {
+            "desc": "None",
+            "name": "Long Bow"
+        },
+        "379": {
+            "desc": "None",
+            "name": "Last Vision"
+        },
+        "380": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "384": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "385": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "388": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "392": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "393": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "398": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "403": {
+            "desc": "None",
+            "name": "Long Bow"
+        },
+        "404": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "408": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "425": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "426": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "435": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "436": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "441": {
+            "desc": "None",
+            "name": "Hunting Bow"
+        },
+        "452": {
+            "desc": "None",
+            "name": "Short Bow"
+        },
+        "461": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "464": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "465": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "468": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "474": {
+            "desc": "None",
+            "name": "Dull Sword"
+        },
+        "479": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "482": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "486": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "495": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "496": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "500": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "509": {
+            "desc": "None",
+            "name": "Bow Bow"
+        },
+        "515": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "516": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "529": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "533": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "542": {
+            "desc": "None",
+            "name": "Hunting Bow"
+        },
+        "544": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "550": {
+            "desc": "None",
+            "name": "Sword Sword"
+        },
+        "558": {
+            "desc": "None",
+            "name": "Recurve Bow"
+        },
+        "559": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "584": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "588": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "589": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "603": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "606": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "610": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "613": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "621": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "626": {
+            "desc": "None",
+            "name": "Long Sword"
+        },
+        "630": {
+            "desc": "The door goes Upwards",
+            "name": "Door"
+        },
+        "634": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "635": {
+            "desc": "None",
+            "name": "Dull Sword"
+        },
+        "637": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "641": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "651": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "653": {
+            "desc": "None",
+            "name": "Common Sword"
+        },
+        "654": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "662": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "665": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "675": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "681": {
+            "desc": "None",
+            "name": "Old Bow"
+        },
+        "683": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "692": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "694": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "700": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "708": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "712": {
+            "desc": "None",
+            "name": "Loose Bow"
+        },
+        "713": {
+            "desc": "None",
+            "name": "Loose Bow"
+        },
+        "714": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "716": {
+            "desc": "None",
+            "name": "Old Bow"
+        },
+        "720": {
+            "desc": "None",
+            "name": "Long Bow"
+        },
+        "722": {
+            "desc": "None",
+            "name": "Short Bow"
+        },
+        "731": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "733": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "735": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "748": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "756": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "768": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "771": {
+            "desc": "None",
+            "name": "Long Bow"
+        },
+        "774": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "776": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "783": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "785": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "786": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "789": {
+            "desc": "None",
+            "name": "Common Sword"
+        },
+        "793": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "796": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "815": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "816": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "820": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "835": {
+            "desc": "A wooden table, I wonder whats on it?",
+            "name": "Table"
+        },
+        "846": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "851": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "858": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "860": {
+            "desc": "None",
+            "name": "Recurve Bow"
+        },
+        "863": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "876": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "881": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "899": {
+            "desc": "A wooden box, I wonder whats inside?",
+            "name": "Wooden box."
+        },
+        "904": {
+            "desc": "None",
+            "name": "Steel Sword"
+        },
+        "907": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "912": {
+            "desc": "None",
+            "name": "Short Bow"
+        },
+        "915": {
+            "desc": "The door goes right",
+            "name": "Door"
+        },
+        "925": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "932": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "933": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "939": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "942": {
+            "desc": "The door goes left",
+            "name": "Door"
+        },
+        "943": {
+            "desc": "None",
+            "name": "Bow Bow"
+        },
+        "952": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "954": {
+            "desc": "None",
+            "name": "Sword Sword"
+        },
+        "968": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "970": {
+            "desc": "The door goes back",
+            "name": "Door"
+        },
+        "974": {
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
+        },
+        "975": {
+            "desc": "The door goes forward",
+            "name": "Door"
+        },
+        "979": {
+            "desc": "None",
+            "name": "Long Sword"
+        },
+        "980": {
+            "desc": "None",
+            "name": "Common Sword"
         },
         "984": {
-            "desc": "None",
-            "name": "None"
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
         },
-        "987": {
+        "990": {
             "desc": "The door goes right",
-            "name": "A Door!"
+            "name": "Door"
+        },
+        "993": {
+            "desc": "The door goes back",
+            "name": "Door"
         },
         "994": {
-            "desc": "The door goes left",
-            "name": "A Door!"
+            "desc": "An interesting chest, I hope theres something interesting inside!",
+            "name": "Chest"
         },
         "997": {
+            "desc": "The door goes Downwards",
+            "name": "Door"
+        },
+        "999": {
             "desc": "None",
-            "name": "None"
+            "name": "Long Sword"
         }
     },
     "equipment": {},
     "inventory": {
-        "2": {
+        "4": {
             "items": [
-                572
+                970,
+                275
             ]
         },
-        "5": {
+        "21": {
             "items": [
-                421,
-                663
+                610,
+                714,
+                404,
+                731
             ]
         },
-        "12": {
+        "24": {
             "items": [
-                201,
-                248,
-                560,
-                940,
-                5
+                776,
+                748,
+                835,
+                398
             ]
         },
-        "18": {
+        "27": {
             "items": [
-                911,
-                867
+                49
             ]
         },
-        "25": {
-            "items": [
-                504
-            ]
-        },
-        "28": {
+        "39": {
             "items": []
         },
-        "29": {
+        "74": {
             "items": [
-                369,
-                533
+                979
             ]
-        },
-        "32": {
-            "items": [
-                104,
-                363,
-                524,
-                813,
-                819,
-                997
-            ]
-        },
-        "36": {
-            "items": [
-                781,
-                419,
-                913
-            ]
-        },
-        "40": {
-            "items": [
-                154,
-                610
-            ]
-        },
-        "60": {
-            "items": [
-                122,
-                103
-            ]
-        },
-        "77": {
-            "items": [
-                878
-            ]
-        },
-        "84": {
-            "items": [
-                961,
-                595
-            ]
-        },
-        "85": {
-            "items": [
-                698,
-                870
-            ]
-        },
-        "89": {
-            "items": [
-                924,
-                734,
-                808,
-                774,
-                487,
-                539
-            ]
-        },
-        "95": {
-            "items": []
         },
         "97": {
             "items": [
-                632,
-                7,
-                409
+                550
             ]
         },
-        "105": {
+        "101": {
             "items": [
-                602,
-                762
+                912
             ]
         },
-        "109": {
+        "106": {
             "items": [
-                492
+                69
             ]
         },
-        "111": {
-            "items": []
-        },
-        "114": {
+        "110": {
             "items": [
-                550,
-                166,
-                601,
-                425,
-                697,
-                85
+                385,
+                200,
+                603
             ]
         },
-        "124": {
+        "116": {
             "items": [
-                337
+                330,
+                113,
+                637
             ]
         },
-        "132": {
+        "122": {
             "items": [
-                559
+                542
+            ]
+        },
+        "126": {
+            "items": [
+                654
             ]
         },
         "133": {
             "items": [
-                199
+                606,
+                332
             ]
         },
-        "140": {
+        "139": {
             "items": [
-                536
+                613,
+                735,
+                74
+            ]
+        },
+        "143": {
+            "items": [
+                392,
+                942,
+                997
+            ]
+        },
+        "150": {
+            "items": [
+                215,
+                155
+            ]
+        },
+        "152": {
+            "items": [
+                347,
+                975,
+                97
+            ]
+        },
+        "158": {
+            "items": [
+                621,
+                651,
+                820,
+                984
             ]
         },
         "163": {
             "items": [
-                72,
-                113
+                863,
+                786,
+                39
             ]
         },
-        "181": {
+        "210": {
             "items": [
-                484
+                529,
+                218,
+                675,
+                588
             ]
         },
-        "202": {
+        "219": {
             "items": [
-                300
+                708,
+                785
             ]
         },
-        "218": {
+        "225": {
             "items": [
-                501,
-                100,
-                984,
-                2
+                151
             ]
         },
-        "226": {
+        "252": {
             "items": [
-                724,
-                795,
-                293,
-                77,
-                29,
-                401
+                681
             ]
         },
-        "230": {
+        "253": {
             "items": [
-                824,
-                273,
-                105,
-                163
-            ]
-        },
-        "239": {
-            "items": [
-                983,
-                987,
-                227,
-                591,
-                28
-            ]
-        },
-        "242": {
-            "items": [
-                570,
-                528,
-                325,
-                294,
-                574
-            ]
-        },
-        "247": {
-            "items": []
-        },
-        "249": {
-            "items": [
-                623,
-                457
-            ]
-        },
-        "260": {
-            "items": [
-                635,
-                650
+                327
             ]
         },
         "261": {
-            "items": [
-                580
-            ]
-        },
-        "266": {
-            "items": [
-                14,
-                662,
-                109
-            ]
-        },
-        "268": {
-            "items": [
-                719,
-                646
-            ]
-        },
-        "270": {
-            "items": [
-                360,
-                771,
-                213,
-                535,
-                686,
-                202
-            ]
-        },
-        "271": {
-            "items": [
-                420,
-                299
-            ]
-        },
-        "272": {
-            "items": [
-                587
-            ]
-        },
-        "293": {
-            "items": [
-                577
-            ]
+            "items": []
         },
         "294": {
             "items": [
-                868,
-                174
+                720,
+                558
             ]
         },
-        "296": {
+        "311": {
             "items": [
-                687
+                860
             ]
         },
-        "298": {
+        "321": {
             "items": [
-                877,
-                57,
-                454,
-                380,
-                917
+                312,
+                25,
+                851,
+                252
             ]
         },
-        "302": {
+        "355": {
             "items": [
-                736,
-                323
+                925,
+                815
             ]
         },
-        "307": {
+        "356": {
             "items": [
-                670
+                733,
+                342
             ]
         },
-        "310": {
+        "362": {
             "items": [
-                106,
-                95
+                374
             ]
         },
-        "312": {
+        "364": {
+            "items": []
+        },
+        "365": {
             "items": [
-                891,
-                416,
-                593,
-                500,
-                415,
-                657
+                933,
+                846,
+                225,
+                364
             ]
         },
-        "313": {
+        "388": {
             "items": [
-                116,
-                693,
-                395
+                204,
+                240
             ]
         },
-        "345": {
+        "393": {
             "items": [
-                180
-            ]
-        },
-        "349": {
-            "items": [
-                264,
-                520,
-                25
-            ]
-        },
-        "351": {
-            "items": [
-                779
-            ]
-        },
-        "353": {
-            "items": [
-                340
-            ]
-        },
-        "380": {
-            "items": [
-                367,
-                136
-            ]
-        },
-        "387": {
-            "items": [
-                918
+                626
             ]
         },
         "395": {
             "items": [
-                573
+                132,
+                932,
+                106
+            ]
+        },
+        "398": {
+            "items": [
+                148,
+                716
             ]
         },
         "401": {
             "items": [
-                130
+                425,
+                968
             ]
         },
-        "404": {
+        "408": {
             "items": [
-                522
+                118
             ]
         },
-        "406": {
-            "items": []
-        },
-        "415": {
+        "421": {
             "items": [
-                274,
-                828
+                384,
+                495,
+                692,
+                27
             ]
         },
-        "425": {
+        "435": {
             "items": [
-                641,
-                555
+                722,
+                76
             ]
         },
-        "433": {
+        "439": {
             "items": [
-                48,
-                47
+                380,
+                783,
+                533,
+                393
             ]
         },
-        "437": {
+        "450": {
             "items": [
-                561
+                486,
+                343,
+                899,
+                362
             ]
         },
-        "440": {
+        "482": {
             "items": [
-                17,
-                110,
-                132,
-                862,
-                261
-            ]
-        },
-        "453": {
-            "items": [
-                667
-            ]
-        },
-        "454": {
-            "items": [
-                730
-            ]
-        },
-        "461": {
-            "items": [
-                333,
-                124
-            ]
-        },
-        "479": {
-            "items": [
-                840,
-                802,
-                850
+                789,
+                653
             ]
         },
         "483": {
             "items": [
-                189,
-                544
+                500,
+                634
             ]
         },
         "485": {
             "items": [
-                493
+                340,
+                876,
+                665
             ]
         },
-        "487": {
+        "516": {
             "items": [
-                715,
-                930
+                999
             ]
         },
-        "489": {
+        "517": {
             "items": [
-                405
+                915,
+                241,
+                75,
+                388,
+                516
             ]
         },
-        "500": {
+        "522": {
             "items": [
-                368
+                371,
+                31,
+                122
             ]
         },
-        "518": {
+        "533": {
             "items": [
-                334
-            ]
-        },
-        "523": {
-            "items": [
-                481,
-                729
-            ]
-        },
-        "524": {
-            "items": [
-                680
+                980
             ]
         },
         "535": {
             "items": [
-                569,
-                286
+                426,
+                293,
+                101,
+                408
             ]
         },
-        "538": {
+        "551": {
             "items": [
-                204,
-                209,
-                353,
-                787,
-                935,
-                271
+                260,
+                66,
+                34,
+                907,
+                311
             ]
         },
-        "539": {
+        "586": {
             "items": [
-                475
+                59,
+                188
             ]
         },
-        "560": {
+        "588": {
             "items": [
-                807
+                441,
+                452
             ]
         },
-        "571": {
+        "598": {
             "items": [
-                288,
-                222,
-                18,
-                302,
-                604,
-                740
+                465,
+                756,
+                974
             ]
         },
-        "574": {
+        "603": {
             "items": [
-                711
+                316
             ]
         },
-        "578": {
+        "605": {
             "items": [
-                875
+                816,
+                559,
+                435
             ]
         },
-        "582": {
+        "616": {
             "items": [
-                887
+                496
             ]
         },
-        "591": {
+        "627": {
             "items": [
-                953
+                584,
+                464
             ]
         },
-        "593": {
+        "633": {
             "items": [
-                797
+                479,
+                161,
+                261
             ]
-        },
-        "594": {
-            "items": [
-                280,
-                489,
-                799,
-                882,
-                406
-            ]
-        },
-        "601": {
-            "items": [
-                837
-            ]
-        },
-        "604": {
-            "items": []
         },
         "637": {
             "items": [
-                326,
-                129
+                331
             ]
         },
-        "657": {
+        "641": {
             "items": [
-                231
+                713
             ]
         },
-        "668": {
+        "643": {
             "items": [
-                566
+                881,
+                768
             ]
         },
-        "677": {
+        "652": {
             "items": [
-                53,
-                628
+                700,
+                589,
+                630,
+                294
             ]
         },
-        "685": {
+        "662": {
             "items": [
-                399,
-                916
+                379
             ]
         },
-        "686": {
+        "665": {
             "items": [
-                964,
-                381
+                954
+            ]
+        },
+        "683": {
+            "items": [
+                943,
+                771
             ]
         },
         "692": {
-            "items": [
-                427,
-                568,
-                871,
-                433
-            ]
-        },
-        "694": {
-            "items": [
-                957
-            ]
-        },
-        "697": {
-            "items": [
-                96
-            ]
-        },
-        "702": {
-            "items": [
-                864
-            ]
-        },
-        "704": {
-            "items": [
-                377,
-                285
-            ]
-        },
-        "709": {
-            "items": [
-                378,
-                370,
-                111
-            ]
-        },
-        "713": {
-            "items": [
-                744,
-                275,
-                133,
-                523
-            ]
-        },
-        "722": {
-            "items": [
-                733,
-                66
-            ]
-        },
-        "738": {
-            "items": [
-                852,
-                60,
-                181,
-                387
-            ]
-        },
-        "740": {
-            "items": [
-                588
-            ]
-        },
-        "750": {
-            "items": [
-                575,
-                585,
-                296,
-                483
-            ]
-        },
-        "760": {
-            "items": [
-                331,
-                510
-            ]
-        },
-        "766": {
-            "items": [
-                976,
-                119
-            ]
-        },
-        "768": {
-            "items": [
-                625,
-                19,
-                260
-            ]
-        },
-        "774": {
-            "items": [
-                324
-            ]
-        },
-        "787": {
-            "items": [
-                833
-            ]
-        },
-        "789": {
-            "items": [
-                262
-            ]
-        },
-        "799": {
-            "items": [
-                365
-            ]
-        },
-        "803": {
             "items": []
         },
-        "804": {
+        "728": {
             "items": [
-                599,
-                654,
-                702,
-                437,
-                789
+                694
             ]
         },
-        "806": {
+        "731": {
             "items": [
-                648,
-                452,
-                272,
-                485
+                635
             ]
         },
-        "808": {
-            "items": [
-                557
-            ]
-        },
-        "813": {
-            "items": [
-                714,
-                889
-            ]
-        },
-        "819": {
-            "items": []
-        },
-        "841": {
-            "items": [
-                565,
-                404
-            ]
-        },
-        "850": {
-            "items": [
-                448
-            ]
-        },
-        "851": {
-            "items": [
-                642
-            ]
-        },
-        "858": {
-            "items": [
-                346
-            ]
-        },
-        "862": {
-            "items": []
-        },
-        "866": {
-            "items": [
-                139,
-                444,
-                320,
-                722
-            ]
-        },
-        "871": {
+        "735": {
             "items": [
                 904
             ]
         },
-        "873": {
+        "738": {
             "items": [
-                879,
-                586,
-                677
+                263,
+                796,
+                641
             ]
         },
-        "882": {
+        "744": {
             "items": [
-                147,
-                128
+                468,
+                544,
+                683,
+                150
             ]
         },
-        "896": {
+        "763": {
             "items": [
-                233,
+                939,
+                952,
+                662
+            ]
+        },
+        "774": {
+            "items": [
+                47
+            ]
+        },
+        "804": {
+            "items": [
+                67
+            ]
+        },
+        "817": {
+            "items": [
+                515,
+                363,
+                482
+            ]
+        },
+        "830": {
+            "items": [
+                262,
+                436
+            ]
+        },
+        "835": {
+            "items": [
+                300
+            ]
+        },
+        "841": {
+            "items": [
+                461
+            ]
+        },
+        "851": {
+            "items": [
+                403
+            ]
+        },
+        "858": {
+            "items": [
+                712
+            ]
+        },
+        "859": {
+            "items": [
+                153,
+                990,
                 994
             ]
         },
-        "902": {
+        "861": {
             "items": [
-                426,
-                172,
-                345,
-                582
-            ]
-        },
-        "910": {
-            "items": [
-                372,
-                473
-            ]
-        },
-        "913": {
-            "items": [
-                10
-            ]
-        },
-        "917": {
-            "items": [
-                121,
-                70
-            ]
-        },
-        "926": {
-            "items": [
-                666,
-                397
-            ]
-        },
-        "933": {
-            "items": [
-                626,
-                482,
-                40
-            ]
-        },
-        "935": {
-            "items": [
-                844
-            ]
-        },
-        "940": {
-            "items": [
-                15
-            ]
-        },
-        "942": {
-            "items": [
-                470,
-                760,
-                926
-            ]
-        },
-        "943": {
-            "items": [
-                590,
-                578,
+                115,
                 858,
-                694,
-                518
+                774
             ]
         },
-        "951": {
+        "877": {
             "items": [
-                778,
-                583,
-                351,
-                851
+                793,
+                993
             ]
         },
-        "968": {
+        "899": {
             "items": [
-                44,
-                914,
-                307,
-                453
+                256
             ]
         },
-        "982": {
+        "907": {
             "items": [
-                548,
-                318,
-                668,
-                766
+                509,
+                52
+            ]
+        },
+        "932": {
+            "items": [
+                313
+            ]
+        },
+        "974": {
+            "items": [
+                474
             ]
         },
         "984": {
             "items": [
-                432
+                243
             ]
         },
-        "985": {
+        "994": {
             "items": [
-                784,
-                503,
-                685,
-                140,
-                247,
-                803
+                53
             ]
         },
-        "997": {
+        "998": {
             "items": [
-                393
+                274,
+                78
             ]
         }
     },
     "isroom": {
-        "12": {
+        "4": {
             "exits": [
-                704,
+                133,
                 0,
-                933,
+                152,
                 0
             ]
         },
-        "32": {
+        "21": {
             "exits": [
-                218,
+                116,
                 0,
-                249,
+                998,
+                586
+            ]
+        },
+        "24": {
+            "exits": [
+                0,
+                439,
+                627,
                 0
             ]
         },
-        "36": {
+        "110": {
             "exits": [
                 0,
-                943,
+                143,
                 0,
-                226
+                401
             ]
         },
-        "84": {
+        "116": {
             "exits": [
                 0,
-                230,
+                0,
+                21,
+                421
+            ]
+        },
+        "126": {
+            "exits": [
+                0,
+                0,
+                0,
+                859
+            ]
+        },
+        "133": {
+            "exits": [
+                485,
+                0,
+                4,
+                0
+            ]
+        },
+        "139": {
+            "exits": [
+                0,
+                0,
+                485,
+                0
+            ]
+        },
+        "143": {
+            "exits": [
+                0,
+                830,
+                0,
+                110
+            ]
+        },
+        "152": {
+            "exits": [
+                4,
+                517,
                 0,
                 0
             ]
         },
-        "89": {
-            "exits": [
-                896,
-                0,
-                0,
-                910
-            ]
-        },
-        "97": {
-            "exits": [
-                0,
-                249,
-                0,
-                713
-            ]
-        },
-        "114": {
-            "exits": [
-                0,
-                218,
-                0,
-                313
-            ]
-        },
-        "218": {
-            "exits": [
-                0,
-                0,
-                32,
-                114
-            ]
-        },
-        "226": {
-            "exits": [
-                0,
-                36,
-                0,
-                768
-            ]
-        },
-        "230": {
-            "exits": [
-                0,
-                709,
-                0,
-                84
-            ]
-        },
-        "239": {
-            "exits": [
-                713,
-                349,
-                0,
-                538
-            ]
-        },
-        "242": {
+        "158": {
             "exits": [
                 738,
+                616,
                 0,
-                704,
-                806
+                483
             ]
         },
-        "249": {
+        "163": {
             "exits": [
-                32,
+                321,
                 0,
-                0,
-                97
+                605,
+                0
             ]
         },
-        "266": {
+        "210": {
             "exits": [
+                598,
+                859,
                 0,
-                806,
-                0,
-                479
+                605
             ]
         },
-        "268": {
+        "219": {
             "exits": [
-                0,
-                0,
-                750,
-                968
-            ]
-        },
-        "270": {
-            "exits": [
-                0,
-                968,
-                0,
-                637
-            ]
-        },
-        "298": {
-            "exits": [
-                902,
-                873,
+                450,
+                763,
                 0,
                 0
             ]
         },
-        "310": {
+        "253": {
             "exits": [
+                365,
                 0,
                 0,
-                0,
-                873
+                0
             ]
         },
-        "312": {
+        "321": {
             "exits": [
+                401,
                 0,
-                866,
-                0,
-                982
+                163,
+                0
             ]
         },
-        "313": {
+        "355": {
             "exits": [
+                633,
                 0,
-                114,
-                0,
-                902
+                817,
+                0
             ]
         },
-        "349": {
+        "356": {
             "exits": [
+                522,
                 0,
-                942,
                 0,
-                239
+                652
             ]
         },
-        "440": {
+        "365": {
             "exits": [
-                637,
                 0,
+                450,
+                253,
+                0
+            ]
+        },
+        "395": {
+            "exits": [
+                0,
+                0,
+                652,
+                0
+            ]
+        },
+        "401": {
+            "exits": [
+                0,
+                110,
+                321,
+                0
+            ]
+        },
+        "421": {
+            "exits": [
+                0,
+                116,
+                0,
+                877
+            ]
+        },
+        "439": {
+            "exits": [
+                586,
+                0,
+                0,
+                24
+            ]
+        },
+        "450": {
+            "exits": [
+                0,
+                0,
+                219,
+                365
+            ]
+        },
+        "483": {
+            "exits": [
+                0,
+                158,
+                0,
+                517
+            ]
+        },
+        "485": {
+            "exits": [
+                139,
+                0,
+                133,
+                0
+            ]
+        },
+        "517": {
+            "exits": [
+                0,
+                483,
+                0,
+                152
+            ]
+        },
+        "522": {
+            "exits": [
+                830,
+                0,
+                356,
+                0
+            ]
+        },
+        "535": {
+            "exits": [
+                643,
+                0,
+                763,
+                0
+            ]
+        },
+        "551": {
+            "exits": [
+                0,
+                643,
+                0,
+                841
+            ]
+        },
+        "586": {
+            "exits": [
+                0,
+                21,
+                439,
+                0
+            ]
+        },
+        "598": {
+            "exits": [
+                861,
+                0,
+                210,
+                0
+            ]
+        },
+        "605": {
+            "exits": [
+                163,
+                210,
+                0,
+                0
+            ]
+        },
+        "616": {
+            "exits": [
+                0,
+                0,
+                0,
+                158
+            ]
+        },
+        "627": {
+            "exits": [
+                24,
+                0,
+                0,
+                817
+            ]
+        },
+        "633": {
+            "exits": [
+                728,
+                0,
+                355,
+                0
+            ]
+        },
+        "643": {
+            "exits": [
+                0,
+                0,
+                535,
+                551
+            ]
+        },
+        "652": {
+            "exits": [
+                395,
+                356,
+                0,
+                0
+            ]
+        },
+        "728": {
+            "exits": [
+                0,
+                0,
+                633,
+                0
+            ]
+        },
+        "738": {
+            "exits": [
+                0,
+                744,
+                158,
+                0
+            ]
+        },
+        "744": {
+            "exits": [
+                998,
+                0,
+                0,
+                738
+            ]
+        },
+        "763": {
+            "exits": [
+                535,
+                0,
+                0,
+                219
+            ]
+        },
+        "804": {
+            "exits": [
+                877,
+                0,
+                0,
+                0
+            ]
+        },
+        "817": {
+            "exits": [
+                355,
+                627,
+                0,
+                0
+            ]
+        },
+        "830": {
+            "exits": [
+                0,
+                0,
+                522,
+                143
+            ]
+        },
+        "841": {
+            "exits": [
+                0,
+                551,
+                0,
+                0
+            ]
+        },
+        "859": {
+            "exits": [
+                0,
+                126,
+                0,
+                210
+            ]
+        },
+        "861": {
+            "exits": [
+                0,
+                0,
+                598,
+                0
+            ]
+        },
+        "877": {
+            "exits": [
+                0,
+                421,
                 804,
                 0
             ]
         },
-        "461": {
+        "998": {
             "exits": [
+                21,
                 0,
-                0,
-                982,
+                744,
                 0
-            ]
-        },
-        "479": {
-            "exits": [
-                0,
-                266,
-                0,
-                571
-            ]
-        },
-        "538": {
-            "exits": [
-                692,
-                239,
-                0,
-                0
-            ]
-        },
-        "571": {
-            "exits": [
-                768,
-                479,
-                0,
-                0
-            ]
-        },
-        "594": {
-            "exits": [
-                0,
-                896,
-                0,
-                0
-            ]
-        },
-        "637": {
-            "exits": [
-                0,
-                270,
-                440,
-                0
-            ]
-        },
-        "692": {
-            "exits": [
-                0,
-                0,
-                538,
-                0
-            ]
-        },
-        "704": {
-            "exits": [
-                242,
-                0,
-                12,
-                0
-            ]
-        },
-        "709": {
-            "exits": [
-                866,
-                0,
-                0,
-                230
-            ]
-        },
-        "713": {
-            "exits": [
-                0,
-                97,
-                239,
-                0
-            ]
-        },
-        "738": {
-            "exits": [
-                0,
-                0,
-                242,
-                0
-            ]
-        },
-        "750": {
-            "exits": [
-                268,
-                0,
-                951,
-                0
-            ]
-        },
-        "768": {
-            "exits": [
-                0,
-                226,
-                571,
-                0
-            ]
-        },
-        "804": {
-            "exits": [
-                440,
-                910,
-                0,
-                0
-            ]
-        },
-        "806": {
-            "exits": [
-                0,
-                242,
-                0,
-                266
-            ]
-        },
-        "841": {
-            "exits": [
-                0,
-                985,
-                0,
-                0
-            ]
-        },
-        "866": {
-            "exits": [
-                985,
-                0,
-                709,
-                312
-            ]
-        },
-        "873": {
-            "exits": [
-                0,
-                310,
-                0,
-                298
-            ]
-        },
-        "896": {
-            "exits": [
-                0,
-                0,
-                89,
-                594
-            ]
-        },
-        "902": {
-            "exits": [
-                0,
-                313,
-                298,
-                0
-            ]
-        },
-        "910": {
-            "exits": [
-                0,
-                89,
-                0,
-                804
-            ]
-        },
-        "933": {
-            "exits": [
-                12,
-                0,
-                0,
-                951
-            ]
-        },
-        "942": {
-            "exits": [
-                0,
-                0,
-                0,
-                349
-            ]
-        },
-        "943": {
-            "exits": [
-                0,
-                0,
-                0,
-                36
-            ]
-        },
-        "951": {
-            "exits": [
-                750,
-                933,
-                0,
-                0
-            ]
-        },
-        "968": {
-            "exits": [
-                0,
-                268,
-                0,
-                270
-            ]
-        },
-        "982": {
-            "exits": [
-                461,
-                312,
-                0,
-                0
-            ]
-        },
-        "985": {
-            "exits": [
-                0,
-                0,
-                866,
-                841
             ]
         }
     },
     "mask": {
-        "2": 41,
-        "5": 41,
-        "7": 2081,
-        "10": 545,
-        "12": 77,
-        "14": 2081,
-        "15": 545,
-        "17": 2081,
-        "18": 41,
-        "19": 2081,
-        "25": 41,
-        "28": 41,
-        "29": 41,
-        "32": 77,
-        "33": 129,
-        "36": 77,
-        "40": 41,
-        "44": 2081,
+        "4": 77,
+        "21": 77,
+        "24": 77,
+        "25": 2081,
+        "27": 41,
+        "31": 2081,
+        "34": 2081,
+        "39": 41,
         "47": 545,
-        "48": 545,
+        "49": 545,
+        "52": 545,
         "53": 545,
-        "57": 2081,
-        "60": 41,
-        "66": 545,
-        "70": 545,
-        "72": 545,
-        "77": 41,
-        "84": 77,
-        "85": 41,
-        "89": 77,
-        "95": 41,
-        "96": 545,
-        "97": 77,
-        "100": 2081,
-        "103": 545,
-        "104": 2081,
-        "105": 41,
-        "106": 2081,
-        "109": 41,
-        "110": 2081,
-        "111": 41,
-        "113": 545,
-        "114": 77,
-        "116": 2081,
-        "119": 545,
-        "121": 545,
-        "122": 545,
-        "124": 41,
-        "128": 545,
-        "129": 2081,
-        "130": 545,
-        "132": 41,
-        "133": 41,
-        "136": 545,
-        "139": 2081,
-        "140": 41,
-        "147": 545,
-        "152": 129,
-        "154": 545,
-        "163": 41,
-        "166": 2081,
-        "172": 2081,
-        "174": 545,
-        "177": 129,
-        "180": 545,
-        "181": 41,
-        "189": 545,
-        "199": 545,
-        "201": 2081,
-        "202": 41,
-        "204": 2081,
-        "209": 2081,
-        "213": 2081,
-        "218": 77,
-        "222": 2081,
-        "226": 77,
-        "227": 2081,
-        "230": 77,
-        "231": 545,
-        "233": 2081,
-        "239": 77,
-        "242": 77,
-        "247": 41,
-        "248": 2081,
-        "249": 77,
-        "260": 41,
+        "59": 2081,
+        "66": 2081,
+        "67": 2081,
+        "69": 545,
+        "74": 41,
+        "75": 2081,
+        "76": 545,
+        "78": 2081,
+        "97": 41,
+        "101": 41,
+        "106": 41,
+        "110": 77,
+        "113": 2081,
+        "115": 2081,
+        "116": 77,
+        "118": 545,
+        "122": 41,
+        "126": 77,
+        "132": 2081,
+        "133": 77,
+        "139": 77,
+        "143": 77,
+        "148": 545,
+        "150": 41,
+        "151": 545,
+        "152": 77,
+        "153": 2081,
+        "155": 545,
+        "158": 77,
+        "161": 2081,
+        "163": 77,
+        "188": 2081,
+        "200": 2081,
+        "202": 129,
+        "204": 545,
+        "206": 129,
+        "210": 77,
+        "215": 545,
+        "218": 2081,
+        "219": 77,
+        "225": 41,
+        "240": 545,
+        "241": 2081,
+        "243": 545,
+        "252": 41,
+        "253": 77,
+        "256": 545,
+        "260": 2081,
         "261": 41,
-        "262": 545,
-        "264": 2081,
-        "266": 77,
-        "268": 77,
-        "270": 77,
-        "271": 41,
-        "272": 41,
-        "273": 2081,
-        "274": 545,
+        "262": 2081,
+        "263": 2081,
+        "274": 2081,
         "275": 2081,
-        "280": 2081,
-        "285": 2081,
-        "286": 545,
-        "288": 2081,
-        "293": 41,
+        "293": 2081,
         "294": 41,
-        "296": 41,
-        "298": 77,
-        "299": 545,
         "300": 545,
-        "302": 41,
-        "307": 41,
-        "310": 77,
-        "312": 77,
-        "313": 77,
-        "318": 2081,
-        "320": 2081,
-        "323": 545,
-        "324": 545,
-        "325": 2081,
-        "326": 2081,
+        "311": 41,
+        "312": 2081,
+        "313": 545,
+        "316": 545,
+        "321": 77,
+        "327": 2081,
+        "330": 2081,
         "331": 545,
-        "333": 2081,
-        "334": 545,
-        "337": 545,
-        "340": 545,
-        "345": 41,
-        "346": 545,
-        "349": 77,
-        "351": 41,
-        "353": 41,
-        "360": 2081,
+        "332": 2081,
+        "340": 2081,
+        "342": 2081,
+        "343": 2081,
+        "347": 2081,
+        "355": 77,
+        "356": 77,
+        "362": 41,
         "363": 2081,
-        "365": 545,
-        "367": 545,
-        "368": 545,
-        "369": 545,
-        "370": 2081,
-        "372": 2081,
-        "377": 2081,
-        "378": 2081,
-        "380": 41,
-        "381": 545,
-        "387": 41,
-        "393": 545,
-        "395": 41,
-        "397": 545,
-        "399": 545,
-        "401": 41,
-        "404": 41,
-        "405": 545,
-        "406": 41,
-        "409": 2081,
-        "415": 41,
-        "416": 2081,
-        "419": 2081,
-        "420": 545,
-        "421": 545,
-        "425": 41,
+        "364": 41,
+        "365": 77,
+        "371": 2081,
+        "374": 545,
+        "379": 545,
+        "380": 2081,
+        "384": 2081,
+        "385": 2081,
+        "388": 41,
+        "392": 2081,
+        "393": 41,
+        "395": 77,
+        "398": 41,
+        "401": 77,
+        "403": 545,
+        "404": 2081,
+        "408": 41,
+        "421": 77,
+        "425": 2081,
         "426": 2081,
-        "427": 2081,
-        "432": 545,
-        "433": 41,
-        "437": 41,
-        "440": 77,
-        "444": 2081,
-        "448": 545,
-        "452": 2081,
-        "453": 41,
-        "454": 41,
-        "457": 2081,
-        "461": 77,
-        "470": 2081,
-        "473": 2081,
-        "475": 545,
-        "479": 77,
-        "481": 545,
-        "482": 2081,
-        "483": 41,
-        "484": 545,
-        "485": 41,
-        "487": 41,
-        "489": 41,
-        "492": 545,
-        "493": 545,
-        "500": 41,
-        "501": 2081,
-        "503": 2081,
-        "504": 545,
-        "510": 545,
-        "518": 41,
-        "520": 2081,
-        "522": 545,
-        "523": 41,
-        "524": 41,
-        "528": 2081,
-        "533": 545,
-        "535": 41,
-        "536": 545,
-        "538": 77,
-        "539": 41,
-        "544": 545,
-        "548": 2081,
-        "550": 2081,
-        "555": 545,
-        "557": 545,
-        "559": 545,
-        "560": 41,
-        "561": 545,
-        "565": 2081,
-        "566": 545,
-        "568": 2081,
-        "569": 545,
-        "570": 2081,
-        "571": 77,
-        "572": 545,
-        "573": 545,
-        "574": 41,
-        "575": 2081,
-        "577": 545,
-        "578": 41,
-        "580": 545,
-        "582": 41,
-        "583": 2081,
-        "585": 2081,
-        "586": 2081,
-        "587": 545,
-        "588": 545,
-        "590": 2081,
-        "591": 41,
-        "593": 41,
-        "594": 77,
-        "595": 2081,
-        "599": 2081,
-        "601": 41,
-        "602": 545,
-        "604": 41,
-        "610": 545,
-        "623": 2081,
-        "625": 2081,
-        "626": 2081,
-        "628": 545,
-        "632": 2081,
+        "435": 41,
+        "436": 2081,
+        "439": 77,
+        "441": 545,
+        "450": 77,
+        "452": 545,
+        "461": 2081,
+        "464": 2081,
+        "465": 2081,
+        "468": 2081,
+        "474": 545,
+        "479": 2081,
+        "482": 41,
+        "483": 77,
+        "485": 77,
+        "486": 2081,
+        "495": 2081,
+        "496": 2081,
+        "500": 2081,
+        "507": 129,
+        "509": 545,
+        "515": 2081,
+        "516": 41,
+        "517": 77,
+        "522": 77,
+        "529": 2081,
+        "533": 41,
+        "535": 77,
+        "542": 545,
+        "544": 2081,
+        "550": 545,
+        "551": 77,
+        "558": 545,
+        "559": 2081,
+        "584": 2081,
+        "586": 77,
+        "588": 41,
+        "589": 2081,
+        "598": 77,
+        "603": 41,
+        "605": 77,
+        "606": 2081,
+        "610": 2081,
+        "613": 2081,
+        "616": 77,
+        "621": 2081,
+        "626": 545,
+        "627": 77,
+        "630": 2081,
+        "633": 77,
+        "634": 2081,
         "635": 545,
-        "637": 77,
-        "641": 545,
-        "642": 545,
-        "646": 2081,
-        "648": 2081,
-        "650": 545,
+        "637": 41,
+        "641": 41,
+        "643": 77,
+        "651": 2081,
+        "652": 77,
+        "653": 545,
         "654": 2081,
-        "657": 41,
-        "662": 2081,
-        "663": 545,
-        "666": 545,
-        "667": 545,
-        "668": 41,
-        "670": 545,
-        "677": 41,
-        "680": 545,
-        "685": 41,
-        "686": 41,
-        "687": 545,
-        "692": 77,
-        "693": 2081,
-        "694": 41,
-        "697": 41,
-        "698": 545,
-        "702": 41,
-        "704": 77,
-        "709": 77,
-        "711": 545,
-        "713": 77,
-        "714": 545,
-        "715": 545,
-        "719": 2081,
-        "722": 41,
-        "724": 2081,
-        "729": 545,
-        "730": 545,
-        "733": 545,
-        "734": 2081,
-        "736": 545,
+        "662": 41,
+        "665": 41,
+        "675": 2081,
+        "681": 545,
+        "683": 41,
+        "692": 41,
+        "694": 2081,
+        "700": 2081,
+        "708": 2081,
+        "712": 545,
+        "713": 545,
+        "714": 2081,
+        "716": 545,
+        "720": 545,
+        "722": 545,
+        "728": 77,
+        "731": 41,
+        "733": 2081,
+        "735": 41,
         "738": 77,
-        "740": 41,
-        "744": 2081,
-        "750": 77,
-        "760": 41,
-        "762": 545,
-        "766": 41,
-        "768": 77,
-        "771": 2081,
+        "744": 77,
+        "748": 2081,
+        "756": 2081,
+        "763": 77,
+        "768": 2081,
+        "771": 545,
         "774": 41,
-        "778": 2081,
-        "779": 545,
-        "781": 2081,
-        "784": 2081,
-        "787": 41,
-        "789": 41,
-        "795": 2081,
-        "797": 545,
-        "799": 41,
-        "802": 2081,
-        "803": 41,
+        "776": 2081,
+        "783": 2081,
+        "785": 2081,
+        "786": 2081,
+        "789": 545,
+        "793": 2081,
+        "796": 2081,
         "804": 77,
-        "806": 77,
-        "807": 545,
-        "808": 41,
-        "813": 41,
-        "819": 41,
-        "824": 2081,
-        "828": 545,
-        "833": 545,
-        "837": 545,
-        "840": 2081,
+        "815": 2081,
+        "816": 2081,
+        "817": 77,
+        "820": 2081,
+        "830": 77,
+        "835": 41,
         "841": 77,
-        "844": 545,
-        "850": 41,
+        "846": 2081,
         "851": 41,
-        "852": 2081,
         "858": 41,
-        "862": 41,
-        "864": 545,
-        "866": 77,
-        "867": 545,
-        "868": 545,
-        "870": 545,
-        "871": 41,
-        "873": 77,
-        "875": 545,
-        "877": 2081,
-        "878": 545,
-        "879": 2081,
-        "882": 41,
-        "887": 545,
-        "889": 545,
-        "891": 2081,
-        "896": 77,
-        "902": 77,
+        "859": 77,
+        "860": 545,
+        "861": 77,
+        "863": 2081,
+        "876": 2081,
+        "877": 77,
+        "881": 2081,
+        "899": 41,
         "904": 545,
-        "910": 77,
-        "911": 545,
-        "913": 41,
-        "914": 2081,
-        "916": 545,
-        "917": 41,
-        "918": 545,
-        "924": 2081,
-        "926": 41,
-        "930": 545,
-        "933": 77,
-        "935": 41,
-        "940": 41,
-        "942": 77,
-        "943": 77,
-        "951": 77,
-        "953": 545,
-        "957": 545,
-        "961": 2081,
-        "964": 545,
-        "968": 77,
-        "976": 545,
-        "982": 77,
-        "983": 2081,
+        "907": 41,
+        "912": 545,
+        "915": 2081,
+        "925": 2081,
+        "932": 41,
+        "933": 2081,
+        "939": 2081,
+        "942": 2081,
+        "943": 545,
+        "952": 2081,
+        "954": 545,
+        "968": 2081,
+        "970": 2081,
+        "974": 41,
+        "975": 2081,
+        "979": 545,
+        "980": 545,
         "984": 41,
-        "985": 77,
-        "987": 2081,
-        "994": 2081,
-        "997": 41
+        "990": 2081,
+        "993": 2081,
+        "994": 41,
+        "997": 2081,
+        "998": 77,
+        "999": 545
     },
     "monster": {},
     "position": {
-        "12": {
-            "x": 4,
+        "4": {
+            "x": 0,
             "y": 3
         },
-        "32": {
-            "x": 3,
+        "21": {
+            "x": 4,
             "y": 1
         },
-        "36": {
+        "24": {
             "x": 2,
+            "y": 2
+        },
+        "110": {
+            "x": 1,
             "y": 0
         },
-        "84": {
+        "116": {
+            "x": 4,
+            "y": 0
+        },
+        "126": {
+            "x": 3,
+            "y": 3
+        },
+        "133": {
             "x": 0,
             "y": 2
         },
-        "89": {
+        "139": {
+            "x": 0,
+            "y": 0
+        },
+        "143": {
+            "x": 2,
+            "y": 0
+        },
+        "152": {
+            "x": 0,
+            "y": 4
+        },
+        "158": {
+            "x": 3,
+            "y": 4
+        },
+        "163": {
+            "x": 0,
+            "y": 2
+        },
+        "210": {
+            "x": 1,
+            "y": 3
+        },
+        "219": {
+            "x": 1,
+            "y": 2
+        },
+        "253": {
+            "x": 0,
+            "y": 2
+        },
+        "321": {
+            "x": 0,
+            "y": 1
+        },
+        "355": {
+            "x": 1,
+            "y": 2
+        },
+        "356": {
+            "x": 3,
+            "y": 2
+        },
+        "365": {
+            "x": 0,
+            "y": 1
+        },
+        "395": {
+            "x": 2,
+            "y": 1
+        },
+        "401": {
+            "x": 0,
+            "y": 0
+        },
+        "421": {
+            "x": 3,
+            "y": 0
+        },
+        "439": {
+            "x": 3,
+            "y": 2
+        },
+        "450": {
+            "x": 1,
+            "y": 1
+        },
+        "483": {
             "x": 2,
             "y": 4
         },
-        "97": {
-            "x": 2,
-            "y": 2
+        "485": {
+            "x": 0,
+            "y": 1
         },
-        "114": {
-            "x": 2,
-            "y": 0
+        "517": {
+            "x": 1,
+            "y": 4
         },
-        "218": {
+        "522": {
             "x": 3,
-            "y": 0
+            "y": 1
         },
-        "226": {
+        "535": {
+            "x": 2,
+            "y": 1
+        },
+        "551": {
             "x": 1,
             "y": 0
         },
-        "230": {
+        "586": {
+            "x": 3,
+            "y": 1
+        },
+        "598": {
             "x": 1,
             "y": 2
         },
-        "239": {
-            "x": 1,
+        "605": {
+            "x": 0,
             "y": 3
         },
-        "242": {
+        "616": {
             "x": 4,
-            "y": 1
+            "y": 4
         },
-        "249": {
-            "x": 3,
-            "y": 2
-        },
-        "266": {
+        "627": {
             "x": 2,
-            "y": 1
+            "y": 3
         },
-        "268": {
-            "x": 3,
-            "y": 2
-        },
-        "270": {
+        "633": {
             "x": 1,
-            "y": 2
-        },
-        "298": {
-            "x": 0,
             "y": 1
         },
-        "310": {
+        "643": {
             "x": 2,
-            "y": 1
-        },
-        "312": {
-            "x": 1,
-            "y": 1
-        },
-        "313": {
-            "x": 1,
             "y": 0
         },
-        "349": {
+        "652": {
             "x": 2,
-            "y": 3
+            "y": 2
         },
-        "440": {
-            "x": 0,
-            "y": 3
-        },
-        "461": {
-            "x": 0,
+        "728": {
+            "x": 1,
             "y": 0
-        },
-        "479": {
-            "x": 1,
-            "y": 1
-        },
-        "538": {
-            "x": 0,
-            "y": 3
-        },
-        "571": {
-            "x": 0,
-            "y": 1
-        },
-        "594": {
-            "x": 1,
-            "y": 3
-        },
-        "637": {
-            "x": 0,
-            "y": 2
-        },
-        "692": {
-            "x": 0,
-            "y": 2
-        },
-        "704": {
-            "x": 4,
-            "y": 2
-        },
-        "709": {
-            "x": 2,
-            "y": 2
-        },
-        "713": {
-            "x": 1,
-            "y": 2
         },
         "738": {
+            "x": 3,
+            "y": 3
+        },
+        "744": {
             "x": 4,
-            "y": 0
-        },
-        "750": {
-            "x": 3,
             "y": 3
         },
-        "768": {
-            "x": 0,
-            "y": 0
-        },
-        "804": {
-            "x": 0,
-            "y": 4
-        },
-        "806": {
-            "x": 3,
-            "y": 1
-        },
-        "841": {
-            "x": 1,
-            "y": 0
-        },
-        "866": {
-            "x": 2,
-            "y": 1
-        },
-        "873": {
-            "x": 1,
-            "y": 1
-        },
-        "896": {
-            "x": 2,
-            "y": 3
-        },
-        "902": {
-            "x": 0,
-            "y": 0
-        },
-        "910": {
-            "x": 1,
-            "y": 4
-        },
-        "933": {
-            "x": 4,
-            "y": 4
-        },
-        "942": {
-            "x": 3,
-            "y": 3
-        },
-        "943": {
-            "x": 3,
-            "y": 0
-        },
-        "951": {
-            "x": 3,
-            "y": 4
-        },
-        "968": {
+        "763": {
             "x": 2,
             "y": 2
         },
-        "982": {
-            "x": 0,
+        "804": {
+            "x": 2,
             "y": 1
         },
-        "985": {
+        "817": {
+            "x": 1,
+            "y": 3
+        },
+        "830": {
+            "x": 3,
+            "y": 0
+        },
+        "841": {
+            "x": 0,
+            "y": 0
+        },
+        "859": {
+            "x": 2,
+            "y": 3
+        },
+        "861": {
+            "x": 1,
+            "y": 1
+        },
+        "877": {
             "x": 2,
             "y": 0
+        },
+        "998": {
+            "x": 4,
+            "y": 2
         }
     },
     "stats": {},
     "transition": {
-        "7": {
-            "target": 713
+        "25": {
+            "target": 163
         },
-        "14": {
-            "target": 479
+        "31": {
+            "target": 830
         },
-        "17": {
-            "target": 637
+        "34": {
+            "target": 652
         },
-        "19": {
-            "target": 571
+        "59": {
+            "target": 439
         },
-        "44": {
-            "target": 268
-        },
-        "57": {
-            "target": 902
-        },
-        "100": {
-            "target": 32
-        },
-        "104": {
-            "target": 218
-        },
-        "106": {
-            "target": 873
-        },
-        "110": {
-            "target": 804
-        },
-        "116": {
-            "target": 902
-        },
-        "129": {
-            "target": 440
-        },
-        "139": {
-            "target": 312
-        },
-        "166": {
-            "target": 218
-        },
-        "172": {
-            "target": 313
-        },
-        "201": {
-            "target": 704
-        },
-        "204": {
-            "target": 239
-        },
-        "209": {
-            "target": 692
-        },
-        "213": {
-            "target": 692
-        },
-        "222": {
-            "target": 479
-        },
-        "227": {
-            "target": 538
-        },
-        "233": {
-            "target": 89
-        },
-        "248": {
-            "target": 933
-        },
-        "264": {
-            "target": 239
-        },
-        "273": {
-            "target": 84
-        },
-        "275": {
-            "target": 239
-        },
-        "280": {
-            "target": 896
-        },
-        "285": {
-            "target": 12
-        },
-        "288": {
-            "target": 768
-        },
-        "318": {
-            "target": 312
-        },
-        "320": {
-            "target": 985
-        },
-        "325": {
-            "target": 704
-        },
-        "326": {
-            "target": 270
-        },
-        "333": {
-            "target": 982
-        },
-        "360": {
-            "target": 968
-        },
-        "363": {
-            "target": 249
-        },
-        "370": {
-            "target": 230
-        },
-        "372": {
-            "target": 804
-        },
-        "377": {
-            "target": 242
-        },
-        "378": {
-            "target": 866
-        },
-        "409": {
-            "target": 84
-        },
-        "416": {
-            "target": 866
-        },
-        "419": {
-            "target": 226
-        },
-        "426": {
-            "target": 298
-        },
-        "427": {
-            "target": 538
-        },
-        "444": {
-            "target": 709
-        },
-        "452": {
-            "target": 242
-        },
-        "457": {
-            "target": 97
-        },
-        "470": {
-            "target": 349
-        },
-        "473": {
-            "target": 89
-        },
-        "482": {
-            "target": 951
-        },
-        "501": {
-            "target": 114
-        },
-        "503": {
+        "66": {
             "target": 841
         },
-        "520": {
-            "target": 942
+        "67": {
+            "target": 877
         },
-        "528": {
+        "75": {
+            "target": 143
+        },
+        "78": {
+            "target": 744
+        },
+        "113": {
+            "target": 421
+        },
+        "115": {
+            "target": 598
+        },
+        "132": {
+            "target": 652
+        },
+        "153": {
+            "target": 210
+        },
+        "161": {
+            "target": 355
+        },
+        "188": {
+            "target": 21
+        },
+        "200": {
+            "target": 401
+        },
+        "218": {
+            "target": 859
+        },
+        "241": {
+            "target": 152
+        },
+        "260": {
+            "target": 643
+        },
+        "262": {
+            "target": 522
+        },
+        "263": {
+            "target": 744
+        },
+        "274": {
+            "target": 21
+        },
+        "275": {
+            "target": 133
+        },
+        "293": {
+            "target": 643
+        },
+        "312": {
+            "target": 401
+        },
+        "327": {
+            "target": 365
+        },
+        "330": {
+            "target": 21
+        },
+        "332": {
+            "target": 485
+        },
+        "340": {
+            "target": 133
+        },
+        "342": {
+            "target": 522
+        },
+        "343": {
+            "target": 219
+        },
+        "347": {
+            "target": 517
+        },
+        "363": {
+            "target": 627
+        },
+        "371": {
+            "target": 356
+        },
+        "380": {
+            "target": 24
+        },
+        "384": {
+            "target": 116
+        },
+        "385": {
+            "target": 143
+        },
+        "392": {
+            "target": 830
+        },
+        "404": {
+            "target": 998
+        },
+        "425": {
+            "target": 110
+        },
+        "426": {
+            "target": 763
+        },
+        "436": {
+            "target": 143
+        },
+        "461": {
+            "target": 551
+        },
+        "464": {
+            "target": 24
+        },
+        "465": {
+            "target": 210
+        },
+        "468": {
+            "target": 998
+        },
+        "479": {
+            "target": 728
+        },
+        "486": {
+            "target": 365
+        },
+        "495": {
+            "target": 877
+        },
+        "496": {
+            "target": 158
+        },
+        "500": {
+            "target": 158
+        },
+        "515": {
+            "target": 355
+        },
+        "529": {
+            "target": 605
+        },
+        "544": {
             "target": 738
         },
-        "548": {
-            "target": 461
+        "559": {
+            "target": 210
         },
-        "550": {
-            "target": 313
+        "584": {
+            "target": 817
         },
-        "565": {
-            "target": 985
+        "589": {
+            "target": 356
         },
-        "568": {
-            "target": 270
+        "606": {
+            "target": 4
         },
-        "570": {
-            "target": 806
+        "610": {
+            "target": 586
         },
-        "575": {
-            "target": 951
+        "613": {
+            "target": 485
         },
-        "583": {
-            "target": 750
+        "621": {
+            "target": 738
         },
-        "585": {
-            "target": 268
+        "630": {
+            "target": 551
         },
-        "586": {
-            "target": 298
+        "634": {
+            "target": 517
         },
-        "590": {
-            "target": 36
-        },
-        "595": {
-            "target": 97
-        },
-        "599": {
-            "target": 440
-        },
-        "623": {
-            "target": 32
-        },
-        "625": {
-            "target": 226
-        },
-        "626": {
-            "target": 12
-        },
-        "632": {
-            "target": 249
-        },
-        "646": {
-            "target": 968
-        },
-        "648": {
-            "target": 266
+        "651": {
+            "target": 616
         },
         "654": {
-            "target": 910
+            "target": 859
         },
-        "662": {
-            "target": 806
+        "675": {
+            "target": 598
         },
-        "693": {
-            "target": 114
+        "694": {
+            "target": 633
         },
-        "719": {
-            "target": 750
+        "700": {
+            "target": 395
         },
-        "724": {
-            "target": 36
+        "708": {
+            "target": 450
         },
-        "734": {
-            "target": 896
+        "714": {
+            "target": 116
         },
-        "744": {
-            "target": 97
+        "733": {
+            "target": 652
         },
-        "771": {
-            "target": 637
+        "748": {
+            "target": 439
         },
-        "778": {
-            "target": 933
+        "756": {
+            "target": 861
         },
-        "781": {
-            "target": 943
+        "768": {
+            "target": 551
         },
-        "784": {
-            "target": 866
+        "776": {
+            "target": 627
         },
-        "795": {
-            "target": 768
+        "783": {
+            "target": 586
         },
-        "802": {
-            "target": 266
+        "785": {
+            "target": 763
         },
-        "824": {
-            "target": 709
+        "786": {
+            "target": 605
         },
-        "840": {
-            "target": 571
+        "793": {
+            "target": 421
         },
-        "852": {
-            "target": 242
+        "796": {
+            "target": 158
         },
-        "877": {
-            "target": 873
+        "815": {
+            "target": 817
         },
-        "879": {
-            "target": 310
+        "816": {
+            "target": 163
         },
-        "891": {
-            "target": 982
+        "820": {
+            "target": 483
         },
-        "914": {
-            "target": 270
+        "846": {
+            "target": 450
         },
-        "924": {
-            "target": 910
+        "863": {
+            "target": 321
         },
-        "961": {
-            "target": 230
+        "876": {
+            "target": 139
         },
-        "983": {
-            "target": 713
+        "881": {
+            "target": 535
         },
-        "987": {
-            "target": 349
+        "915": {
+            "target": 483
         },
-        "994": {
-            "target": 594
+        "925": {
+            "target": 633
+        },
+        "933": {
+            "target": 253
+        },
+        "939": {
+            "target": 219
+        },
+        "942": {
+            "target": 110
+        },
+        "952": {
+            "target": 535
+        },
+        "968": {
+            "target": 321
+        },
+        "970": {
+            "target": 152
+        },
+        "975": {
+            "target": 4
+        },
+        "990": {
+            "target": 126
+        },
+        "993": {
+            "target": 804
+        },
+        "997": {
+            "target": 517
         }
     },
     "weapon": {
-        "10": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "15": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
         "47": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "48": {
+        "49": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "bow"
+        },
+        "52": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
@@ -3508,132 +2548,72 @@
             "mod_amount": 0,
             "type": "sword"
         },
-        "66": {
+        "69": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "70": {
+        "76": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "sword"
+        },
+        "118": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "sword"
+        },
+        "148": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "72": {
+        "151": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "sword"
+        },
+        "155": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "sword"
+        },
+        "204": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "96": {
+        "215": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "sword"
+        },
+        "240": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "103": {
+        "243": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "sword"
+        },
+        "256": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
-        },
-        "113": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "119": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "121": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "122": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "128": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "130": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "136": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "147": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "154": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "174": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "180": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "189": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "199": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "231": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "262": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "274": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "286": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "299": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
         },
         "300": {
             "mod": "str",
             "mod_amount": 0,
-            "type": "sword"
-        },
-        "323": {
-            "mod": "str",
-            "mod_amount": 0,
             "type": "bow"
         },
-        "324": {
+        "313": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "sword"
+        },
+        "316": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
@@ -3641,437 +2621,152 @@
         "331": {
             "mod": "str",
             "mod_amount": 0,
-            "type": "bow"
-        },
-        "334": {
-            "mod": "str",
-            "mod_amount": 0,
             "type": "sword"
         },
-        "337": {
+        "374": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "340": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "346": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "365": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "367": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "368": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "369": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "381": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "393": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "397": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "399": {
+        "379": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "405": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "420": {
+        "403": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "421": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "432": {
+        "441": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "448": {
+        "452": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "475": {
+        "474": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "481": {
+        "509": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "484": {
+        "542": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "492": {
+        "550": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "493": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "504": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "510": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "522": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "533": {
+        "558": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "536": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "544": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "555": {
+        "626": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
-        },
-        "557": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "559": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "561": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "566": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "569": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "572": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "573": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "577": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "580": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "587": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "588": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "602": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "610": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "628": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
         },
         "635": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "641": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "642": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "650": {
+        "653": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "663": {
+        "681": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "666": {
+        "712": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "bow"
+        },
+        "713": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "bow"
+        },
+        "716": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "bow"
+        },
+        "720": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "bow"
+        },
+        "722": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "bow"
+        },
+        "771": {
+            "mod": "str",
+            "mod_amount": 0,
+            "type": "bow"
+        },
+        "789": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "667": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "670": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "680": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "687": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "698": {
+        "860": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
-        },
-        "711": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "714": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "715": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "729": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "730": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "733": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "736": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "762": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "779": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "797": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "807": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "828": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "833": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "837": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "844": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "864": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "867": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "868": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "870": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "875": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "878": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "887": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
-        },
-        "889": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "sword"
         },
         "904": {
             "mod": "str",
             "mod_amount": 0,
-            "type": "bow"
+            "type": "sword"
         },
-        "911": {
+        "912": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "916": {
+        "943": {
             "mod": "str",
             "mod_amount": 0,
             "type": "bow"
         },
-        "918": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
-        },
-        "930": {
+        "954": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "953": {
+        "979": {
             "mod": "str",
             "mod_amount": 0,
             "type": "sword"
         },
-        "957": {
+        "980": {
             "mod": "str",
             "mod_amount": 0,
-            "type": "bow"
+            "type": "sword"
         },
-        "964": {
+        "999": {
             "mod": "str",
             "mod_amount": 0,
-            "type": "bow"
-        },
-        "976": {
-            "mod": "str",
-            "mod_amount": 0,
-            "type": "bow"
+            "type": "sword"
         }
     }
 }
