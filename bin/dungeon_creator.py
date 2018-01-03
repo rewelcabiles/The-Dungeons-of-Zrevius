@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import random
+import world
 from ecs_systems import *
 
 # This file puts the pieces together and creates the dungeon itself.
@@ -11,8 +12,13 @@ from ecs_systems import *
 
 class Dungeon_Generator():
     def __init__(self, world):
-        self.world = world
+        self.world = world = world.World()
 
+    # As long as a user calls this function before calling create_dungeon, 
+    # the class will use the provided world instead of using a Brand new one.
+    # Whats the purpose of this? No idea, for future uses I suppose :3
+    def set_world(self, world):
+        self.world = world
 
     def create_dungeon(self, floors):
         complexity = 3
