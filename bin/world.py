@@ -1,13 +1,13 @@
 import json
 import random
-
+import factory
 
 class World():
 
     def __init__(self):
 
         #Loads the files that contains all components
-        with open ('components.json') as component_files:
+        with open ('data/components.json') as component_files:
            components = json.load(component_files)
 
         # This is where all the specific component dicts reside, inside the WORLD dictionary
@@ -21,7 +21,7 @@ class World():
             self.COMPS[key] = 1 << iterator
             iterator += 1
         self.entity_id_max = 1000
-        self.factory = Factory(self)
+        self.factory = factory.Factory(self)
 
 
     def assign_entity_id(self):
