@@ -10,11 +10,11 @@ class Factory():
     def __init__(self,WORLD):
         self.world = WORLD
         self.WORLD = self.world.WORLD
-        with open('archetype.json') as data_file:
+        with open('data/archetype.json') as data_file:
             self.archetypes = json.load(data_file)
-        with open('components.json') as component_files:
+        with open('data/components.json') as component_files:
             self.components = json.load(component_files)
-        with open('descriptors.json') as descriptor_files:
+        with open('data/descriptors.json') as descriptor_files:
             self.descriptors= json.load(descriptor_files)
     def create_from_archetype(self,ent_id, archetype_name):
         for component in list(self.archetypes[archetype_name].keys()):
