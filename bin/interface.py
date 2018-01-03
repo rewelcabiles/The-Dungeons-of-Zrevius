@@ -4,9 +4,9 @@ from dungeon_creator import Dungeon_Generator as dug
 from ecs_systems import World
 import json
 
-#This is where we add functions that interface with the world object
-#Things like, move_entity and whatnot
-#Generate New World, Load World
+# This is where we add functions that interface with the world object
+# Things like, move_entity and whatnot
+# Generate New World, Load World
 
 class Interface:
 

@@ -4,6 +4,11 @@ from ecs_systems import *
 
 # This file puts the pieces together and creates the dungeon itself.
 
+
+# TODO- Document this monstrosity of a class.
+#       Possibly make this class create dungeon FLOORS instead of the whole dungeon.
+#       And then create another class that calls this one if it needs more floors.
+
 class Dungeon_Generator():
     def __init__(self, world):
         self.world = world
