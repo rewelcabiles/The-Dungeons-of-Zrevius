@@ -90,10 +90,10 @@ class Factory():
         self.create_from_archetype(ent_id, 'door')
         self.WORLD['transition'][ent_id]['target'] = targets
         if direction == "up" or direction == "down":
-            self.WORLD['descriptor'][ent_id]['name'] = "Stairs"
+            self.WORLD['descriptor'][ent_id]['name'] = "Staircase"
             self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go "+ direction
         else:
-            self.WORLD['descriptor'][ent_id]['name'] = "A Door!"
+            self.WORLD['descriptor'][ent_id]['name'] = "Door"
             self.WORLD['descriptor'][ent_id]['desc'] = "The door goes "+direction
         return ent_id
 
