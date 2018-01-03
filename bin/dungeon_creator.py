@@ -27,8 +27,6 @@ class Dungeon_Generator():
         self.connect_floors(d_map)
         Dungeon_Spicer(self.world, d_map)
 
-        #return d_map
-
 
 
     #Creates empty maps, creates unvisited list... etc.
