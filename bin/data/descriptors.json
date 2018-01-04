@@ -145,6 +145,10 @@
 		{
 			"name" : "Wooden door",
 			"desc" : "A wooden door"
+		},
+		{
+			"name" : "Wooden door",
+			"desc" : "A door made of wood, with wrought iron reinforced throughout"
 		}
 	],
 	"rooms" : [
@@ -157,7 +161,7 @@
 			"desc" : "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor."
 		},
 		{
-			"name" : "Room of Skulls",
+			"name" : "Room full of Skulls",
 			"desc" : "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room."
 		},
 		{
@@ -201,6 +205,6 @@
 		{
 			"name" : "Broken Crate",
 			"desc" : "A crate with many cracks around it."
-		},
+		}
 	]
 }
