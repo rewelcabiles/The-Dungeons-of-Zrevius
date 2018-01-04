@@ -215,5 +215,7 @@ class Dungeon_Spicer:
             if random.randrange(0, 100) <= 30: # For weapons
                 self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.weapon_creator())
 
+            if random.randrange(0, 100) <= 65: # For consumables
+                self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.create_consumbale())
 
 
