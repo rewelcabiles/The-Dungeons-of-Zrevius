@@ -80,6 +80,11 @@
 					"Requiem of the Lost",
 					"Extinction Broadsword",
 					"Mageblade of the Falling Sky",
+					"Grasscutter",
+					"Masamume",
+					"Guard's Warblade",
+					"Warriors Scalpel",
+					"Ragespike",
 					"-???-"
 				],
 				"common" : [
@@ -89,7 +94,8 @@
 					"Old Sword",
 					"Dusty Sword",
 					"Sword Sword",
-					"Common Sword"
+					"Common Sword",
+					"Movibrad Longsword"
 				]
 			},
 			"bow" :{
@@ -99,12 +105,18 @@
 					"Last Vision",
 					"Bronzed Striker",
 					"Token of the Plague",
+					"Whisperwind",
+					"Heartbeat",
+					"Death's Hail",
+					"Mirage",
 					"-???-"
 				],
 				"common" :[
 					"Short Bow",
 					"Long Bow",
-					"Bow Bow",
+					"Rifle Bow",
+					"Flat Bow",
+					"Compound Bow",
 					"Loose Bow",
 					"Old Bow",
 					"Recurve Bow",
@@ -129,6 +141,10 @@
 		{
 			"name" : "Ornate door",
 			"desc" : "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded"
+		},
+		{
+			"name" : "Wooden door",
+			"desc" : "A wooden door"
 		}
 	],
 	"rooms" : [
@@ -139,6 +155,52 @@
 		{
 			"name" : "Room",
 			"desc" : "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor."
+		},
+		{
+			"name" : "Room of Skulls",
+			"desc" : "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room."
+		},
+		{
+			"name" : "Room",
+			"desc" : "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth."
+		},
+		{
+			"name" : "Room",
+			"desc" : "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond."
+		},
+		{
+			"name" : "Room of Requiem",
+			"desc" : "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks."
 		}
+	],
+	"containers" : [
+		{
+			"name" : "Crate",
+			"desc" : "A Crate! I wonder whats in it!"
+		},
+		{
+			"name" : "Barrel",
+			"desc" : "A wooden Barrel!"
+		},
+		{
+			"name" : "Wooden Chest",
+			"desc" : "A steel studded, wooden chest!"
+		},
+		{
+			"name" : "Gold Decorated Chest",
+			"desc" : "A wooden chest, with gold inlaid and studded throughout."
+		},
+		{
+			"name" : "Rotting Barrel",
+			"desc" : "A barrel rotted with age."
+		},
+		{
+			"name" : "Broken Crate",
+			"desc" : "A shattered crate, with many of its pieces lying around it."
+		},
+		{
+			"name" : "Broken Crate",
+			"desc" : "A crate with many cracks around it."
+		},
 	]
 }
