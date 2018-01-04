@@ -57,7 +57,7 @@
 		"descriptor": "None",
 		"stats"     : "None",
 		"inventory" : "None",
-		"equipment" : "None",
+		"equipment" : "None"
 	},
 
 	"door":
@@ -71,7 +71,15 @@
 			"target":"None"
 		}
 	},
+	"containers" : {
+		"descriptor" : {
+			"name" : "Barrel",
+			"desc" : "A Barrel, I wonder whats in it?"
+		}
+
+	},
 	"furniture":{
+
 		"containers":{
 			"table":
 			{
