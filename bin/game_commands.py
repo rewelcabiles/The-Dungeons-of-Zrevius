@@ -68,6 +68,40 @@ class Command:
 				elif obj_type == "is_weapon":
 					self.look_weapon(item_id)
 
+class MenuNode():
+
+	def __init__(self):
+		self.current_options = 1
+		# self.printable       = []
+		self.options         = {}
+		self.add_new_option("back", "Back")
+
+	def print_menu(self):
+		try:
+			for index in self.options:
+				item = self.options[index]
+				print(index+" ) "+item['text'])
+		except IndexError:
+			print("This Menu Is Empty!")
+
+	def add_new_option(self,option_type, text, pointer = None):
+		# self.printable.append[str(self.current_options)+" ) "+text]
+		self.options[self.current_options] = {"type": option_type, "pointer": pointer, "text": text}
+		self.current_options += 1
+
+	def get_action(self, option_index):
+		if self.is_an_option(option_index):
+			return self.options[option_index][0]
+		else:
+			return None
+
+	def is_an_option(self, option_index):
+		if option_index in self.options.keys():
+			return True
+		else:
+			return False
+
+
 class MenuTree():
 	
 	def __init__(self):
@@ -76,4 +110,5 @@ class MenuTree():
 	def create_new_node():
 		self.new_node = {}
 
-	
+	def add_options:
+		pass
