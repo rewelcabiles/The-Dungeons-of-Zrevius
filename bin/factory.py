@@ -19,7 +19,11 @@ class Factory():
 
     def create_from_archetype(self,ent_id, archetype_name):
         for component in list(self.archetypes[archetype_name].keys()):
-            self.create_components(component, ent_id)
+            if self.archetypes[archetype_name][component] != "None":
+                self.WORLD[component][ent_id] = copy.deepcopy(self.archetypes[archetype_name][component])
+            else:
+                self.WORLD[component][ent_id] = copy.deepcopy(self.components[component])
+            self.WORLD['mask'][ent_id] |= self.world.COMPS[component]
 
 
     def create_components(self, comp, ent_id):
@@ -41,7 +45,7 @@ class Factory():
                 rarity = 'unique'
             else:
                 rarity = 'common'
-            print(rarity)
+            print(self.WORLD['descriptor'][ent_id])
             self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
             self.WORLD['descriptor'][ent_id]['desc'] = "A "+rarity+" "+ weapon_type
             self.WORLD['item'][ent_id]['rarity']     = rarity
