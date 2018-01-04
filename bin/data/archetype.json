@@ -78,48 +78,6 @@
 		},
 		"inventory" : "None"
 
-	},
-	"furniture":{
-
-		"containers":{
-			"table":
-			{
-				"descriptor":
-				{
-					"name" : "Table",
-					"desc" : "A wooden table, I wonder whats on it?"
-				},
-				"inventory":
-				{
-					"items": []
-				}
-			},
-			"box":
-			{
-				"descriptor":
-				{
-					"name": "Wooden box.",
-					"desc": "A wooden box, I wonder whats inside?"
-				},
-				"inventory":
-				{
-					"items": []
-				}
-
-			},
-			"chest":
-			{
-				"descriptor":
-				{
-					"name": "Chest",
-					"desc": "An interesting chest, I hope theres something interesting inside!"
-				},
-				"inventory":
-				{
-					"items"	: []
-				}
-			}
-		}
 	}
 }
 
