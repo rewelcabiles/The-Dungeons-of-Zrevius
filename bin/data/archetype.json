@@ -71,11 +71,12 @@
 			"target":"None"
 		}
 	},
-	"containers" : {
+	"container" : {
 		"descriptor" : {
 			"name" : "Barrel",
 			"desc" : "A Barrel, I wonder whats in it?"
-		}
+		},
+		"inventory" : "None"
 
 	},
 	"furniture":{
