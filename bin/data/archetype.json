@@ -1,21 +1,10 @@
 {
 	"room":
 	{
-		"position": {
-			"x": 0,
-			"y": 0
-		},
-		"isroom": {
-			"exits":[0,0,0,0]
-		},
-		"inventory": {
-			"items": []
-		},
-		"descriptor":{
-			"name" : "Room",
-			"desc" : "Looks like any other old dungeon room. Quite roomy.."
-		}
-
+		"position"  : "None",
+		"isroom"    : "None",
+		"inventory" : "None",
+		"descriptor": "None"
 	},
 
 	"area":
@@ -23,13 +12,11 @@
 		"area" : []
 	},
 
+
 	"sword":
 	{
-		"descriptor": "None",
-		"item":{
-			"rarity": "Common",
-			"value" : 1
-		},
+		"descriptor"	: "None",
+		"item"			: "None",
 		"weapon": {
 			"type"      : "sword",
 			"mod"       : "str",
@@ -37,14 +24,10 @@
 		}
 	},
 
-
 	"bow":
 	{
-		"descriptor": "None",
-		"item":{
-			"rarity": "Common",
-			"value" : 1
-		},
+		"descriptor"    : "None",
+		"item"          : "None",
 		"weapon": {
 			"type"	    : "bow",
 			"mod"	    : "str",
@@ -62,22 +45,13 @@
 
 	"door":
 	{
-		"descriptor":
-		{
-			"name" : "Door",
-			"desc": "Its very.... Doory"
-		},
-		"transition": {
-			"target":"None"
-		}
+		"descriptor": "None",
+		"transition": "None"
 	},
-	"container" : {
-		"descriptor" : {
-			"name" : "Barrel",
-			"desc" : "A Barrel, I wonder whats in it?"
-		},
-		"inventory" : "None"
 
+	"container" : {
+		"descriptor": "None",
+		"inventory" : "None"
 	}
 }
 
