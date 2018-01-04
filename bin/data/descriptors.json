@@ -1,117 +1,145 @@
 {
-"names" :{
-	"monsters" :{
-		"Goblin" : [
-			"Rurnk",
-			"Bish",
-			"Omzonk",
-			"Gubme",
-			"Ebbawg",
-			"Nigbesh",
-			"Nabbuvmug",
-			"Judgugbik",
-			"Giphlissems"
-		],
-		"Kobold" : [
-			"Ate",
-			"Kigi",
-			"Okbi",
-			"Vedu",
-			"Girn",
-			"Muss",
-			"Vogs",
-			"Mohru",
-			"Rihle"
-		],
-		"Orc": [
-			"Dugok The Mad",
-			"Otrukk The Merciless",
-			"Nagvud The Warped",
-			"Ghogvuk The Gargantuan",
-			"Zhabag The Arrogant",
-			"Amzak Talon Axe",
-			"Bukk The Barbarian",
-			"Bhub Skull Axe"
-		]
-	},
-
-
-	"Npcs":{
-		"Human" : [
-			"Déaglán Mac Cumhaighe",
-			"Bob",
-			"Conchubhar Ó Fuaráin",
-			"Vivaldo Pelle",
-			"Gael Dieudonne",
-			"Akpolat Akdemir",
-			"Legget Behring",
-			"Augustinus Knottley",
-			"Waller Oakley",
-			"Rayce Breeden",
-			"Sven Shelley",
-			"Justice Harrington",
-			"Paul Dumlao",
-			"Rewel Cabiles"
-		],
-		"Objects" : [
-			" the Lesser",
-			" the Greater",
-			" the Sharp",
-			" the Witty",
-			" the Smelly",
-			" the Greatest",
-			" the small",
-			" the Zen",
-			" of the Hills",
-			" of the Deep",
-			" of the Skulls",
-			" of the Minor Truths",
-			" of the Budder"
-		]
-
-	},
-
-
-	"objects" :{
-		"sword" :{
-			"unique" : [
-				"Persuasion",
-				"Silver Saber",
-				"Requiem of the Lost",
-				"Extinction Broadsword",
-				"Mageblade of the Falling Sky",
-				"-???-"
+	"names" :{
+		"monsters" :{
+			"Goblin" : [
+				"Rurnk",
+				"Bish",
+				"Omzonk",
+				"Gubme",
+				"Ebbawg",
+				"Nigbesh",
+				"Nabbuvmug",
+				"Judgugbik",
+				"Giphlissems"
 			],
-			"common" : [
-				"Dull Sword",
-				"Long Sword",
-				"Steel Sword",
-				"Old Sword",
-				"Dusty Sword",
-				"Sword Sword",
-				"Common Sword"
+			"Kobold" : [
+				"Ate",
+				"Kigi",
+				"Okbi",
+				"Vedu",
+				"Girn",
+				"Muss",
+				"Vogs",
+				"Mohru",
+				"Rihle"
+			],
+			"Orc": [
+				"Dugok The Mad",
+				"Otrukk The Merciless",
+				"Nagvud The Warped",
+				"Ghogvuk The Gargantuan",
+				"Zhabag The Arrogant",
+				"Amzak Talon Axe",
+				"Bukk The Barbarian",
+				"Bhub Skull Axe"
 			]
 		},
-		"bow" :{
-			"unique" : [
-				"Bristleblitz",
-				"Calamity",
-				"Last Vision",
-				"Bronzed Striker",
-				"Token of the Plague",
-				"-???-"
-			],
-			"common" :[
-				"Short Bow",
-				"Long Bow",
-				"Bow Bow",
-				"Loose Bow",
-				"Old Bow",
-				"Recurve Bow",
-				"Hunting Bow"
-			]
-		}
 
-	}
-}
+
+		"Npcs":{
+			"Human" : [
+				"Déaglán Mac Cumhaighe",
+				"Bob",
+				"Conchubhar Ó Fuaráin",
+				"Vivaldo Pelle",
+				"Gael Dieudonne",
+				"Akpolat Akdemir",
+				"Legget Behring",
+				"Augustinus Knottley",
+				"Waller Oakley",
+				"Rayce Breeden",
+				"Sven Shelley",
+				"Justice Harrington",
+				"Paul Dumlao",
+				"Rewel Cabiles"
+			],
+			"Objects" : [
+				" the Lesser",
+				" the Greater",
+				" the Sharp",
+				" the Witty",
+				" the Smelly",
+				" the Greatest",
+				" the small",
+				" the Zen",
+				" of the Hills",
+				" of the Deep",
+				" of the Skulls",
+				" of the Minor Truths",
+				" of the Budder"
+			]
+
+		},
+
+
+		"objects" :{
+			"sword" :{
+				"unique" : [
+					"Persuasion",
+					"Silver Saber",
+					"Requiem of the Lost",
+					"Extinction Broadsword",
+					"Mageblade of the Falling Sky",
+					"-???-"
+				],
+				"common" : [
+					"Dull Sword",
+					"Long Sword",
+					"Steel Sword",
+					"Old Sword",
+					"Dusty Sword",
+					"Sword Sword",
+					"Common Sword"
+				]
+			},
+			"bow" :{
+				"unique" : [
+					"Bristleblitz",
+					"Calamity",
+					"Last Vision",
+					"Bronzed Striker",
+					"Token of the Plague",
+					"-???-"
+				],
+				"common" :[
+					"Short Bow",
+					"Long Bow",
+					"Bow Bow",
+					"Loose Bow",
+					"Old Bow",
+					"Recurve Bow",
+					"Hunting Bow"
+				]
+			}
+
+		}
+	},
+	"doors" :[
+		{
+			"name" : "Heavy Wooden Door",
+			"desc" : "A wooden heavy set door."
+		},
+		{
+			"name" : "A Hole in the wall",
+			"desc" : "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever."
+		},
+		{
+			"name" : "A Broken Door",
+			"desc" : "A broken door which seems to be very old, vines have started to cover it"
+		},
+		{
+			"name" : "Ornate door",
+			"desc" : "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded"
+		}
+	],
+	"rooms" : [
+		{
+			"name" : "Cavern",
+			"desc" : "The only sounds you hear in this room are the echos of your footsteps, as the sound bounces back from unseen walls in the distance. The darkness in this room is almost suffocating as the pitch blackness seem to dim whatever lights might be here."
+		},
+		{
+			"name" : "Room",
+			"desc" : "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor."
+		},
+	]
 }
