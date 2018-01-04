@@ -125,7 +125,23 @@
 			}
 		}
 	},
-	"doors" :[
+
+	"basic_food" : [
+		{
+			"name" : "Rations",
+			"desc" : "A ration, good for your everyday adventures!"
+		},
+		{
+			"name" : "Stale bread",
+			"desc" : "A stale piece of bread, better than nothing!"
+		},
+		{
+			"name" : "Small Rock Cake",
+			"desc" : "A bit hard on the outside.... and the inside as well. Will make you feel heavy!"
+		},
+	],
+
+	"doors" : [
 		{
 			"name" : "Heavy Wooden Door",
 			"desc" : "A wooden heavy set door."
