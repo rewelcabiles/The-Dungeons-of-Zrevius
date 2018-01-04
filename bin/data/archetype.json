@@ -52,6 +52,12 @@
 	"container" : {
 		"descriptor": "None",
 		"inventory" : "None"
+	},
+
+	"consumable_refill" : {
+		"descriptor" : "None",
+		"consumable" : "None",
+		"buff_refill": "None"
 	}
 }
 
