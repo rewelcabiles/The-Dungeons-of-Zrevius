@@ -43,6 +43,13 @@
 		"cha"	 : 0
 	},
 
+	"consumable" : {},
+
+	"buff_refill" : {
+		"stat"   : "health",
+		"amount" : 7
+	},
+
 	"weapon": {
 		"type"       : "None",
 		"mod" 	     : "str",
