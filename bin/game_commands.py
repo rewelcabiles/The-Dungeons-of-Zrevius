@@ -19,6 +19,9 @@ class Command:
 		if((self.WORLD['mask'][ent_id] & isr_mask) == isr_mask):
 			return "is_room"			
 
+	def look_at(self, ent_id):
+		pass
+
 	def look_weapon(self, ent_id):
 		if self.WORLD['item'][ent_id]['rarity'] == 'common':
 			print("Its a "+self.WORLD['descriptor'][ent_id]['name'])
@@ -29,7 +32,7 @@ class Command:
 
 
 	def look_inventory(self, ent_id):
-		print("You look around the "+self.WORLD['descriptor'][ent_id]['name'])
+		print("You look at the "+self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
 		container_type = self.WORLD['descriptor'][ent_id]['name']
 		if not self.WORLD['inventory'][ent_id]['items']:
@@ -42,15 +45,7 @@ class Command:
 				new_node.add_new_option("look", text, things)
 			self.MenuTree.append(new_node)
 
-	def display_menu(self):
-		try:
-			for items in self.MenuTree[-1]:
-				print(self.MenuTree[-1][items][1])
-		except IndexError:
-			pass
-
 	def do(self):
-		# self.display_menu()
 		try:
 			self.MenuTree[-1].print_menu()
 		except IndexError:
