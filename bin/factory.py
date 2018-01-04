@@ -45,7 +45,6 @@ class Factory():
                 rarity = 'unique'
             else:
                 rarity = 'common'
-            print(self.WORLD['descriptor'][ent_id])
             self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
             self.WORLD['descriptor'][ent_id]['desc'] = "A "+rarity+" "+ weapon_type
             self.WORLD['item'][ent_id]['rarity']     = rarity
@@ -94,12 +93,12 @@ class Factory():
         ent_id = self.world.assign_entity_id()
         self.create_from_archetype(ent_id, 'door')
         self.WORLD['transition'][ent_id]['target'] = targets
-        if direction == "up" or direction == "down":
+        if direction == "Upwards" or direction == "Downwards":
             self.WORLD['descriptor'][ent_id]['name'] = "Staircase"
             self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go "+ direction
         else:
             self.WORLD['descriptor'][ent_id]['name'] = "Door"
-            self.WORLD['descriptor'][ent_id]['desc'] = "The door goes "+direction
+            self.WORLD['descriptor'][ent_id]['desc'] = "The door goes "+ direction
         return ent_id
 
 

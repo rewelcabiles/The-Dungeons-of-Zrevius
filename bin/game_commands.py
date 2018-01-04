@@ -65,6 +65,7 @@ class Command:
 		command = input("============Health: >> ")
 
 		if command == "look":
+			self.MenuTree.clear()
 			self.look_at(self.current_pos)
 			self.look_inventory(self.current_pos)
 		
@@ -73,11 +74,15 @@ class Command:
 				latest_node = self.MenuTree[-1]
 				info   = latest_node.options[command]
 				action = info['type']
+
 				if action == "back":
 					self.MenuTree.pop()
 
 				if action == "go":
 					next_room = info['pointer']
+					self.current_pos = self.WORLD['transition'][next_room]['target']
+					print("You head through the "+self.WORLD['descriptor'][next_room]['name'])
+					self.MenuTree.clear()
 
 				if action == "look":
 					item_id = info['pointer']
