@@ -81,7 +81,7 @@ class Command:
 				if action == "go":
 					next_room = info['pointer']
 					self.current_pos = self.WORLD['transition'][next_room]['target']
-					print("You head through the "+self.WORLD['descriptor'][next_room]['name'])
+					print("You head through the "+self.WORLD['descriptor'][next_room]['name'] + " and into a " + self.WORLD['descriptor'][self.current_pos]['name'])
 					self.MenuTree.clear()
 
 				if action == "look":
