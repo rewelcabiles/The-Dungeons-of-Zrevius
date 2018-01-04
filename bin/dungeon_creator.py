@@ -49,7 +49,6 @@ class Dungeon_Generator():
         area_id = self.world.factory.area_creator()
         for x in range(self.d_xsize):
             for y in range(self.d_ysize):
-                print(area_id)
                 ent_id =  self.world.factory.room_creator(x, y)
                 self.world.WORLD['area'][area_id]['rooms'].append(ent_id)
                 self.unvisited.append(ent_id)
@@ -57,7 +56,6 @@ class Dungeon_Generator():
 
 
     def randomize_maze(self):
-        print("Randomizing new floor")
         WORLD = self.world.WORLD
         dfs_x = random.randint(0, self.d_xsize -1)
         dfs_y = random.randint(0, self.d_ysize -1)
@@ -209,7 +207,7 @@ class Dungeon_Spicer:
 
     def add_items(self, inv_id, i_type = "random"):
         for i in range(random.randrange(1, 3)):
-            if random.randrange(0, 100) <= 80: # For weapons
+            if random.randrange(0, 100) <= 10: # For weapons
                 self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.weapon_creator())
 
 
