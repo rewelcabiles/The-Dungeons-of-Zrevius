@@ -1,8 +1,10 @@
+import random
 
 class Command:
 	def __init__(self, functions):
 		self.functions = functions
 		self.WORLD = self.functions.world.WORLD
+		self.current_pos = random.choice(list(self.WORLD['isroom'].keys()))
 		self.MenuTree = []
 
 	def get_object_type(self, ent_id):
@@ -40,11 +42,12 @@ class Command:
 		self.MenuTree.append(new_node)
 
 	def look_inventory(self, ent_id):
+		new_node  = MenuNode()
 		container_type = self.WORLD['descriptor'][ent_id]['name']
 		if not self.WORLD['inventory'][ent_id]['items']:
-			print("You look through the "+container_type+" and see nothing of use.")
+			new_node.set_header("You look through the "+container_type+" and see nothing of use.")
+			self.MenuTree.append(new_node)
 		else:
-			new_node  = MenuNode()
 			new_node.set_context(self.get_object_type(ent_id))
 			new_node.set_header("You look through the "+container_type+" and see...")
 			for things in self.WORLD['inventory'][ent_id]['items']:
@@ -62,8 +65,8 @@ class Command:
 		command = input("============Health: >> ")
 
 		if command == "look":
-			self.look_at(self.functions.current_pos)
-			self.look_inventory(self.functions.current_pos)
+			self.look_at(self.current_pos)
+			self.look_inventory(self.current_pos)
 		
 		try:
 			if command in self.MenuTree[-1].options.keys():
@@ -72,6 +75,9 @@ class Command:
 				action = info['type']
 				if action == "back":
 					self.MenuTree.pop()
+
+				if action == "go":
+					next_room = info['pointer']
 
 				if action == "look":
 					item_id = info['pointer']
@@ -97,6 +103,7 @@ class MenuNode():
 		self.context 		 = ""
 		self.header			 = ""
 		self.options         = {} # Type, Pointer, Text
+		self.options[str(self.current_options)] = {"type": "back", "pointer": None, "text": "Back"}
 
 	def set_context(self, cont):
 		self.context = cont
@@ -136,14 +143,3 @@ class MenuNode():
 		else:
 			return False
 
-
-class MenuTree():
-	
-	def __init__(self):
-		self.Tree = []
-
-	def create_current_node(self):
-		self.new_node = {}
-
-	def add_options(self):
-		pass
