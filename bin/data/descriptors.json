@@ -126,7 +126,7 @@
 		}
 	},
 
-	"basic_food" : [
+	"small_food" : [
 		{
 			"name" : "Rations",
 			"desc" : "A ration, good for your everyday adventures!"
@@ -138,7 +138,7 @@
 		{
 			"name" : "Small Rock Cake",
 			"desc" : "A bit hard on the outside.... and the inside as well. Will make you feel heavy!"
-		},
+		}
 	],
 
 	"doors" : [
