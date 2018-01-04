@@ -7,136 +7,134 @@ import copy
 
 class Factory():
 
-    def __init__(self,WORLD):
-        self.world = WORLD
-        self.WORLD = self.world.WORLD
-        with open('data/archetype.json') as data_file:
-            self.archetypes = json.load(data_file)
-        with open('data/components.json') as component_files:
-            self.components = json.load(component_files)
-        with open('data/descriptors.json') as descriptor_files:
-            self.descriptors= json.load(descriptor_files)
+	def __init__(self,WORLD):
+		self.world = WORLD
+		self.WORLD = self.world.WORLD
+		with open('data/archetype.json') as data_file:
+			self.archetypes  = json.load(data_file)
+		with open('data/components.json') as component_files:
+			self.components  = json.load(component_files)
+		with open('data/descriptors.json') as descriptor_files:
+			self.descriptors = json.load(descriptor_files)
+		with open('data/entity_stats.json') as stat_files:
+            self.stats = json.load(stat_files)
 
-    def create_from_archetype(self,ent_id, archetype_name):
-        for component in list(self.archetypes[archetype_name].keys()):
-            if self.archetypes[archetype_name][component] != "None":
-                self.WORLD[component][ent_id] = copy.deepcopy(self.archetypes[archetype_name][component])
-            else:
-                self.WORLD[component][ent_id] = copy.deepcopy(self.components[component])
-            self.WORLD['mask'][ent_id] |= self.world.COMPS[component]
-
-
-    def create_components(self, comp, ent_id):
-        self.WORLD[comp][ent_id] = copy.deepcopy(self.components[comp])
-        self.WORLD['mask'][ent_id] |= self.world.COMPS[comp]
+	def create_from_archetype(self,ent_id, archetype_name):
+		for component in list(self.archetypes[archetype_name].keys()):
+			if self.archetypes[archetype_name][component] != "None":
+				self.WORLD[component][ent_id] = copy.deepcopy(self.archetypes[archetype_name][component])
+			else:
+				self.WORLD[component][ent_id] = copy.deepcopy(self.components[component])
+			self.WORLD['mask'][ent_id] |= self.world.COMPS[component]
 
 
-    def lorify(self,ent_id):
-        monster_mask = (self.world.COMPS['monster'])
-        weapon_mask  = (self.world.COMPS['weapon'])
-        isroom_mask  = (self.world.COMPS['isroom'])
-        door_mask  = (self.world.COMPS['transition'])
-
-        if (self.world.WORLD['mask'][ent_id] & door_mask) == door_mask:
-            desc = random.choice(self.descriptors['doors'])
-            self.WORLD['descriptor'][ent_id]['name'] = desc['name']
-            self.WORLD['descriptor'][ent_id]['desc'] = desc['desc']
-
-        if (self.world.WORLD['mask'][ent_id] & isroom_mask) == isroom_mask:
-            desc = random.choice(self.descriptors['rooms'])
-            self.WORLD['descriptor'][ent_id]['name'] = desc['name']
-            self.WORLD['descriptor'][ent_id]['desc'] = desc['desc']
-
-        if (self.world.WORLD['mask'][ent_id] & monster_mask) == monster_mask:
-            monster_type = self.WORLD['monster'][ent_id]['type']
-            self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['monsters'][monster_type])
-
-        if (self.world.WORLD['mask'][ent_id] & weapon_mask) == weapon_mask:
-            weapon_type = self.WORLD['weapon'][ent_id]['type']
-            if random.randrange(1,100) <= 10:
-                rarity = 'unique'
-            else:
-                rarity = 'common'
-            self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
-            self.WORLD['descriptor'][ent_id]['desc'] = "A "+rarity+" "+ weapon_type
-            self.WORLD['item'][ent_id]['rarity']     = rarity
+	def create_components(self, comp, ent_id):
+		self.WORLD[comp][ent_id] = copy.deepcopy(self.components[comp])
+		self.WORLD['mask'][ent_id] |= self.world.COMPS[comp]
 
 
-    def room_creator(self,x ,y):
-        ent_id = self.world.assign_entity_id()
-        self.create_from_archetype(ent_id, 'room')
-        self.WORLD['position'][ent_id]['x'] = x
-        self.WORLD['position'][ent_id]['y'] = y
-        self.lorify(ent_id)
-        return ent_id
+	def lorify(self,ent_id):
+		monster_mask = (self.world.COMPS['monster'])
+		weapon_mask  = (self.world.COMPS['weapon'])
+		isroom_mask  = (self.world.COMPS['isroom'])
+		door_mask  = (self.world.COMPS['transition'])
+
+		if (self.world.WORLD['mask'][ent_id] & door_mask) == door_mask:
+			desc = random.choice(self.descriptors['doors'])
+			self.WORLD['descriptor'][ent_id]['name'] = desc['name']
+			self.WORLD['descriptor'][ent_id]['desc'] = desc['desc']
+
+		if (self.world.WORLD['mask'][ent_id] & isroom_mask) == isroom_mask:
+			desc = random.choice(self.descriptors['rooms'])
+			self.WORLD['descriptor'][ent_id]['name'] = desc['name']
+			self.WORLD['descriptor'][ent_id]['desc'] = desc['desc']
+
+		if (self.world.WORLD['mask'][ent_id] & monster_mask) == monster_mask:
+			monster_type = self.WORLD['monster'][ent_id]['type']
+			self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['monsters'][monster_type])
+
+		if (self.world.WORLD['mask'][ent_id] & weapon_mask) == weapon_mask:
+			weapon_type = self.WORLD['weapon'][ent_id]['type']
+			if random.randrange(1,100) <= 10:
+				rarity = 'unique'
+			else:
+				rarity = 'common'
+			self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['objects'][weapon_type][rarity])
+			self.WORLD['descriptor'][ent_id]['desc'] = "A "+rarity+" "+ weapon_type
+			self.WORLD['item'][ent_id]['rarity']     = rarity
 
 
-    def monster_creator(self, monster_type = 'random'):
-        ent_id = self.world.assign_entity_id()
-        if monster_type == 'random':
-            monster_type = random.choice(list(self.descriptors['names']['monsters'].keys()))
-
-        for component in list(self.archetypes['monster'].keys()):
-            self.create_components(component, ent_id)
-
-        self.WORLD['monster'][ent_id]['type'] = monster_type
-        self.lorify(ent_id)
-        return ent_id
+	def room_creator(self,x ,y):
+		ent_id = self.world.assign_entity_id()
+		self.create_from_archetype(ent_id, 'room')
+		self.WORLD['position'][ent_id]['x'] = x
+		self.WORLD['position'][ent_id]['y'] = y
+		self.lorify(ent_id)
+		return ent_id
 
 
-    def area_creator(self):
-        ent_id = self.world.assign_entity_id()
-        for component in list(self.archetypes['area'].keys()):
-            self.create_components(component, ent_id)
-        return ent_id
+	def monster_creator(self, monster_type = 'random'):
+		ent_id = self.world.assign_entity_id()
+		if monster_type == 'random':
+			monster_type = random.choice(list(self.descriptors['names']['monsters'].keys()))
 
-    def container_creator(self):
-        ent_id = self.world.assign_entity_id()
-        self.create_from_archetype(ent_id, 'container')
-        self.lorify(ent_id)
+		for component in list(self.archetypes['monster'].keys()):
+			self.create_components(component, ent_id)
 
-    # def furniture_creator(self, f_type = "random", f_name = 'random'):
-    #     ent_id = self.world.assign_entity_id()
-    #     if f_type == "random":
-    #         f_type = random.choice(list(self.archetypes['furniture'].keys()))
-    #         f_name = random.choice(list(self.archetypes['furniture'][f_type].keys()))
-    #     for component in list(self.archetypes['furniture'][f_type][f_name].keys()):
-    #        self.create_components(component, ent_id)
-    #     self.WORLD['descriptor'][ent_id] = self.archetypes['furniture'][f_type][f_name]["descriptor"]
-    #     return ent_id, f_type
-
-    def pair_doors(self, door1, door2):
-        desc = random.choice(self.descriptors['doors'])
-        self.WORLD['descriptor'][door1]['name'] = desc['name']
-        self.WORLD['descriptor'][door1]['desc'] = desc['desc']
-
-        self.WORLD['descriptor'][door2]['name'] = desc['name']
-        self.WORLD['descriptor'][door2]['desc'] = desc['desc']
-
-    def door_creator(self, targets, direction):
-        ent_id = self.world.assign_entity_id()
-        self.create_from_archetype(ent_id, 'door')
-        self.WORLD['transition'][ent_id]['target'] = targets
-        if direction == "Upwards" or direction == "Downwards":
-            self.WORLD['descriptor'][ent_id]['name'] = "Staircase"
-            self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go "+ direction
-        else:
-            self.WORLD['descriptor'][ent_id]['name'] = "Door"
-            self.WORLD['descriptor'][ent_id]['desc'] = "The door goes "+ direction
-        self.lorify(ent_id)
-        return ent_id
+		self.WORLD['monster'][ent_id]['type'] = monster_type
+		self.lorify(ent_id)
+		return ent_id
 
 
-    def weapon_creator(self, weapon_type = "random"):
-        ent_id = self.world.assign_entity_id()
-        if weapon_type == 'random':
-            weapon_type = random.choice(list(self.descriptors['names']['objects'].keys()))
+	def area_creator(self):
+		ent_id = self.world.assign_entity_id()
+		for component in list(self.archetypes['area'].keys()):
+			self.create_components(component, ent_id)
+		return ent_id
 
-        #Same as monster_creator
-        self.create_from_archetype(ent_id, weapon_type)
+	def container_creator(self):
+		ent_id = self.world.assign_entity_id()
+		self.create_from_archetype(ent_id, 'container')
+		self.lorify(ent_id)
+		return ent_id
+	
+	def create_consumbale(self, c_type = "refill", size = "small"):
+		ent_id = self.world.assign_entity_id()
+		
 
-        self.WORLD['weapon'][ent_id] =  self.archetypes[weapon_type]['weapon'].copy()
-        self.lorify(ent_id)
-        return ent_id
+
+	def pair_doors(self, door1, door2):
+		desc = random.choice(self.descriptors['doors'])
+		self.WORLD['descriptor'][door1]['name'] = desc['name']
+		self.WORLD['descriptor'][door1]['desc'] = desc['desc']
+
+		self.WORLD['descriptor'][door2]['name'] = desc['name']
+		self.WORLD['descriptor'][door2]['desc'] = desc['desc']
+
+	def door_creator(self, targets, direction):
+		ent_id = self.world.assign_entity_id()
+		self.create_from_archetype(ent_id, 'door')
+		self.WORLD['transition'][ent_id]['target'] = targets
+		if direction == "Upwards" or direction == "Downwards":
+			self.WORLD['descriptor'][ent_id]['name'] = "Staircase"
+			self.WORLD['descriptor'][ent_id]['desc'] = "The stairs go "+ direction
+		else:
+			self.WORLD['descriptor'][ent_id]['name'] = "Door"
+			self.WORLD['descriptor'][ent_id]['desc'] = "The door goes "+ direction
+		self.lorify(ent_id)
+		return ent_id
+
+
+	def weapon_creator(self, weapon_type = "random"):
+		ent_id = self.world.assign_entity_id()
+		if weapon_type == 'random':
+			weapon_type = random.choice(list(self.descriptors['names']['objects'].keys()))
+
+		#Same as monster_creator
+		self.create_from_archetype(ent_id, weapon_type)
+
+		self.WORLD['weapon'][ent_id] =  self.archetypes[weapon_type]['weapon'].copy()
+		self.lorify(ent_id)
+		return ent_id
 
 
