@@ -90,16 +90,20 @@ class Factory():
             self.create_components(component, ent_id)
         return ent_id
 
-
-    def furniture_creator(self, f_type = "random", f_name = 'random'):
+    def container_creator(self):
         ent_id = self.world.assign_entity_id()
-        if f_type == "random":
-            f_type = random.choice(list(self.archetypes['furniture'].keys()))
-            f_name = random.choice(list(self.archetypes['furniture'][f_type].keys()))
-        for component in list(self.archetypes['furniture'][f_type][f_name].keys()):
-           self.create_components(component, ent_id)
-        self.WORLD['descriptor'][ent_id] = self.archetypes['furniture'][f_type][f_name]["descriptor"]
-        return ent_id, f_type
+        self.create_from_archetype(ent_id, 'container')
+        self.lorify(ent_id)
+
+    # def furniture_creator(self, f_type = "random", f_name = 'random'):
+    #     ent_id = self.world.assign_entity_id()
+    #     if f_type == "random":
+    #         f_type = random.choice(list(self.archetypes['furniture'].keys()))
+    #         f_name = random.choice(list(self.archetypes['furniture'][f_type].keys()))
+    #     for component in list(self.archetypes['furniture'][f_type][f_name].keys()):
+    #        self.create_components(component, ent_id)
+    #     self.WORLD['descriptor'][ent_id] = self.archetypes['furniture'][f_type][f_name]["descriptor"]
+    #     return ent_id, f_type
 
     def pair_doors(self, door1, door2):
         desc = random.choice(self.descriptors['doors'])
@@ -108,7 +112,7 @@ class Factory():
 
         self.WORLD['descriptor'][door2]['name'] = desc['name']
         self.WORLD['descriptor'][door2]['desc'] = desc['desc']
-        
+
     def door_creator(self, targets, direction):
         ent_id = self.world.assign_entity_id()
         self.create_from_archetype(ent_id, 'door')
