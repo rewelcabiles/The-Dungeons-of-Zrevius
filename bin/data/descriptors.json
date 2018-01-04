@@ -111,7 +111,6 @@
 					"Hunting Bow"
 				]
 			}
-
 		}
 	},
 	"doors" :[
@@ -140,6 +139,6 @@
 		{
 			"name" : "Room",
 			"desc" : "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor."
-		},
+		}
 	]
 }
