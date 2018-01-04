@@ -6,10 +6,10 @@ class Command:
 		self.MenuTree = []
 
 	def get_object_type(self, ent_id):
-		inv_mask = self.functions.interface.create_dynamic_mask(['inventory'])
-		wep_mask = self.functions.interface.create_dynamic_mask(['weapon'])
-		dor_mask = self.functions.interface.create_dynamic_mask(['transition'])
-		isr_mask = self.functions.interface.create_dynamic_mask(['isroom'])
+		inv_mask = self.functions.create_dynamic_mask(['inventory'])
+		wep_mask = self.functions.create_dynamic_mask(['weapon'])
+		dor_mask = self.functions.create_dynamic_mask(['transition'])
+		isr_mask = self.functions.create_dynamic_mask(['isroom'])
 		if((self.WORLD['mask'][ent_id] & inv_mask) == inv_mask):
 			return "is_inventory"
 		if((self.WORLD['mask'][ent_id] & wep_mask) == wep_mask):
