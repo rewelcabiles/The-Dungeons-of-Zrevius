@@ -9,12 +9,15 @@ class Command:
 		inv_mask = self.functions.interface.create_dynamic_mask(['inventory'])
 		wep_mask = self.functions.interface.create_dynamic_mask(['weapon'])
 		dor_mask = self.functions.interface.create_dynamic_mask(['transition'])
+		isr_mask = self.functions.interface.create_dynamic_mask(['isroom'])
 		if((self.WORLD['mask'][ent_id] & inv_mask) == inv_mask):
 			return "is_inventory"
 		if((self.WORLD['mask'][ent_id] & wep_mask) == wep_mask):
 			return "is_weapon"
 		if((self.WORLD['mask'][ent_id] & dor_mask) == dor_mask):
 			return "is_door"
+		if((self.WORLD['mask'][ent_id] & isr_mask) == isr_mask):
+			return "is_room"			
 
 	def look_weapon(self, ent_id):
 		if self.WORLD['item'][ent_id]['rarity'] == 'common':
@@ -26,19 +29,18 @@ class Command:
 
 
 	def look_inventory(self, ent_id):
+		print("You look around the "+self.WORLD['descriptor'][ent_id]['name'])
+		print(self.WORLD['descriptor'][ent_id]['desc'])
+		container_type = self.WORLD['descriptor'][ent_id]['name']
 		if not self.WORLD['inventory'][ent_id]['items']:
-			print("You see no items in it.")
+			print("You look through the "+container_type+" and see nothing of use.")
 		else:
-			temp_dict = {}
-			iterator  = 0
-			print("You see: ")
+			new_node  = MenuNode()
+			print("You look through the "+container_type+" and see...")
 			for things in self.WORLD['inventory'][ent_id]['items']:
-				iterator += 1
-				text = str(iterator)+" ) "+ " a "+self.WORLD['descriptor'][things]['name']
-				temp_dict[str(iterator)] = ["look", text, things]
-				#print("BF "+ text)
-			temp_dict[str(iterator+1)] = ["back", str(iterator+1)+" )  Back"]
-			self.MenuTree.append(temp_dict)
+				text = self.WORLD['descriptor'][things]['name']
+				new_node.add_new_option("look", text, things)
+			self.MenuTree.append(new_node)
 
 	def display_menu(self):
 		try:
@@ -48,33 +50,41 @@ class Command:
 			pass
 
 	def do(self):
-		self.display_menu()
+		# self.display_menu()
+		try:
+			self.MenuTree[-1].print_menu()
+		except IndexError:
+			pass
 
-		command = input("Health: >>")
+		command = input("Health: >> ")
 
 		if command == "look":
 			self.look_inventory(self.functions.current_pos)
-					
-		if command in self.MenuTree[-1].keys():
-			info   = self.MenuTree[-1][command]
-			action = info[0]
+		
+		if command in self.MenuTree[-1].options.keys():
+			latest_node = self.MenuTree[-1]
+			info   = latest_node.options[command]
+			action = info['type']
 			if action == "back":
 				self.MenuTree.pop()
+
 			if action == "look":
-				item_id = info[2]
+				item_id = info['pointer']
 				obj_type = self.get_object_type(item_id)
 				if obj_type   == "is_inventory":
 					self.look_inventory(item_id)
 				elif obj_type == "is_weapon":
 					self.look_weapon(item_id)
+				elif obj_type == "is_room":
+					pass
+
 
 class MenuNode():
 
 	def __init__(self):
 		self.current_options = 1
-		# self.printable       = []
-		self.options         = {}
-		self.add_new_option("back", "Back")
+		self.options         = {} # Type, Pointer, Text
+		#self.add_new_option("back", "Back")
 
 	def print_menu(self):
 		try:
@@ -85,9 +95,15 @@ class MenuNode():
 			print("This Menu Is Empty!")
 
 	def add_new_option(self,option_type, text, pointer = None):
-		# self.printable.append[str(self.current_options)+" ) "+text]
-		self.options[self.current_options] = {"type": option_type, "pointer": pointer, "text": text}
+		self.options[str(self.current_options)] = {"type": option_type, "pointer": pointer, "text": text}
 		self.current_options += 1
+
+		# Moves Back option to back of menu list.
+		try:
+			del self.options[-2]
+			self.options[str(self.current_options)] = {"type": "back", "pointer": None, "text": "Back"}
+		except KeyError:
+			self.options[str(self.current_options)] = {"type": "back", "pointer": None, "text": "Back"}
 
 	def get_action(self, option_index):
 		if self.is_an_option(option_index):
@@ -107,8 +123,8 @@ class MenuTree():
 	def __init__(self):
 		self.Tree = []
 
-	def create_new_node():
+	def create_current_node(self):
 		self.new_node = {}
 
-	def add_options:
+	def add_options(self):
 		pass
