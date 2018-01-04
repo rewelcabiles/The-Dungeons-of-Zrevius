@@ -10,6 +10,8 @@
 		"items": []
 	},
 
+	"container" : {},
+
 	"equipment": {
 		"armor" : "None",
 		"weapon": "None",
@@ -43,7 +45,9 @@
 		"cha"	 : 0
 	},
 
-	"consumable" : {},
+	"consumable" : {
+		"size" : "small"
+	},
 
 	"buff_refill" : {
 		"stat"   : "health",
