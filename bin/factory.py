@@ -17,7 +17,7 @@ class Factory():
 		with open('data/descriptors.json') as descriptor_files:
 			self.descriptors = json.load(descriptor_files)
 		with open('data/entity_stats.json') as stat_files:
-            self.stats = json.load(stat_files)
+			self.stats = json.load(stat_files)
 
 	def create_from_archetype(self,ent_id, archetype_name):
 		for component in list(self.archetypes[archetype_name].keys()):
@@ -33,27 +33,29 @@ class Factory():
 		self.WORLD['mask'][ent_id] |= self.world.COMPS[comp]
 
 
-	def lorify(self,ent_id):
-		monster_mask = (self.world.COMPS['monster'])
-		weapon_mask  = (self.world.COMPS['weapon'])
-		isroom_mask  = (self.world.COMPS['isroom'])
-		door_mask  = (self.world.COMPS['transition'])
+	def lorify(self, ent_id):
+		monster_mask   = (self.world.COMPS['monster'])
+		weapon_mask    = (self.world.COMPS['weapon'])
+		isroom_mask    = (self.world.COMPS['isroom'])
+		door_mask  	   = (self.world.COMPS['transition'])
+		inventory_mask = (self.world.COMPS['inventory'])
+		refill_mask    = (self.world.COMPS['buff_refill'] | self.world.COMPS['consumable'])
 
-		if (self.world.WORLD['mask'][ent_id] & door_mask) == door_mask:
+		if (self.WORLD['mask'][ent_id] & door_mask) == door_mask:
 			desc = random.choice(self.descriptors['doors'])
 			self.WORLD['descriptor'][ent_id]['name'] = desc['name']
 			self.WORLD['descriptor'][ent_id]['desc'] = desc['desc']
 
-		if (self.world.WORLD['mask'][ent_id] & isroom_mask) == isroom_mask:
+		elif (self.WORLD['mask'][ent_id] & isroom_mask) == isroom_mask:
 			desc = random.choice(self.descriptors['rooms'])
 			self.WORLD['descriptor'][ent_id]['name'] = desc['name']
 			self.WORLD['descriptor'][ent_id]['desc'] = desc['desc']
 
-		if (self.world.WORLD['mask'][ent_id] & monster_mask) == monster_mask:
+		elif (self.WORLD['mask'][ent_id] & monster_mask) == monster_mask:
 			monster_type = self.WORLD['monster'][ent_id]['type']
 			self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names']['monsters'][monster_type])
 
-		if (self.world.WORLD['mask'][ent_id] & weapon_mask) == weapon_mask:
+		elif (self.WORLD['mask'][ent_id] & weapon_mask) == weapon_mask:
 			weapon_type = self.WORLD['weapon'][ent_id]['type']
 			if random.randrange(1,100) <= 10:
 				rarity = 'unique'
@@ -63,6 +65,12 @@ class Factory():
 			self.WORLD['descriptor'][ent_id]['desc'] = "A "+rarity+" "+ weapon_type
 			self.WORLD['item'][ent_id]['rarity']     = rarity
 
+		elif (self.WORLD['mask'][ent_id] & inventory_mask) == inventory_mask:
+			self.WORLD['descriptor'][ent_id] = random.choice(self.descriptors['containers'])
+
+		elif (self.WORLD['mask'][ent_id] & refill_mask) == refill_mask:
+			if self.WORLD['consumable'][ent_id]['size'] == "small":
+				self.WORLD['descriptor'][ent_id] = random.choice(self.descriptors['small_food'])
 
 	def room_creator(self,x ,y):
 		ent_id = self.world.assign_entity_id()
@@ -100,8 +108,13 @@ class Factory():
 	
 	def create_consumbale(self, c_type = "refill", size = "small"):
 		ent_id = self.world.assign_entity_id()
-		
-
+		if c_type == 'refill':
+			self.create_from_archetype(ent_id, 'consumable_refill')
+			self.WORLD['buff_refill'][ent_id]['amount'] = self.stats['consumable_stats']['refill'][size]
+			self.WORLD['consumable'][ent_id]['size']    = size
+		# Add more types here
+		self.lorify(ent_id)
+		return ent_id
 
 	def pair_doors(self, door1, door2):
 		desc = random.choice(self.descriptors['doors'])
