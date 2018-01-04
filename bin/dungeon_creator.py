@@ -199,18 +199,20 @@ class Dungeon_Spicer:
                 self.add_furniture(r)
         return self.world
 
-    def add_furniture(self, room_id): # f_ where f refers to furniture
-        for i in range(random.randrange(0, 3)):
-            ent_id, f_type = self.world.factory.furniture_creator()
-            if f_type == 'containers':
-                self.add_items(ent_id)
+    def add_furniture(self, room_id):
+        for i in range(random.randrange(0, 6)):
+            if random.randrange(0, 100) <= 30: # Containers
+                ent_id  = self.world.factory.container_creator()
+                self.WORLD['inventory'][room_id]['items'].append(ent_id)
+                self.add_items(ent_id) 
 
-            self.WORLD['inventory'][room_id]['items'].append(ent_id)
+            if random.randrange(0, 100) <= 40:
+                self.add_items(room_id)
 
 
     def add_items(self, inv_id, i_type = "random"):
-        for i in range(random.randrange(1, 3)):
-            if random.randrange(0, 100) <= 60: # For weapons
+        for i in range(random.randrange(1, 4)):
+            if random.randrange(0, 100) <= 30: # For weapons
                 self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.weapon_creator())
 
 
