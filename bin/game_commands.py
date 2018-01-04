@@ -61,22 +61,25 @@ class Command:
 		if command == "look":
 			self.look_inventory(self.functions.current_pos)
 		
-		if command in self.MenuTree[-1].options.keys():
-			latest_node = self.MenuTree[-1]
-			info   = latest_node.options[command]
-			action = info['type']
-			if action == "back":
-				self.MenuTree.pop()
+		try:
+			if command in self.MenuTree[-1].options.keys():
+				latest_node = self.MenuTree[-1]
+				info   = latest_node.options[command]
+				action = info['type']
+				if action == "back":
+					self.MenuTree.pop()
 
-			if action == "look":
-				item_id = info['pointer']
-				obj_type = self.get_object_type(item_id)
-				if obj_type   == "is_inventory":
-					self.look_inventory(item_id)
-				elif obj_type == "is_weapon":
-					self.look_weapon(item_id)
-				elif obj_type == "is_room":
-					pass
+				if action == "look":
+					item_id = info['pointer']
+					obj_type = self.get_object_type(item_id)
+					if obj_type   == "is_inventory":
+						self.look_inventory(item_id)
+					elif obj_type == "is_weapon":
+						self.look_weapon(item_id)
+					elif obj_type == "is_room":
+						pass
+		except IndexError:
+			pass
 
 
 class MenuNode():
