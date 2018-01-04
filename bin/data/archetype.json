@@ -52,13 +52,12 @@
 		}
 	},
 
-	"monster":
+	"character" :
 	{
 		"descriptor": "None",
 		"stats"     : "None",
 		"inventory" : "None",
 		"equipment" : "None",
-		"monster"   : "None"
 	},
 
 	"door":

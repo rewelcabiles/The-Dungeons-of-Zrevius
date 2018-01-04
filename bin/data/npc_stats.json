@@ -1,0 +1,26 @@
+{
+	"npc_stats": {
+		"Goblin" : {
+			"level"	 : 1,
+			"exp"    : 0,
+			"health" : 20,
+			"damage" : 10,
+			"str"    : 16,
+			"dex"    : 13,
+			"int"    : 6,
+			"con"    : 8,
+			"cha"	 : 9
+		},
+		"Kobold" : {
+			"level"  : 1,
+			"exp"    : 0,
+			"health" : 20,
+			"damage" : 10,
+			"str"    : 8,
+			"dex"    : 16,
+			"int"    : 9,
+			"con"    : 15,
+			"cha"	 : 12
+		}
+	}
+}

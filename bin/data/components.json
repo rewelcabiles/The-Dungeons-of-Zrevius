@@ -35,12 +35,12 @@
 		"level"  : 1,
 		"exp"    : 0,
 		"health" : 20,
-		"mana"   : 10,
-		"o_mod"  : 30,
-		"a_mod"  : 0,
-		"str"    : 5,
-		"int"    : 5,
-		"con"    : 5
+		"damage" : 10,
+		"str"    : 0,
+		"dex"    : 0,
+		"int"    : 0,
+		"con"    : 0,
+		"cha"	 : 0
 	},
 
 	"weapon": {
