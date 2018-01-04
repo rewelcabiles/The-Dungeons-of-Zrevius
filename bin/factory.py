@@ -101,7 +101,14 @@ class Factory():
         self.WORLD['descriptor'][ent_id] = self.archetypes['furniture'][f_type][f_name]["descriptor"]
         return ent_id, f_type
 
+    def pair_doors(self, door1, door2):
+        desc = random.choice(self.descriptors['doors'])
+        self.WORLD['descriptor'][door1]['name'] = desc['name']
+        self.WORLD['descriptor'][door1]['desc'] = desc['desc']
 
+        self.WORLD['descriptor'][door2]['name'] = desc['name']
+        self.WORLD['descriptor'][door2]['desc'] = desc['desc']
+        
     def door_creator(self, targets, direction):
         ent_id = self.world.assign_entity_id()
         self.create_from_archetype(ent_id, 'door')

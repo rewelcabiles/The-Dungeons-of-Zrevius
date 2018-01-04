@@ -109,32 +109,35 @@ class Dungeon_Generator():
                 self.connect_rooms(temp_dict[floor][1], temp_dict[floor + 1][0], "down")
 
 
-
     def connect_rooms(self, current_room, temp_room, direction):
         if direction == "forward":
-            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "forward"))
-            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "back"))
+            dir_1 = "forward"
+            dir_2 = "backward"
 
         elif direction == "right":
-            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "right"))
-            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "left"))
+            dir_1 = "right"
+            dir_2 = "left"
 
         elif direction == "back":
-            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "back"))
-            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "forward"))
+            dir_1 = "backward"
+            dir_2 = "forward"
 
         elif direction == "left":
-            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "left"))
-            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "right"))
+            dir_1 = "left"
+            dir_2 = "right"
 
         elif direction == "up":
-            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "Upwards"))
-            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "Downwards"))
+            dir_1 = "Upwards"
+            dir_2 = "Downwards"
 
         elif direction == "down":
-            self.world.WORLD['inventory'][current_room]['items'].append(self.world.factory.door_creator(temp_room, "Downwards"))
-            self.world.WORLD['inventory'][temp_room]['items'].append(self.world.factory.door_creator(current_room, "Upwards"))
-
+            dir_1 = "Downwards"
+            dir_2 = "Upwards"
+        door1_id = self.world.factory.door_creator(temp_room, dir_1)
+        door2_id = self.world.factory.door_creator(temp_room, dir_2)
+        self.world.WORLD['inventory'][current_room]['items'].append(door1_id)
+        self.world.WORLD['inventory'][temp_room]['items'].append(door2_id)
+        self.world.factory.pair_doors(door1_id,door2_id)            
 
 
     def get_random_unvisited_neighbor(self, place):
