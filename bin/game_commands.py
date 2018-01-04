@@ -37,6 +37,7 @@ class Command:
 				text = str(iterator)+" ) "+ " a "+self.WORLD['descriptor'][things]['name']
 				temp_dict[str(iterator)] = ["look", text, things]
 				#print("BF "+ text)
+			temp_dict[str(iterator+1)] = ["back", str(iterator+1)+" )  Back"]
 			self.MenuTree.append(temp_dict)
 
 	def display_menu(self):
@@ -57,6 +58,8 @@ class Command:
 		if command in self.MenuTree[-1].keys():
 			info   = self.MenuTree[-1][command]
 			action = info[0]
+			if action == "back":
+				self.MenuTree.pop()
 			if action == "look":
 				item_id = info[2]
 				obj_type = self.get_object_type(item_id)
@@ -65,3 +68,12 @@ class Command:
 				elif obj_type == "is_weapon":
 					self.look_weapon(item_id)
 
+class MenuTree():
+	
+	def __init__(self):
+		self.Tree = []
+
+	def create_new_node():
+		self.new_node = {}
+
+	
