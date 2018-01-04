@@ -10,7 +10,12 @@
 		},
 		"inventory": {
 			"items": []
+		},
+		"descriptor":{
+			"name" : "Room",
+			"desc" : "Looks like any other old dungeon room. Quite roomy.."
 		}
+
 	},
 
 	"area":
@@ -63,7 +68,9 @@
 			"name" : "Door",
 			"desc": "Its very.... Doory"
 		},
-		"transition": "None"
+		"transition": {
+			"target":"None"
+		}
 	},
 	"furniture":{
 		"containers":{
