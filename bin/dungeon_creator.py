@@ -189,7 +189,6 @@ class Dungeon_Spicer:
     def __init__(self,world, d_map):
         self.world = world
         self.WORLD = self.world.WORLD
-        #dungeon_generator = Dungeon_Generator(self.world)
         self.dungeon = d_map
         self.populate_dungeon()
 
@@ -205,17 +204,15 @@ class Dungeon_Spicer:
                 ent_id  = self.world.factory.container_creator()
                 self.WORLD['inventory'][room_id]['items'].append(ent_id)
                 self.add_items(ent_id) 
-
-            if random.randrange(0, 100) <= 40:
+            if random.randrange(0, 100) <= 40: # Chance  to spawn any loose items at all
                 self.add_items(room_id)
 
-
     def add_items(self, inv_id, i_type = "random"):
-        for i in range(random.randrange(1, 4)):
-            if random.randrange(0, 100) <= 30: # For weapons
+        for i in range(random.randrange(1, 3)):
+            if random.randrange(0, 100) <= 20: # For weapons
                 self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.weapon_creator())
 
-            if random.randrange(0, 100) <= 65: # For consumables
+            if random.randrange(0, 100) <= 45: # For consumables
                 self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.create_consumbale())
 
 
