@@ -1,0 +1,4172 @@
+{
+    "area": {
+        "227": {
+            "rooms": [
+                149,
+                1492,
+                1441,
+                712,
+                1247,
+                820,
+                1047,
+                749,
+                616,
+                776,
+                1123,
+                286,
+                442,
+                827,
+                1345,
+                1438,
+                832,
+                1500,
+                60,
+                710,
+                1436,
+                1079,
+                1442,
+                689,
+                910
+            ]
+        },
+        "528": {
+            "rooms": [
+                124,
+                494,
+                1440,
+                339,
+                1010,
+                954,
+                571,
+                1369,
+                117
+            ]
+        },
+        "1200": {
+            "rooms": [
+                1402,
+                1490,
+                216,
+                35,
+                951,
+                181,
+                115,
+                699,
+                1006,
+                1481,
+                510,
+                99,
+                1343,
+                335,
+                722,
+                788
+            ]
+        }
+    },
+    "armor": {},
+    "buff_refill": {
+        "19": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "30": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "38": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "46": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "58": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "66": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "69": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "104": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "135": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "144": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "158": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "188": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "198": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "212": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "225": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "228": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "229": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "231": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "305": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "329": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "337": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "370": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "405": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "425": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "457": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "459": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "478": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "491": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "517": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "520": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "524": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "525": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "554": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "577": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "591": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "605": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "622": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "633": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "723": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "744": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "756": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "774": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "785": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "789": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "799": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "809": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "819": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "846": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "887": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "891": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "912": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "932": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "983": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1029": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1039": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1056": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1072": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1083": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1093": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1110": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1124": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1134": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1187": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1196": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1219": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1231": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1270": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1285": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1286": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1296": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1297": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1302": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1335": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1378": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1390": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1397": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1425": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1474": {
+            "amount": 4,
+            "stat": "health"
+        },
+        "1494": {
+            "amount": 4,
+            "stat": "health"
+        }
+    },
+    "consumable": {
+        "19": {
+            "size": "small"
+        },
+        "30": {
+            "size": "small"
+        },
+        "38": {
+            "size": "small"
+        },
+        "46": {
+            "size": "small"
+        },
+        "58": {
+            "size": "small"
+        },
+        "66": {
+            "size": "small"
+        },
+        "69": {
+            "size": "small"
+        },
+        "104": {
+            "size": "small"
+        },
+        "135": {
+            "size": "small"
+        },
+        "144": {
+            "size": "small"
+        },
+        "158": {
+            "size": "small"
+        },
+        "188": {
+            "size": "small"
+        },
+        "198": {
+            "size": "small"
+        },
+        "212": {
+            "size": "small"
+        },
+        "225": {
+            "size": "small"
+        },
+        "228": {
+            "size": "small"
+        },
+        "229": {
+            "size": "small"
+        },
+        "231": {
+            "size": "small"
+        },
+        "305": {
+            "size": "small"
+        },
+        "329": {
+            "size": "small"
+        },
+        "337": {
+            "size": "small"
+        },
+        "370": {
+            "size": "small"
+        },
+        "405": {
+            "size": "small"
+        },
+        "425": {
+            "size": "small"
+        },
+        "457": {
+            "size": "small"
+        },
+        "459": {
+            "size": "small"
+        },
+        "478": {
+            "size": "small"
+        },
+        "491": {
+            "size": "small"
+        },
+        "517": {
+            "size": "small"
+        },
+        "520": {
+            "size": "small"
+        },
+        "524": {
+            "size": "small"
+        },
+        "525": {
+            "size": "small"
+        },
+        "554": {
+            "size": "small"
+        },
+        "577": {
+            "size": "small"
+        },
+        "591": {
+            "size": "small"
+        },
+        "605": {
+            "size": "small"
+        },
+        "622": {
+            "size": "small"
+        },
+        "633": {
+            "size": "small"
+        },
+        "723": {
+            "size": "small"
+        },
+        "744": {
+            "size": "small"
+        },
+        "756": {
+            "size": "small"
+        },
+        "774": {
+            "size": "small"
+        },
+        "785": {
+            "size": "small"
+        },
+        "789": {
+            "size": "small"
+        },
+        "799": {
+            "size": "small"
+        },
+        "809": {
+            "size": "small"
+        },
+        "819": {
+            "size": "small"
+        },
+        "846": {
+            "size": "small"
+        },
+        "887": {
+            "size": "small"
+        },
+        "891": {
+            "size": "small"
+        },
+        "912": {
+            "size": "small"
+        },
+        "932": {
+            "size": "small"
+        },
+        "983": {
+            "size": "small"
+        },
+        "1029": {
+            "size": "small"
+        },
+        "1039": {
+            "size": "small"
+        },
+        "1056": {
+            "size": "small"
+        },
+        "1072": {
+            "size": "small"
+        },
+        "1083": {
+            "size": "small"
+        },
+        "1093": {
+            "size": "small"
+        },
+        "1110": {
+            "size": "small"
+        },
+        "1124": {
+            "size": "small"
+        },
+        "1134": {
+            "size": "small"
+        },
+        "1187": {
+            "size": "small"
+        },
+        "1196": {
+            "size": "small"
+        },
+        "1219": {
+            "size": "small"
+        },
+        "1231": {
+            "size": "small"
+        },
+        "1270": {
+            "size": "small"
+        },
+        "1285": {
+            "size": "small"
+        },
+        "1286": {
+            "size": "small"
+        },
+        "1296": {
+            "size": "small"
+        },
+        "1297": {
+            "size": "small"
+        },
+        "1302": {
+            "size": "small"
+        },
+        "1335": {
+            "size": "small"
+        },
+        "1378": {
+            "size": "small"
+        },
+        "1390": {
+            "size": "small"
+        },
+        "1397": {
+            "size": "small"
+        },
+        "1425": {
+            "size": "small"
+        },
+        "1474": {
+            "size": "small"
+        },
+        "1494": {
+            "size": "small"
+        }
+    },
+    "descriptor": {
+        "6": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "15": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "19": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "25": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "30": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "35": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        },
+        "38": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "46": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "49": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "52": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "58": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "60": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "66": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "69": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "85": {
+            "desc": "A common sling",
+            "name": "Short sling"
+        },
+        "99": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "104": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "114": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "115": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "117": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "124": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "131": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "132": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "133": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "135": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "144": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "146": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "147": {
+            "desc": "A unique sword",
+            "name": "-???-"
+        },
+        "149": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "158": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "171": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "181": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        },
+        "188": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "192": {
+            "desc": "A steel studded, wooden chest!",
+            "name": "Wooden Chest"
+        },
+        "195": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "197": {
+            "desc": "A unique sword",
+            "name": "Masamume"
+        },
+        "198": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "207": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "212": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "216": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        },
+        "223": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "224": {
+            "desc": "A unique bow",
+            "name": "Calamity"
+        },
+        "225": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "228": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "229": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "231": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "235": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "237": {
+            "desc": "A common crossbow",
+            "name": "Long crossbow"
+        },
+        "240": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "244": {
+            "desc": "A wooden Barrel!",
+            "name": "Barrel"
+        },
+        "265": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "270": {
+            "desc": "A unique rapier",
+            "name": "Requiem of the Lost"
+        },
+        "271": {
+            "desc": "A common crossbow",
+            "name": "Flat crossbow"
+        },
+        "274": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "275": {
+            "desc": "A unique dagger",
+            "name": "Silver Saber"
+        },
+        "285": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "286": {
+            "desc": "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks.",
+            "name": "Room of Requiem"
+        },
+        "288": {
+            "desc": "A Crate! I wonder whats in it!",
+            "name": "Crate"
+        },
+        "305": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "329": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "335": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "337": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "339": {
+            "desc": "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks.",
+            "name": "Room of Requiem"
+        },
+        "341": {
+            "desc": "A common 2H Sword",
+            "name": "Old 2H Sword"
+        },
+        "343": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "345": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "346": {
+            "desc": "A unique bow",
+            "name": "Heartbeat"
+        },
+        "353": {
+            "desc": "A common crossbow",
+            "name": "Flat crossbow"
+        },
+        "364": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "367": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "368": {
+            "desc": "A unique dagger",
+            "name": "Silver Saber"
+        },
+        "370": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "374": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "378": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "393": {
+            "desc": "A unique sling",
+            "name": "Bronzed Striker"
+        },
+        "405": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "416": {
+            "desc": "A Crate! I wonder whats in it!",
+            "name": "Crate"
+        },
+        "425": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "429": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "438": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "442": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        },
+        "446": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "457": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "459": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "461": {
+            "desc": "A common crossbow",
+            "name": "Short crossbow"
+        },
+        "466": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "478": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "488": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "490": {
+            "desc": "A shattered crate, with many of its pieces lying around it.",
+            "name": "Broken Crate"
+        },
+        "491": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "494": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "508": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "510": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "512": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "514": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "517": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "520": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "524": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "525": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "530": {
+            "desc": "A common crossbow",
+            "name": "Short crossbow"
+        },
+        "538": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "540": {
+            "desc": "A steel studded, wooden chest!",
+            "name": "Wooden Chest"
+        },
+        "544": {
+            "desc": "A common dagger",
+            "name": "Dull dagger"
+        },
+        "547": {
+            "desc": "A common sword",
+            "name": "Dusty sword"
+        },
+        "554": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "555": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "565": {
+            "desc": "A crate with many cracks around it.",
+            "name": "Broken Crate"
+        },
+        "571": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "572": {
+            "desc": "A unique 2H Sword",
+            "name": "Requiem of the Lost"
+        },
+        "577": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "579": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "582": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "584": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "586": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "587": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "589": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "591": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "605": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "610": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "613": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "616": {
+            "desc": "The only sounds you hear in this room are the echos of your footsteps, as the sound bounces back from unseen walls in the distance. The darkness in this room is almost suffocating as the pitch blackness seem to dim whatever lights might be here.",
+            "name": "Cavern"
+        },
+        "622": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "633": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "640": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "644": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "648": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "649": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "664": {
+            "desc": "A crate with many cracks around it.",
+            "name": "Broken Crate"
+        },
+        "670": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "677": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "681": {
+            "desc": "A shattered crate, with many of its pieces lying around it.",
+            "name": "Broken Crate"
+        },
+        "685": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "689": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "699": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "704": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "710": {
+            "desc": "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks.",
+            "name": "Room of Requiem"
+        },
+        "712": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "717": {
+            "desc": "A common crossbow",
+            "name": "Rifle crossbow"
+        },
+        "722": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "723": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "728": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "729": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "730": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "734": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "739": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "740": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "742": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "744": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "746": {
+            "desc": "A unique dagger",
+            "name": "Guard's Warblade"
+        },
+        "747": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "749": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "756": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "760": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "766": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "774": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "776": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "780": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "785": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "788": {
+            "desc": "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks.",
+            "name": "Room of Requiem"
+        },
+        "789": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "794": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "796": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "799": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "800": {
+            "desc": "A common sling",
+            "name": "Old sling"
+        },
+        "801": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "809": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "819": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "820": {
+            "desc": "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks.",
+            "name": "Room of Requiem"
+        },
+        "821": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "823": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "825": {
+            "desc": "A common bow",
+            "name": "Flat bow"
+        },
+        "826": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "827": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "832": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        },
+        "840": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "844": {
+            "desc": "A steel studded, wooden chest!",
+            "name": "Wooden Chest"
+        },
+        "846": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "848": {
+            "desc": "A common rapier",
+            "name": "Dusty rapier"
+        },
+        "856": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "859": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "864": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "882": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "884": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "886": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "887": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "891": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "899": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "910": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "912": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "930": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "932": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "933": {
+            "desc": "A Crate! I wonder whats in it!",
+            "name": "Crate"
+        },
+        "951": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "954": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "955": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "960": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "970": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "983": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "1005": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1006": {
+            "desc": "The only sounds you hear in this room are the echos of your footsteps, as the sound bounces back from unseen walls in the distance. The darkness in this room is almost suffocating as the pitch blackness seem to dim whatever lights might be here.",
+            "name": "Cavern"
+        },
+        "1010": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "1022": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "1029": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "1031": {
+            "desc": "A common sword",
+            "name": "Movibrad sword"
+        },
+        "1039": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1046": {
+            "desc": "A unique sword",
+            "name": "Warriors Scalpel"
+        },
+        "1047": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "1056": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1058": {
+            "desc": "A broken door which seems to be very old, vines have started to cover it",
+            "name": "Broken Door"
+        },
+        "1060": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1066": {
+            "desc": "A unique sling",
+            "name": "Last Vision"
+        },
+        "1072": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1075": {
+            "desc": "A wooden Barrel!",
+            "name": "Barrel"
+        },
+        "1079": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        },
+        "1083": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "1086": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1089": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "1091": {
+            "desc": "A crate with many cracks around it.",
+            "name": "Broken Crate"
+        },
+        "1093": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1110": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1114": {
+            "desc": "A common 2H Sword",
+            "name": "Dusty 2H Sword"
+        },
+        "1117": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "1118": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1123": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "1124": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1126": {
+            "Quin": "Quin",
+            "desc": "None",
+            "name": "None"
+        },
+        "1134": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1138": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "1146": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "1150": {
+            "desc": "A wooden Barrel!",
+            "name": "Barrel"
+        },
+        "1159": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1163": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "1167": {
+            "desc": "A shattered crate, with many of its pieces lying around it.",
+            "name": "Broken Crate"
+        },
+        "1176": {
+            "desc": "A unique crossbow",
+            "name": "Death's Hail"
+        },
+        "1185": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "1187": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1196": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "1198": {
+            "desc": "A steel studded, wooden chest!",
+            "name": "Wooden Chest"
+        },
+        "1203": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "1204": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1219": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1229": {
+            "desc": "A wooden chest, with gold inlaid and studded throughout.",
+            "name": "Gold Decorated Chest"
+        },
+        "1231": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1247": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        },
+        "1250": {
+            "desc": "A unique sword",
+            "name": "Warriors Scalpel"
+        },
+        "1251": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1265": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1270": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1272": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "1280": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1285": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1286": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1289": {
+            "desc": "A barrel rotted with age.",
+            "name": "Rotting Barrel"
+        },
+        "1291": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1295": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "1296": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "1297": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1302": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1312": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1334": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "1335": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "1341": {
+            "desc": "A Crate! I wonder whats in it!",
+            "name": "Crate"
+        },
+        "1343": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "1345": {
+            "desc": "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks.",
+            "name": "Room of Requiem"
+        },
+        "1368": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1369": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "1378": {
+            "desc": "A stale piece of bread, better than nothing!",
+            "name": "Stale bread"
+        },
+        "1386": {
+            "desc": "A wooden door",
+            "name": "Wooden door"
+        },
+        "1390": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1391": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1397": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1402": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "1410": {
+            "desc": "A wooden Barrel!",
+            "name": "Barrel"
+        },
+        "1415": {
+            "desc": "A unique rapier",
+            "name": "Grasscutter"
+        },
+        "1417": {
+            "desc": "A shattered crate, with many of its pieces lying around it.",
+            "name": "Broken Crate"
+        },
+        "1425": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1426": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "1436": {
+            "desc": "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor.",
+            "name": "Room"
+        },
+        "1438": {
+            "desc": "The only sounds you hear in this room are the echos of your footsteps, as the sound bounces back from unseen walls in the distance. The darkness in this room is almost suffocating as the pitch blackness seem to dim whatever lights might be here.",
+            "name": "Cavern"
+        },
+        "1440": {
+            "desc": "A chill crawls up your spine and out over your skin as you look upon this room. The carvings on the wall are magnificent, a symphony in stonework -- but given the themes represented, it might be better described as a requiem. Scenes of death, both violent and peaceful, appear on every wall framed by grinning skeletons and ghoulish forms in ragged cloaks.",
+            "name": "Room of Requiem"
+        },
+        "1441": {
+            "desc": "The only sounds you hear in this room are the echos of your footsteps, as the sound bounces back from unseen walls in the distance. The darkness in this room is almost suffocating as the pitch blackness seem to dim whatever lights might be here.",
+            "name": "Cavern"
+        },
+        "1442": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "1455": {
+            "desc": "A crate with many cracks around it.",
+            "name": "Broken Crate"
+        },
+        "1457": {
+            "desc": "A wooden heavy set door.",
+            "name": "Heavy Wooden Door"
+        },
+        "1473": {
+            "desc": "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded",
+            "name": "Ornate Door"
+        },
+        "1474": {
+            "desc": "A ration, good for your everyday adventures!",
+            "name": "Rations"
+        },
+        "1480": {
+            "desc": "A door made of wood, with wrought iron reinforced throughout",
+            "name": "Wooden door"
+        },
+        "1481": {
+            "desc": "You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.",
+            "name": "Room"
+        },
+        "1482": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1485": {
+            "desc": "A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.",
+            "name": "Hole in the wall"
+        },
+        "1490": {
+            "desc": "You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room.",
+            "name": "Room full of Skulls"
+        },
+        "1492": {
+            "desc": "The only sounds you hear in this room are the echos of your footsteps, as the sound bounces back from unseen walls in the distance. The darkness in this room is almost suffocating as the pitch blackness seem to dim whatever lights might be here.",
+            "name": "Cavern"
+        },
+        "1494": {
+            "desc": "A bit hard on the outside.... and the inside as well. Will make you feel heavy!",
+            "name": "Small Rock Cake"
+        },
+        "1500": {
+            "desc": "A chill wind blows against you as you enter the room. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond.",
+            "name": "Room"
+        }
+    },
+    "equipment": {
+        "1126": {
+            "chest_armor": "None",
+            "helmet_armor": "None",
+            "left_hand": "None",
+            "legs_armour": "None",
+            "right_hand": "None",
+            "ring01": "None",
+            "ring02": "None"
+        }
+    },
+    "equippable": {
+        "85": {
+            "slot": "one_hand"
+        },
+        "147": {
+            "slot": "one_hand"
+        },
+        "197": {
+            "slot": "one_hand"
+        },
+        "224": {
+            "slot": "dual_hand"
+        },
+        "237": {
+            "slot": "dual_hand"
+        },
+        "270": {
+            "slot": "one_hand"
+        },
+        "271": {
+            "slot": "dual_hand"
+        },
+        "275": {
+            "slot": "one_hand"
+        },
+        "341": {
+            "slot": "dual_hand"
+        },
+        "346": {
+            "slot": "dual_hand"
+        },
+        "353": {
+            "slot": "dual_hand"
+        },
+        "368": {
+            "slot": "one_hand"
+        },
+        "393": {
+            "slot": "one_hand"
+        },
+        "461": {
+            "slot": "dual_hand"
+        },
+        "530": {
+            "slot": "dual_hand"
+        },
+        "544": {
+            "slot": "one_hand"
+        },
+        "547": {
+            "slot": "one_hand"
+        },
+        "572": {
+            "slot": "dual_hand"
+        },
+        "717": {
+            "slot": "dual_hand"
+        },
+        "746": {
+            "slot": "one_hand"
+        },
+        "800": {
+            "slot": "one_hand"
+        },
+        "825": {
+            "slot": "dual_hand"
+        },
+        "848": {
+            "slot": "one_hand"
+        },
+        "1031": {
+            "slot": "one_hand"
+        },
+        "1046": {
+            "slot": "one_hand"
+        },
+        "1066": {
+            "slot": "one_hand"
+        },
+        "1114": {
+            "slot": "dual_hand"
+        },
+        "1176": {
+            "slot": "dual_hand"
+        },
+        "1250": {
+            "slot": "one_hand"
+        },
+        "1415": {
+            "slot": "one_hand"
+        }
+    },
+    "inventory": {
+        "6": {
+            "items": [
+                425
+            ]
+        },
+        "35": {
+            "items": [
+                1060,
+                983,
+                1163,
+                1093
+            ]
+        },
+        "60": {
+            "items": [
+                739,
+                1251,
+                438,
+                1114,
+                1397
+            ]
+        },
+        "99": {
+            "items": [
+                886,
+                589,
+                1302,
+                844
+            ]
+        },
+        "115": {
+            "items": [
+                367,
+                955,
+                970,
+                1219,
+                1390,
+                341,
+                1231,
+                514
+            ]
+        },
+        "117": {
+            "items": [
+                512
+            ]
+        },
+        "124": {
+            "items": [
+                766,
+                1386,
+                58,
+                224,
+                1378,
+                231
+            ]
+        },
+        "149": {
+            "items": [
+                378,
+                195,
+                825
+            ]
+        },
+        "181": {
+            "items": [
+                704,
+                25
+            ]
+        },
+        "192": {
+            "items": [
+                846
+            ]
+        },
+        "216": {
+            "items": [
+                285,
+                1265,
+                188,
+                540
+            ]
+        },
+        "244": {
+            "items": [
+                104,
+                547
+            ]
+        },
+        "274": {
+            "items": [
+                305,
+                756
+            ]
+        },
+        "286": {
+            "items": [
+                364,
+                265,
+                730,
+                856,
+                591,
+                1056,
+                1417,
+                6,
+                664
+            ]
+        },
+        "288": {
+            "items": [
+                525
+            ]
+        },
+        "335": {
+            "items": [
+                579,
+                1312,
+                1058
+            ]
+        },
+        "339": {
+            "items": [
+                582,
+                740,
+                746,
+                800,
+                270,
+                1083,
+                1196
+            ]
+        },
+        "416": {
+            "items": [
+                622
+            ]
+        },
+        "429": {
+            "items": [
+                1072
+            ]
+        },
+        "438": {
+            "items": [
+                530,
+                544
+            ]
+        },
+        "442": {
+            "items": [
+                132,
+                821,
+                135,
+                275,
+                789,
+                1296
+            ]
+        },
+        "488": {
+            "items": []
+        },
+        "490": {
+            "items": [
+                30
+            ]
+        },
+        "494": {
+            "items": [
+                240,
+                840,
+                114,
+                685,
+                429,
+                891
+            ]
+        },
+        "510": {
+            "items": [
+                644,
+                1341
+            ]
+        },
+        "514": {
+            "items": []
+        },
+        "540": {
+            "items": []
+        },
+        "565": {
+            "items": [
+                912
+            ]
+        },
+        "571": {
+            "items": [
+                587,
+                1198,
+                1091,
+                1425,
+                1285,
+                819,
+                1110
+            ]
+        },
+        "616": {
+            "items": [
+                1005,
+                555,
+                554,
+                1185,
+                288
+            ]
+        },
+        "664": {
+            "items": []
+        },
+        "677": {
+            "items": [
+                1124
+            ]
+        },
+        "681": {
+            "items": [
+                144
+            ]
+        },
+        "685": {
+            "items": []
+        },
+        "689": {
+            "items": [
+                648,
+                610
+            ]
+        },
+        "699": {
+            "items": [
+                1480,
+                742
+            ]
+        },
+        "710": {
+            "items": [
+                960,
+                207,
+                794
+            ]
+        },
+        "712": {
+            "items": [
+                1203,
+                223,
+                370
+            ]
+        },
+        "722": {
+            "items": [
+                826,
+                1089,
+                848,
+                490,
+                1229,
+                147,
+                69,
+                1176,
+                677,
+                46
+            ]
+        },
+        "749": {
+            "items": [
+                345,
+                780
+            ]
+        },
+        "776": {
+            "items": [
+                1482,
+                584
+            ]
+        },
+        "788": {
+            "items": [
+                1272,
+                133,
+                859,
+                605
+            ]
+        },
+        "794": {
+            "items": []
+        },
+        "820": {
+            "items": [
+                1280,
+                52,
+                374,
+                933
+            ]
+        },
+        "827": {
+            "items": [
+                586,
+                1485,
+                1167
+            ]
+        },
+        "832": {
+            "items": [
+                729,
+                1159
+            ]
+        },
+        "844": {
+            "items": [
+                1031,
+                212
+            ]
+        },
+        "856": {
+            "items": [
+                524
+            ]
+        },
+        "884": {
+            "items": [
+                1066,
+                633
+            ]
+        },
+        "910": {
+            "items": [
+                640
+            ]
+        },
+        "933": {
+            "items": [
+                717,
+                158
+            ]
+        },
+        "951": {
+            "items": [
+                728,
+                899,
+                146,
+                1039
+            ]
+        },
+        "954": {
+            "items": [
+                1086,
+                747,
+                488,
+                1335,
+                1415,
+                329
+            ]
+        },
+        "1006": {
+            "items": [
+                1291,
+                446,
+                274,
+                244
+            ]
+        },
+        "1010": {
+            "items": [
+                670,
+                1473,
+                572,
+                1270,
+                1046,
+                457,
+                405,
+                461,
+                228,
+                517
+            ]
+        },
+        "1047": {
+            "items": [
+                15,
+                649,
+                229,
+                337,
+                681,
+                565
+            ]
+        },
+        "1075": {
+            "items": []
+        },
+        "1079": {
+            "items": [
+                760
+            ]
+        },
+        "1091": {
+            "items": [
+                38,
+                353
+            ]
+        },
+        "1117": {
+            "items": [
+                478
+            ]
+        },
+        "1123": {
+            "items": [
+                508,
+                1204,
+                1289,
+                1474,
+                19,
+                1187,
+                1297
+            ]
+        },
+        "1126": {
+            "items": []
+        },
+        "1150": {
+            "items": []
+        },
+        "1163": {
+            "items": [
+                1250
+            ]
+        },
+        "1167": {
+            "items": [
+                197
+            ]
+        },
+        "1185": {
+            "items": [
+                1029
+            ]
+        },
+        "1198": {
+            "items": [
+                744,
+                785
+            ]
+        },
+        "1229": {
+            "items": [
+                393
+            ]
+        },
+        "1247": {
+            "items": [
+                1426,
+                343,
+                1117,
+                225
+            ]
+        },
+        "1289": {
+            "items": [
+                1134
+            ]
+        },
+        "1341": {
+            "items": [
+                491
+            ]
+        },
+        "1343": {
+            "items": [
+                882,
+                1286,
+                192,
+                271,
+                520,
+                723
+            ]
+        },
+        "1345": {
+            "items": [
+                1368,
+                801,
+                1455,
+                459,
+                346,
+                66
+            ]
+        },
+        "1369": {
+            "items": [
+                823,
+                235
+            ]
+        },
+        "1402": {
+            "items": [
+                49,
+                1295,
+                774,
+                1150,
+                577
+            ]
+        },
+        "1410": {
+            "items": [
+                237
+            ]
+        },
+        "1417": {
+            "items": [
+                799
+            ]
+        },
+        "1436": {
+            "items": [
+                1457,
+                1391
+            ]
+        },
+        "1438": {
+            "items": [
+                538,
+                930
+            ]
+        },
+        "1440": {
+            "items": [
+                1022,
+                864
+            ]
+        },
+        "1441": {
+            "items": [
+                1334,
+                1138,
+                884
+            ]
+        },
+        "1442": {
+            "items": [
+                734
+            ]
+        },
+        "1455": {
+            "items": [
+                1494
+            ]
+        },
+        "1481": {
+            "items": [
+                796,
+                809
+            ]
+        },
+        "1490": {
+            "items": [
+                1146,
+                171,
+                416
+            ]
+        },
+        "1492": {
+            "items": [
+                613,
+                466,
+                1410,
+                368,
+                932,
+                1075,
+                198,
+                85,
+                887
+            ]
+        },
+        "1500": {
+            "items": [
+                131,
+                1118
+            ]
+        }
+    },
+    "isroom": {
+        "35": {
+            "exits": [
+                216,
+                0,
+                0,
+                0
+            ]
+        },
+        "60": {
+            "exits": [
+                0,
+                689,
+                0,
+                827
+            ]
+        },
+        "99": {
+            "exits": [
+                0,
+                788,
+                0,
+                699
+            ]
+        },
+        "115": {
+            "exits": [
+                181,
+                510,
+                699,
+                0
+            ]
+        },
+        "117": {
+            "exits": [
+                1369,
+                0,
+                0,
+                0
+            ]
+        },
+        "124": {
+            "exits": [
+                0,
+                339,
+                494,
+                0
+            ]
+        },
+        "149": {
+            "exits": [
+                0,
+                820,
+                1492,
+                0
+            ]
+        },
+        "181": {
+            "exits": [
+                951,
+                0,
+                115,
+                0
+            ]
+        },
+        "216": {
+            "exits": [
+                1490,
+                0,
+                35,
+                0
+            ]
+        },
+        "286": {
+            "exits": [
+                0,
+                832,
+                0,
+                1047
+            ]
+        },
+        "335": {
+            "exits": [
+                0,
+                0,
+                722,
+                1481
+            ]
+        },
+        "339": {
+            "exits": [
+                0,
+                571,
+                0,
+                124
+            ]
+        },
+        "442": {
+            "exits": [
+                0,
+                1500,
+                0,
+                749
+            ]
+        },
+        "494": {
+            "exits": [
+                124,
+                1010,
+                1440,
+                0
+            ]
+        },
+        "510": {
+            "exits": [
+                0,
+                0,
+                0,
+                115
+            ]
+        },
+        "571": {
+            "exits": [
+                0,
+                0,
+                0,
+                339
+            ]
+        },
+        "616": {
+            "exits": [
+                749,
+                827,
+                0,
+                0
+            ]
+        },
+        "689": {
+            "exits": [
+                1442,
+                0,
+                0,
+                60
+            ]
+        },
+        "699": {
+            "exits": [
+                115,
+                99,
+                0,
+                0
+            ]
+        },
+        "710": {
+            "exits": [
+                0,
+                910,
+                0,
+                1345
+            ]
+        },
+        "712": {
+            "exits": [
+                1441,
+                0,
+                1247,
+                0
+            ]
+        },
+        "722": {
+            "exits": [
+                335,
+                0,
+                788,
+                0
+            ]
+        },
+        "749": {
+            "exits": [
+                0,
+                442,
+                616,
+                0
+            ]
+        },
+        "776": {
+            "exits": [
+                0,
+                1345,
+                0,
+                1247
+            ]
+        },
+        "788": {
+            "exits": [
+                722,
+                0,
+                0,
+                99
+            ]
+        },
+        "820": {
+            "exits": [
+                0,
+                1123,
+                1047,
+                149
+            ]
+        },
+        "827": {
+            "exits": [
+                0,
+                60,
+                0,
+                616
+            ]
+        },
+        "832": {
+            "exits": [
+                0,
+                0,
+                1500,
+                286
+            ]
+        },
+        "910": {
+            "exits": [
+                0,
+                0,
+                0,
+                710
+            ]
+        },
+        "951": {
+            "exits": [
+                0,
+                1006,
+                181,
+                1402
+            ]
+        },
+        "954": {
+            "exits": [
+                0,
+                0,
+                0,
+                1440
+            ]
+        },
+        "1006": {
+            "exits": [
+                0,
+                1343,
+                0,
+                951
+            ]
+        },
+        "1010": {
+            "exits": [
+                0,
+                1369,
+                0,
+                494
+            ]
+        },
+        "1047": {
+            "exits": [
+                820,
+                286,
+                0,
+                0
+            ]
+        },
+        "1079": {
+            "exits": [
+                1436,
+                0,
+                0,
+                0
+            ]
+        },
+        "1123": {
+            "exits": [
+                0,
+                1438,
+                0,
+                820
+            ]
+        },
+        "1247": {
+            "exits": [
+                712,
+                776,
+                0,
+                0
+            ]
+        },
+        "1343": {
+            "exits": [
+                0,
+                0,
+                0,
+                1006
+            ]
+        },
+        "1345": {
+            "exits": [
+                0,
+                710,
+                0,
+                776
+            ]
+        },
+        "1369": {
+            "exits": [
+                0,
+                0,
+                117,
+                1010
+            ]
+        },
+        "1402": {
+            "exits": [
+                0,
+                951,
+                1490,
+                0
+            ]
+        },
+        "1436": {
+            "exits": [
+                0,
+                0,
+                1079,
+                1438
+            ]
+        },
+        "1438": {
+            "exits": [
+                0,
+                1436,
+                0,
+                1123
+            ]
+        },
+        "1440": {
+            "exits": [
+                494,
+                954,
+                0,
+                0
+            ]
+        },
+        "1441": {
+            "exits": [
+                1492,
+                0,
+                712,
+                0
+            ]
+        },
+        "1442": {
+            "exits": [
+                0,
+                0,
+                689,
+                0
+            ]
+        },
+        "1481": {
+            "exits": [
+                0,
+                335,
+                0,
+                0
+            ]
+        },
+        "1490": {
+            "exits": [
+                1402,
+                0,
+                216,
+                0
+            ]
+        },
+        "1492": {
+            "exits": [
+                149,
+                0,
+                1441,
+                0
+            ]
+        },
+        "1500": {
+            "exits": [
+                832,
+                0,
+                0,
+                442
+            ]
+        }
+    },
+    "item": {
+        "85": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "147": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "197": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "224": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "237": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "270": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "271": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "275": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "341": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "346": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "353": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "368": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "393": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "461": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "530": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "544": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "547": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "572": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "717": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "746": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "800": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "825": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "848": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "1031": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "1046": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "1066": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "1114": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "1176": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "1250": {
+            "rarity": "Common",
+            "value": 1
+        },
+        "1415": {
+            "rarity": "Common",
+            "value": 1
+        }
+    },
+    "location": {
+        "1126": {
+            "container_id": 1441
+        }
+    },
+    "mask": {
+        "6": 41,
+        "15": 524321,
+        "19": 3105,
+        "25": 524321,
+        "30": 3105,
+        "35": 173,
+        "38": 3105,
+        "46": 3105,
+        "49": 524321,
+        "52": 524321,
+        "58": 3105,
+        "60": 173,
+        "66": 3105,
+        "69": 3105,
+        "85": 249889,
+        "99": 173,
+        "104": 3105,
+        "114": 524321,
+        "115": 173,
+        "117": 173,
+        "124": 173,
+        "131": 524321,
+        "132": 524321,
+        "133": 524321,
+        "135": 3105,
+        "144": 3105,
+        "146": 524321,
+        "147": 217121,
+        "149": 173,
+        "158": 3105,
+        "171": 524321,
+        "181": 173,
+        "188": 3105,
+        "192": 41,
+        "195": 524321,
+        "197": 217121,
+        "198": 3105,
+        "207": 524321,
+        "212": 3105,
+        "216": 173,
+        "223": 524321,
+        "224": 249889,
+        "225": 3105,
+        "227": 257,
+        "228": 3105,
+        "229": 3105,
+        "231": 3105,
+        "235": 524321,
+        "237": 249889,
+        "240": 524321,
+        "244": 41,
+        "265": 524321,
+        "270": 217121,
+        "271": 249889,
+        "274": 41,
+        "275": 217121,
+        "285": 524321,
+        "286": 173,
+        "288": 41,
+        "305": 3105,
+        "329": 3105,
+        "335": 173,
+        "337": 3105,
+        "339": 173,
+        "341": 217121,
+        "343": 524321,
+        "345": 524321,
+        "346": 249889,
+        "353": 249889,
+        "364": 524321,
+        "367": 524321,
+        "368": 217121,
+        "370": 3105,
+        "374": 524321,
+        "378": 524321,
+        "393": 249889,
+        "405": 3105,
+        "416": 41,
+        "425": 3105,
+        "429": 41,
+        "438": 41,
+        "442": 173,
+        "446": 524321,
+        "457": 3105,
+        "459": 3105,
+        "461": 249889,
+        "466": 524321,
+        "478": 3105,
+        "488": 41,
+        "490": 41,
+        "491": 3105,
+        "494": 173,
+        "508": 524321,
+        "510": 173,
+        "512": 524321,
+        "514": 41,
+        "517": 3105,
+        "520": 3105,
+        "524": 3105,
+        "525": 3105,
+        "528": 257,
+        "530": 249889,
+        "538": 524321,
+        "540": 41,
+        "544": 217121,
+        "547": 217121,
+        "554": 3105,
+        "555": 524321,
+        "565": 41,
+        "571": 173,
+        "572": 217121,
+        "577": 3105,
+        "579": 524321,
+        "582": 524321,
+        "584": 524321,
+        "586": 524321,
+        "587": 524321,
+        "589": 524321,
+        "591": 3105,
+        "605": 3105,
+        "610": 524321,
+        "613": 524321,
+        "616": 173,
+        "622": 3105,
+        "633": 3105,
+        "640": 524321,
+        "644": 524321,
+        "648": 524321,
+        "649": 524321,
+        "664": 41,
+        "670": 524321,
+        "677": 41,
+        "681": 41,
+        "685": 41,
+        "689": 173,
+        "699": 173,
+        "704": 524321,
+        "710": 173,
+        "712": 173,
+        "717": 249889,
+        "722": 173,
+        "723": 3105,
+        "728": 524321,
+        "729": 524321,
+        "730": 524321,
+        "734": 524321,
+        "739": 524321,
+        "740": 524321,
+        "742": 524321,
+        "744": 3105,
+        "746": 217121,
+        "747": 524321,
+        "749": 173,
+        "756": 3105,
+        "760": 524321,
+        "766": 524321,
+        "774": 3105,
+        "776": 173,
+        "780": 524321,
+        "785": 3105,
+        "788": 173,
+        "789": 3105,
+        "794": 41,
+        "796": 524321,
+        "799": 3105,
+        "800": 249889,
+        "801": 524321,
+        "809": 3105,
+        "819": 3105,
+        "820": 173,
+        "821": 524321,
+        "823": 524321,
+        "825": 249889,
+        "826": 524321,
+        "827": 173,
+        "832": 173,
+        "840": 524321,
+        "844": 41,
+        "846": 3105,
+        "848": 217121,
+        "856": 41,
+        "859": 524321,
+        "864": 524321,
+        "882": 524321,
+        "884": 41,
+        "886": 524321,
+        "887": 3105,
+        "891": 3105,
+        "899": 524321,
+        "910": 173,
+        "912": 3105,
+        "930": 524321,
+        "932": 3105,
+        "933": 41,
+        "951": 173,
+        "954": 173,
+        "955": 524321,
+        "960": 524321,
+        "970": 524321,
+        "983": 3105,
+        "1005": 524321,
+        "1006": 173,
+        "1010": 173,
+        "1022": 524321,
+        "1029": 3105,
+        "1031": 217121,
+        "1039": 3105,
+        "1046": 217121,
+        "1047": 173,
+        "1056": 3105,
+        "1058": 524321,
+        "1060": 524321,
+        "1066": 249889,
+        "1072": 3105,
+        "1075": 41,
+        "1079": 173,
+        "1083": 3105,
+        "1086": 524321,
+        "1089": 524321,
+        "1091": 41,
+        "1093": 3105,
+        "1110": 3105,
+        "1114": 217121,
+        "1117": 41,
+        "1118": 524321,
+        "1123": 173,
+        "1124": 3105,
+        "1126": 633,
+        "1134": 3105,
+        "1138": 524321,
+        "1146": 524321,
+        "1150": 41,
+        "1159": 524321,
+        "1163": 41,
+        "1167": 41,
+        "1176": 249889,
+        "1185": 41,
+        "1187": 3105,
+        "1196": 3105,
+        "1198": 41,
+        "1200": 257,
+        "1203": 524321,
+        "1204": 524321,
+        "1219": 3105,
+        "1229": 41,
+        "1231": 3105,
+        "1247": 173,
+        "1250": 217121,
+        "1251": 524321,
+        "1265": 524321,
+        "1270": 3105,
+        "1272": 524321,
+        "1280": 524321,
+        "1285": 3105,
+        "1286": 3105,
+        "1289": 41,
+        "1291": 524321,
+        "1295": 524321,
+        "1296": 3105,
+        "1297": 3105,
+        "1302": 3105,
+        "1312": 524321,
+        "1334": 524321,
+        "1335": 3105,
+        "1341": 41,
+        "1343": 173,
+        "1345": 173,
+        "1368": 524321,
+        "1369": 173,
+        "1378": 3105,
+        "1386": 524321,
+        "1390": 3105,
+        "1391": 524321,
+        "1397": 3105,
+        "1402": 173,
+        "1410": 41,
+        "1415": 217121,
+        "1417": 41,
+        "1425": 3105,
+        "1426": 524321,
+        "1436": 173,
+        "1438": 173,
+        "1440": 173,
+        "1441": 173,
+        "1442": 173,
+        "1455": 41,
+        "1457": 524321,
+        "1473": 524321,
+        "1474": 3105,
+        "1480": 524321,
+        "1481": 173,
+        "1482": 524321,
+        "1485": 524321,
+        "1490": 173,
+        "1492": 173,
+        "1494": 3105,
+        "1500": 173
+    },
+    "modifiers": {
+        "85": {
+            "damage": 3,
+            "dex": 5
+        },
+        "147": {
+            "cha": 3,
+            "damage": 7,
+            "str": 5
+        },
+        "197": {
+            "damage": 6
+        },
+        "224": {
+            "cha": 2,
+            "damage": 7,
+            "int": 5,
+            "str": 1
+        },
+        "237": {
+            "con": 4,
+            "damage": 3
+        },
+        "270": {
+            "cha": 5,
+            "con": 2,
+            "damage": 9,
+            "dex": 5
+        },
+        "271": {
+            "cha": 2,
+            "damage": 7,
+            "int": 5
+        },
+        "275": {
+            "cha": 4,
+            "damage": 9
+        },
+        "341": {
+            "cha": 1,
+            "damage": 7
+        },
+        "346": {
+            "damage": 6,
+            "dex": 3,
+            "int": 4
+        },
+        "353": {
+            "armor": 5,
+            "cha": 1,
+            "damage": 2
+        },
+        "368": {
+            "cha": 2,
+            "damage": 4,
+            "int": 3
+        },
+        "393": {
+            "cha": 2,
+            "con": 4,
+            "damage": 3,
+            "str": 2
+        },
+        "461": {
+            "armor": 3,
+            "damage": 3,
+            "int": 4
+        },
+        "530": {
+            "damage": 6,
+            "int": 5
+        },
+        "544": {
+            "cha": 3,
+            "damage": 3,
+            "int": 1
+        },
+        "547": {
+            "armor": 4,
+            "con": 1,
+            "damage": 6,
+            "int": 3
+        },
+        "572": {
+            "armor": 5,
+            "con": 5,
+            "damage": 4,
+            "str": 5
+        },
+        "717": {
+            "damage": 7,
+            "dex": 4,
+            "int": 1
+        },
+        "746": {
+            "damage": 8
+        },
+        "800": {
+            "damage": 5,
+            "dex": 2,
+            "int": 5
+        },
+        "825": {
+            "cha": 3,
+            "damage": 3,
+            "int": 4,
+            "str": 2
+        },
+        "848": {
+            "cha": 5,
+            "damage": 7,
+            "str": 1
+        },
+        "1031": {
+            "damage": 5,
+            "dex": 3
+        },
+        "1046": {
+            "con": 3,
+            "damage": 8,
+            "dex": 2,
+            "str": 5
+        },
+        "1066": {
+            "armor": 1,
+            "damage": 6
+        },
+        "1114": {
+            "damage": 5,
+            "int": 5,
+            "str": 1
+        },
+        "1176": {
+            "armor": 5,
+            "cha": 4,
+            "damage": 4,
+            "int": 2
+        },
+        "1250": {
+            "damage": 4
+        },
+        "1415": {
+            "damage": 10,
+            "int": 4
+        }
+    },
+    "monster": {},
+    "position": {
+        "35": {
+            "x": 0,
+            "y": 3
+        },
+        "60": {
+            "x": 3,
+            "y": 3
+        },
+        "99": {
+            "x": 2,
+            "y": 3
+        },
+        "115": {
+            "x": 1,
+            "y": 2
+        },
+        "117": {
+            "x": 2,
+            "y": 2
+        },
+        "124": {
+            "x": 0,
+            "y": 0
+        },
+        "149": {
+            "x": 0,
+            "y": 0
+        },
+        "181": {
+            "x": 1,
+            "y": 1
+        },
+        "216": {
+            "x": 0,
+            "y": 2
+        },
+        "286": {
+            "x": 2,
+            "y": 1
+        },
+        "335": {
+            "x": 3,
+            "y": 1
+        },
+        "339": {
+            "x": 1,
+            "y": 0
+        },
+        "442": {
+            "x": 2,
+            "y": 2
+        },
+        "494": {
+            "x": 0,
+            "y": 1
+        },
+        "510": {
+            "x": 2,
+            "y": 2
+        },
+        "571": {
+            "x": 2,
+            "y": 0
+        },
+        "616": {
+            "x": 1,
+            "y": 3
+        },
+        "689": {
+            "x": 4,
+            "y": 3
+        },
+        "699": {
+            "x": 1,
+            "y": 3
+        },
+        "710": {
+            "x": 3,
+            "y": 4
+        },
+        "712": {
+            "x": 0,
+            "y": 3
+        },
+        "722": {
+            "x": 3,
+            "y": 2
+        },
+        "749": {
+            "x": 1,
+            "y": 2
+        },
+        "776": {
+            "x": 1,
+            "y": 4
+        },
+        "788": {
+            "x": 3,
+            "y": 3
+        },
+        "820": {
+            "x": 1,
+            "y": 0
+        },
+        "827": {
+            "x": 2,
+            "y": 3
+        },
+        "832": {
+            "x": 3,
+            "y": 1
+        },
+        "910": {
+            "x": 4,
+            "y": 4
+        },
+        "951": {
+            "x": 1,
+            "y": 0
+        },
+        "954": {
+            "x": 1,
+            "y": 2
+        },
+        "1006": {
+            "x": 2,
+            "y": 0
+        },
+        "1010": {
+            "x": 1,
+            "y": 1
+        },
+        "1047": {
+            "x": 1,
+            "y": 1
+        },
+        "1079": {
+            "x": 4,
+            "y": 1
+        },
+        "1123": {
+            "x": 2,
+            "y": 0
+        },
+        "1247": {
+            "x": 0,
+            "y": 4
+        },
+        "1343": {
+            "x": 3,
+            "y": 0
+        },
+        "1345": {
+            "x": 2,
+            "y": 4
+        },
+        "1369": {
+            "x": 2,
+            "y": 1
+        },
+        "1402": {
+            "x": 0,
+            "y": 0
+        },
+        "1436": {
+            "x": 4,
+            "y": 0
+        },
+        "1438": {
+            "x": 3,
+            "y": 0
+        },
+        "1440": {
+            "x": 0,
+            "y": 2
+        },
+        "1441": {
+            "x": 0,
+            "y": 2
+        },
+        "1442": {
+            "x": 4,
+            "y": 2
+        },
+        "1481": {
+            "x": 2,
+            "y": 1
+        },
+        "1490": {
+            "x": 0,
+            "y": 1
+        },
+        "1492": {
+            "x": 0,
+            "y": 1
+        },
+        "1500": {
+            "x": 3,
+            "y": 2
+        }
+    },
+    "shoots_projectiles": {
+        "85": {
+            "projectile_type": "rock"
+        },
+        "224": {
+            "projectile_type": "arrow"
+        },
+        "237": {
+            "projectile_type": "bolt"
+        },
+        "271": {
+            "projectile_type": "bolt"
+        },
+        "346": {
+            "projectile_type": "arrow"
+        },
+        "353": {
+            "projectile_type": "bolt"
+        },
+        "393": {
+            "projectile_type": "rock"
+        },
+        "461": {
+            "projectile_type": "bolt"
+        },
+        "530": {
+            "projectile_type": "bolt"
+        },
+        "717": {
+            "projectile_type": "bolt"
+        },
+        "800": {
+            "projectile_type": "rock"
+        },
+        "825": {
+            "projectile_type": "arrow"
+        },
+        "1066": {
+            "projectile_type": "rock"
+        },
+        "1176": {
+            "projectile_type": "bolt"
+        }
+    },
+    "stats": {
+        "1126": {
+            "cha": 9,
+            "con": 8,
+            "damage": 10,
+            "dex": 13,
+            "exp": 0,
+            "health": 20,
+            "int": 6,
+            "level": 1,
+            "str": 16
+        }
+    },
+    "transition": {
+        "15": {
+            "target": 1047
+        },
+        "25": {
+            "target": 951
+        },
+        "49": {
+            "target": 1402
+        },
+        "52": {
+            "target": 1123
+        },
+        "114": {
+            "target": 1440
+        },
+        "131": {
+            "target": 1500
+        },
+        "132": {
+            "target": 442
+        },
+        "133": {
+            "target": 99
+        },
+        "146": {
+            "target": 1402
+        },
+        "171": {
+            "target": 216
+        },
+        "195": {
+            "target": 1492
+        },
+        "207": {
+            "target": 910
+        },
+        "223": {
+            "target": 1247
+        },
+        "235": {
+            "target": 1010
+        },
+        "240": {
+            "target": 494
+        },
+        "265": {
+            "target": 1047
+        },
+        "285": {
+            "target": 216
+        },
+        "343": {
+            "target": 776
+        },
+        "345": {
+            "target": 749
+        },
+        "364": {
+            "target": 286
+        },
+        "367": {
+            "target": 115
+        },
+        "374": {
+            "target": 149
+        },
+        "378": {
+            "target": 149
+        },
+        "446": {
+            "target": 1343
+        },
+        "466": {
+            "target": 1441
+        },
+        "508": {
+            "target": 1123
+        },
+        "512": {
+            "target": 1369
+        },
+        "538": {
+            "target": 1438
+        },
+        "555": {
+            "target": 749
+        },
+        "579": {
+            "target": 335
+        },
+        "582": {
+            "target": 339
+        },
+        "584": {
+            "target": 1345
+        },
+        "586": {
+            "target": 827
+        },
+        "587": {
+            "target": 571
+        },
+        "589": {
+            "target": 699
+        },
+        "610": {
+            "target": 60
+        },
+        "613": {
+            "target": 1492
+        },
+        "640": {
+            "target": 910
+        },
+        "644": {
+            "target": 510
+        },
+        "648": {
+            "target": 689
+        },
+        "649": {
+            "target": 820
+        },
+        "670": {
+            "target": 1010
+        },
+        "704": {
+            "target": 181
+        },
+        "728": {
+            "target": 951
+        },
+        "729": {
+            "target": 832
+        },
+        "730": {
+            "target": 286
+        },
+        "734": {
+            "target": 689
+        },
+        "739": {
+            "target": 60
+        },
+        "740": {
+            "target": 571
+        },
+        "742": {
+            "target": 115
+        },
+        "747": {
+            "target": 335
+        },
+        "760": {
+            "target": 1079
+        },
+        "766": {
+            "target": 124
+        },
+        "780": {
+            "target": 442
+        },
+        "796": {
+            "target": 335
+        },
+        "801": {
+            "target": 710
+        },
+        "821": {
+            "target": 1500
+        },
+        "823": {
+            "target": 1369
+        },
+        "826": {
+            "target": 722
+        },
+        "840": {
+            "target": 124
+        },
+        "859": {
+            "target": 286
+        },
+        "864": {
+            "target": 954
+        },
+        "882": {
+            "target": 1343
+        },
+        "886": {
+            "target": 99
+        },
+        "899": {
+            "target": 1006
+        },
+        "930": {
+            "target": 1436
+        },
+        "955": {
+            "target": 510
+        },
+        "960": {
+            "target": 710
+        },
+        "970": {
+            "target": 181
+        },
+        "1005": {
+            "target": 616
+        },
+        "1022": {
+            "target": 1440
+        },
+        "1058": {
+            "target": 335
+        },
+        "1060": {
+            "target": 35
+        },
+        "1086": {
+            "target": 954
+        },
+        "1089": {
+            "target": 788
+        },
+        "1118": {
+            "target": 832
+        },
+        "1138": {
+            "target": 712
+        },
+        "1146": {
+            "target": 1490
+        },
+        "1159": {
+            "target": 286
+        },
+        "1203": {
+            "target": 712
+        },
+        "1204": {
+            "target": 1438
+        },
+        "1251": {
+            "target": 827
+        },
+        "1265": {
+            "target": 35
+        },
+        "1272": {
+            "target": 788
+        },
+        "1280": {
+            "target": 820
+        },
+        "1291": {
+            "target": 1006
+        },
+        "1295": {
+            "target": 1490
+        },
+        "1312": {
+            "target": 722
+        },
+        "1334": {
+            "target": 1441
+        },
+        "1368": {
+            "target": 1345
+        },
+        "1386": {
+            "target": 339
+        },
+        "1391": {
+            "target": 1079
+        },
+        "1426": {
+            "target": 1247
+        },
+        "1457": {
+            "target": 1436
+        },
+        "1473": {
+            "target": 494
+        },
+        "1480": {
+            "target": 699
+        },
+        "1482": {
+            "target": 776
+        },
+        "1485": {
+            "target": 616
+        }
+    },
+    "weapon": {
+        "85": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "sling"
+        },
+        "147": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "sword"
+        },
+        "197": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "sword"
+        },
+        "224": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "bow"
+        },
+        "237": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "crossbow"
+        },
+        "270": {
+            "damage_type": "melee",
+            "main_modifier": "dex",
+            "weapon_type": "rapier"
+        },
+        "271": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "crossbow"
+        },
+        "275": {
+            "damage_type": "melee",
+            "main_modifier": "dex",
+            "weapon_type": "dagger"
+        },
+        "341": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "2H Sword"
+        },
+        "346": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "bow"
+        },
+        "353": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "crossbow"
+        },
+        "368": {
+            "damage_type": "melee",
+            "main_modifier": "dex",
+            "weapon_type": "dagger"
+        },
+        "393": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "sling"
+        },
+        "461": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "crossbow"
+        },
+        "530": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "crossbow"
+        },
+        "544": {
+            "damage_type": "melee",
+            "main_modifier": "dex",
+            "weapon_type": "dagger"
+        },
+        "547": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "sword"
+        },
+        "572": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "2H Sword"
+        },
+        "717": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "crossbow"
+        },
+        "746": {
+            "damage_type": "melee",
+            "main_modifier": "dex",
+            "weapon_type": "dagger"
+        },
+        "800": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "sling"
+        },
+        "825": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "bow"
+        },
+        "848": {
+            "damage_type": "melee",
+            "main_modifier": "dex",
+            "weapon_type": "rapier"
+        },
+        "1031": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "sword"
+        },
+        "1046": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "sword"
+        },
+        "1066": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "sling"
+        },
+        "1114": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "2H Sword"
+        },
+        "1176": {
+            "damage_type": "ranged",
+            "main_modifier": "dex",
+            "weapon_type": "crossbow"
+        },
+        "1250": {
+            "damage_type": "melee",
+            "main_modifier": "str",
+            "weapon_type": "sword"
+        },
+        "1415": {
+            "damage_type": "melee",
+            "main_modifier": "dex",
+            "weapon_type": "rapier"
+        }
+    }
+}
