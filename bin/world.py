@@ -34,9 +34,12 @@ class World():
 		for components in self.WORLD.keys():
 			if ent_id in self.WORLD[components].keys():
 				del self.WORLD[components][ent_id]
-				
+
 	def set_entity_location(self, ent_id, target_room):
 		self.WORLD['location'][ent_id]['room_id'] = target_room
+
+	def del_from_inventory(self, ent_id, target_inventory):
+		del self.WORLD['inventory'][target_inventory]['items'][ent_id]
 
 	def add_to_inventory(self, ent_id, target_inventory):
 		self.WORLD['inventory'][target_inventory]['items'].append(ent_id)
