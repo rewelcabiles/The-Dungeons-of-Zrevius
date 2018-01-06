@@ -13,26 +13,17 @@
 	},
 
 
-	"sword":
+	"weapon":
 	{
 		"descriptor"	: "None",
 		"item"			: "None",
+		"equippable"    : {"slot" : "None"},
 		"weapon": {
-			"type"      : "sword",
-			"mod"       : "str",
-			"mod_amount": 0
-		}
-	},
-
-	"bow":
-	{
-		"descriptor"    : "None",
-		"item"          : "None",
-		"weapon": {
-			"type"	    : "bow",
-			"mod"	    : "str",
-			"mod_amount": 0
-		}
+			"damage_type": "melee",
+			"weapon_type": "sword",
+			"main_modifier": "str"
+		},
+		"modifiers" : {}
 	},
 
 	"character" :

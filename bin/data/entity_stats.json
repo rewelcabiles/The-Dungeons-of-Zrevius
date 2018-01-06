@@ -41,5 +41,46 @@
 			"medium" : 9,
 			"large"  : 20
 		}
+	},
+	"weapon_info" : {
+		"dagger" :{
+			"damage_type"	:"melee",
+			"slot"  		:"one_hand",
+			"main_modifier"	:"dex"
+		},
+		"sword" :{
+			"damage_type"	:"melee",
+			"slot"  		:"one_hand",
+			"main_modifier"	:"str"
+		},
+		"2H Sword" :{
+			"damage_type"	:"melee",
+			"slot"  		:"dual_hand",
+			"main_modifier"	:"str"
+		},
+		"rapier" :{
+			"damage_type"	:"melee",
+			"slot"  		:"one_hand",
+			"main_modifier"	:"dex"
+		},
+		"bow" :{
+			"damage_type"		:"ranged",
+			"slot"  			:"dual_hand",
+			"main_modifier"		:"dex",
+			"projectile_type"	:"arrow"
+		},
+		"crossbow" :{
+			"damage_type"		:"ranged",
+			"slot"  			:"dual_hand",
+			"main_modifier"		:"dex",
+			"projectile_type"	:"bolt"
+		},
+		"sling" :{
+			"damage_type"		:"ranged",
+			"slot"  			:"one_hand",
+			"main_modifier"		:"dex",
+			"projectile_type"	:"rock"
+		}
+
 	}
 }

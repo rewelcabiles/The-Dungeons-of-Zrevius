@@ -42,6 +42,7 @@
 		"exp"    : 0,
 		"health" : 20,
 		"damage" : 10,
+		"armor"  : 0,
 		"str"    : 0,
 		"dex"    : 0,
 		"int"    : 0,
@@ -59,9 +60,17 @@
 	},
 
 	"weapon": {
-		"type"       : "None",
-		"mod" 	     : "str",
-		"mod_amount" : 1
+		"damage_type"  : "None",
+		"weapon_type"  : "None",
+		"main_modifier": "str"
+	},
+
+	"armor" : {},
+
+	"modifiers" : {},
+
+	"shoots_projectiles" : {
+		"projectile_type" : "arrow"
 	},
 
 	"equippable" : {

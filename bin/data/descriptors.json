@@ -67,12 +67,11 @@
 
 
 		"objects" :{
-			"sword" :{
+			"melee": {
 				"unique" : [
 					"Persuasion",
 					"Silver Saber",
 					"Requiem of the Lost",
-					"Extinction Broadsword",
 					"Mageblade of the Falling Sky",
 					"Grasscutter",
 					"Masamume",
@@ -82,17 +81,28 @@
 					"-???-"
 				],
 				"common" : [
-					"Dull Sword",
-					"Long Sword",
-					"Steel Sword",
-					"Old Sword",
-					"Dusty Sword",
-					"Sword Sword",
-					"Common Sword",
-					"Movibrad Longsword"
+					"Dull",
+					"Long",
+					"Steel",
+					"Old",
+					"Dusty",
+					"Sword",
+					"Common",
+					"Movibrad"
 				]
 			},
-			"bow" :{
+			"ranged":{
+				"common" :[
+					"Short",
+					"Long",
+					"Rifle",
+					"Flat",
+					"Compound",
+					"Loose",
+					"Old",
+					"Recurve",
+					"Hunting"
+				],
 				"unique" : [
 					"Bristleblitz",
 					"Calamity",
@@ -104,17 +114,6 @@
 					"Death's Hail",
 					"Mirage",
 					"-???-"
-				],
-				"common" :[
-					"Short Bow",
-					"Long Bow",
-					"Rifle Bow",
-					"Flat Bow",
-					"Compound Bow",
-					"Loose Bow",
-					"Old Bow",
-					"Recurve Bow",
-					"Hunting Bow"
 				]
 			}
 		}
@@ -149,7 +148,7 @@
 			"desc" : "A broken door which seems to be very old, vines have started to cover it"
 		},
 		{
-			"name" : "Ornate door",
+			"name" : "Ornate Door",
 			"desc" : "An ornate looking door, or at least it would have been long ago. Now just a shell of its former self, with decorations long ago faded"
 		},
 		{
