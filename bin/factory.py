@@ -143,14 +143,47 @@ class Factory():
 		self.lorify(ent_id)
 		return ent_id
 
-	def weapon_creator(self, weapon_type="random"):
+
+	def weapon_creator(self, weapon_type="random", prebuilt=False):
+		# Creates the entity
 		ent_id = self.world.assign_entity_id()
-		if weapon_type == 'random':
-			weapon_type = random.choice(
-				list(self.descriptors['names']['objects'].keys()))
-		self.create_from_archetype(ent_id, weapon_type)
-		self.WORLD['weapon'][ent_id] = self.archetypes[weapon_type]['weapon'].copy()
-		self.lorify(ent_id)
+		self.create_from_archetype(ent_id, 'weapon')
+		if not prebuilt:
+			weapon_type = random.choice(list(self.stats["weapon_info"].keys()))
+			weapon_info = self.stats["weapon_info"][weapon_type]
+		self.WORLD['equippable'][ent_id]['slot'] = weapon_info['slot']
+		self.WORLD['weapon'][ent_id]['damage_type'] = weapon_info['damage_type']
+		self.WORLD['weapon'][ent_id]['main_modifier'] = weapon_info['main_modifier']
+		self.WORLD['weapon'][ent_id]['weapon_type'] = weapon_type
+
+
+		if weapon_info['damage_type'] == "ranged":
+			self.create_components('shoots_projectiles', ent_id)
+			self.WORLD['shoots_projectiles'][ent_id]['projectile_type'] = weapon_info['projectile_type']
+		rarity = random.choice(["Common", "Unique"])
+
+		if rarity == "Common":
+			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['common']) + " " + weapon_type
+		elif rarity == "Unique":
+			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['unique'])
+		self.WORLD['item'][ent_id]['rarity'] = rarity
+		# Create Name and Stats
+		self.WORLD['descriptor'][ent_id]['name'] = name
+
+		if self.WORLD['equippable'][ent_id]['slot'] == "one_hand":
+			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" one-handed "+weapon_type
+		else:
+			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" two-handed "+weapon_type
+
+		self.WORLD['modifiers'][ent_id]["damage"] = random.randrange(2, 8)
+		if rarity == "Unique":
+			self.WORLD['modifiers'][ent_id]["damage"] += random.randrange(1,4)
+
+		stat_list = ['str', 'dex', 'int', 'con', 'cha', 'armor']
+
+		for stat in random.sample(stat_list, random.randrange(0, 4)):
+			self.WORLD['modifiers'][ent_id][stat] = random.randrange(1,6)
+
 		return ent_id
 
 	def character_creator(self, species, name='random'):

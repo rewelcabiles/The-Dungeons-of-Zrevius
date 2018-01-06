@@ -8,6 +8,7 @@ from factory import *
 # TODO: Document this monstrosity of a class.
 #       Possibly make this class create dungeon FLOORS instead of the whole dungeon.
 #       And then create another class that calls this one if it needs more floors.
+# TODO: Make a function that ONLY creates floors, separate it from the generation as a whole.
 
 class Dungeon_Generator():
 	def __init__(self):
@@ -83,10 +84,8 @@ class Dungeon_Generator():
 
 				current = temp_current
 				self.unvisited.remove(current)
-			else:                                           # If the current node doesn't have any unvisited neighbors
-				# If there are more nodes in the stack:
+			else:                                          
 				if len(place_stack) != 0:
-					# It gets the topmost node from the stack and set it to current
 					current = place_stack.pop()
 
 	def connect_floors(self, d_map):
