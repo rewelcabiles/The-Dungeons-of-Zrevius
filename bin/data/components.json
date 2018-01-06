@@ -25,6 +25,9 @@
 		"desc" : "None"
 	},
 
+	"location" : {
+		"room_id" : "None"
+	},
 
 	"isroom":{
 		"exits" : [0,0,0,0]
