@@ -156,12 +156,12 @@ class Factory():
 	def character_creator(self, species, name='random'):
 		ent_id = self.world.assign_entity_id()
 		self.create_from_archetype(ent_id, 'character')
+
 		# Applies stats from entity_stats.json file based on species
 		if species in self.stats['npc_stats'].keys():
 			self.WORLD['stats'][ent_id] = self.stats['npc_stats'][species]
 		else:
-			self.WORLD['stats'][ent_id] = self.stats['npc_stats']['default']
-
+			self.WORLD['stats'][ent_id] = self.stats['npc_stats']['Default']
 		if name == 'random':
 			self.WORLD['descriptor'][ent_id][name] = random.choice(self.descriptors['names'][species])
 		else:
