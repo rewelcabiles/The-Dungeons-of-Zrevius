@@ -5,7 +5,7 @@ A small project I've been working on for a while now. A randomly generated dunge
 
 #### You can use the dungeon generator in your game.
 
-Checkout the wiki on using it! [Using the Dungeon Generator In Your Game](https://github.com/Firetryer/TextRougelike/wiki/Using-the-Dungeon-Generator-in-your-game.)
+While an actual game is still missing, the foundation of the Dungeon Generator is working! Checkout the wiki on using it! [Using the Dungeon Generator In Your Game](https://github.com/Firetryer/TextRougelike/wiki/Using-the-Dungeon-Generator-in-your-game.)
  Will update it with more information in the future
 
 #### Will feature:
