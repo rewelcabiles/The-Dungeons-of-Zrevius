@@ -11,8 +11,11 @@
 	},
 
 	"equipment": {
-		"armor" : "None",
-		"weapon": "None",
+		"helmet_armor" : "None",
+		"chest_armor"  : "None",
+		"legs_armour"  : "None",
+		"left_hand"	   : "None",
+		"right_hand"   : "None",
 		"ring01": "None",
 		"ring02": "None"
 
@@ -59,6 +62,10 @@
 		"type"       : "None",
 		"mod" 	     : "str",
 		"mod_amount" : 1
+	},
+
+	"equippable" : {
+		"slot" : "None"
 	},
 
 	"item":{
