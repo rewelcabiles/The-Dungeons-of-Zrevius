@@ -148,10 +148,24 @@ class Factory():
 		if weapon_type == 'random':
 			weapon_type = random.choice(
 				list(self.descriptors['names']['objects'].keys()))
-
-		# Same as monster_creator
 		self.create_from_archetype(ent_id, weapon_type)
-
 		self.WORLD['weapon'][ent_id] = self.archetypes[weapon_type]['weapon'].copy()
 		self.lorify(ent_id)
 		return ent_id
+
+	def character_creator(self, species, name='random'):
+		ent_id = self.world.assign_entity_id()
+		self.create_from_archetype(ent_id, 'character')
+		# Applies stats from entity_stats.json file based on species
+		if species in self.stats['npc_stats'].keys():
+			self.WORLD['stats'][ent_id] = self.stats['npc_stats'][species]
+		else:
+			self.WORLD['stats'][ent_id] = self.stats['npc_stats']['default']
+
+		if name == 'random':
+			self.WORLD['descriptor'][ent_id][name] = random.choice(self.descriptors['names'][species])
+		else:
+			self.WORLD['descriptor'][ent_id][name] = name
+		return ent_id
+
+
