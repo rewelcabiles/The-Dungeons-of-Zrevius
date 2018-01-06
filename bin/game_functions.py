@@ -13,7 +13,14 @@ class GameFunctions:
 
 	def __init__(self):
 		self.init_world()
-		self.command = Command(self)
+		self.player_id = None
+		self.command   = Command(self)
+
+	def spawn_player(self):
+		self.player_id = self.world.factory.character_creator('Human', "Quin")
+		spawn_room     = random.choice(list(self.WORLD['isroom'].keys()))
+		self.world.set_entity_location(self.player_id, spawn_room)
+
 
 	def game_loop(self):
 		while(True):
