@@ -40,6 +40,13 @@ You head through the Hole in the wall and into a room.
 
 ```
 
+
+#### To Run
+
+You need python 3.6.x
+run ```game_functions.py``` and type ```look```
+
+
 #### You can use the dungeon generator in your game.
 
 While an actual game is still missing, the foundation of the Dungeon Generator is working! Checkout the wiki on using it! [Using the Dungeon Generator In Your Game](https://github.com/Firetryer/TextRougelike/wiki/Using-the-Dungeon-Generator-in-your-game.)
