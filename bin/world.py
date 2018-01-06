@@ -60,7 +60,7 @@ class World():
 
 		elif slot == "ring02":
 			self.WORLD['equipment'][character_id]['ring02'] = equipment_id		
-			
+
 	def set_entity_location(self, ent_id, target_room):
 		self.WORLD['location'][ent_id]['container_id'] = target_room
 
@@ -69,6 +69,7 @@ class World():
 
 	def add_to_inventory(self, ent_id, target_inventory):
 		self.WORLD['inventory'][target_inventory]['items'].append(ent_id)
+		self.WORLD['location'][ent_id]['container_id'] = target_inventory
 
 	def move_to_inventory(self, ent_id, old_inv, new_inv):
 		self.WORLD['inventory'][new_inv]['items'].append(ent_id)
