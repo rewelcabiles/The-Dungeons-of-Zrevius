@@ -30,13 +30,18 @@ class Command:
 		print(self.WORLD['descriptor'][ent_id]['desc'])
 
 	def look_weapon(self, ent_id):
-		if self.WORLD['item'][ent_id]['rarity'] == 'common':
-			print("Its a " + self.WORLD['descriptor'][ent_id]['name'])
+		print("You look at " + self.WORLD['descriptor'][ent_id]['name'])
+		print(self.WORLD['descriptor'][ent_id]['desc'])
 
-		elif self.WORLD['item'][ent_id]['rarity'] == 'unique':
-			wep_type = self.WORLD['weapon'][ent_id]['type']
-			print("A unique " + wep_type + ", well known  as " +
-				  self.WORLD['descriptor'][ent_id]['name'])
+		equipment_slot = self.WORLD['equippable'][ent_id]['slot']
+
+		# TODO: Create an option to attempt to view stats.
+		# Will use wisdom to discern.
+
+		new_node = MenuNode()
+		new_node.set_header("What do you want to do with it? ")
+
+		self.MenuTree.append(new_node)
 
 	def look_door(self, ent_id):
 		new_node = MenuNode()
@@ -67,7 +72,7 @@ class Command:
 		except IndexError:
 			pass
 
-		command = input("============Health: >> ")
+		command = input("============: >> ")
 
 		if command == "look":
 			self.MenuTree.clear()
