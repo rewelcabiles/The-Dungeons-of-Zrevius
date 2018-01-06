@@ -33,5 +33,5 @@ class World():
     def destroy_entity(self, entity_id):
         pass # ye.
 
-    def move_entity(self, ent_id, target_room):
+    def set_entity_location(self, ent_id, target_room):
         self.WORLD['position'][ent_id] = self.WORLD['locati'][ent_id].copy()
