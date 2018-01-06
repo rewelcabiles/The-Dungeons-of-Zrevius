@@ -2,8 +2,7 @@ import json
 import random
 import factory
 
-
-
+# TODO: equip_item(self, ent_id, player_id)
 
 class World():
 
@@ -35,6 +34,33 @@ class World():
 			if ent_id in self.WORLD[components].keys():
 				del self.WORLD[components][ent_id]
 
+	def equip_item(self, equipment_id, character_id, slot):
+		equipment_slot = self.WORLD['equippable'][equipment_id]['slot']
+		if slot == "dual_hand":
+			self.WORLD['equipment'][character_id]['left_hand'] = equipment_id
+			self.WORLD['equipment'][character_id]['right_hand'] = equipment_id
+
+		elif slot == "left_hand":
+			self.WORLD['equipment'][character_id]['left_hand'] = equipment_id
+
+		elif slot == "right_hand":
+			self.WORLD['equipment'][character_id]['right_hand'] = equipment_id
+
+		elif slot == "helmet_armor":
+			self.WORLD['equipment'][character_id]['helmet_armor'] = equipment_id
+
+		elif slot == "chest_armor":
+			self.WORLD['equipment'][character_id]['chest_armor'] = equipment_id
+
+		elif slot == "legs_armour":
+			self.WORLD['equipment'][character_id]['legs_armour'] = equipment_id		
+
+		elif slot == "ring01":
+			self.WORLD['equipment'][character_id]['ring01'] = equipment_id		
+
+		elif slot == "ring02":
+			self.WORLD['equipment'][character_id]['ring02'] = equipment_id		
+			
 	def set_entity_location(self, ent_id, target_room):
 		self.WORLD['location'][ent_id]['container_id'] = target_room
 
