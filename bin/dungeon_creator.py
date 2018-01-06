@@ -135,8 +135,8 @@ class Dungeon_Generator():
             dir_2 = "Upwards"
         door1_id = self.world.factory.door_creator(temp_room, dir_1)
         door2_id = self.world.factory.door_creator(temp_room, dir_2)
-        self.world.WORLD['inventory'][current_room]['items'].append(door1_id)
-        self.world.WORLD['inventory'][temp_room]['items'].append(door2_id)
+        self.world.add_to_inventory(door1_id, current_room)
+        self.world.add_to_inventory(door2_id, temp_room)
         self.world.factory.pair_doors(door1_id,door2_id)            
 
 
@@ -202,7 +202,7 @@ class Dungeon_Spicer:
         for i in range(random.randrange(0, 6)):
             if random.randrange(0, 100) <= 30: # Containers
                 ent_id  = self.world.factory.container_creator()
-                self.WORLD['inventory'][room_id]['items'].append(ent_id)
+                self.world.add_to_inventory(ent_id, room_id)
                 self.add_items(ent_id) 
             if random.randrange(0, 100) <= 40: # Chance  to spawn any loose items at all
                 self.add_items(room_id)
@@ -210,9 +210,11 @@ class Dungeon_Spicer:
     def add_items(self, inv_id, i_type = "random"):
         for i in range(random.randrange(1, 3)):
             if random.randrange(0, 100) <= 20: # For weapons
-                self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.weapon_creator())
+                new_weapon = self.world.factory.weapon_creator()
+                self.world.add_to_inventory(new_weapon, inv_id)
 
             if random.randrange(0, 100) <= 45: # For consumables
-                self.WORLD['inventory'][inv_id]['items'].append(self.world.factory.create_consumbale())
+                new_consumable = self.world.factory.create_consumbale()
+                self.world.add_to_inventory(new_consumable, inv_id)
 
 
