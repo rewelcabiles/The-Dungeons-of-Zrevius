@@ -1,5 +1,6 @@
 import random
 
+# TODO: Make it so that as you travel between rooms, you get a chance of being ambushed
 
 class Command:
 	def __init__(self, functions):
@@ -29,17 +30,19 @@ class Command:
 		print("You look at the " + self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
 
+
+	# TODO: Create an option to attempt to view stats.
+	# Will use wisdom to discern.
+	
 	def look_weapon(self, ent_id):
 		print("You look at " + self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
 
 		equipment_slot = self.WORLD['equippable'][ent_id]['slot']
 
-		# TODO: Create an option to attempt to view stats.
-		# Will use wisdom to discern.
-
 		new_node = MenuNode()
 		new_node.set_header("What do you want to do with it? ")
+		new_node.add_new_option("pick_up", "Pick Up", ent_id)
 
 		self.MenuTree.append(new_node)
 
@@ -62,9 +65,12 @@ class Command:
 			new_node.set_header("You look through the " +
 								container_type + " and see...")
 			for things in self.WORLD['inventory'][ent_id]['items']:
-				text = self.WORLD['descriptor'][things]['name']
+				if self.get_object_type(things) == "is_door":
+					text = self.WORLD['descriptor'][things]['name'] + " " + str(self.WORLD['transition'][things]['target'])
+				else:
+					text = self.WORLD['descriptor'][things]['name']
 				new_node.add_new_option("look", text, things)
-			self.MenuTree.append(new_node)
+		self.MenuTree.append(new_node)
 
 	def do(self):
 		try:
@@ -76,6 +82,7 @@ class Command:
 
 		if command == "look":
 			self.MenuTree.clear()
+			print(self.player_pos)
 			self.look_at(self.player_pos)
 			self.look_inventory(self.player_pos)
 
