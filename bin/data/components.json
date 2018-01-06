@@ -10,8 +10,6 @@
 		"items": []
 	},
 
-	"container" : {},
-
 	"equipment": {
 		"armor" : "None",
 		"weapon": "None",
@@ -26,7 +24,7 @@
 	},
 
 	"location" : {
-		"room_id" : "None"
+		"container_id" : "None"
 	},
 
 	"isroom":{
