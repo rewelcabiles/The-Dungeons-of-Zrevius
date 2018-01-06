@@ -23,7 +23,8 @@
 			"weapon_type": "sword",
 			"main_modifier": "str"
 		},
-		"modifiers" : {}
+		"modifiers" : {},
+		"location"	: "None"
 	},
 
 	"character" :
@@ -38,18 +39,21 @@
 	"door":
 	{
 		"descriptor": "None",
-		"transition": "None"
+		"transition": "None",
+		"location"	: "None"
 	},
 
 	"container" : {
 		"descriptor": "None",
-		"inventory" : "None"
+		"inventory" : "None",
+		"location"	: "None"
 	},
 
 	"consumable_refill" : {
 		"descriptor" : "None",
 		"consumable" : "None",
-		"buff_refill": "None"
+		"buff_refill": "None",
+		"location"	: "None"
 	}
 }
 
