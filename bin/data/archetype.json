@@ -40,7 +40,8 @@
 		"descriptor": "None",
 		"stats"     : "None",
 		"inventory" : "None",
-		"equipment" : "None"
+		"equipment" : "None",
+		"location"  : "None"
 	},
 
 	"door":
