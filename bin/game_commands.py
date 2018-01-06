@@ -6,7 +6,7 @@ class Command:
 		self.functions = functions
 		self.WORLD = self.functions.world.WORLD
 		self.player = self.functions.player_id
-		self.player_pos = self.WORLD['location'][self.player]['room_id']
+		self.player_pos = self.WORLD['location'][self.player]['container_id']
 		self.MenuTree = []
 
 	def get_object_type(self, ent_id):
