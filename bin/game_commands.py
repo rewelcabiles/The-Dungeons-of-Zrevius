@@ -2,10 +2,11 @@ import random
 
 class Command:
 	def __init__(self, functions):
-		self.functions = functions
-		self.WORLD = self.functions.world.WORLD
-		self.current_pos = random.choice(list(self.WORLD['isroom'].keys()))
-		self.MenuTree = []
+		self.functions  = functions
+		self.WORLD      = self.functions.world.WORLD
+		self.player     = self.functions.player_id
+		self.player_pos = self.WORLD['location'][self.player]
+		self.MenuTree   = []
 
 	def get_object_type(self, ent_id):
 		inv_mask = self.functions.create_dynamic_mask(['inventory'])
@@ -66,8 +67,8 @@ class Command:
 
 		if command == "look":
 			self.MenuTree.clear()
-			self.look_at(self.current_pos)
-			self.look_inventory(self.current_pos)
+			self.look_at(self.player_pos)
+			self.look_inventory(self.player_pos)
 		
 		try:
 			if command in self.MenuTree[-1].options.keys():
@@ -80,8 +81,8 @@ class Command:
 
 				if action == "go":
 					next_room = info['pointer']
-					self.current_pos = self.WORLD['transition'][next_room]['target']
-					print("You head through the "+self.WORLD['descriptor'][next_room]['name'] + " and into a " + self.WORLD['descriptor'][self.current_pos]['name'])
+					self.player_pos = self.WORLD['transition'][next_room]['target']
+					print("You head through the "+self.WORLD['descriptor'][next_room]['name'] + " and into a " + self.WORLD['descriptor'][self.player_pos]['name'])
 					self.MenuTree.clear()
 
 				if action == "look":
