@@ -21,9 +21,10 @@ class Dungeon_Generator():
 		return self.world
 
 	def create_dungeon(self, floors):
-		complexity = 3
-		self.d_xsize = complexity + 1
-		self.d_ysize = complexity + 1
+		complexity = 4
+		floors = 1
+		self.d_xsize = complexity 
+		self.d_ysize = complexity 
 		d_map = {}
 		for floor in range(floors):
 			self.d_xsize = complexity
@@ -126,7 +127,7 @@ class Dungeon_Generator():
 			dir_1 = "Downwards"
 			dir_2 = "Upwards"
 		door1_id = self.world.factory.door_creator(temp_room, dir_1)
-		door2_id = self.world.factory.door_creator(temp_room, dir_2)
+		door2_id = self.world.factory.door_creator(current_room, dir_2)
 		self.world.add_to_inventory(door1_id, current_room)
 		self.world.add_to_inventory(door2_id, temp_room)
 		self.world.factory.pair_doors(door1_id, door2_id)
