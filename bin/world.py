@@ -36,10 +36,14 @@ class World():
 				del self.WORLD[components][ent_id]
 
 	def set_entity_location(self, ent_id, target_room):
-		self.WORLD['location'][ent_id]['room_id'] = target_room
+		self.WORLD['location'][ent_id]['container_id'] = target_room
 
 	def del_from_inventory(self, ent_id, target_inventory):
 		del self.WORLD['inventory'][target_inventory]['items'][ent_id]
 
 	def add_to_inventory(self, ent_id, target_inventory):
 		self.WORLD['inventory'][target_inventory]['items'].append(ent_id)
+
+	def move_to_inventory(self, ent_id, old_inv, new_inv):
+		self.WORLD['inventory'][new_inv]['items'].append(ent_id)
+		del self.WORLD['inventory'][old_inv]['items'][ent_id]
