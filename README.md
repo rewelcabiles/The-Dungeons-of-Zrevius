@@ -8,7 +8,10 @@ A small project I've been working on for a while now. A randomly generated dunge
 >>> Look
 
 You look at the Room
-You open the door to confront a room of odd pillars. Water rushes down from several holes in the ceiling and falls through similar holes in the floor, flowing down to some unknown depth.
+
+You opened the door to confront a room of odd pillars. Water rushes down from several
+holes in the ceiling and falls through similar holes in the floor, flowing down to 
+some unknown depth.
 
 You look through the Room and see...
 
@@ -21,7 +24,9 @@ You look through the Room and see...
 >>>  1
 
 You look at the Hole in the wall
+
 A rather large hole in the wall, beyond, all you see is darkness that seems to go on forever.
+
 Go through the Hole in the wall?
 
 1 ) Go through
