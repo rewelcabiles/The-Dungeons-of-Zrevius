@@ -19,7 +19,7 @@ class World():
 			self.WORLD[key] = {}
 			self.COMPS[key] = 1 << iterator
 			iterator += 1
-		self.entity_id_max = 1000
+		self.entity_id_max = 1500
 		self.factory = factory.Factory(self)
 
 	def assign_entity_id(self):
@@ -31,7 +31,12 @@ class World():
 
 
 	def destroy_entity(self, entity_id):
-		pass # ye.
-
+		for components in self.WORLD.keys():
+			if ent_id in self.WORLD[components].keys():
+				del self.WORLD[components][ent_id]
+				
 	def set_entity_location(self, ent_id, target_room):
 		self.WORLD['location'][ent_id]['room_id'] = target_room
+
+	def add_to_inventory(self, ent_id, target_inventory):
+		self.WORLD['inventory'][target_inventory]['items'].append(ent_id)
