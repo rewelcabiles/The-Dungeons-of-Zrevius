@@ -44,6 +44,7 @@ You head through the Hole in the wall and into a room.
 #### To Run
 
 You need python 3.6.x
+
 run ```game_functions.py``` and type ```look```
 
 
