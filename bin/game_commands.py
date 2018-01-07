@@ -38,8 +38,6 @@ class Command:
 		print("You look at " + self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
 
-		equipment_slot = self.WORLD['equippable'][ent_id]['slot']
-
 		new_node = MenuNode()
 		new_node.set_header("What do you want to do with it? ")
 		new_node.add_new_option("pick_up", "Pick Up", ent_id)
@@ -72,11 +70,13 @@ class Command:
 				new_node.add_new_option("look", text, things)
 		self.MenuTree.append(new_node)
 
+
+	# TODO: separate the logic to another class? idk
 	def do(self):
 		try:
 			self.MenuTree[-1].print_menu()
 		except IndexError:
-			pass
+			print("Debug: no print menu -1")
 
 		command = input("============: >> ")
 
@@ -86,23 +86,35 @@ class Command:
 			self.look_at(self.player_pos)
 			self.look_inventory(self.player_pos)
 
-		try:
+		if not self.MenuTree:
 			if command in self.MenuTree[-1].options.keys():
 				latest_node = self.MenuTree[-1]
 				info = latest_node.options[command]
 				action = info['type']
 
+				print(action)
+
 				if action == "back":  # Go Back a Menu
 					self.MenuTree.pop()
 
-				if action == "go":   # Use A Door / Transition Object
+				elif action == "go":   # Use A Door / Transition Object
 					next_room = info['pointer']
 					self.player_pos = self.WORLD['transition'][next_room]['target']
 					print("You head through the " + self.WORLD['descriptor'][next_room]['name'] +
 						  " and into a " + self.WORLD['descriptor'][self.player_pos]['name'])
 					self.MenuTree.clear()
 
-				if action == "look":  # Look at / interact with something
+				elif action == "pick_up":
+					item_id = info['pointer']
+					
+					print("You add the "
+						+ self.WORLD['descriptor'][item_id]['name']
+						+ ' to your inventory.'
+						)
+					self.functions.world.move_to_inventory(item_id, self.player_pos)
+					self.MenuTree.clear()
+
+				elif action == "look":  # Look at / interact with something
 					item_id = info['pointer']
 					obj_type = self.get_object_type(item_id)
 					if obj_type == "is_inventory":
@@ -115,8 +127,6 @@ class Command:
 						self.look_door(item_id)
 					else:
 						self.look_at(item_id)
-		except IndexError:
-			pass
 
 
 class MenuNode():
