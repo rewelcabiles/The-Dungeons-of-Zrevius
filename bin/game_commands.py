@@ -38,13 +38,18 @@ class Command:
 		new_node = MenuNode()
 		container_type = self.WORLD['descriptor'][ent_id]['name']
 		if not self.WORLD['inventory'][ent_id]['items']:
-			new_node.set_header("You look through the " +
-								container_type + " and see nothing of use.")
-			self.MenuTree.append(new_node)
+			if ent_id != self.player:																				## TODO: This feels hacky. Fix in future
+				new_node.set_header("You look through the " + container_type + " and see nothing of use.")			##
+			else:																									##
+				new_node.set_header("You look through the your bags and see nothing.")	
+											##
 		else:
 			new_node.set_context(self.world.get_object_type(ent_id))
-			new_node.set_header("You look through the " +
-								container_type + " and see...")
+			if ent_id != self.player:
+				new_node.set_header("You look through the " + container_type + " and see...")
+			else:
+				new_node.set_header("You look through the your bags and see...")
+
 			for things in self.WORLD['inventory'][ent_id]['items']:
 				if self.world.get_object_type(things) == "is_door":
 					text = self.WORLD['descriptor'][things]['name'] + " " + str(self.WORLD['transition'][things]['target'])
@@ -56,20 +61,20 @@ class Command:
 
 	# TODO: separate the logic to another class? idk
 	def do(self):
-		try:
+		if self.MenuTree:
 			self.MenuTree[-1].print_menu()
-		except IndexError:
-			print("Debug: no print menu -1")
 
 		command = input("============: >> ")
 
 		if command == "look":
 			self.MenuTree.clear()
-			print(self.player_pos)
 			self.look_at(self.player_pos)
 			self.look_inventory(self.player_pos)
 
-		if not self.MenuTree:
+		elif command == "inventory":
+			self.look_inventory(self.player)
+
+		elif self.MenuTree: # Checks if MenuTree is empty. If not: 
 			if command in self.MenuTree[-1].options.keys():
 				latest_node = self.MenuTree[-1]
 				info = latest_node.options[command]
@@ -94,7 +99,7 @@ class Command:
 						+ self.WORLD['descriptor'][item_id]['name']
 						+ ' to your inventory.'
 						)
-					self.world.move_to_inventory(item_id, self.player_pos)
+					self.world.move_to_inventory(item_id, self.player)
 					self.MenuTree.clear()
 
 				elif action == "look":  # Look at / interact with something
@@ -110,7 +115,10 @@ class Command:
 						self.look_door(item_id)
 					else:
 						self.look_at(item_id)
-
+				else:
+					print("You stand confused as to what you want to do.")
+			else: 
+				print("You stand confused as to what you want to do.")
 
 class MenuNode():
 
