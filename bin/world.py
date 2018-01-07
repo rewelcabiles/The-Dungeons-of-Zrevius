@@ -2,7 +2,7 @@ import json
 import random
 import factory
 
-# TODO: equip_item(self, ent_id, player_id)
+
 
 class World():
 
@@ -65,12 +65,13 @@ class World():
 		self.WORLD['location'][ent_id]['container_id'] = target_room
 
 	def del_from_inventory(self, ent_id, target_inventory):
-		del self.WORLD['inventory'][target_inventory]['items'][ent_id]
+		self.WORLD['inventory'][target_inventory]['items'].remove(ent_id)
 
 	def add_to_inventory(self, ent_id, target_inventory):
 		self.WORLD['inventory'][target_inventory]['items'].append(ent_id)
 		self.WORLD['location'][ent_id]['container_id'] = target_inventory
 
-	def move_to_inventory(self, ent_id, old_inv, new_inv):
+	def move_to_inventory(self, ent_id, new_inv):
+		old_inv = self.WORLD['location'][ent_id]['container_id']
 		self.WORLD['inventory'][new_inv]['items'].append(ent_id)
-		del self.WORLD['inventory'][old_inv]['items'][ent_id]
+		self.WORLD['inventory'][old_inv]['items'].remove(ent_id)
