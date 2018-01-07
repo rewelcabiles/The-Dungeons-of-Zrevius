@@ -28,6 +28,27 @@ class World():
 				self.WORLD['mask'][entity_id] = self.COMPS['none']
 				return entity_id
 
+	def create_dynamic_mask(self, component_list):
+		temp_mask = 0
+		for comps in component_list:
+			temp_mask |= self.world.COMPS[comps]
+		return temp_mask
+
+	def get_object_type(self, ent_id):
+		inv_mask = self.create_dynamic_mask(['inventory'])
+		wep_mask = self.create_dynamic_mask(['weapon'])
+		dor_mask = self.create_dynamic_mask(['transition'])
+		isr_mask = self.create_dynamic_mask(['isroom'])
+		if((self.WORLD['mask'][ent_id] & inv_mask) == inv_mask):
+			return "is_inventory"
+		if((self.WORLD['mask'][ent_id] & wep_mask) == wep_mask):
+			return "is_weapon"
+		if((self.WORLD['mask'][ent_id] & dor_mask) == dor_mask):
+			return "is_door"
+		if((self.WORLD['mask'][ent_id] & isr_mask) == isr_mask):
+			return "is_room"
+		else:
+			return "Missing type"
 
 	def destroy_entity(self, entity_id):
 		for components in self.WORLD.keys():
