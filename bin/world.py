@@ -31,7 +31,7 @@ class World():
 	def create_dynamic_mask(self, component_list):
 		temp_mask = 0
 		for comps in component_list:
-			temp_mask |= self.world.COMPS[comps]
+			temp_mask |= self.COMPS[comps]
 		return temp_mask
 
 	def get_object_type(self, ent_id):

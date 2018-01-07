@@ -1,38 +1,21 @@
 import random
 
 # TODO: Make it so that as you travel between rooms, you get a chance of being ambushed
+# TODO: Create an option to attempt to view stats.
+# Will use wisdom to discern.
 
 class Command:
 	def __init__(self, functions):
 		self.functions = functions
-		self.WORLD = self.functions.world.WORLD
+		self.world     = self.functions.world
+		self.WORLD = self.world.WORLD
 		self.player = self.functions.player_id
 		self.player_pos = self.WORLD['location'][self.player]['container_id']
 		self.MenuTree = []
 
-	def get_object_type(self, ent_id):
-		inv_mask = self.functions.create_dynamic_mask(['inventory'])
-		wep_mask = self.functions.create_dynamic_mask(['weapon'])
-		dor_mask = self.functions.create_dynamic_mask(['transition'])
-		isr_mask = self.functions.create_dynamic_mask(['isroom'])
-		if((self.WORLD['mask'][ent_id] & inv_mask) == inv_mask):
-			return "is_inventory"
-		if((self.WORLD['mask'][ent_id] & wep_mask) == wep_mask):
-			return "is_weapon"
-		if((self.WORLD['mask'][ent_id] & dor_mask) == dor_mask):
-			return "is_door"
-		if((self.WORLD['mask'][ent_id] & isr_mask) == isr_mask):
-			return "is_room"
-		else:
-			return "Missing type"
-
 	def look_at(self, ent_id):
 		print("You look at the " + self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
-
-
-	# TODO: Create an option to attempt to view stats.
-	# Will use wisdom to discern.
 	
 	def look_weapon(self, ent_id):
 		print("You look at " + self.WORLD['descriptor'][ent_id]['name'])
@@ -59,11 +42,11 @@ class Command:
 								container_type + " and see nothing of use.")
 			self.MenuTree.append(new_node)
 		else:
-			new_node.set_context(self.get_object_type(ent_id))
+			new_node.set_context(self.world.get_object_type(ent_id))
 			new_node.set_header("You look through the " +
 								container_type + " and see...")
 			for things in self.WORLD['inventory'][ent_id]['items']:
-				if self.get_object_type(things) == "is_door":
+				if self.world.get_object_type(things) == "is_door":
 					text = self.WORLD['descriptor'][things]['name'] + " " + str(self.WORLD['transition'][things]['target'])
 				else:
 					text = self.WORLD['descriptor'][things]['name']
@@ -111,12 +94,12 @@ class Command:
 						+ self.WORLD['descriptor'][item_id]['name']
 						+ ' to your inventory.'
 						)
-					self.functions.world.move_to_inventory(item_id, self.player_pos)
+					self.world.move_to_inventory(item_id, self.player_pos)
 					self.MenuTree.clear()
 
 				elif action == "look":  # Look at / interact with something
 					item_id = info['pointer']
-					obj_type = self.get_object_type(item_id)
+					obj_type = self.world.get_object_type(item_id)
 					if obj_type == "is_inventory":
 						self.look_at(item_id)
 						self.look_inventory(item_id)

@@ -38,11 +38,7 @@ class GameFunctions:
 		with open('data/data.json', 'w') as save_file:
 			json.dump(self.world.WORLD, save_file, indent=4, sort_keys=True)
 
-	def create_dynamic_mask(self, component_list):
-		temp_mask = 0
-		for comps in component_list:
-			temp_mask |= self.world.COMPS[comps]
-		return temp_mask
+	
 
 	
 
