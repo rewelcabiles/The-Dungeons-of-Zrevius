@@ -1,9 +1,9 @@
 import random
 
 # TODO: Make it so that as you travel between rooms, you get a chance of being ambushed
-# TODO: Create an option to attempt to view stats.
 # TODO: @Important Work in user commands like: View stats, Inventory Etc.
 # Will use wisdom to discern.
+# TODO: Combat mechanics now pls
 
 class Command:
 	def __init__(self, functions):
@@ -21,8 +21,9 @@ class Command:
 	def look_weapon(self, ent_id):
 		print("You look at " + self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
-		print("Statistics : ")
+		print("===============\nStatistics : ")
 		self.display_item_modifiers(ent_id)
+		print("===============")
 
 		new_node = MenuNode()
 		new_node.set_header("What do you want to do with it? ")
@@ -46,14 +47,14 @@ class Command:
 		if ent_stats:
 			for stat in ent_stats.keys():
 				if stat != 'exp': # Theres no need to show exp
-					text = stat + " : " + str(ent_stats[stat])
+					text = stat.capitalize() + " : " + str(ent_stats[stat])
 					print(text)
 
 	def display_item_modifiers(self, ent_id):
 		ent_mod  = self.WORLD['modifiers'][ent_id]
 		if ent_mod:
 			for mods in ent_mod.keys():
-				text = mods + " : " + str(ent_mod[mods]) + '\n'
+				text = mods.capitalize() + " : " + str(ent_mod[mods])
 				print(text)
 
 	def look_inventory(self, ent_id):
@@ -97,7 +98,9 @@ class Command:
 			self.look_inventory(self.player)
 
 		elif command == "stats":
+			print("===============\nStatistics : ")
 			self.display_ent_stats(self.player)
+			print("===============")
 
 		elif self.MenuTree: # Checks if MenuTree is empty. If not: 
 			if command in self.MenuTree[-1].options.keys():
