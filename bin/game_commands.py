@@ -2,6 +2,7 @@ import random
 
 # TODO: Make it so that as you travel between rooms, you get a chance of being ambushed
 # TODO: Create an option to attempt to view stats.
+# TODO: @Important Work in user commands like: View stats, Inventory Etc.
 # Will use wisdom to discern.
 
 class Command:
@@ -20,6 +21,8 @@ class Command:
 	def look_weapon(self, ent_id):
 		print("You look at " + self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
+		print("Statistics : ")
+		self.display_item_modifiers(ent_id)
 
 		new_node = MenuNode()
 		new_node.set_header("What do you want to do with it? ")
@@ -34,6 +37,25 @@ class Command:
 		new_node.add_new_option("go", "Go through", ent_id)
 		self.MenuTree.append(new_node)
 
+	# TODO: Create an Inventory component Maybe
+	# TODO: Depending on wisdom modifier, make it so that the stats hown
+	# Are only accurate if the wisdom check is high enough.
+
+	def display_ent_stats(self, ent_id):
+		ent_stats = self.WORLD['stats'][ent_id]
+		if ent_stats:
+			for stat in ent_stats.keys():
+				if stat != 'exp': # Theres no need to show exp
+					text = stat + " : " + str(ent_stats[stat])
+					print(text)
+
+	def display_item_modifiers(self, ent_id):
+		ent_mod  = self.WORLD['modifiers'][ent_id]
+		if ent_mod:
+			for mods in ent_mod.keys():
+				text = mods + " : " + str(ent_mod[mods]) + '\n'
+				print(text)
+
 	def look_inventory(self, ent_id):
 		new_node = MenuNode()
 		container_type = self.WORLD['descriptor'][ent_id]['name']
@@ -42,7 +64,6 @@ class Command:
 				new_node.set_header("You look through the " + container_type + " and see nothing of use.")			##
 			else:																									##
 				new_node.set_header("You look through the your bags and see nothing.")	
-											##
 		else:
 			new_node.set_context(self.world.get_object_type(ent_id))
 			if ent_id != self.player:
@@ -56,6 +77,7 @@ class Command:
 				else:
 					text = self.WORLD['descriptor'][things]['name']
 				new_node.add_new_option("look", text, things)
+
 		self.MenuTree.append(new_node)
 
 
@@ -73,6 +95,9 @@ class Command:
 
 		elif command == "inventory":
 			self.look_inventory(self.player)
+
+		elif command == "stats":
+			self.display_ent_stats(self.player)
 
 		elif self.MenuTree: # Checks if MenuTree is empty. If not: 
 			if command in self.MenuTree[-1].options.keys():
