@@ -186,6 +186,16 @@ class Factory():
 
 		return ent_id
 
+	def random_monster_creator(self):
+		ent_id = self.world.assign_entity_id()
+		self.create_from_archetype(ent_id, 'character')
+		species = random.choice(list(self.stats['npc_stats'].keys()))
+		print(species)
+		self.WORLD['stats'][ent_id] = self.stats['npc_stats'][species]
+		self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names'][species])
+		return ent_id
+
+
 	def character_creator(self, species, name='random'):
 		ent_id = self.world.assign_entity_id()
 		self.create_from_archetype(ent_id, 'character')
@@ -194,11 +204,12 @@ class Factory():
 		if species in self.stats['npc_stats'].keys():
 			self.WORLD['stats'][ent_id] = self.stats['npc_stats'][species]
 		else:
-			self.WORLD['stats'][ent_id] = self.stats['npc_stats']['Default']
+			self.WORLD['stats'][ent_id] = self.stats['npc_stats']['Human']
+
 		if name == 'random':
-			self.WORLD['descriptor'][ent_id][name] = random.choice(self.descriptors['names'][species])
+			self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names'][species])
 		else:
-			self.WORLD['descriptor'][ent_id][name] = name
+			self.WORLD['descriptor'][ent_id]['name'] = name
 		return ent_id
 
 

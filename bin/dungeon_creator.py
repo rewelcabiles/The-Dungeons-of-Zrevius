@@ -179,13 +179,27 @@ class Dungeon_Spicer:
 		self.world = world
 		self.WORLD = self.world.WORLD
 		self.dungeon = d_map
+		self.max_enemies = 5
+		self.max_rooms = 0
+		for f in self.dungeon:
+			for r in list(self.dungeon[f].values()):
+				self.max_rooms += 1
 		self.populate_dungeon()
 
 	def populate_dungeon(self):
 		for f in self.dungeon:
 			for r in list(self.dungeon[f].values()):
 				self.add_furniture(r)
+				#self.initial_spawn_monster(r) # This function is broken, pls fix
 		return self.world
+
+	def initial_spawn_monster(self, room_id): 
+		while self.max_enemies != 0:
+			# I made this function ages ago and don't exactly remember what it does. pls fix.
+			if random.randrange(0, 100) <= ((self.max_enemies / self.max_rooms) * 100): 
+				new_monster = self.world.factory.random_monster_creator()
+				self.world.add_to_inventory(new_monster, room_id)
+
 
 	def add_furniture(self, room_id):
 		for i in range(random.randrange(0, 6)):
