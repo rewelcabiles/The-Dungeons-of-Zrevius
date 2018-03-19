@@ -91,6 +91,7 @@ class World():
 	def add_to_inventory(self, ent_id, target_inventory):
 		self.WORLD['inventory'][target_inventory]['items'].append(ent_id)
 		self.WORLD['location'][ent_id]['container_id'] = target_inventory
+		print("[WORLD]Adding to Inventory: "+str(ent_id)+"->"+str(target_inventory))
 
 	def move_to_inventory(self, ent_id, new_inv):
 		old_inv = self.WORLD['location'][ent_id]['container_id']

@@ -29,6 +29,7 @@ class GameFunctions:
 		dg = dun_gen()
 		dg.create_dungeon(3)
 		self.world = dg.get_world()
+		self.save_dungeon()
 
 	def load_dungeon(self):
 		pass
@@ -37,7 +38,8 @@ class GameFunctions:
 		with open('data/data.json', 'w') as save_file:
 			json.dump(self.world.WORLD, save_file, indent=4, sort_keys=True)
 
-
+game = GameFunctions()
+game.game_loop()
 
 
 
