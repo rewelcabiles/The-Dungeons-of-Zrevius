@@ -32,7 +32,7 @@ class World():
 		temp_mask = 0
 		for comps in component_list:
 			temp_mask |= self.COMPS[comps]
-		return temp_mask
+		return temp_mask		
 
 	def get_object_type(self, ent_id):
 		inv_mask = self.create_dynamic_mask(['inventory'])
@@ -91,9 +91,14 @@ class World():
 	def add_to_inventory(self, ent_id, target_inventory):
 		self.WORLD['inventory'][target_inventory]['items'].append(ent_id)
 		self.WORLD['location'][ent_id]['container_id'] = target_inventory
-		print("[WORLD]Adding to Inventory: "+str(ent_id)+"->"+str(target_inventory))
+		#print("[WORLD]Adding to Inventory: "+str(ent_id)+"->"+str(target_inventory))
 
 	def move_to_inventory(self, ent_id, new_inv):
 		old_inv = self.WORLD['location'][ent_id]['container_id']
 		self.WORLD['inventory'][new_inv]['items'].append(ent_id)
 		self.WORLD['inventory'][old_inv]['items'].remove(ent_id)
+		self.WORLD['location' ][ent_id ]['container_id'] = new_inv
+
+	def in_container(self, ent_id, container):
+		test = container == self.WORLD['location'][ent_id]['container_id']
+		return test
