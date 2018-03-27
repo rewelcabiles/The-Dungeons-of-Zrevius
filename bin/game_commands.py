@@ -19,8 +19,7 @@ class Command:
 		print(self.WORLD['descriptor'][ent_id]['desc'])
 	
 	def look_weapon(self, ent_id):
-		print("You look at " + self.WORLD['descriptor'][ent_id]['name'])
-		print(self.WORLD['descriptor'][ent_id]['desc'])
+		self.look_at(ent_id)
 		print("===============\nStatistics : ")
 		self.display_item_modifiers(ent_id)
 		print("===============")
@@ -57,23 +56,23 @@ class Command:
 				text = mods.capitalize() + " : " + str(ent_mod[mods])
 				print(text)
 
-	def look_inventory(self, ent_id):
-		new_node = MenuNode()
-		container_type = self.WORLD['descriptor'][ent_id]['name']
-		if not self.WORLD['inventory'][ent_id]['items']:
+	def look_inventory(self, ent_id): # Figure out exactly what each line does and document it for the future
+		new_node = MenuNode() # Creates  new menu Node.... Duh
+		container_type = self.WORLD['descriptor'][ent_id]['name'] # Gets the type of container from the descriptor component
+		if not self.WORLD['inventory'][ent_id]['items']: # This entire if block is used if the container is empty
 			if ent_id != self.player:																				## TODO: This feels hacky. Fix in future
 				new_node.set_header("You look through the " + container_type + " and see nothing of use.")			##
 			else:																									##
-				new_node.set_header("You look through the your bags and see nothing.")	
+				new_node.set_header("You look through your bags and see nothing.")	
 		else:
 			new_node.set_context(self.world.get_object_type(ent_id))
-			if ent_id != self.player:
+			if ent_id != self.player: # This If/Else is to check if the container belongs to the player
 				new_node.set_header("You look through the " + container_type + " and see...")
 			else:
-				new_node.set_header("You look through the your bags and see...")
+				new_node.set_header("You look through your bags and see...")
 
 			for things in self.WORLD['inventory'][ent_id]['items']:
-				if self.world.get_object_type(things) == "is_door":
+				if self.world.get_object_type(things) == "is_door": # This if block is for debug purposes
 					text = self.WORLD['descriptor'][things]['name'] + " " + str(self.WORLD['transition'][things]['target'])
 				else:
 					text = self.WORLD['descriptor'][things]['name']
