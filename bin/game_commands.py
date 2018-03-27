@@ -13,6 +13,7 @@ class Command:
 		self.player = self.functions.player_id
 		self.player_pos = self.WORLD['location'][self.player]['container_id']
 		self.MenuTree = []
+		self.InventoryNode = InventoryNode(self)
 
 	def look_at(self, ent_id):
 		print("You look at the " + self.WORLD['descriptor'][ent_id]['name'])
@@ -94,7 +95,7 @@ class Command:
 			self.look_inventory(self.player_pos)
 
 		elif command == "inventory":
-			self.look_inventory(self.player)
+			self.InventoryNode.look_inventory(self.player)
 
 		elif command == "stats":
 			print("===============\nStatistics : ")
@@ -146,6 +147,34 @@ class Command:
 					print("You stand confused as to what you want to do.")
 			else: 
 				print("You stand confused as to what you want to do.")
+
+class InventoryNode():
+	def __init__(self, commands):
+		self.commands = commands
+		self.player   = commands.player
+		
+	def look_inventory(self, ent_id):
+		look_node = MenuNode()
+		look_node.set_header("You look through your bags and see...")
+		for things in self.WORLD['inventory'][ent_id]['items']:
+			text = self.WORLD['descriptor'][things]['name']
+			look_node.add_new_option("look", text, things)
+		return look_node
+
+
+	def look_weapon(self, ent_id):
+		self.commands.look_at(ent_id)
+		print("===============\nStatistics : ")
+		self.commands.display_item_modifiers(ent_id)
+		print("===============")
+
+		choice_node = MenuNode()
+		choice_node.set_header("What do you want to do with it?")
+		choice_node.add_new_option("look", "Look", ent_id)
+		choice_node.add_new_option("equip","Equip",ent_id)
+		choice_node.add_new_option("drop", "Drop", ent_id)
+
+		return choice_node
 
 class MenuNode():
 
