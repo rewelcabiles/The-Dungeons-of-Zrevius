@@ -73,10 +73,7 @@ class Command:
 				new_node.set_header("You look through your bags and see...")
 
 			for things in self.WORLD['inventory'][ent_id]['items']:
-				if self.world.get_object_type(things) == "is_door": # This if block is for debug purposes
-					text = self.WORLD['descriptor'][things]['name'] + " " + str(self.WORLD['transition'][things]['target'])
-				else:
-					text = self.WORLD['descriptor'][things]['name']
+				text = self.WORLD['descriptor'][things]['name']
 				new_node.add_new_option("look", text, things)
 
 		self.MenuTree.append(new_node)
@@ -95,7 +92,7 @@ class Command:
 			self.look_inventory(self.player_pos)
 
 		elif command == "inventory":
-			self.InventoryNode.look_inventory(self.player)
+			self.MenuTree.append(self.InventoryNode.look_inventory(self.player))
 
 		elif command == "stats":
 			print("===============\nStatistics : ")
@@ -121,23 +118,28 @@ class Command:
 					self.MenuTree.clear()
 
 				elif action == "pick_up":
-					item_id = info['pointer']
-					
-					print("You add the "
-						+ self.WORLD['descriptor'][item_id]['name']
-						+ ' to your inventory.'
-						)
-					self.world.move_to_inventory(item_id, self.player)
+					self.InventoryNode.pick_up(info['pointer'])
 					self.MenuTree.clear()
+
+				elif action == "drop":
+					self.InventoryNode.drop(info['pointer'])
+					self.MenuTree.clear()
+					self.MenuTree.append(self.InventoryNode.look_inventory(self.player))
 
 				elif action == "look":  # Look at / interact with something
 					item_id = info['pointer']
-					obj_type = self.world.get_object_type(item_id)
+					obj_type= self.world.get_object_type(item_id)
+
 					if obj_type == "is_inventory":
 						self.look_at(item_id)
 						self.look_inventory(item_id)
+
 					elif obj_type == "is_weapon":
-						self.look_weapon(item_id)
+						if self.world.in_container(item_id, self.player):
+							self.MenuTree.append(self.InventoryNode.look_weapon(item_id))
+						else: 
+							self.look_weapon(item_id)
+
 					elif obj_type == "is_door":
 						self.look_at(item_id)
 						self.look_door(item_id)
@@ -152,13 +154,22 @@ class InventoryNode():
 	def __init__(self, commands):
 		self.commands = commands
 		self.player   = commands.player
-		
+	
+	def pick_up(self, ent_id):
+		print(self.commands.WORLD['descriptor'][ent_id]['name'] + ' goes into your inventory.')
+		self.commands.world.move_to_inventory(ent_id, self.player)
+
+	def drop(self, ent_id):
+		print("You drop "+self.commands.WORLD['descriptor'][ent_id]['name']+". Down it goes!")
+		player_loc = self.commands.WORLD['location'][self.player]['container_id']
+		self.commands.world.move_to_inventory(ent_id, player_loc)
+
 	def look_inventory(self, ent_id):
 		look_node = MenuNode()
 		look_node.set_header("You look through your bags and see...")
-		for things in self.WORLD['inventory'][ent_id]['items']:
-			text = self.WORLD['descriptor'][things]['name']
-			look_node.add_new_option("look", text, things)
+		for item in self.commands.WORLD['inventory'][ent_id]['items']:
+			text = self.commands.WORLD['descriptor'][item]['name']
+			look_node.add_new_option("look", text, item)
 		return look_node
 
 
