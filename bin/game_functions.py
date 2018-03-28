@@ -18,6 +18,7 @@ class GameFunctions:
 		self.message_systems = MessageBoard()
 		self.systems 		 = Systems(self.world)
 		self.command   		 = Command(self)
+		self.command.set_player_id(self.player_id)
 		self.init_systems()
 
 	def init_systems(self):
