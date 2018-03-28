@@ -5,23 +5,34 @@ class PlayerCommands():
 		self.WORLD = self.world.WORLD
 		self.message = message
 		self.MenuTree = []
-	
+		self.context="surface"
+
 	def set_player_id(self, pid):
 		self.player_id = pid
 		self.surface_nodes = SurfaceNode(self)
 		self.inventory_nodes = InventoryNode(self)
 
-	def do(self):
+	def update(self):
 		if self.MenuTree:
 			self.MenuTree[-1].print_menu()
-		user = input("============: >> ")
 
+		user = input(":=======:>> ")
+		if context == "surface":
+			self.do_surface(user)
+
+		elif context == "inventory":
+			self.do_inventory(user)
+
+	def do_inventory(self, user):
+		pass
+
+	def do_surface(self, user):
 		if user == "look":
 			self.MenuTree.clear()
 			self.look_at(self.player_pos)
 			self.look_inventory(self.player_pos)
 
-		elif command == "inventory":
+		elif user == "inventory":
 			self.MenuTree.append(self.InventoryNode.look_inventory(self.player))
 
 	def look_at(self, ent_id):
@@ -42,6 +53,7 @@ class SurfaceNode():
 			+ "?"
 			)
 		door_node.add_new_option("go", "Go through", ent_id)
+		door_node.add_new_option("back", "Back", ent_id)
 		return door_node
 
 	def look_inventory(self, ent_id):
@@ -95,6 +107,9 @@ class InventoryNode():
 
 		return choice_node
 
+class MenuTree():
+	def __init__(self):
+		pass
 
 class MenuNode():
 
