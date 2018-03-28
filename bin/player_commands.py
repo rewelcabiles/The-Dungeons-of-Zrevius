@@ -90,8 +90,10 @@ class PlayerCommands():
 
 class SurfaceNode():
 	def __init__(self, commands):
-		self.commands = commands
-		self.player   = commands.player_id
+		self.commands   = commands
+		self.world      = self.commands.world
+		self.WORLD      = self.commands.world.WORLD
+		self.player     = commands.player_id
 
 	def look_door(self, ent_id):
 		door_node = MenuNode()
@@ -101,8 +103,12 @@ class SurfaceNode():
 			+ "?"
 			)
 		door_node.add_new_option("go", "Go through", ent_id)
-		door_node.add_new_option("back", "Back", ent_id)
+
 		return door_node
+
+	def look_at(self, ent_id):
+		print("You look at the " + self.WORLD['descriptor'][ent_id]['name'])
+		print(self.WORLD['descriptor'][ent_id]['desc'])
 
 	def look_inventory(self, ent_id):
 		look_node = MenuNode() 
@@ -119,8 +125,10 @@ class SurfaceNode():
 
 class InventoryNode():
 	def __init__(self, commands):
-		self.commands = commands
-		self.player   = commands.player_id
+		self.commands   = commands
+		self.world      = self.commands.world
+		self.WORLD      = self.commands.world.WORLD
+		self.player     = commands.player_id
 	
 	def pick_up(self, ent_id):
 		print(self.commands.WORLD['descriptor'][ent_id]['name'] + ' goes into your inventory.')
