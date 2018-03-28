@@ -17,27 +17,75 @@ class PlayerCommands():
 			self.MenuTree[-1].print_menu()
 
 		user = input(":=======:>> ")
-		if context == "surface":
+		if self.context == "surface":
 			self.do_surface(user)
 
-		elif context == "inventory":
+		elif self.context == "inventory":
 			self.do_inventory(user)
 
 	def do_inventory(self, user):
-		pass
+		if command in self.MenuTree[-1].options.keys():
+			latest_node = self.MenuTree[-1]
+			info = latest_node.options[command]
+			action = info['type']
+
+			if action == "back":  # Go Back a Menu
+				self.MenuTree.pop()
 
 	def do_surface(self, user):
 		if user == "look":
 			self.MenuTree.clear()
-			self.look_at(self.player_pos)
-			self.look_inventory(self.player_pos)
+			self.surface_nodes.look_at(self.world.get_location(self.player_id))
+			self.MenuTree.append(
+				self.surface_nodes.look_inventory(self.world.get_location(self.player_id))
+				)
 
 		elif user == "inventory":
+			self.context = "inventory"
 			self.MenuTree.append(self.InventoryNode.look_inventory(self.player))
 
-	def look_at(self, ent_id):
-		print("You look at the " + self.WORLD['descriptor'][ent_id]['name'])
-		print(self.WORLD['descriptor'][ent_id]['desc'])
+		elif user in self.MenuTree[-1].options.keys():
+			latest_node = self.MenuTree[-1]
+			info = latest_node.options[user]
+			action = info['type']
+
+			if   action == "back":  # Go Back a Menu
+				self.MenuTree.pop()
+
+			elif action == "look": #Possibly rename this to interact instead
+				item_id = info['pointer']
+				obj_type= self.world.get_object_type(item_id)
+
+				if obj_type == "is_inventory":
+					self.surface_nodes.look_at(item_id)
+					self.surface_nodes.look_inventory(item_id)
+
+				elif obj_type == "is_weapon":
+					if self.world.in_container(item_id, self.player):
+						self.MenuTree.append(self.InventoryNode.look_weapon(item_id))
+					else: 
+						self.look_weapon(item_id)
+
+				elif obj_type == "is_door":
+					self.surface_nodes.look_at(item_id)
+					self.MenuTree.append(
+						self.surface_nodes.look_door(item_id)
+						)
+
+				else:
+					self.surface_nodes.look_at(item_id)
+
+			elif action == "go":
+				next_room = self.WORLD['transition'][info['pointer']]['target']
+				print(str(info['pointer'])+" "+str(self.player_id)+" "+str(next_room))
+				message = {
+					"type"   :"move",
+					"pointer":{"room_target":next_room, "action_user":self.player_id}
+				}
+				self.MenuTree.clear()
+				self.message.add_to_queue(message)
+
+	
 
 
 class SurfaceNode():
