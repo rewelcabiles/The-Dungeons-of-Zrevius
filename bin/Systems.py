@@ -19,10 +19,9 @@ class MessageBoard():
 
 
 class Systems:
-	def __init__(self, world, message_systems):
+	def __init__(self, world):
 		self.world = world
 		self.WORLD = self.world.WORLD
-		self.message_systems = message_systems
 
 	def Update(self, message):
 		self.Movement(message)
