@@ -84,6 +84,7 @@ class World():
 
 	def set_entity_location(self, ent_id, target_room):
 		self.WORLD['location'][ent_id]['container_id'] = target_room
+		self.WORLD['inventory'][target_room]['items'].append(ent_id)
 
 	def del_from_inventory(self, ent_id, target_inventory):
 		self.WORLD['inventory'][target_inventory]['items'].remove(ent_id)
