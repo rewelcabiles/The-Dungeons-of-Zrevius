@@ -99,6 +99,9 @@ class World():
 		self.WORLD['inventory'][old_inv]['items'].remove(ent_id)
 		self.WORLD['location' ][ent_id ]['container_id'] = new_inv
 
+	def get_location(self, ent_id):
+		return self.WORLD['location'][ent_id]['container_id']
+
 	def in_container(self, ent_id, container):
 		test = container == self.WORLD['location'][ent_id]['container_id']
 		return test

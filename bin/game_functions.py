@@ -15,11 +15,11 @@ class GameFunctions:
 	def __init__(self):
 		self.init_world()
 		self.spawn_player()
-		self.command   		 = Command(self)
 		self.message_systems = MessageBoard()
-		self.systems 		 = Systems()
+		self.systems 		 = Systems(self.world)
+		self.command   		 = Command(self)
 		self.init_systems()
-		
+
 	def init_systems(self):
 		self.message_systems.register(self.systems.notified)
 
