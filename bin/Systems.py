@@ -7,7 +7,7 @@ class MessageBoard():
 		
 	def add_to_queue(self, message):
 		self.message_queue.append(message)
-		self.notify(message)
+		self.notify_observers(message)
 
 	def register(self, observer):
 		self.observers.append(observer)
@@ -23,22 +23,22 @@ class Systems:
 		self.world = world
 		self.WORLD = self.world.WORLD
 
-	def Update(self, message):
-		self.Movement(message)
+	def update(self, message):
+		self.movement(message)
 
-	def Movement(message):
+	def movement(self, message):
 		if message["type"] == "move":
 			room_target = message['pointer']["room_target"]
 			action_user = message['pointer']["action_user"]
 			self.world.move_to_inventory(action_user, room_target)
 
-	def PickUp(message):
+	def pickup(self, message):
 		if message["type"] == "pick_up":
 			item_target = message['pointer']["item_target"]
 			action_user = message['pointer']["action_user"]
 			self.world.move_to_inventory(item_target, action_user)
 
-	def Drop(message):
+	def drop(self, message):
 		if message == "drop":
 			item_target = message['pointer']["item_target"]
 			action_user = message['pointer']["action_user"]
