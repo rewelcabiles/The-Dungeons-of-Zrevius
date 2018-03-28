@@ -2,6 +2,7 @@
 
 from dungeon_creator import Dungeon_Generator as dun_gen
 from game_commands import Command
+from player_commands import PlayerCommands
 from Systems import *
 import json
 import random
@@ -17,7 +18,7 @@ class GameFunctions:
 		self.spawn_player()
 		self.message_systems = MessageBoard()
 		self.systems 		 = Systems(self.world)
-		self.command   		 = Command(self)
+		self.command   		 = PlayerCommands(self.world, self.message_systems)
 		self.command.set_player_id(self.player_id)
 		self.init_systems()
 
@@ -31,7 +32,7 @@ class GameFunctions:
 
 	def game_loop(self):
 		while(True):
-			self.command.do()
+			self.command.update()
 
 	def init_world(self):
 		dg = dun_gen()
