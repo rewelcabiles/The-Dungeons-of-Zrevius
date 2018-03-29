@@ -25,7 +25,7 @@ class PlayerCommands():
 
 		elif self.context == "inventory":
 			self.do_inventory(user)
-
+	
 	def do_inventory(self, user):
 		if command in self.MenuTree[-1].options.keys():
 			latest_node = self.MenuTree[-1]
@@ -33,15 +33,13 @@ class PlayerCommands():
 			action = info['type']
 
 			if action == "back":  # Go Back a Menu
-				self.MenuTree.pop()
+				self.MenuTree.pop()	
 
 	def do_surface(self, user):
 		if user == "look":
 			self.MenuTree.clear()
 			self.surface_nodes.look_at(self.world.get_location(self.player_id))
-			self.MenuTree.append(
-				self.surface_nodes.look_inventory(self.world.get_location(self.player_id))
-				)
+			self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(self.player_id)))
 
 		elif user == "inventory":
 			self.context = "inventory"
@@ -71,9 +69,7 @@ class PlayerCommands():
 
 				elif obj_type == "is_door":
 					self.surface_nodes.look_at(item_id)
-					self.MenuTree.append(
-						self.surface_nodes.look_door(item_id)
-						)
+					self.MenuTree.append(self.surface_nodes.look_door(item_id))
 
 				else:
 					self.surface_nodes.look_at(item_id)
@@ -98,6 +94,31 @@ class SurfaceNode():
 		self.WORLD      = self.commands.world.WORLD
 		self.player     = commands.player_id
 
+	def interact(self, ent_id):
+		new_node = MenuNode()
+		new_node.set_header("What do you want to do with "
+			+ self.WORLD['descriptor'][ent_id]['name'] + "?")
+
+		# Can be looked at?
+		if self.world.is_object_type(ent_id, ["descriptor"]):
+			new_node.add_new_option("look", "Look at", ent_id)
+		# Able to be picked up?
+		if self.world.is_object_type(ent_id, ["item"]):
+			new_node.add_new_option("pick_up", "Pick Up", ent_id)
+
+		# Has something to identify?
+		if self.world.is_object_type(ent_id, ["modifiers"]) or self.world.is_object_type(ent_id, ["buff_refill"]):
+			new_node.add_new_option("identify", "Identify", ent_id)
+
+		# Is it a transition object? (AKA, a door or portal.. etc)
+		if self.world.is_object_type(ent_id, ["isroom"]):
+			new_node.add_new_option("go", "Go Through", ent_id)
+
+		# Is an inventory?
+		if self.world.is_object_type(ent_id, ["isroom"]):
+			new_node.add_new_option("go", "Go Through", ent_id)
+
+		return new_node
 	def look_door(self, ent_id):
 		door_node = MenuNode()
 		door_node.set_header(
@@ -125,6 +146,7 @@ class SurfaceNode():
 			text = self.WORLD['descriptor'][things]['name']
 			look_node.add_new_option("look", text, things)
 		return look_node
+
 
 class InventoryNode():
 	def __init__(self, commands):
@@ -166,9 +188,11 @@ class InventoryNode():
 
 		return choice_node
 
+
 class MenuTree():
 	def __init__(self):
 		pass
+
 
 class MenuNode():
 
