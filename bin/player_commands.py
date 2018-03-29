@@ -1,6 +1,9 @@
-# TODO: Start filling out thte commands for the different
-#  		context nodes
-
+# TODO 
+#
+#
+# !   If you're feeling bored. Separate out the input logic from the display logic :P 
+#
+# !!! Make player characters invisible from room look.
 
 class PlayerCommands():
 	def __init__(self, world, message, pid):
@@ -9,7 +12,6 @@ class PlayerCommands():
 		self.player_id = pid
 		self.message = message
 		self.surface_nodes = SurfaceNode(self)
-		self.inventory_nodes = InventoryNode(self)
 		self.MenuTree = []
 
 	def update(self):
@@ -145,29 +147,6 @@ class SurfaceNode():
 			text = self.WORLD['descriptor'][things]['name']
 			look_node.add_new_option("interact", text, {"entity_id":things})
 		return look_node
-
-
-class InventoryNode():
-	def __init__(self, commands):
-		self.commands   = commands
-		self.world      = self.commands.world
-		self.WORLD      = self.commands.world.WORLD
-		self.player     = commands.player_id
-
-	def look_weapon(self, ent_id):
-		self.commands.look_at(ent_id)
-		print("===============\nStatistics : ")
-		self.commands.display_item_modifiers(ent_id)
-		print("===============")
-
-		choice_node = MenuNode()
-		choice_node.set_header("What do you want to do with it?")
-		choice_node.add_new_option("look", "Look", {"entity_id":ent_id})
-		choice_node.add_new_option("equip","Equip",{"entity_id":ent_id})
-		choice_node.add_new_option("drop", "Drop", {"entity_id":ent_id})
-
-		return choice_node
-
 
 class MenuNode():
 
