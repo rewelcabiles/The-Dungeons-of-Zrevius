@@ -53,6 +53,7 @@
 		"descriptor" : "None",
 		"consumable" : "None",
 		"buff_refill": "None",
+		"item"		: "None",
 		"location"	: "None"
 	}
 }
