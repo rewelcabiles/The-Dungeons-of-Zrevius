@@ -25,23 +25,24 @@ class Systems:
 
 	def update(self, message):
 		self.movement(message)
+		self.pick_up(message)
+
+	def pick_up(self, message):
+		if message["type"] == "pick_up":
+			item_target = message['data']["entity_id"]
+			action_user = message['data']["action_user"]
+			self.world.move_to_inventory(item_target, action_user)
 
 	def movement(self, message):
 		if message["type"] == "move":
-			room_target = message['pointer']["room_target"]
-			action_user = message['pointer']["action_user"]
+			room_target = message['data']["room_target"]
+			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(action_user, room_target)
-
-	def pickup(self, message):
-		if message["type"] == "pick_up":
-			item_target = message['pointer']["item_target"]
-			action_user = message['pointer']["action_user"]
-			self.world.move_to_inventory(item_target, action_user)
 
 	def drop(self, message):
 		if message == "drop":
-			item_target = message['pointer']["item_target"]
-			action_user = message['pointer']["action_user"]
+			item_target = message['data']["item_target"]
+			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, self.world.get_location(action_user))
 
 	def notified(self, message):
