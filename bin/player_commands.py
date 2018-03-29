@@ -16,24 +16,27 @@ class PlayerCommands():
 		self.inventory_nodes = InventoryNode(self)
 
 	def update(self):
-		if self.MenuTree:
-			self.MenuTree[-1].print_menu()
-
+		if not self.MenuTree:
+			self.surface_nodes.look_at(self.world.get_location(self.player_id))
+			self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(self.player_id)))
+		top_node = self.MenuTree[-1]
+		top_node.print_menu()
+		
 		user = input(":=======:>> ")
-		if self.context == "surface":
+		if top_node.get_context() == "surface":
 			self.do_surface(user)
 
-		elif self.context == "inventory":
+		elif top_node.get_context() == "inventory":
 			self.do_inventory(user)
 	
 	def do_inventory(self, user):
-		if command in self.MenuTree[-1].options.keys():
+		if user in self.MenuTree[-1].options.keys():
 			latest_node = self.MenuTree[-1]
-			info = latest_node.options[command]
-			action = info['type']
+			info = latest_node.options[user] # Gets selection based on user input
+			action_type = info['type']
 
-			if action == "back":  # Go Back a Menu
-				self.MenuTree.pop()	
+			if action_type == "back":  # Go Back a Menu
+				self.MenuTree.pop()
 
 	def do_surface(self, user):
 		if user == "look":
@@ -42,44 +45,46 @@ class PlayerCommands():
 			self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(self.player_id)))
 
 		elif user == "inventory":
-			self.context = "inventory"
-			self.MenuTree.append(self.InventoryNode.look_inventory(self.player))
+			#self.context = "inventory"
+			self.MenuTree.append(self.inventory_nodes.look_inventory(self.player_id))
 
 		elif user in self.MenuTree[-1].options.keys():
 			latest_node = self.MenuTree[-1]
 			info = latest_node.options[user]
-			action = info['type']
+			action_type = info['type']
 
-			if   action == "back":  # Go Back a Menu
+			if action_type == "back":
 				self.MenuTree.pop()
 
-			elif action == "look": #Possibly rename this to interact instead
-				item_id = info['pointer']
-				obj_type= self.world.get_object_type(item_id)
+			elif action_type == "interact":
+				entity_id = info['data']["entity_id"]
+				obj_type= self.world.get_object_type(entity_id)
+				self.MenuTree.append(self.surface_nodes.interact(entity_id))
 
-				if obj_type == "is_inventory":
-					self.surface_nodes.look_at(item_id)
-					self.surface_nodes.look_inventory(item_id)
+			elif action_type == "look":
+				self.surface_nodes.look_at(info['data'])
 
-				elif obj_type == "is_weapon":
-					if self.world.in_container(item_id, self.player_id):
-						self.MenuTree.append(self.InventoryNode.look_weapon(item_id))
-					else: 
-						self.surface_nodes.look_weapon(item_id)
+			elif action_type == "pick_up":
+				message = {
+					"type"   :"pick_up",
+					"data":{"entity_id" : info['data']["entity_id"], "action_user" : self.player_id}}
+					
+				print(self.commands.WORLD['descriptor'][ent_id]['name'] + ' goes into your inventory.')
 
-				elif obj_type == "is_door":
-					self.surface_nodes.look_at(item_id)
-					self.MenuTree.append(self.surface_nodes.look_door(item_id))
+				self.message.add_to_queue(message)
+				self.MenuTree.pop() # Pops the interact Node
+				self.MenuTree.pop() # Pops the Old container Node
+				self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(info['data']["entity_id"]))) # Appends the updated node
 
-				else:
-					self.surface_nodes.look_at(item_id)
+			elif action_type == "open":
+				entity_id = info['data']["entity_id"]
+				self.MenuTree.append(self.surface_nodes.look_inventory(entity_id))
 
-			elif action == "go":
-				next_room = self.WORLD['transition'][info['pointer']]['target']
-				print(str(info['pointer'])+" "+str(self.player_id)+" "+str(next_room))
+			elif action_type == "go":
+				next_room = self.WORLD['transition'][info['data']["entity_id"]]['target']
 				message = {
 					"type"   :"move",
-					"pointer":{"room_target":next_room, "action_user":self.player_id}
+					"data":{"room_target":next_room, "action_user":self.player_id}
 				}
 				self.MenuTree.clear()
 				self.message.add_to_queue(message)
@@ -92,43 +97,39 @@ class SurfaceNode():
 		self.commands   = commands
 		self.world      = self.commands.world
 		self.WORLD      = self.commands.world.WORLD
-		self.player     = commands.player_id
+		self.player_id  = commands.player_id
 
 	def interact(self, ent_id):
 		new_node = MenuNode()
+		new_node.set_context("surface")
 		new_node.set_header("What do you want to do with "
 			+ self.WORLD['descriptor'][ent_id]['name'] + "?")
 
 		# Can be looked at?
 		if self.world.is_object_type(ent_id, ["descriptor"]):
-			new_node.add_new_option("look", "Look at", ent_id)
+			print("DEBUG: Can be looked at.")
+			new_node.add_new_option("look", "Look at", {"entity_id":ent_id})
 		# Able to be picked up?
 		if self.world.is_object_type(ent_id, ["item"]):
-			new_node.add_new_option("pick_up", "Pick Up", ent_id)
+			print("DEBUG: Can be picked up.")
+			new_node.add_new_option("pick_up", "Pick Up", {"entity_id":ent_id, "action_user":self.player_id})
 
 		# Has something to identify?
 		if self.world.is_object_type(ent_id, ["modifiers"]) or self.world.is_object_type(ent_id, ["buff_refill"]):
-			new_node.add_new_option("identify", "Identify", ent_id)
+			print("DEBUG: Can be indentified.")
+			new_node.add_new_option("identify", "Identify", {"entity_id":ent_id})
 
 		# Is it a transition object? (AKA, a door or portal.. etc)
-		if self.world.is_object_type(ent_id, ["isroom"]):
-			new_node.add_new_option("go", "Go Through", ent_id)
+		if self.world.is_object_type(ent_id, ["transition"]):
+			print("DEBUG: Can go through.")
+			new_node.add_new_option("go", "Go Through", {"entity_id":ent_id})
 
 		# Is an inventory?
-		if self.world.is_object_type(ent_id, ["isroom"]):
-			new_node.add_new_option("go", "Go Through", ent_id)
+		if self.world.is_object_type(ent_id, ["inventory"]):
+			print("DEBUG: Is an Inventory.")
+			new_node.add_new_option("open", "Open container", {"entity_id":ent_id})
 
 		return new_node
-	def look_door(self, ent_id):
-		door_node = MenuNode()
-		door_node.set_header(
-			"Go through the "
-			+ self.WORLD['descriptor'][ent_id]['name'] 
-			+ "?"
-			)
-		door_node.add_new_option("go", "Go through", ent_id)
-
-		return door_node
 
 	def look_at(self, ent_id):
 		print("You look at the " + self.WORLD['descriptor'][ent_id]['name'])
@@ -144,7 +145,7 @@ class SurfaceNode():
 			)
 		for things in self.WORLD['inventory'][ent_id]['items']:
 			text = self.WORLD['descriptor'][things]['name']
-			look_node.add_new_option("look", text, things)
+			look_node.add_new_option("interact", text, {"entity_id":things})
 		return look_node
 
 
@@ -154,10 +155,6 @@ class InventoryNode():
 		self.world      = self.commands.world
 		self.WORLD      = self.commands.world.WORLD
 		self.player     = commands.player_id
-	
-	def pick_up(self, ent_id):
-		print(self.commands.WORLD['descriptor'][ent_id]['name'] + ' goes into your inventory.')
-		self.commands.world.move_to_inventory(ent_id, self.player)
 
 	def drop(self, ent_id):
 		print("You drop "+self.commands.WORLD['descriptor'][ent_id]['name']+". Down it goes!")
@@ -170,7 +167,7 @@ class InventoryNode():
 		look_node.set_header("You look through your bags and see...")
 		for item in self.commands.WORLD['inventory'][ent_id]['items']:
 			text = self.commands.WORLD['descriptor'][item]['name']
-			look_node.add_new_option("look", text, item)
+			look_node.add_new_option("look", text, {"entity_id":ent_id})
 		return look_node
 
 
@@ -182,9 +179,9 @@ class InventoryNode():
 
 		choice_node = MenuNode()
 		choice_node.set_header("What do you want to do with it?")
-		choice_node.add_new_option("look", "Look", ent_id)
-		choice_node.add_new_option("equip","Equip",ent_id)
-		choice_node.add_new_option("drop", "Drop", ent_id)
+		choice_node.add_new_option("look", "Look", {"entity_id":ent_id})
+		choice_node.add_new_option("equip","Equip",{"entity_id":ent_id})
+		choice_node.add_new_option("drop", "Drop", {"entity_id":ent_id})
 
 		return choice_node
 
@@ -200,12 +197,15 @@ class MenuNode():
 		self.current_options = 1
 		self.context = ""
 		self.header = ""
-		self.options = {}  # Type, Pointer, Text
+		self.options = {}  # Type, data, Text
 		self.options[str(self.current_options)] = {
-			"type": "back", "pointer": None, "text": "Back"}
+			"type": "back", "data": {}, "text": "Back"}
 
 	def set_context(self, cont):
 		self.context = cont
+
+	def get_context(self):
+		return self.context
 
 	def set_header(self, head):
 		self.header = head
@@ -219,19 +219,19 @@ class MenuNode():
 		except IndexError:
 			print("This Menu Is Empty!")
 
-	def add_new_option(self, option_type, text, pointer=None):
+	def add_new_option(self, option_type, text, data={}):
 		self.options[str(self.current_options)] = {
-			"type": option_type, "pointer": pointer, "text": text}
+			"type": option_type, "data": data, "text": text}
 		self.current_options += 1
 
 		# Moves Back option to back of menu list.
 		try:
 			del self.options[-2]
 			self.options[str(self.current_options)] = {
-				"type": "back", "pointer": None, "text": "Back"}
+				"type": "back", "data": {}, "text": "Back"}
 		except KeyError:
 			self.options[str(self.current_options)] = {
-				"type": "back", "pointer": None, "text": "Back"}
+				"type": "back", "data": {}, "text": "Back"}
 
 	def get_action(self, option_index):
 		if self.is_an_option(option_index):
