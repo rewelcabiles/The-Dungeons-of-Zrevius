@@ -34,6 +34,11 @@ class World():
 			temp_mask |= self.COMPS[comps]
 		return temp_mask		
 
+	def is_object_type(self, ent_id, component_list):
+		temp_mask = self.create_dynamic_mask(component_list)
+		if((self.WORLD['mask'][ent_id] & temp_mask) == temp_mask):
+			return True
+
 	def get_object_type(self, ent_id):
 		inv_mask = self.create_dynamic_mask(['inventory'])
 		wep_mask = self.create_dynamic_mask(['weapon'])
