@@ -15,20 +15,16 @@ class GameFunctions:
 
 	def __init__(self):
 		self.init_world()
-		self.spawn_player()
+		self.player_id = self.world.factory.character_creator('Human', "Quin")
+		spawn_room     = random.choice(list(self.world.WORLD['isroom'].keys()))
+		self.world.set_entity_location(self.player_id, spawn_room)
 		self.message_systems = MessageBoard()
 		self.systems 		 = Systems(self.world)
-		self.command   		 = PlayerCommands(self.world, self.message_systems)
-		self.command.set_player_id(self.player_id)
+		self.command   		 = PlayerCommands(self.world, self.message_systems, self.player_id)
 		self.init_systems()
 
 	def init_systems(self):
 		self.message_systems.register(self.systems.notified)
-
-	def spawn_player(self):
-		self.player_id = self.world.factory.character_creator('Human', "Quin")
-		spawn_room     = random.choice(list(self.world.WORLD['isroom'].keys()))
-		self.world.set_entity_location(self.player_id, spawn_room)
 
 	def game_loop(self):
 		while(True):
