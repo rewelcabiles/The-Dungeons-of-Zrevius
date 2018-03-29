@@ -26,7 +26,7 @@ class Systems:
 	def update(self, message):
 		self.movement(message)
 		self.pick_up(message)
-
+		self.drop(message)
 	def pick_up(self, message):
 		if message["type"] == "pick_up":
 			item_target = message['data']["entity_id"]
@@ -40,8 +40,8 @@ class Systems:
 			self.world.move_to_inventory(action_user, room_target)
 
 	def drop(self, message):
-		if message == "drop":
-			item_target = message['data']["item_target"]
+		if message["type"] == "drop":
+			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, self.world.get_location(action_user))
 
