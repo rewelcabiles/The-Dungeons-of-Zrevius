@@ -1,3 +1,6 @@
+# TODO: Start filling out thte commands for the different
+#  		context nodes
+
 
 class PlayerCommands():
 	def __init__(self, world, message):
@@ -61,10 +64,10 @@ class PlayerCommands():
 					self.surface_nodes.look_inventory(item_id)
 
 				elif obj_type == "is_weapon":
-					if self.world.in_container(item_id, self.player):
+					if self.world.in_container(item_id, self.player_id):
 						self.MenuTree.append(self.InventoryNode.look_weapon(item_id))
 					else: 
-						self.look_weapon(item_id)
+						self.surface_nodes.look_weapon(item_id)
 
 				elif obj_type == "is_door":
 					self.surface_nodes.look_at(item_id)
