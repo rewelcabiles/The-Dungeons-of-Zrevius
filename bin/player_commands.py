@@ -203,6 +203,7 @@ class SurfaceNode():
 				equipment_node.add_new_option("interact", text, {"entity_id":equipment[slots]})
 			else:
 				text = slots + '    ->      None' 
+				equipment_node.add_new_option("interact", text, {"entity_id":equipment[slots]})
 
 		return equipment_node
 

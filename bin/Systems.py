@@ -112,12 +112,10 @@ class Equipment_Handling:
 		if slot == "dual_wield":
 			if entity_equipment['left_hand'] == None and entity_equipment['right_hand'] == None:
 				self._equip(ent_id, item_id, slot)
-
 			else: 
 				self._unequip(ent_id, 'left_hand')
 				self._unequip(ent_id, 'right_hand')
 				self._equip(ent_id, item_id, slot)
-
 		elif slot == "left_hand":
 			if entity_equipment['left_hand'] == None:
 				self._equip(ent_id, item_id, slot)
