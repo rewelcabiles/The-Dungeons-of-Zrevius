@@ -51,7 +51,7 @@ class PlayerCommands():
 				self.MenuTree.append(self.surface_nodes.interact(entity_id))
 
 			elif action_type == "look":
-				self.surface_nodes.look_at(info['data'])
+				self.surface_nodes.look_at(info['data']['entity_id'])
 
 			elif action_type == "drop":
 				ent_id  = info['data']["entity_id"]
@@ -60,8 +60,7 @@ class PlayerCommands():
 					"data":{"entity_id" : ent_id, "action_user" : self.player_id}
 					}
 				self.message.add_to_queue(message)
-				self.MenuTree.pop() # Pops the interact Node
-				self.MenuTree.pop() # Pops the Old container Node
+				self.MenuTree.clear() # Pops the interact Node
 				self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(info['data']["entity_id"]))) # Appends the updated node
 				print("You drop "+self.WORLD['descriptor'][ent_id]['name']+". Down it goes!")
 
@@ -92,16 +91,15 @@ class PlayerCommands():
 
 			elif action_type == "equip":
 				requested_slot  = self.WORLD['equippable'][info['data']["entity_id"]]['slot']
+				slot = info['data']['slot']
 
 				if requested_slot == "dual_wield":
 					slot = "dual_wield"
 
-				if requested_slot != "dual_wield" and info['data']['slot'] == None:
+				elif requested_slot == "one_hand" and info['data']['slot'] == None:
 					self.MenuTree.append(self.surface_nodes.one_hand_equip(info['data']["entity_id"]))
 				
-				else:
-					slot = info['data']['slot']
-
+				if slot != None:
 					message = {
 						"type"   :"equip",
 						"data":{"entity_id":info['data']["entity_id"], 
@@ -109,8 +107,9 @@ class PlayerCommands():
 						"slot": slot
 						}
 					}
-					self.MenuTree.clear()
 					self.message.add_to_queue(message)
+					self.MenuTree.clear()
+					
 
 	
 class SurfaceNode():
@@ -123,8 +122,8 @@ class SurfaceNode():
 	def one_hand_equip(self, ent_id):
 		new_node = MenuNode()
 		new_node.set_header("Which slot do you want to equip it in?")
-		new_node.add_new_option("equip", "Left Hand", {"item_id":ent_id, "slot": "left_hand", "action_user":self.player_id})
-		new_node.add_new_option("equip", "Right Hand", {"item_id":ent_id, "slot": "right_hand", "action_user":self.player_id})
+		new_node.add_new_option("equip", "Left Hand", {"entity_id":ent_id, "slot": "left_hand", "action_user":self.player_id})
+		new_node.add_new_option("equip", "Right Hand", {"entity_id":ent_id, "slot": "right_hand", "action_user":self.player_id})
 		return new_node
 
 	def interact(self, ent_id):
@@ -138,7 +137,7 @@ class SurfaceNode():
 			print("DEBUG: Can be looked at.")
 			new_node.add_new_option("look", "Look at", {"entity_id":ent_id})
 		# Able to be picked up?
-		if self.world.is_object_type(ent_id, ["item"]):
+		if self.world.is_object_type(ent_id, ["item"]) and not self.world.in_container(ent_id, self.player_id):
 			print("DEBUG: Can be picked up.")
 			new_node.add_new_option("pick_up", "Pick Up", {"entity_id":ent_id, "action_user":self.player_id})
 
@@ -150,7 +149,7 @@ class SurfaceNode():
 		# Is Equipable, and is in player inventory
 		if self.world.is_object_type(ent_id, ["equippable"]) and self.world.in_container(ent_id, self.player_id):
 			print("DEBUG: Is inside player inventory, and is equipable")
-			new_node.add_new_option("equip", "Equip", {"item_id":ent_id, "slot":None,"action_user":self.player_id})
+			new_node.add_new_option("equip", "Equip", {"entity_id":ent_id, "slot":None,"action_user":self.player_id})
 
 		# Has something to identify?
 		if self.world.is_object_type(ent_id, ["modifiers"]) or self.world.is_object_type(ent_id, ["buff_refill"]):
