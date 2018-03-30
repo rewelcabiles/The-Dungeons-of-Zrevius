@@ -55,7 +55,7 @@
 		},
 		"2H Sword" :{
 			"damage_type"	:"melee",
-			"slot"  		:"dual_hand",
+			"slot"  		:"dual_wield",
 			"main_modifier"	:"str"
 		},
 		"rapier" :{
@@ -65,13 +65,13 @@
 		},
 		"bow" :{
 			"damage_type"		:"ranged",
-			"slot"  			:"dual_hand",
+			"slot"  			:"dual_wield",
 			"main_modifier"		:"dex",
 			"projectile_type"	:"arrow"
 		},
 		"crossbow" :{
 			"damage_type"		:"ranged",
-			"slot"  			:"dual_hand",
+			"slot"  			:"dual_wield",
 			"main_modifier"		:"dex",
 			"projectile_type"	:"bolt"
 		},

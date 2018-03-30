@@ -1,10 +1,10 @@
 {
 	"room":
 	{
-		"position"  : "None",
-		"isroom"    : "None",
-		"inventory" : "None",
-		"descriptor": "None"
+		"position"  : null,
+		"isroom"    : null,
+		"inventory" : null,
+		"descriptor": null
 	},
 
 	"area":
@@ -15,46 +15,46 @@
 
 	"weapon":
 	{
-		"descriptor"	: "None",
-		"item"			: "None",
-		"equippable"    : {"slot" : "None"},
+		"descriptor"	: null,
+		"item"			: null,
+		"equippable"    : {"slot" : null},
 		"weapon": {
 			"damage_type": "melee",
 			"weapon_type": "sword",
 			"main_modifier": "str"
 		},
 		"modifiers" : {},
-		"location"	: "None"
+		"location"	: null
 	},
 
 	"character" :
 	{
-		"descriptor": "None",
-		"stats"     : "None",
-		"inventory" : "None",
-		"equipment" : "None",
-		"location"  : "None"
+		"descriptor": null,
+		"stats"     : null,
+		"inventory" : null,
+		"equipment" : null,
+		"location"  : null
 	},
 
 	"door":
 	{
-		"descriptor": "None",
-		"transition": "None",
-		"location"	: "None"
+		"descriptor": null,
+		"transition": null,
+		"location"	: null
 	},
 
 	"container" : {
-		"descriptor": "None",
-		"inventory" : "None",
-		"location"	: "None"
+		"descriptor": null,
+		"inventory" : null,
+		"location"	: null
 	},
 
 	"consumable_refill" : {
-		"descriptor" : "None",
-		"consumable" : "None",
-		"buff_refill": "None",
-		"item"		: "None",
-		"location"	: "None"
+		"descriptor" : null,
+		"consumable" : null,
+		"buff_refill": null,
+		"item"		: null,
+		"location"	: null
 	}
 }
 

@@ -11,24 +11,24 @@
 	},
 
 	"equipment": {
-		"helmet_armor" : "None",
-		"chest_armor"  : "None",
-		"legs_armour"  : "None",
-		"left_hand"	   : "None",
-		"right_hand"   : "None",
-		"dual_hand"    : "None",
-		"ring01": "None",
-		"ring02": "None"
+		"helmet_armor" : null,
+		"chest_armor"  : null,
+		"legs_armour"  : null,
+		"left_hand"	   : null,
+		"right_hand"   : null,
+		"dual_wield"    : null,
+		"ring01": null,
+		"ring02": null
 
 	},
 
 	"descriptor":{
-		"name" : "None",
-		"desc" : "None"
+		"name" : null,
+		"desc" : null
 	},
 
 	"location" : {
-		"container_id" : "None"
+		"container_id" : null
 	},
 
 	"isroom":{
@@ -64,8 +64,8 @@
 	},
 
 	"weapon": {
-		"damage_type"  : "None",
-		"weapon_type"  : "None",
+		"damage_type"  : null,
+		"weapon_type"  : null,
 		"main_modifier": "str"
 	},
 
@@ -78,7 +78,7 @@
 	},
 
 	"equippable" : {
-		"slot" : "None"
+		"slot" : null
 	},
 
 	"item":{
@@ -87,11 +87,11 @@
 	},
 
 	"monster": {
-		"type" : "None"
+		"type" : null
 	},
 
 	"transition": {
-		"target" : "None"
+		"target" : null
 	}
 }
 
