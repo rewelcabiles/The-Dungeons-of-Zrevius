@@ -42,7 +42,7 @@ class Systems:
 			item_target    = message['data']["entity_id"]
 			action_user    = message['data']["action_user"]
 			requested_slot = message['data']["slot"]
-			self.world.equip_item(action_user, item_target, requested_slot)
+			self.equipment.equip(action_user, item_target, requested_slot)
 
 	def movement(self, message):
 		if message["type"] == "move":
@@ -70,7 +70,7 @@ class Equipment_Handling:
 		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
 		self.WORLD['equipment'][ent_id][slot] == item_id
 		message = {
-			"topic" : "notification",
+			"type" : "notification",
 			"data"  : {
 				"action" 	 : "equip",
 				"action_user": ent_id,
@@ -85,7 +85,7 @@ class Equipment_Handling:
 			self.WORLD['equipment'][ent_id][slot] = None
 			self.WORLD['inventory'][ent_id]['items'].append(item_id)
 			message = {
-				"topic" : "notification",
+				"type" : "notification",
 				"data"  : {
 					"action" 	 : "unequip",
 					"action_user": ent_id,
@@ -97,7 +97,7 @@ class Equipment_Handling:
 	def equip(self,ent_id, item_id, slot):
 		entity_equipment = self.WORLD['equipment'][ent_id]
 
-		if slot == "dual_hand":
+		if slot == "dual_wield":
 			if entity_equipment['left_hand'] == None and entity_equipment['right_hand'] == None:
 				self._equip(ent_id, item_id, slot)
 
@@ -105,6 +105,7 @@ class Equipment_Handling:
 				self._unequip(ent_id, 'left_hand')
 				self._unequip(ent_id, 'right_hand')
 				self._equip(ent_id, item_id, slot)
+
 		elif slot == "left_hand":
 			if entity_equipment['left_hand'] == None:
 				self._equip(ent_id, item_id, slot)

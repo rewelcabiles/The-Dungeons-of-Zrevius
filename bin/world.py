@@ -62,9 +62,8 @@ class World():
 
 	def equip_item(self, equipment_id, character_id, slot):
 		equipment_slot = self.WORLD['equippable'][equipment_id]['slot']
-		if slot == "dual_hand":
-			self.WORLD['equipment'][character_id]['left_hand'] = equipment_id
-			self.WORLD['equipment'][character_id]['right_hand'] = equipment_id
+		if slot == "dual_wield":
+			self.WORLD['equipment'][character_id]['dual_wield'] = equipment_id
 
 		elif slot == "left_hand":
 			self.WORLD['equipment'][character_id]['left_hand'] = equipment_id
