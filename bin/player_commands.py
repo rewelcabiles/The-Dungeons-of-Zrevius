@@ -21,9 +21,7 @@ class PlayerCommands():
 		if not self.MenuTree:
 			self.surface_nodes.look_at(self.world.get_location(self.player_id))
 			self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(self.player_id)))
-		top_node = self.MenuTree[-1]
-		top_node.print_menu()
-		
+		self.MenuTree[-1].print_menu()
 		user = input(":=======:>> ")
 		self.do_surface(user)
 
@@ -35,6 +33,9 @@ class PlayerCommands():
 			self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(self.player_id)))
 
 		elif user == "inventory":
+			self.MenuTree.append(self.surface_nodes.look_inventory(self.player_id))
+
+		elif user == "equipment":
 			self.MenuTree.append(self.surface_nodes.look_inventory(self.player_id))
 
 		elif user in self.MenuTree[-1].options.keys():
@@ -128,42 +129,31 @@ class SurfaceNode():
 
 	def interact(self, ent_id):
 		new_node = MenuNode()
-		new_node.set_context("surface")
-		new_node.set_header("What do you want to do with "
-			+ self.WORLD['descriptor'][ent_id]['name'] + "?")
-
+		new_node.set_header("What do you want to do with "+ self.WORLD['descriptor'][ent_id]['name'] + "?")
 		# Can be looked at?
 		if self.world.is_object_type(ent_id, ["descriptor"]):
-			print("DEBUG: Can be looked at.")
 			new_node.add_new_option("look", "Look at", {"entity_id":ent_id})
 		# Able to be picked up?
 		if self.world.is_object_type(ent_id, ["item"]) and not self.world.in_container(ent_id, self.player_id):
-			print("DEBUG: Can be picked up.")
 			new_node.add_new_option("pick_up", "Pick Up", {"entity_id":ent_id, "action_user":self.player_id})
-
 		#  Is inside the players Inventory and thus, can be dropped.
 		if self.world.is_object_type(ent_id, ["item"]) and self.world.in_container(ent_id, self.player_id):
-			print("DEBUG: Is inside the players Inventory and thus, can be dropped.")
 			new_node.add_new_option("drop", "Drop", {"entity_id":ent_id, "action_user":self.player_id})
 
 		# Is Equipable, and is in player inventory
 		if self.world.is_object_type(ent_id, ["equippable"]) and self.world.in_container(ent_id, self.player_id):
-			print("DEBUG: Is inside player inventory, and is equipable")
 			new_node.add_new_option("equip", "Equip", {"entity_id":ent_id, "slot":None,"action_user":self.player_id})
 
 		# Has something to identify?
 		if self.world.is_object_type(ent_id, ["modifiers"]) or self.world.is_object_type(ent_id, ["buff_refill"]):
-			print("DEBUG: Can be indentified.")
 			new_node.add_new_option("identify", "Identify", {"entity_id":ent_id})
 
 		# Is it a transition object? (AKA, a door or portal.. etc)
 		if self.world.is_object_type(ent_id, ["transition"]):
-			print("DEBUG: Can go through.")
 			new_node.add_new_option("go", "Go Through", {"entity_id":ent_id})
 
 		# Is an inventory?
 		if self.world.is_object_type(ent_id, ["inventory"]):
-			print("DEBUG: Is an Inventory.")
 			new_node.add_new_option("open", "Open container", {"entity_id":ent_id})
 
 		return new_node
@@ -174,7 +164,6 @@ class SurfaceNode():
 
 	def look_inventory(self, ent_id):
 		look_node = MenuNode() 
-		look_node.set_context("surface")
 		if ent_id != self.player_id:
 			look_node.set_header("You look through the " + self.WORLD['descriptor'][ent_id]['name'] + " and see...")
 		else: 
@@ -185,21 +174,14 @@ class SurfaceNode():
 			look_node.add_new_option("interact", text, {"entity_id":things})
 		return look_node
 
-class MenuNode():
 
+class MenuNode():
 	def __init__(self):
 		self.current_options = 1
-		self.context = ""
 		self.header = ""
 		self.options = {}  # Type, data, Text
 		self.options[str(self.current_options)] = {
 			"type": "back", "data": {}, "text": "Back"}
-
-	def set_context(self, cont):
-		self.context = cont
-
-	def get_context(self):
-		return self.context
 
 	def set_header(self, head):
 		self.header = head
