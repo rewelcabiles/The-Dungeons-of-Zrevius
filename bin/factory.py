@@ -22,7 +22,7 @@ class Factory():
 
 	def create_from_archetype(self, ent_id, archetype_name):
 		for component in list(self.archetypes[archetype_name].keys()):
-			if self.archetypes[archetype_name][component] != "None":
+			if self.archetypes[archetype_name][component] != None:
 				self.WORLD[component][ent_id] = copy.deepcopy(
 					self.archetypes[archetype_name][component])
 			else:

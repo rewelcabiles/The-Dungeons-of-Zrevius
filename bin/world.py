@@ -60,32 +60,6 @@ class World():
 			if ent_id in self.WORLD[components].keys():
 				del self.WORLD[components][ent_id]
 
-	def equip_item(self, equipment_id, character_id, slot):
-		equipment_slot = self.WORLD['equippable'][equipment_id]['slot']
-		if slot == "dual_wield":
-			self.WORLD['equipment'][character_id]['dual_wield'] = equipment_id
-
-		elif slot == "left_hand":
-			self.WORLD['equipment'][character_id]['left_hand'] = equipment_id
-
-		elif slot == "right_hand":
-			self.WORLD['equipment'][character_id]['right_hand'] = equipment_id
-
-		elif slot == "helmet_armor":
-			self.WORLD['equipment'][character_id]['helmet_armor'] = equipment_id
-
-		elif slot == "chest_armor":
-			self.WORLD['equipment'][character_id]['chest_armor'] = equipment_id
-
-		elif slot == "legs_armour":
-			self.WORLD['equipment'][character_id]['legs_armour'] = equipment_id		
-
-		elif slot == "ring01":
-			self.WORLD['equipment'][character_id]['ring01'] = equipment_id		
-
-		elif slot == "ring02":
-			self.WORLD['equipment'][character_id]['ring02'] = equipment_id		
-
 	def set_entity_location(self, ent_id, target_room):
 		self.WORLD['location'][ent_id]['container_id'] = target_room
 		self.WORLD['inventory'][target_room]['items'].append(ent_id)
@@ -107,5 +81,7 @@ class World():
 		return self.WORLD['location'][ent_id]['container_id']
 
 	def in_container(self, ent_id, container):
-		test = container == self.WORLD['location'][ent_id]['container_id']
-		return test
+		return container == self.WORLD['location'][ent_id]['container_id']
+
+	def equipped_by(self, ent_id):
+		return self.WORLD['equippable'][ent_id]['equipped_by']

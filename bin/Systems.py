@@ -30,7 +30,7 @@ class Systems:
 		self.pick_up(message)
 		self.drop(message)
 		self.equip(message)
-
+		self.unequip(message)
 	def pick_up(self, message):
 		if message["type"] == "pick_up":
 			item_target = message['data']["entity_id"]
@@ -43,6 +43,11 @@ class Systems:
 			action_user    = message['data']["action_user"]
 			requested_slot = message['data']["slot"]
 			self.equipment.equip(action_user, item_target, requested_slot)
+
+	def unequip(self, message):
+		if message["type"] == "unequip":
+			item_target    = message['data']["entity_id"]
+			self.equipment.unequip(item_target)
 
 	def movement(self, message):
 		if message["type"] == "move":
@@ -68,7 +73,9 @@ class Equipment_Handling:
 
 	def _equip(self, ent_id, item_id, slot):
 		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
-		self.WORLD['equipment'][ent_id][slot] == item_id
+		self.WORLD['equipment'][ent_id][slot] = item_id
+		self.WORLD['equippable'][item_id]['equipped_by']   = ent_id
+		self.WORLD['equippable'][item_id]['equipped_slot'] = slot
 		message = {
 			"type" : "notification",
 			"data"  : {
@@ -94,7 +101,12 @@ class Equipment_Handling:
 			}
 			self.message.add_to_queue(message)
 
-	def equip(self,ent_id, item_id, slot):
+	def unequip(self, item):
+		slot = self.WORLD['equippable'][item]['equipped_slot']
+		by   = self.WORLD['equippable'][item]['equipped_by']
+		self._unequip(by, slot)
+
+	def equip(self, ent_id, item_id, slot):
 		entity_equipment = self.WORLD['equipment'][ent_id]
 
 		if slot == "dual_wield":

@@ -36,7 +36,7 @@ class PlayerCommands():
 			self.MenuTree.append(self.surface_nodes.look_inventory(self.player_id))
 
 		elif user == "equipment":
-			self.MenuTree.append(self.surface_nodes.look_inventory(self.player_id))
+			self.MenuTree.append(self.surface_nodes.look_equipment(self.player_id))
 
 		elif user in self.MenuTree[-1].options.keys():
 			latest_node = self.MenuTree[-1]
@@ -104,14 +104,21 @@ class PlayerCommands():
 					message = {
 						"type"   :"equip",
 						"data":{"entity_id":info['data']["entity_id"], 
-						"action_user":self.player_id,
-						"slot": slot
+							"action_user":self.player_id,
+							"slot": slot
 						}
 					}
 					self.message.add_to_queue(message)
 					self.MenuTree.clear()
 					
-
+			elif action_type == "unequip":
+				message = {
+					"type"   :"unequip",
+					"data":{"entity_id":info['data']["entity_id"]}
+				}
+				self.message.add_to_queue(message)
+				self.MenuTree.clear()
+				self.MenuTree.append(self.surface_nodes.look_equipment(self.player_id))
 	
 class SurfaceNode():
 	def __init__(self, commands):
@@ -137,11 +144,11 @@ class SurfaceNode():
 		if self.world.is_object_type(ent_id, ["item"]) and not self.world.in_container(ent_id, self.player_id):
 			new_node.add_new_option("pick_up", "Pick Up", {"entity_id":ent_id, "action_user":self.player_id})
 		#  Is inside the players Inventory and thus, can be dropped.
-		if self.world.is_object_type(ent_id, ["item"]) and self.world.in_container(ent_id, self.player_id):
+		if self.world.is_object_type(ent_id, ["item"]) and ent_id in self.WORLD['inventory'][self.player_id]['items']:
 			new_node.add_new_option("drop", "Drop", {"entity_id":ent_id, "action_user":self.player_id})
 
 		# Is Equipable, and is in player inventory
-		if self.world.is_object_type(ent_id, ["equippable"]) and self.world.in_container(ent_id, self.player_id):
+		if self.world.is_object_type(ent_id, ["equippable"]) and ent_id in self.WORLD['inventory'][self.player_id]['items']:
 			new_node.add_new_option("equip", "Equip", {"entity_id":ent_id, "slot":None,"action_user":self.player_id})
 
 		# Has something to identify?
@@ -155,6 +162,12 @@ class SurfaceNode():
 		# Is an inventory?
 		if self.world.is_object_type(ent_id, ["inventory"]):
 			new_node.add_new_option("open", "Open container", {"entity_id":ent_id})
+
+		# Is currently equipped?
+		print(self.world.equipped_by(ent_id))
+		print(self.player_id)
+		if self.world.is_object_type(ent_id, ["equippable"]) and self.world.equipped_by(ent_id) == self.player_id:
+			new_node.add_new_option("unequip", "Unequip", {"entity_id":ent_id, "action_user": self.player_id})
 
 		return new_node
 
@@ -174,6 +187,24 @@ class SurfaceNode():
 			look_node.add_new_option("interact", text, {"entity_id":things})
 		return look_node
 
+	def look_equipment(self, ent_id):
+		equipment_node = MenuNode()
+		if ent_id != self.player_id:
+			pass
+		else:
+			equipment_node.set_header("You check your equipment.")
+
+		equipment = self.WORLD['equipment'][ent_id]
+
+		for slots in equipment:
+			
+			if equipment[slots] != None:
+				text = slots + '    ->     ' + self.WORLD['descriptor'][equipment[slots]]['name']
+				equipment_node.add_new_option("interact", text, {"entity_id":equipment[slots]})
+			else:
+				text = slots + '    ->      None' 
+
+		return equipment_node
 
 class MenuNode():
 	def __init__(self):

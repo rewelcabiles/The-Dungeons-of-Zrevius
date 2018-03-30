@@ -16,7 +16,7 @@
 		"legs_armour"  : null,
 		"left_hand"	   : null,
 		"right_hand"   : null,
-		"dual_wield"    : null,
+		"dual_wield"   : null,
 		"ring01": null,
 		"ring02": null
 
@@ -78,7 +78,9 @@
 	},
 
 	"equippable" : {
-		"slot" : null
+		"slot" : null,
+		"equipped_by"   : null,
+		"equipped_slot" : null
 	},
 
 	"item":{

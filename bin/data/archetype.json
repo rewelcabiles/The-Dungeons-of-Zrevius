@@ -17,7 +17,7 @@
 	{
 		"descriptor"	: null,
 		"item"			: null,
-		"equippable"    : {"slot" : null},
+		"equippable"    : null,
 		"weapon": {
 			"damage_type": "melee",
 			"weapon_type": "sword",
