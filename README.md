@@ -45,32 +45,24 @@ You head through the Hole in the wall and into a room.
 
 You need python 3.6.x
 
-run ```game_functions.py``` and type ```look```
+run ```game_functions.py``` 
 
-
-#### You can use the dungeon generator in your game.
-
-While an actual game is still missing, the foundation of the Dungeon Generator is working! Checkout the wiki on using it! [Using the Dungeon Generator In Your Game](https://github.com/Firetryer/TextRougelike/wiki/Using-the-Dungeon-Generator-in-your-game.)
-
- Will update it with more information in the future
 
 
 #### Features Completed
-1) Dungeon Generator creates a Maze of rooms
-2) Dungeon Generator can create items with a chance of a unique item when creating them.
-3) Dungeon Generator randomly adds items to the rooms
-4) The foundation of adding names and descriptions to anything
-5) Can enter doors to go move around other rooms
-6) The foundation of creating menus 
+1) Randomly generated dungeon.
+2) Semi-randomly generated equipment(Only weapons for now), and various other things you can pick up and equip.
+3) Move around the different areas.
+4) Semi-Randomly generated monsters with stats. (Can't interact with them for now though)
+5) Inventory Management. (Kind of clunky, but thats mostly the menu system that I'll improve in the future)
 
 #### Features being worked on:
-1) NPC Generation (Includes monsters and passive NPCs)
+1) NPC Interaction
 2) Combat Mechanics
-3) Inventory Management
-4) Consumable Use
-5) More Item Variety
-6) More Monster Variety
-7 More Variety in General
+3) Consumable Use
+4) More Item Variety
+5) More Monster Variety
+6) More Variety in General
 
 #### Future Plans
 1) A Main Quest
