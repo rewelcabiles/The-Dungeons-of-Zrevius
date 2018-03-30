@@ -14,6 +14,9 @@ class PlayerCommands():
 		self.surface_nodes = SurfaceNode(self)
 		self.MenuTree = []
 
+	def notified(self, message):
+		pass
+
 	def update(self):
 		if not self.MenuTree:
 			self.surface_nodes.look_at(self.world.get_location(self.player_id))

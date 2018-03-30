@@ -25,7 +25,7 @@ class GameFunctions:
 
 	def init_systems(self):
 		self.message_systems.register(self.systems.notified)
-
+		self.message_systems.register(self.command.notified)
 	def game_loop(self):
 		while(True):
 			self.command.update()

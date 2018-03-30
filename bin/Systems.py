@@ -22,8 +22,9 @@ class Systems:
 	def __init__(self, world, message):
 		self.world = world
 		self.WORLD = self.world.WORLD
-		self.message.message
+		self.message   = message
 		self.equipment = Equipment_Handling(self.world, message)
+
 	def update(self, message):
 		self.movement(message)
 		self.pick_up(message)
@@ -79,7 +80,7 @@ class Equipment_Handling:
 		self.message.add_to_queue(message)
 
 	def _unequip(self, ent_id, slot):
-		if self.WORLD['equipment'][ent_id][slot] != None
+		if self.WORLD['equipment'][ent_id][slot] != None:
 			item_id = self.WORLD['equipment'][ent_id][slot]
 			self.WORLD['equipment'][ent_id][slot] = None
 			self.WORLD['inventory'][ent_id]['items'].append(item_id)
@@ -93,7 +94,7 @@ class Equipment_Handling:
 			}
 			self.message.add_to_queue(message)
 
-	def equip(self,ent_id, item_id, slot)
+	def equip(self,ent_id, item_id, slot):
 		entity_equipment = self.WORLD['equipment'][ent_id]
 
 		if slot == "dual_hand":
