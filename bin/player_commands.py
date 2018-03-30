@@ -87,6 +87,28 @@ class PlayerCommands():
 				self.MenuTree.clear()
 				self.message.add_to_queue(message)
 
+			elif action_type == "equip":
+				requested_slot  = self.WORLD['equippable'][info['data']["entity_id"]]['slot']
+
+				if requested_slot == "dual_wield":
+					slot = "dual_wield"
+
+				if requested_slot != "dual_wield" and info['data']['slot'] == None:
+					self.MenuTree.append(self.surface_nodes.one_hand_equip(info['data']["entity_id"]))
+				
+				else:
+					slot = info['data']['slot']
+
+					message = {
+						"type"   :"equip",
+						"data":{"entity_id":info['data']["entity_id"], 
+						"action_user":self.player_id,
+						"slot": slot
+						}
+					}
+					self.MenuTree.clear()
+					self.message.add_to_queue(message)
+
 	
 class SurfaceNode():
 	def __init__(self, commands):
@@ -94,6 +116,13 @@ class SurfaceNode():
 		self.world      = self.commands.world
 		self.WORLD      = self.commands.world.WORLD
 		self.player_id  = commands.player_id
+
+	def one_hand_equip(self, ent_id):
+		new_node = MenuNode()
+		new_node.set_header("Which slot do you want to equip it in?")
+		new_node.add_new_option("equip", "Left Hand", {"item_id":ent_id, "slot": "left_hand", "action_user":self.player_id})
+		new_node.add_new_option("equip", "Right Hand", {"item_id":ent_id, "slot": "right_hand", "action_user":self.player_id})
+		return new_node
 
 	def interact(self, ent_id):
 		new_node = MenuNode()
@@ -110,9 +139,15 @@ class SurfaceNode():
 			print("DEBUG: Can be picked up.")
 			new_node.add_new_option("pick_up", "Pick Up", {"entity_id":ent_id, "action_user":self.player_id})
 
+		#  Is inside the players Inventory and thus, can be dropped.
 		if self.world.is_object_type(ent_id, ["item"]) and self.world.in_container(ent_id, self.player_id):
 			print("DEBUG: Is inside the players Inventory and thus, can be dropped.")
 			new_node.add_new_option("drop", "Drop", {"entity_id":ent_id, "action_user":self.player_id})
+
+		# Is Equipable, and is in player inventory
+		if self.world.is_object_type(ent_id, ["equippable"]) and self.world.in_container(ent_id, self.player_id):
+			print("DEBUG: Is inside player inventory, and is equipable")
+			new_node.add_new_option("equip", "Equip", {"item_id":ent_id, "slot":None,"action_user":self.player_id})
 
 		# Has something to identify?
 		if self.world.is_object_type(ent_id, ["modifiers"]) or self.world.is_object_type(ent_id, ["buff_refill"]):

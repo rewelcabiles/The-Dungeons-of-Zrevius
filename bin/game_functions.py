@@ -19,7 +19,7 @@ class GameFunctions:
 		spawn_room     = random.choice(list(self.world.WORLD['isroom'].keys()))
 		self.world.set_entity_location(self.player_id, spawn_room)
 		self.message_systems = MessageBoard()
-		self.systems 		 = Systems(self.world)
+		self.systems 		 = Systems(self.world,self.message_systems)
 		self.command   		 = PlayerCommands(self.world, self.message_systems, self.player_id)
 		self.init_systems()
 
