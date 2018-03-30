@@ -84,4 +84,7 @@ class World():
 		return container == self.WORLD['location'][ent_id]['container_id']
 
 	def equipped_by(self, ent_id):
-		return self.WORLD['equippable'][ent_id]['equipped_by']
+		try:
+			return self.WORLD['equippable'][ent_id]['equipped_by']
+		except:
+			return False

@@ -187,8 +187,9 @@ class SurfaceNode():
 			look_node.set_header("You look through your bags and see...")
 
 		for things in self.WORLD['inventory'][ent_id]['items']:
-			text = self.WORLD['descriptor'][things]['name']
-			look_node.add_new_option("interact", text, {"entity_id":things})
+			if things != self.player_id:
+				text = self.WORLD['descriptor'][things]['name']
+				look_node.add_new_option("interact", text, {"entity_id":things})
 		return look_node
 
 	def look_equipment(self, ent_id):
