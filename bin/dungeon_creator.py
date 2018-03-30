@@ -216,7 +216,7 @@ class Dungeon_Spicer:
 
 	def add_items(self, inv_id, i_type="random"):
 		for i in range(random.randrange(1, 3)):
-			if random.randrange(0, 100) <= 20:  # For weapons
+			if random.randrange(0, 100) <= 60:  # For weapons
 				new_weapon = self.world.factory.weapon_creator()
 				self.world.add_to_inventory(new_weapon, inv_id)
 
