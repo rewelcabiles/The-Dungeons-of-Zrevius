@@ -19,19 +19,29 @@ class MessageBoard():
 
 
 class Systems:
-	def __init__(self, world):
+	def __init__(self, world, message):
 		self.world = world
 		self.WORLD = self.world.WORLD
-
+		self.message.message
+		self.equipment = Equipment_Handling(self.world, message)
 	def update(self, message):
 		self.movement(message)
 		self.pick_up(message)
 		self.drop(message)
+		self.equip(message)
+
 	def pick_up(self, message):
 		if message["type"] == "pick_up":
 			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, action_user)
+
+	def equip(self, message):
+		if message["type"] == "equip":
+			item_target    = message['data']["entity_id"]
+			action_user    = message['data']["action_user"]
+			requested_slot = message['data']["slot"]
+			self.world.equip_item(action_user, item_target, requested_slot)
 
 	def movement(self, message):
 		if message["type"] == "move":
@@ -47,3 +57,62 @@ class Systems:
 
 	def notified(self, message):
 		self.update(message)
+
+
+class Equipment_Handling:
+	def __init__(self, world, message):
+		self.world = world
+		self.WORLD = self.world.WORLD
+		self.message = message
+
+	def _equip(self, ent_id, item_id, slot):
+		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
+		self.WORLD['equipment'][ent_id][slot] == item_id
+		message = {
+			"topic" : "notification",
+			"data"  : {
+				"action" 	 : "equip",
+				"action_user": ent_id,
+				"item_id"	 : item_id
+			}
+		}
+		self.message.add_to_queue(message)
+
+	def _unequip(self, ent_id, slot):
+		if self.WORLD['equipment'][ent_id][slot] != None
+			item_id = self.WORLD['equipment'][ent_id][slot]
+			self.WORLD['equipment'][ent_id][slot] = None
+			self.WORLD['inventory'][ent_id]['items'].append(item_id)
+			message = {
+				"topic" : "notification",
+				"data"  : {
+					"action" 	 : "unequip",
+					"action_user": ent_id,
+					"item_id"	 : item_id
+				}
+			}
+			self.message.add_to_queue(message)
+
+	def equip(self,ent_id, item_id, slot)
+		entity_equipment = self.WORLD['equipment'][ent_id]
+
+		if slot == "dual_hand":
+			if entity_equipment['left_hand'] == None and entity_equipment['right_hand'] == None:
+				self._equip(ent_id, item_id, slot)
+
+			else: 
+				self._unequip(ent_id, 'left_hand')
+				self._unequip(ent_id, 'right_hand')
+				self._equip(ent_id, item_id, slot)
+		elif slot == "left_hand":
+			if entity_equipment['left_hand'] == None:
+				self._equip(ent_id, item_id, slot)
+			else:
+				self._unequip(ent_id, 'left_hand')
+				self._equip(ent_id, item_id, slot)
+		elif slot == "right_hand":
+			if entity_equipment['right_hand'] == None:
+				self._equip(ent_id, item_id, slot)
+			else:
+				self._unequip(ent_id, 'right_hand')
+				self._equip(ent_id, item_id, slot)
