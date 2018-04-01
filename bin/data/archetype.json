@@ -46,7 +46,8 @@
 	"container" : {
 		"descriptor": null,
 		"inventory" : null,
-		"location"	: null
+		"location"	: null,
+		"container" : null
 	},
 
 	"consumable_refill" : {

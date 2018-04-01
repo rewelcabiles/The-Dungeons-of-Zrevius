@@ -1,10 +1,11 @@
-{
+ {
 	"mask" : {},
 	"position":{
 		"x": 0,
 		"y": 0
 	},
 
+	"container" : {},
 
 	"inventory":{
 		"items": []
@@ -88,8 +89,8 @@
 		"value"      : 1
 	},
 
-	"monster": {
-		"type" : null
+	"npc":{
+		"aggresive":false
 	},
 
 	"transition": {
