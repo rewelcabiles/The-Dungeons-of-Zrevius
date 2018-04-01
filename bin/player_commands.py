@@ -142,35 +142,35 @@ class SurfaceNode():
 		new_node = MenuNode()
 		new_node.set_header("What do you want to do with "+ self.WORLD['descriptor'][ent_id]['name'] + "?")
 		# Can be looked at?
-		if self.world.is_object_type(ent_id, ["descriptor"]):
+		if self.world.has_components(ent_id, ["descriptor"]):
 			new_node.add_new_option("look", "Look at", {"entity_id":ent_id})
 		# Able to be picked up?
-		if self.world.is_object_type(ent_id, ["item"]) and not self.world.in_container(ent_id, self.player_id):
+		if self.world.has_components(ent_id, ["item"]) and not self.world.in_container(ent_id, self.player_id):
 			new_node.add_new_option("pick_up", "Pick Up", {"entity_id":ent_id, "action_user":self.player_id})
 		#  Is inside the players Inventory and thus, can be dropped.
-		if self.world.is_object_type(ent_id, ["item"]) and ent_id in self.WORLD['inventory'][self.player_id]['items']:
+		if self.world.has_components(ent_id, ["item"]) and ent_id in self.WORLD['inventory'][self.player_id]['items']:
 			new_node.add_new_option("drop", "Drop", {"entity_id":ent_id, "action_user":self.player_id})
 
 		# Is Equipable, and is in player inventory
-		if self.world.is_object_type(ent_id, ["equippable"]) and ent_id in self.WORLD['inventory'][self.player_id]['items']:
+		if self.world.has_components(ent_id, ["equippable"]) and ent_id in self.WORLD['inventory'][self.player_id]['items']:
 			new_node.add_new_option("equip", "Equip", {"entity_id":ent_id, "slot":None,"action_user":self.player_id})
 
 		# Has something to identify?
-		if self.world.is_object_type(ent_id, ["modifiers"]) or self.world.is_object_type(ent_id, ["buff_refill"]):
+		if self.world.has_components(ent_id, ["modifiers"]) or self.world.has_components(ent_id, ["buff_refill"]):
 			new_node.add_new_option("identify", "Identify", {"entity_id":ent_id})
 
 		# Is it a transition object? (AKA, a door or portal.. etc)
-		if self.world.is_object_type(ent_id, ["transition"]):
+		if self.world.has_components(ent_id, ["transition"]):
 			new_node.add_new_option("go", "Go Through", {"entity_id":ent_id})
 
-		# Is an inventory?
-		if self.world.is_object_type(ent_id, ["inventory"]):
+		# Is a container?
+		if self.world.has_components(ent_id, ["container"]):
 			new_node.add_new_option("open", "Open container", {"entity_id":ent_id})
 
 		# Is currently equipped?
 		print(self.world.equipped_by(ent_id))
 		print(self.player_id)
-		if self.world.is_object_type(ent_id, ["equippable"]) and self.world.equipped_by(ent_id) == self.player_id:
+		if self.world.has_components(ent_id, ["equippable"]) and self.world.equipped_by(ent_id) == self.player_id:
 			new_node.add_new_option("unequip", "Unequip", {"entity_id":ent_id, "action_user": self.player_id})
 
 		return new_node
