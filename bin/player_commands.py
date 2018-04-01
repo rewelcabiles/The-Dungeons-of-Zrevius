@@ -42,6 +42,9 @@ class PlayerCommands():
 		elif user == "equipment":
 			self.MenuTree.append(self.surface_nodes.look_equipment(self.player_id))
 
+		elif user == "stats":
+			self.MenuTree.append(self.surface_nodes.view_stats(self.player_id))
+
 		elif user in self.MenuTree[-1].options.keys():
 			latest_node = self.MenuTree[-1]
 			info = latest_node.options[user]
@@ -178,6 +181,13 @@ class SurfaceNode():
 	def look_at(self, ent_id):
 		print("You look at the " + self.WORLD['descriptor'][ent_id]['name'])
 		print(self.WORLD['descriptor'][ent_id]['desc'])
+
+	def view_stats(self, ent_id):
+		stat_node = MenuNode()
+		stat_node.set_header("STATS: ")
+		for stat in self.WORLD['stats'][ent_id]:
+			print("~ "+str(self.WORLD['stats'][ent_id][stat])+"  ->  "+str(stat))
+		return stat_node
 
 	def look_inventory(self, ent_id):
 		look_node = MenuNode() 
