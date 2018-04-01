@@ -188,8 +188,10 @@ class Factory():
 		return ent_id
 
 
-	def character_creator(self, species=None, name=None): # Leave parameters empty for random characters
-		return self.npc_factory.create_character(species, name)
+	def character_creator(self, species=None, name=None, is_npc = True): # Leave parameters empty for random characters
+		return self.npc_factory.create_character(species, name, is_npc)
+
+
 
 class NPC_Factory: # Not going to lie, we probably dont need this in a separate class.
 	def __init__(self, factory):
@@ -202,14 +204,17 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 		self.factory.create_from_archetype(ent_id, 'character')
 		return ent_id
 
-	def create_character(self, species = None, name = None):
+	def create_character(self, species = None, name = None, is_npc = True):
 		ent_id = self._create_base_character()
 		if species == None or species not in self.factory.stats['npc_stats'].keys():
-			if species not in self.factory.stats['npc_stats'].keys():
+			if species not in self.factory.stats['npc_stats'].keys() and species != None:
 				print("DEBUG HIGH: SPECIES NOT IN NPC_STATS")
 			species = random.choice(list(self.factory.stats['npc_stats'].keys()))
 		if name == None:
 			name    = random.choice(self.factory.descriptors['names'][species])
+
+		if is_npc:
+			self.factory.create_components('npc', ent_id)
 
 		self.WORLD['stats'][ent_id] 			 = self.factory.stats['npc_stats'][species]
 		self.WORLD['descriptor'][ent_id]['name'] = name
