@@ -17,7 +17,12 @@ class PlayerCommands():
 		self.surface_nodes = SurfaceNode(self)
 		self.MenuTree = []
 
-	def notified(self, message):
+	# For when I decide to separate input from (text) display
+	# When displayer gets notified of an action the player has made via a notification
+	# with the players id, print a relevant message
+	# Likewise for things like combat
+	def notified(self, message): 
+
 		pass
 
 	def update(self):
