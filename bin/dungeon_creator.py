@@ -199,7 +199,7 @@ class Dungeon_Spicer:
 		while self.max_enemies > self.spawned_enemies:
 			# I made this function ages ago and don't exactly remember what it does. pls fix.
 			if random.randrange(0, 100) <= ((self.max_enemies / self.max_rooms) * 100): 
-				new_monster = self.world.factory.random_monster_creator()
+				new_monster = self.world.factory.character_creator()
 				self.world.add_to_inventory(new_monster, room_id)
 				self.spawned_enemies += 1
 

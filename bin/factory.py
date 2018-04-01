@@ -9,8 +9,6 @@ import copy
 class Factory():
 
 	def __init__(self, WORLD):
-		self.world = WORLD
-		self.WORLD = self.world.WORLD
 		with open('data/archetype.json') as data_file:
 			self.archetypes = json.load(data_file)
 		with open('data/components.json') as component_files:
@@ -19,6 +17,9 @@ class Factory():
 			self.descriptors = json.load(descriptor_files)
 		with open('data/entity_stats.json') as stat_files:
 			self.stats = json.load(stat_files)
+		self.world = WORLD
+		self.WORLD = self.world.WORLD
+		self.npc_factory = NPC_Factory(self)
 
 	def create_from_archetype(self, ent_id, archetype_name):
 		for component in list(self.archetypes[archetype_name].keys()):
@@ -35,7 +36,7 @@ class Factory():
 		self.WORLD['mask'][ent_id] |= self.world.COMPS[comp]
 
 	def lorify(self, ent_id):
-		monster_mask = (self.world.COMPS['monster'])
+		npc_mask = (self.world.COMPS['npc'])
 		weapon_mask = (self.world.COMPS['weapon'])
 		isroom_mask = (self.world.COMPS['isroom'])
 		door_mask = (self.world.COMPS['transition'])
@@ -53,10 +54,10 @@ class Factory():
 			self.WORLD['descriptor'][ent_id]['name'] = desc['name']
 			self.WORLD['descriptor'][ent_id]['desc'] = desc['desc']
 
-		elif (self.WORLD['mask'][ent_id] & monster_mask) == monster_mask:
-			monster_type = self.WORLD['monster'][ent_id]['type']
+		elif (self.WORLD['mask'][ent_id] & npc_mask) == npc_mask:
+			npc_type = self.WORLD['monster'][ent_id]['type']
 			self.WORLD['descriptor'][ent_id]['name'] = random.choice(
-				self.descriptors['names']['monsters'][monster_type])
+				self.descriptors['names']['monsters'][npc_type])
 
 		elif (self.WORLD['mask'][ent_id] & weapon_mask) == weapon_mask:
 			weapon_type = self.WORLD['weapon'][ent_id]['type']
@@ -186,29 +187,30 @@ class Factory():
 
 		return ent_id
 
-	def random_monster_creator(self):
+
+	def character_creator(self, species=None, name=None): # Leave parameters empty for random characters
+		return self.npc_factory.create_character(species, name)
+
+class NPC_Factory: # Not going to lie, we probably dont need this in a separate class.
+	def __init__(self, factory):
+		self.factory = factory
+		self.world = self.factory.world
+		self.WORLD = self.world.WORLD
+
+	def _create_base_character(self):
 		ent_id = self.world.assign_entity_id()
-		self.create_from_archetype(ent_id, 'character')
-		species = random.choice(list(self.stats['npc_stats'].keys()))
-		self.WORLD['stats'][ent_id] = self.stats['npc_stats'][species]
-		self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names'][species])
+		self.factory.create_from_archetype(ent_id, 'character')
 		return ent_id
 
+	def create_character(self, species = None, name = None):
+		ent_id = self._create_base_character()
+		if species == None or species not in self.factory.stats['npc_stats'].keys():
+			if species not in self.factory.stats['npc_stats'].keys():
+				print("DEBUG HIGH: SPECIES NOT IN NPC_STATS")
+			species = random.choice(list(self.factory.stats['npc_stats'].keys()))
+		if name == None:
+			name    = random.choice(self.factory.descriptors['names'][species])
 
-	def character_creator(self, species, name='random'):
-		ent_id = self.world.assign_entity_id()
-		self.create_from_archetype(ent_id, 'character')
-
-		# Applies stats from entity_stats.json file based on species
-		if species in self.stats['npc_stats'].keys():
-			self.WORLD['stats'][ent_id] = self.stats['npc_stats'][species]
-		else:
-			self.WORLD['stats'][ent_id] = self.stats['npc_stats']['Human']
-
-		if name == 'random':
-			self.WORLD['descriptor'][ent_id]['name'] = random.choice(self.descriptors['names'][species])
-		else:
-			self.WORLD['descriptor'][ent_id]['name'] = name
+		self.WORLD['stats'][ent_id] 			 = self.factory.stats['npc_stats'][species]
+		self.WORLD['descriptor'][ent_id]['name'] = name
 		return ent_id
-
-
