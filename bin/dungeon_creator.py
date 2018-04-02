@@ -184,7 +184,7 @@ class Dungeon_Spicer:
 		for f in self.dungeon:
 			for r in list(self.dungeon[f].values()):
 				self.max_rooms += 1
-		self.max_enemies = self.max_rooms * 0.3
+		self.max_enemies = self.max_rooms * 0.5
 
 		self.populate_dungeon()
 
@@ -198,7 +198,7 @@ class Dungeon_Spicer:
 	def initial_spawn_monster(self, room_id): 
 		if self.max_enemies > self.spawned_enemies:
 			if random.randrange(0, 100) <= ((self.max_enemies / self.max_rooms) * 100): 
-				new_monster = self.world.factory.character_creator()
+				new_monster = self.world.factory.npc_factory.create_hostile_npc()
 				self.world.add_to_inventory(new_monster, room_id)
 				self.spawned_enemies += 1
 
