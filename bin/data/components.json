@@ -89,9 +89,21 @@
 		"value"      : 1
 	},
 
-	"npc":{
-		"aggresive":false
+	"in_combat":{
+		"enemies":[],
+		"allies" :[]
 	},
+
+	"ai_combat_flags":{
+		"allies_with_own_species": true,
+		"allies_with_anyone": false,
+		"retaliates":true
+	},	
+
+	"aggresive_only_player":{},
+	"aggresive_all":{},
+
+	"npc":{},
 
 	"transition": {
 		"target" : null
