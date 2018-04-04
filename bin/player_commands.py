@@ -6,7 +6,7 @@
 # !!! Make player characters invisible from room look.
 # TODO: Make it so that as you travel between rooms, you get a chance of being ambushed
 # TODO: Combat mechanics now pls
-# TODO: Encounter/ Scenario System, instead of random spawning of one or two monsters
+# TODO: Encounter/ Scenario System, instead  of random spawning of one or two monsters
 # 	 	Ala- darkest dungeon esque
 class PlayerCommands():
 	def __init__(self, world, message, pid):

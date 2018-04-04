@@ -55,6 +55,20 @@ class Systems:
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(action_user, room_target)
 
+	def ai_aggression_move(self, message):
+		if message["type"] == "move":
+			room_target = message['data']["room_target"]
+			action_user = message['data']["action_user"]
+
+			aggressive_entities = []
+
+			for entity in self.WORLD['inventory'][room_target]['items']:
+				if self.world.has_components(entity, ['aggresive']):
+					aggressive_entities.append(entity)
+					
+
+
+
 	def drop(self, message):
 		if message["type"] == "drop":
 			item_target = message['data']["entity_id"]
