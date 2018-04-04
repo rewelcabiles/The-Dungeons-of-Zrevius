@@ -100,8 +100,9 @@
 		"retaliates":true
 	},	
 
-	"aggresive_only_player":{},
-	"aggresive_all":{},
+	"aggresive":{
+		"against": "all"
+	},
 
 	"npc":{},
 
