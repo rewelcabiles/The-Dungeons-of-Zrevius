@@ -1,10 +1,11 @@
-{
+ {
 	"mask" : {},
 	"position":{
 		"x": 0,
 		"y": 0
 	},
 
+	"container" : {},
 
 	"inventory":{
 		"items": []
@@ -88,9 +89,23 @@
 		"value"      : 1
 	},
 
-	"monster": {
-		"type" : null
+	"in_combat":{
+		"enemies":[],
+		"allies" :[]
 	},
+
+	"ai_combat_flags":{
+		"allies_with_own_species": true,
+		"allies_with_anyone": false,
+		"retaliates":true
+	},	
+
+	"aggressive":{
+		"against": "player"
+	},
+
+	"npc":null,
+	"player":null,
 
 	"transition": {
 		"target" : null

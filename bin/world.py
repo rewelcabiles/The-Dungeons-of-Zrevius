@@ -18,7 +18,7 @@ class World():
 			self.WORLD[key] = {}
 			self.COMPS[key] = 1 << iterator
 			iterator += 1
-		self.entity_id_max = 1500
+		self.entity_id_max = 2500
 		self.factory = factory.Factory(self)
 
 	def assign_entity_id(self):
@@ -34,7 +34,7 @@ class World():
 			temp_mask |= self.COMPS[comps]
 		return temp_mask		
 
-	def is_object_type(self, ent_id, component_list):
+	def has_components(self, ent_id, component_list):
 		temp_mask = self.create_dynamic_mask(component_list)
 		if((self.WORLD['mask'][ent_id] & temp_mask) == temp_mask):
 			return True
@@ -57,8 +57,8 @@ class World():
 
 	def destroy_entity(self, entity_id):
 		for components in self.WORLD.keys():
-			if ent_id in self.WORLD[components].keys():
-				del self.WORLD[components][ent_id]
+			if entity_id in self.WORLD[components].keys():
+				del self.WORLD[components][entity_id]
 
 	def set_entity_location(self, ent_id, target_room):
 		self.WORLD['location'][ent_id]['container_id'] = target_room

@@ -2,7 +2,7 @@
 
 from dungeon_creator import Dungeon_Generator as dun_gen
 from player_commands import PlayerCommands
-from Systems import *
+from Systems import Systems_Master, MessageBoard
 import json
 import random
 # This is where we add functions that interface with the world object
@@ -14,17 +14,18 @@ class GameFunctions:
 
 	def __init__(self):
 		self.init_world()
-		self.player_id = self.world.factory.character_creator('Human', "Quin")
+		# Maybe move the player spawning to the command classes?
+		self.player_id = self.world.factory.character_creator('Human', "Quin", False) 
 		spawn_room     = random.choice(list(self.world.WORLD['isroom'].keys()))
 		self.world.set_entity_location(self.player_id, spawn_room)
-		self.message_systems = MessageBoard()
-		self.systems 		 = Systems(self.world,self.message_systems)
-		self.command   		 = PlayerCommands(self.world, self.message_systems, self.player_id)
+		self.message_board   = MessageBoard()
+		self.systems 		 = Systems_Master(self)
+		self.command   		 = PlayerCommands(self.world, self.message_board, self.player_id)
 		self.init_systems()
 
 	def init_systems(self):
-		self.message_systems.register(self.systems.notified)
-		self.message_systems.register(self.command.notified)
+		self.message_board.register(self.command.notified)
+		
 	def game_loop(self):
 		while(True):
 			self.command.update()
