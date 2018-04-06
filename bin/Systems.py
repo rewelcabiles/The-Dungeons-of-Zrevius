@@ -55,18 +55,7 @@ class Systems:
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(action_user, room_target)
 
-	def ai_aggression_move(self, message):
-		if message["type"] == "move":
-			room_target = message['data']["room_target"]
-			action_user = message['data']["action_user"]
 
-			aggressive_entities = []
-
-			# Get all entities that have aggressive component
-			for entity in self.WORLD['inventory'][room_target]['items']:
-				if self.world.has_components(entity, ['aggresive']):
-					aggressive_entities.append(entity)
-					
 	def drop(self, message):
 		if message["type"] == "drop":
 			item_target = message['data']["entity_id"]
@@ -76,12 +65,35 @@ class Systems:
 	def notified(self, message):
 		self.update(message)
 
+class NPC_Ai:
+	def __init__(self, world, message):
+		self.world = world
+		self.WORLD = self.world.WORLD
+		self.message_board = message
+
+	def ai_aggression_move(self, message):
+		# If a new entity moves into a room, it checks if other entities in the room it moved into
+		# can be aggressive to it.
+		if message["type"] == "move":
+			room_target = message['data']["room_target"]
+			action_user = message['data']["action_user"]
+
+			aggressive_entities = []
+			aggressive_against_player = []
+			# Get all entities that have aggressive component
+			for entity in self.WORLD['inventory'][room_target]['items']:
+				if self.world.has_components(entity, ['aggressive']):
+					aggressive_entities.append(entity)
+
+			for entity in aggressive_entities:
+				if self.WORLD['aggressive'][entity]['against'] == "player":
+					aggressive_against_player.append(entity) 
 
 class Equipment_Handling:
 	def __init__(self, world, message):
 		self.world = world
 		self.WORLD = self.world.WORLD
-		self.message = message
+		self.message_board = message
 
 	def _equip(self, ent_id, item_id, slot):
 		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
@@ -96,7 +108,7 @@ class Equipment_Handling:
 				"item_id"	 : item_id
 			}
 		}
-		self.message.add_to_queue(message)
+		self.message_board.add_to_queue(message)
 
 	def _unequip(self, ent_id, slot):
 		if self.WORLD['equipment'][ent_id][slot] != None:
@@ -111,7 +123,7 @@ class Equipment_Handling:
 					"item_id"	 : item_id
 				}
 			}
-			self.message.add_to_queue(message)
+			self.message_board.add_to_queue(message)
 
 	def unequip(self, item):
 		slot = self.WORLD['equippable'][item]['equipped_slot']
