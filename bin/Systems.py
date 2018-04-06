@@ -62,13 +62,11 @@ class Systems:
 
 			aggressive_entities = []
 
+			# Get all entities that have aggressive component
 			for entity in self.WORLD['inventory'][room_target]['items']:
 				if self.world.has_components(entity, ['aggresive']):
 					aggressive_entities.append(entity)
 					
-
-
-
 	def drop(self, message):
 		if message["type"] == "drop":
 			item_target = message['data']["entity_id"]

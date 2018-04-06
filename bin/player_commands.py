@@ -13,6 +13,7 @@ class PlayerCommands():
 		self.world = world
 		self.WORLD = self.world.WORLD
 		self.player_id = pid
+		print(pid)
 		self.message = message
 		self.surface_nodes = SurfaceNode(self)
 		self.MenuTree = []
@@ -59,7 +60,6 @@ class PlayerCommands():
 
 			elif action_type == "interact":
 				entity_id = info['data']["entity_id"]
-				obj_type= self.world.get_object_type(entity_id)
 				self.MenuTree.append(self.surface_nodes.interact(entity_id))
 
 			elif action_type == "look":

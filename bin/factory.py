@@ -207,6 +207,8 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 		if is_npc:
 			self.factory.create_components('npc', ent_id)
 			self.factory.create_components('ai_combat_flags', ent_id)
+		else:
+			self.factory.create_components('player', ent_id)
 
 		self.WORLD['stats'][ent_id] 			 = self.factory.stats['npc_stats'][species]
 		self.WORLD['descriptor'][ent_id]['name'] = name
@@ -224,7 +226,7 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 		self.WORLD['stats'][ent_id] = copy.deepcopy(self.factory.stats['npc_stats'][species])
 		self.WORLD['descriptor'][ent_id]['name'] = name
 
-		self.factory.create_components('aggresive_only_player', ent_id)
+		self.factory.create_components('aggresive', ent_id)
 		self.factory.create_components('ai_combat_flags', ent_id)			
 
 		base_stats = self.WORLD['stats'][ent_id]
