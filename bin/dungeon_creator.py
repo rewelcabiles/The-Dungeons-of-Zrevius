@@ -220,5 +220,5 @@ class Dungeon_Spicer:
 				self.world.add_to_inventory(new_weapon, inv_id)
 
 			if random.randrange(0, 100) <= 45:  # For consumables
-				new_consumable = self.world.factory.create_consumbale()
+				new_consumable = self.world.factory.create_consumable()
 				self.world.add_to_inventory(new_consumable, inv_id)

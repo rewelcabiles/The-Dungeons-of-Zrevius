@@ -104,7 +104,7 @@ class Factory():
 		self.lorify(ent_id)
 		return ent_id
 
-	def create_consumbale(self, c_type="refill", size="small"):
+	def create_consumable(self, c_type="refill", size="small"):
 		ent_id = self.world.assign_entity_id()
 		if c_type == 'refill':
 			self.create_from_archetype(ent_id, 'consumable_refill')
