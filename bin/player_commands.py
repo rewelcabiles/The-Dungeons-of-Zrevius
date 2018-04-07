@@ -71,10 +71,14 @@ class PlayerCommands():
 					"type"   :"drop",
 					"data":{"entity_id" : ent_id, "action_user" : self.player_id}
 					}
+				old_loc = self.world.get_location(info['data']["entity_id"])
 				self.message.add_to_queue(message)
-				self.MenuTree.clear() # Pops the interact Node
-				self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(info['data']["entity_id"]))) # Appends the updated node
+				self.MenuTree.pop() # Pops the interact Node
+				self.MenuTree.pop() # Pops the Old container Node
+				self.MenuTree.append(self.surface_nodes.look_inventory(old_loc)) 
 				print("You drop "+self.WORLD['descriptor'][ent_id]['name']+". Down it goes!")
+
+			
 
 			elif action_type == "pick_up":
 				ent_id  = info['data']["entity_id"]
@@ -82,10 +86,11 @@ class PlayerCommands():
 					"type"   :"pick_up",
 					"data":{"entity_id" : ent_id, "action_user" : self.player_id}
 					}
+				old_loc = self.world.get_location(info['data']["entity_id"])
 				self.message.add_to_queue(message)
 				self.MenuTree.pop() # Pops the interact Node
 				self.MenuTree.pop() # Pops the Old container Node
-				self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(info['data']["entity_id"]))) # Appends the updated node
+				self.MenuTree.append(self.surface_nodes.look_inventory(old_loc)) # Appends the updated node
 				print(self.WORLD['descriptor'][ent_id]['name'] + ' goes into your inventory.')
 
 			elif action_type == "open":
@@ -177,7 +182,7 @@ class SurfaceNode():
 		# Is NPC
 		if self.world.has_components(ent_id, ["npc"]):
 			new_node.add_new_option("attack", "Attack", {"entity_id":ent_id})
-			
+
 		# Is currently equipped?
 		print(self.world.equipped_by(ent_id))
 		print(self.player_id)
