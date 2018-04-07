@@ -67,6 +67,9 @@ class World():
 	def in_container(self, ent_id, container):
 		return container == self.WORLD['location'][ent_id]['container_id']
 
+	def get_equipment_slot(self, entity, slot):
+		return self.WORLD['equipment'][entity][slot]
+
 	def equipped_by(self, ent_id):
 		try:
 			return self.WORLD['equippable'][ent_id]['equipped_by']

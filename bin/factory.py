@@ -230,8 +230,7 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 
 		base_stats = self.WORLD['stats'][ent_id]
 		print(base_stats)
-		base_stats.pop('level'),
-		base_stats.pop('exp')
+
 
 		for stat in random.sample(list(base_stats), random.randrange(0, 5)):
 			new_mod = self.WORLD['stats'][ent_id][stat] + random.randrange(-4,6)
