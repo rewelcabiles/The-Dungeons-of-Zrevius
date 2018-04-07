@@ -78,8 +78,6 @@ class PlayerCommands():
 				self.MenuTree.append(self.surface_nodes.look_inventory(old_loc)) 
 				print("You drop "+self.WORLD['descriptor'][ent_id]['name']+". Down it goes!")
 
-			
-
 			elif action_type == "pick_up":
 				ent_id  = info['data']["entity_id"]
 				message = {
@@ -135,7 +133,19 @@ class PlayerCommands():
 				self.message.add_to_queue(message)
 				self.MenuTree.clear()
 				self.MenuTree.append(self.surface_nodes.look_equipment(self.player_id))
-	
+			## COMBAT RELATED
+			elif action_type == "attack":
+				message = {
+					"type"	: "attack",
+					"data"	: {
+						"action_user"  : self.player_id,
+						"target_entity": info['data']['entity_id']
+					}
+				}
+				self.message.add_to_queue(message)
+				self.MenuTree.clear()
+				self.MenuTree.append(self.surface_nodes.interact(info['data']['entity_id']))
+
 class SurfaceNode():
 	def __init__(self, commands):
 		self.commands   = commands
