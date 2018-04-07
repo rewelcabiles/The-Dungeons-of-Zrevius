@@ -36,6 +36,18 @@
 		"location"  : null
 	},
 
+	"character_monster" :
+	{
+		"descriptor"	: null,
+		"stats"     	: null,
+		"inventory" 	: null,
+		"equipment" 	: null,
+		"location"  	: null,
+		"npc"	    	: null,
+		"ai_aggressive"	: null,
+		"ai_retaliates"	: null
+	},
+
 	"door":
 	{
 		"descriptor": null,

@@ -35,8 +35,6 @@
 	"isroom":{
 		"exits" : [0,0,0,0]
 	},
-	
-	"ismonster":{},
 
 	"area":{
 		"rooms" : []
@@ -52,7 +50,8 @@
 		"dex"    : 0,
 		"int"    : 0,
 		"con"    : 0,
-		"cha"	 : 0
+		"cha"	 : 0,
+		"spd"	 : 0
 	},
 
 	"consumable" : {
@@ -94,18 +93,10 @@
 		"allies" :[]
 	},
 
-	"ai_combat_flags":{
-		"allies_with_own_species": true,
-		"allies_with_anyone": false,
-		"retaliates":true
-	},	
+	"ai_retaliates":true,
 
-	"aggressive":{
+	"ai_aggressive":{
 		"against": "player"
-	},
-
-	"ai_enemy_behavior":{
-		"aggressive_against": "player"
 	},
 
 	"npc":null,
