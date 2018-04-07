@@ -77,9 +77,11 @@ class Combat_Handler:
 		self.attack(message)
 
 	def attack(self, message):
-		if message["type"] == "move":
-			room_target = message['data']["room_target"]
+		if message["type"] == "attack":
+			target_entity = message['data']["target_entity"]
 			action_user = message['data']["action_user"]
+
+
 
 class NPC_Handler:
 	def __init__(self, sys_master):
@@ -154,11 +156,28 @@ class Equipment_Handling:
 					self._unequip(ent_id, 'right_hand')
 					self._equip(ent_id, item_id, slot)
 
+	def _apply_item_stats(self, item_id, ent_id):
+		modifiers = self.WORLD['modifiers'][item_id]
+		ent_stats = self.WORLD['stats'][ent_id]
+
+		for stats_key in modifiers:
+			stats_value = modifiers[stats_key]
+			ent_stats[stats_key] += stats_value
+
+	def _remove_item_stats(self, item_id, ent_id):
+		modifiers = self.WORLD['modifiers'][item_id]
+		ent_stats = self.WORLD['stats'][ent_id]
+
+		for stats_key in modifiers:
+			stats_value = modifiers[stats_key]
+			ent_stats[stats_key] -= stats_value		
+
 	def _equip(self, ent_id, item_id, slot):
 		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
 		self.WORLD['equipment'][ent_id][slot] = item_id
 		self.WORLD['equippable'][item_id]['equipped_by']   = ent_id
 		self.WORLD['equippable'][item_id]['equipped_slot'] = slot
+		self._apply_item_stats(item_id, ent_id)
 		message = {
 			"type" : "notification",
 			"data"  : {
@@ -174,6 +193,8 @@ class Equipment_Handling:
 			item_id = self.WORLD['equipment'][ent_id][slot]
 			self.WORLD['equipment'][ent_id][slot] = None
 			self.WORLD['inventory'][ent_id]['items'].append(item_id)
+			self._remove_item_stats(item_id, ent_id)
+
 			message = {
 				"type" : "notification",
 				"data"  : {
