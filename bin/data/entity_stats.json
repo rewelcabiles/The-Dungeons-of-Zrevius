@@ -1,37 +1,34 @@
 {
 	"npc_stats": {
 		"Human" : {
-			"level"	 : 1,
-			"exp"    : 0,
 			"health" : 20,
 			"damage" : 10,
 			"str"    : 16,
 			"dex"    : 13,
 			"int"    : 6,
 			"con"    : 8,
-			"cha"	 : 9
+			"cha"	 : 9,
+			"armor"	 : 4
 		},
 		"Goblin" : {
-			"level"	 : 1,
-			"exp"    : 0,
 			"health" : 20,
 			"damage" : 10,
 			"str"    : 16,
 			"dex"    : 13,
 			"int"    : 6,
 			"con"    : 8,
-			"cha"	 : 9
+			"cha"	 : 9,
+			"armor"	 : 5
 		},
 		"Kobold" : {
-			"level"  : 1,
-			"exp"    : 0,
 			"health" : 20,
 			"damage" : 10,
 			"str"    : 8,
 			"dex"    : 16,
 			"int"    : 9,
 			"con"    : 15,
-			"cha"	 : 12
+			"cha"	 : 12,
+			"armor"	 : 1
 		}
 	},
 	

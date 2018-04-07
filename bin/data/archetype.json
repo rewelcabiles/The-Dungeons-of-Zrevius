@@ -30,6 +30,7 @@
 	"character" :
 	{
 		"descriptor": null,
+		"level"		: null,
 		"stats"     : null,
 		"inventory" : null,
 		"equipment" : null,
@@ -39,6 +40,7 @@
 	"character_monster" :
 	{
 		"descriptor"	: null,
+		"level"			: null,
 		"stats"     	: null,
 		"inventory" 	: null,
 		"equipment" 	: null,

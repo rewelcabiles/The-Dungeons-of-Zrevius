@@ -40,18 +40,20 @@
 		"rooms" : []
 	},
 
-	"stats":{
+	"level":{
 		"level"  : 1,
-		"exp"    : 0,
+		"exp"    : 0
+	},
+
+	"stats":{
 		"health" : 20,
-		"damage" : 10,
+		"damage" : 1,
 		"armor"  : 0,
 		"str"    : 0,
 		"dex"    : 0,
 		"int"    : 0,
 		"con"    : 0,
-		"cha"	 : 0,
-		"spd"	 : 0
+		"cha"	 : 0
 	},
 
 	"consumable" : {
