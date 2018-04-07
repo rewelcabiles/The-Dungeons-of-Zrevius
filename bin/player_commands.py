@@ -174,6 +174,10 @@ class SurfaceNode():
 		if self.world.has_components(ent_id, ["container"]):
 			new_node.add_new_option("open", "Open container", {"entity_id":ent_id})
 
+		# Is NPC
+		if self.world.has_components(ent_id, ["npc"]):
+			new_node.add_new_option("attack", "Attack", {"entity_id":ent_id})
+			
 		# Is currently equipped?
 		print(self.world.equipped_by(ent_id))
 		print(self.player_id)

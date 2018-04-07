@@ -28,12 +28,12 @@ class Systems_Master:
 	def init_systems(self):
 		# Create instances
 		self.sys_generic   = Generic_System(self)
-		self.sys_npc_ai    = NPC_Ai(self)
+		self.sys_NPC_Handler    = NPC_Handler(self)
 		self.sys_equipment = Equipment_Handling(self)
 
 		# Register notification functions
 		self.message_board.register(self.sys_generic.notified)
-		self.message_board.register(self.sys_npc_ai.notified)
+		self.message_board.register(self.sys_NPC_Handler.notified)
 		self.message_board.register(self.sys_equipment.notified)
 
 
@@ -67,11 +67,28 @@ class Generic_System:
 		self.drop(message)
 
 
-class NPC_Ai:
+class Combat_Handler:
 	def __init__(self, sys_master):
 		self.world 		   = sys_master.world
 		self.WORLD		   = sys_master.world.WORLD
 		self.message_board = sys_master.message_board
+
+	def notified(self, message):
+		self.attack(message)
+
+	def attack(self, message):
+		if message["type"] == "move":
+			room_target = message['data']["room_target"]
+			action_user = message['data']["action_user"]
+
+class NPC_Handler:
+	def __init__(self, sys_master):
+		self.world 		   = sys_master.world
+		self.WORLD		   = sys_master.world.WORLD
+		self.message_board = sys_master.message_board
+
+	def notified(self, message):
+		self.ai_aggression_move(message)
 
 	def ai_aggression_move(self, message):
 		# If a new entity moves into a room, it checks if other entities in the room it moved into
@@ -84,17 +101,13 @@ class NPC_Ai:
 			aggressive_against_player = []
 			# Get all entities that have aggressive component
 			for entity in self.WORLD['inventory'][room_target]['items']:
-				if self.world.has_components(entity, ['aggressive']):
+				if self.world.has_components(entity, ['ai_aggressive']):
 					aggressive_entities.append(entity)
 
 			for entity in aggressive_entities:
-				if self.WORLD['aggressive'][entity]['against'] == "player":
+				if self.WORLD['ai_aggressive'][entity]['against'] == "player":
 					aggressive_against_player.append(entity) 
 
-	def notified(self, message):
-		self.ai_aggression_move(message)
-
-# This isn't really a system on its own, just a helper for generic systems
 
 class Equipment_Handling:
 	def __init__(self, sys_master):
