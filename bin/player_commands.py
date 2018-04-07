@@ -5,7 +5,9 @@
 #
 # !!! Make player characters invisible from room look.
 # TODO: Make it so that as you travel between rooms, you get a chance of being ambushed
-
+# TODO: Combat mechanics now pls
+# TODO: Encounter/ Scenario System, instead  of random spawning of one or two monsters
+# 	 	Ala- darkest dungeon esque
 class PlayerCommands():
 	def __init__(self, world, message, pid):
 		self.world = world
@@ -21,6 +23,7 @@ class PlayerCommands():
 	# with the players id, print a relevant message
 	# Likewise for things like combat
 	def notified(self, message): 
+
 		pass
 
 	def update(self):
@@ -65,38 +68,24 @@ class PlayerCommands():
 			elif action_type == "drop":
 				ent_id  = info['data']["entity_id"]
 				message = {
-					"action" :"drop",
-					"type"   :"request",
-					"data"   :{"entity_id" : ent_id, "action_user" : self.player_id}
+					"type"   :"drop",
+					"data":{"entity_id" : ent_id, "action_user" : self.player_id}
 					}
 				self.message.add_to_queue(message)
 				self.MenuTree.clear() # Pops the interact Node
-				self.MenuTree.append(
-					self.surface_nodes.look_inventory(
-						self.world.get_location(
-							info['data']["entity_id"]
-							)
-						)
-					)
+				self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(info['data']["entity_id"]))) # Appends the updated node
 				print("You drop "+self.WORLD['descriptor'][ent_id]['name']+". Down it goes!")
 
 			elif action_type == "pick_up":
 				ent_id  = info['data']["entity_id"]
 				message = {
-					"action"   : "pick_up",
-					"type"	   : "request",
+					"type"   :"pick_up",
 					"data":{"entity_id" : ent_id, "action_user" : self.player_id}
 					}
 				self.message.add_to_queue(message)
 				self.MenuTree.pop() # Pops the interact Node
 				self.MenuTree.pop() # Pops the Old container Node
-				self.MenuTree.append(
-					self.surface_nodes.look_inventory(
-						self.world.get_location(
-							info['data']["entity_id"]
-							)
-						)
-					) 
+				self.MenuTree.append(self.surface_nodes.look_inventory(self.world.get_location(info['data']["entity_id"]))) # Appends the updated node
 				print(self.WORLD['descriptor'][ent_id]['name'] + ' goes into your inventory.')
 
 			elif action_type == "open":
@@ -106,8 +95,7 @@ class PlayerCommands():
 			elif action_type == "go":
 				next_room = self.WORLD['transition'][info['data']["entity_id"]]['target']
 				message = {
-					"action"    :"move",
-					"type"		:"request",
+					"type"   :"move",
 					"data":{"room_target":next_room, "action_user":self.player_id}
 				}
 				self.MenuTree.clear()
@@ -125,8 +113,7 @@ class PlayerCommands():
 				
 				if slot != None:
 					message = {
-						"action"   :"equip",
-						"type"		:"request",
+						"type"   :"equip",
 						"data":{"entity_id":info['data']["entity_id"], 
 							"action_user":self.player_id,
 							"slot": slot
@@ -137,8 +124,7 @@ class PlayerCommands():
 					
 			elif action_type == "unequip":
 				message = {
-					"action"   :"unequip",
-					"type"		:"request",
+					"type"   :"unequip",
 					"data":{"entity_id":info['data']["entity_id"]}
 				}
 				self.message.add_to_queue(message)
@@ -155,17 +141,8 @@ class SurfaceNode():
 	def one_hand_equip(self, ent_id):
 		new_node = MenuNode()
 		new_node.set_header("Which slot do you want to equip it in?")
-		new_node.add_new_option("equip", "Left Hand", {
-			"entity_id":ent_id, 
-			"slot": "left_hand", 
-			"action_user":self.player_id
-			})
-		new_node.add_new_option("equip", "Right Hand", {
-			"entity_id":ent_id, 
-			"slot": "right_hand", 
-			"action_user":self.player_id
-			}
-)
+		new_node.add_new_option("equip", "Left Hand", {"entity_id":ent_id, "slot": "left_hand", "action_user":self.player_id})
+		new_node.add_new_option("equip", "Right Hand", {"entity_id":ent_id, "slot": "right_hand", "action_user":self.player_id})
 		return new_node
 
 	def interact(self, ent_id):

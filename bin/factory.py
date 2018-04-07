@@ -215,7 +215,8 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 		return ent_id
 
 	def create_hostile_npc(self, species = None, name = None):
-		ent_id = self._create_base_character()
+		ent_id = self.world.assign_entity_id()
+		self.factory.create_from_archetype(ent_id, 'character_monster')
 		if species == None or species not in self.factory.stats['npc_stats'].keys():
 			if species not in self.factory.stats['npc_stats'].keys() and species != None:
 				print("DEBUG HIGH: SPECIES NOT IN NPC_STATS")
@@ -225,9 +226,7 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 
 		self.WORLD['stats'][ent_id] = copy.deepcopy(self.factory.stats['npc_stats'][species])
 		self.WORLD['descriptor'][ent_id]['name'] = name
-
-		self.factory.create_components('aggressive', ent_id)
-		self.factory.create_components('ai_combat_flags', ent_id)			
+		
 
 		base_stats = self.WORLD['stats'][ent_id]
 		print(base_stats)

@@ -9,10 +9,6 @@ class MessageBoard():
 		self.message_queue.append(message)
 		self.notify_observers(message)
 
-	def confirm_action(self, message):
-		message['type'] = "confirmed"
-		self.add_to_queue(message)
-
 	def register(self, observer):
 		self.observers.append(observer)
 		return observer 
@@ -48,26 +44,22 @@ class Generic_System:
 		self.message_board = sys_master.message_board
 
 	def movement(self, message):
-		if message["action"] == "move":
+		if message["type"] == "move":
 			room_target = message['data']["room_target"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(action_user, room_target)
-			self.message_board.confirm_action(message)
 
 	def drop(self, message):
-		if message["action"] == "drop":
+		if message["type"] == "drop":
 			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, self.world.get_location(action_user))
-			self.message_board.confirm_action(message)
 
 	def pick_up(self, message):
-		if message["action"] == "pick_up":
+		if message["type"] == "pick_up":
 			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, action_user)
-			self.message_board.confirm_action(message)
-
 
 	def notified(self, message):
 		self.movement(message)
@@ -84,7 +76,7 @@ class NPC_Ai:
 	def ai_aggression_move(self, message):
 		# If a new entity moves into a room, it checks if other entities in the room it moved into
 		# can be aggressive to it.
-		if message["action"] == "move":
+		if message["type"] == "move":
 			room_target = message['data']["room_target"]
 			action_user = message['data']["action_user"]
 
@@ -111,20 +103,18 @@ class Equipment_Handling:
 		self.message_board = sys_master.message_board
 
 	def notified(self, message):
-		if message["type"] == "request":
-			self.equip(message)
-			self.unequip(message)
+		self.equip(message)
+		self.unequip(message)
 
 	def unequip(self, message):
-		if message["action"] == "unequip":
+		if message["type"] == "unequip":
 			item    = message['data']["entity_id"]
 			slot = self.WORLD['equippable'][item]['equipped_slot']
 			by   = self.WORLD['equippable'][item]['equipped_by']
 			self._unequip(by, slot)
-			self.message_board.confirm_action(message)
 
 	def equip(self, message):
-		if message["action"] == "equip":
+		if message["type"] == "equip":
 			item_id    = message['data']["entity_id"]
 			ent_id    = message['data']["action_user"]
 			slot = message['data']["slot"]
@@ -150,17 +140,14 @@ class Equipment_Handling:
 				else:
 					self._unequip(ent_id, 'right_hand')
 					self._equip(ent_id, item_id, slot)
-			self.message_board.confirm_action(message)
 
-			
 	def _equip(self, ent_id, item_id, slot):
 		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
 		self.WORLD['equipment'][ent_id][slot] = item_id
 		self.WORLD['equippable'][item_id]['equipped_by']   = ent_id
 		self.WORLD['equippable'][item_id]['equipped_slot'] = slot
 		message = {
-			"action"  : "equip",
-			"type" 	: "confirmed",
+			"type" : "notification",
 			"data"  : {
 				"action" 	 : "equip",
 				"action_user": ent_id,
@@ -175,8 +162,7 @@ class Equipment_Handling:
 			self.WORLD['equipment'][ent_id][slot] = None
 			self.WORLD['inventory'][ent_id]['items'].append(item_id)
 			message = {
-				"action" : "unequip",
-				"type" 	: "confirmed",
+				"type" : "notification",
 				"data"  : {
 					"action" 	 : "unequip",
 					"action_user": ent_id,
