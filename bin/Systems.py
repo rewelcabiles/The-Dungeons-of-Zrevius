@@ -9,6 +9,10 @@ class MessageBoard():
 		self.message_queue.append(message)
 		self.notify_observers(message)
 
+	def confirm_action(self, message):
+		message['type'] = "confirmed"
+		self.add_to_queue(message)
+
 	def register(self, observer):
 		self.observers.append(observer)
 		return observer 
@@ -48,18 +52,22 @@ class Generic_System:
 			room_target = message['data']["room_target"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(action_user, room_target)
+			self.message_board.confirm_action(message)
 
 	def drop(self, message):
 		if message["action"] == "drop":
 			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, self.world.get_location(action_user))
+			self.message_board.confirm_action(message)
 
 	def pick_up(self, message):
 		if message["action"] == "pick_up":
 			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, action_user)
+			self.message_board.confirm_action(message)
+
 
 	def notified(self, message):
 		self.movement(message)
@@ -113,6 +121,7 @@ class Equipment_Handling:
 			slot = self.WORLD['equippable'][item]['equipped_slot']
 			by   = self.WORLD['equippable'][item]['equipped_by']
 			self._unequip(by, slot)
+			self.message_board.confirm_action(message)
 
 	def equip(self, message):
 		if message["action"] == "equip":
@@ -141,7 +150,9 @@ class Equipment_Handling:
 				else:
 					self._unequip(ent_id, 'right_hand')
 					self._equip(ent_id, item_id, slot)
+			self.message_board.confirm_action(message)
 
+			
 	def _equip(self, ent_id, item_id, slot):
 		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
 		self.WORLD['equipment'][ent_id][slot] = item_id
