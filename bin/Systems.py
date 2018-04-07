@@ -44,19 +44,19 @@ class Generic_System:
 		self.message_board = sys_master.message_board
 
 	def movement(self, message):
-		if message["type"] == "move":
+		if message["action"] == "move":
 			room_target = message['data']["room_target"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(action_user, room_target)
 
 	def drop(self, message):
-		if message["type"] == "drop":
+		if message["action"] == "drop":
 			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, self.world.get_location(action_user))
 
 	def pick_up(self, message):
-		if message["type"] == "pick_up":
+		if message["action"] == "pick_up":
 			item_target = message['data']["entity_id"]
 			action_user = message['data']["action_user"]
 			self.world.move_to_inventory(item_target, action_user)
@@ -76,7 +76,7 @@ class NPC_Ai:
 	def ai_aggression_move(self, message):
 		# If a new entity moves into a room, it checks if other entities in the room it moved into
 		# can be aggressive to it.
-		if message["type"] == "move":
+		if message["action"] == "move":
 			room_target = message['data']["room_target"]
 			action_user = message['data']["action_user"]
 
@@ -103,18 +103,19 @@ class Equipment_Handling:
 		self.message_board = sys_master.message_board
 
 	def notified(self, message):
-		self.equip(message)
-		self.unequip(message)
+		if message["type"] == "request":
+			self.equip(message)
+			self.unequip(message)
 
 	def unequip(self, message):
-		if message["type"] == "unequip":
+		if message["action"] == "unequip":
 			item    = message['data']["entity_id"]
 			slot = self.WORLD['equippable'][item]['equipped_slot']
 			by   = self.WORLD['equippable'][item]['equipped_by']
 			self._unequip(by, slot)
 
 	def equip(self, message):
-		if message["type"] == "equip":
+		if message["action"] == "equip":
 			item_id    = message['data']["entity_id"]
 			ent_id    = message['data']["action_user"]
 			slot = message['data']["slot"]
@@ -147,7 +148,8 @@ class Equipment_Handling:
 		self.WORLD['equippable'][item_id]['equipped_by']   = ent_id
 		self.WORLD['equippable'][item_id]['equipped_slot'] = slot
 		message = {
-			"type" : "notification",
+			"action"  : "equip",
+			"type" 	: "confirmed",
 			"data"  : {
 				"action" 	 : "equip",
 				"action_user": ent_id,
@@ -162,7 +164,8 @@ class Equipment_Handling:
 			self.WORLD['equipment'][ent_id][slot] = None
 			self.WORLD['inventory'][ent_id]['items'].append(item_id)
 			message = {
-				"type" : "notification",
+				"action" : "unequip",
+				"type" 	: "confirmed",
 				"data"  : {
 					"action" 	 : "unequip",
 					"action_user": ent_id,

@@ -104,6 +104,10 @@
 		"against": "player"
 	},
 
+	"ai_enemy_behavior":{
+		"aggressive_against": "player"
+	},
+
 	"npc":null,
 	"player":null,
 
