@@ -15,7 +15,7 @@ class GameFunctions:
 	def __init__(self):
 		self.init_world()
 		# Maybe move the player spawning to the command classes?
-		self.player_id = self.world.factory.character_creator('Human', "Quin", False) 
+		self.player_id = self.world.factory.npc_factory.create_character('Human', "Quin", False) 
 		spawn_room     = random.choice(list(self.world.WORLD['isroom'].keys()))
 		self.world.set_entity_location(self.player_id, spawn_room)
 		self.message_board   = MessageBoard()

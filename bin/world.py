@@ -70,6 +70,9 @@ class World():
 	def get_equipment_slot(self, entity, slot):
 		return self.WORLD['equipment'][entity][slot]
 
+	def get_slot_type(self, ent_id):
+		return self.WORLD['equippable'][ent_id]['slot']
+
 	def equipped_by(self, ent_id):
 		try:
 			return self.WORLD['equippable'][ent_id]['equipped_by']

@@ -198,13 +198,13 @@ class Dungeon_Spicer:
 	def initial_spawn_monster(self, room_id): 
 		if self.max_enemies > self.spawned_enemies:
 			if random.randrange(0, 100) <= ((self.max_enemies / self.max_rooms) * 100): 
-				new_monster = self.world.factory.npc_factory.random_monster_spawn()
+				new_monster = self.random_monster_spawn()
 				self.world.add_to_inventory(new_monster, room_id)
 				self.spawned_enemies += 1
 
 	def random_monster_spawn(self):
 		if random.randrange(0, 100) <= 10:
-			 return self.world.factory.npc_factory.create_hostile_npc()
+			 return self.world.factory.npc_factory.create_basic_hostile_npc()
 		else:
 			return self.world.factory.npc_factory.create_special_hostile_npc()
 			
