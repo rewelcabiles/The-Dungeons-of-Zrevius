@@ -6,8 +6,7 @@
 			"dex"    : 13,
 			"int"    : 6,
 			"con"    : 8,
-			"cha"	 : 9,
-			"armor"	 : 4
+			"cha"	 : 9
 		},
 		"Goblin" : {
 			"health" : 8,
@@ -15,8 +14,7 @@
 			"dex"    : 13,
 			"int"    : 6,
 			"con"    : 8,
-			"cha"	 : 9,
-			"armor"	 : 5
+			"cha"	 : 9
 		},
 		"Kobold" : {
 			"health" : 8,
@@ -24,8 +22,7 @@
 			"dex"    : 16,
 			"int"    : 9,
 			"con"    : 15,
-			"cha"	 : 12,
-			"armor"	 : 1
+			"cha"	 : 12
 		}
 	},
 	
