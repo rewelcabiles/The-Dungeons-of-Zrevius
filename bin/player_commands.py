@@ -206,8 +206,9 @@ class SurfaceNode():
 		print(self.WORLD['descriptor'][ent_id]['desc'])
 
 	def view_stats(self, ent_id):
+		print("You check your stats.")
 		stat_node = MenuNode()
-		stat_node.set_header("STATS: ")
+		stat_node.set_header("")
 		for stat in self.WORLD['stats'][ent_id]:
 			print("~ "+str(self.WORLD['stats'][ent_id][stat])+"  ->  "+str(stat))
 		return stat_node
