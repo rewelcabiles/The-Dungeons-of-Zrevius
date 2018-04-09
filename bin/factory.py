@@ -173,7 +173,12 @@ class Factory():
 	def character_creator(self, species=None, name=None, is_npc = True): # Leave parameters empty for random characters
 		return self.npc_factory.create_character(species, name, is_npc)
 
-
+class Buff_Factory:
+	# Can be used for modifiers as well
+	def __init__(self, factory):
+		self.factory = factory
+		self.world = self.factory.world
+		self.WORLD = self.world.WORLD
 
 class NPC_Factory: # Not going to lie, we probably dont need this in a separate class.
 	def __init__(self, factory):
@@ -190,14 +195,16 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 		ent_id = self._create_base_character()
 		if species == None or species not in self.factory.stats['npc_stats'].keys():
 			if species not in self.factory.stats['npc_stats'].keys() and species != None:
-				print("DEBUG HIGH: SPECIES NOT IN NPC_STATS")
+				print("DEBUG: SPECIES NOT IN NPC_STATS")
 			species = random.choice(list(self.factory.stats['npc_stats'].keys()))
+
 		if name == None:
 			name    = random.choice(self.factory.descriptors['names'][species])
 
 		if is_npc:
 			self.factory.create_components('npc', ent_id)
-			self.factory.create_components('ai_combat_flags', ent_id)
+			self.factory.create_components('ai_aggressive', ent_id)
+			self.factory.create_components('ai_retaliates', ent_id)
 		else:
 			self.factory.create_components('player', ent_id)
 
@@ -208,6 +215,7 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 	def create_hostile_npc(self, species = None, name = None):
 		ent_id = self.world.assign_entity_id()
 		self.factory.create_from_archetype(ent_id, 'character')
+
 		if species == None or species not in self.factory.stats['npc_stats'].keys():
 			if species not in self.factory.stats['npc_stats'].keys() and species != None:
 				print("DEBUG HIGH: SPECIES NOT IN NPC_STATS")
@@ -215,20 +223,26 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 		if name == None:
 			name    = random.choice(self.factory.descriptors['names'][species])
 
-		self.WORLD['stats'][ent_id] = copy.deepcopy(self.factory.stats['npc_stats'][species])
-		self.WORLD['descriptor'][ent_id]['name'] = name
-		
-
-		base_stats = self.WORLD['stats'][ent_id]
+		self._apply_npc_base_stats(ent_id, species)
 		self.factory.create_components('npc', ent_id)
 		self.factory.create_components('ai_aggressive', ent_id)
 		self.factory.create_components('ai_retaliates', ent_id)
 
-
-		for stat in random.sample(list(base_stats), random.randrange(0, 5)):
-			new_mod = self.WORLD['stats'][ent_id][stat] + random.randrange(-4,6)
-			if new_mod < 0: new_mod = 1
-			self.WORLD['stats'][ent_id][stat] = new_mod
-
 		self.WORLD['descriptor'][ent_id]['name'] = name
+		
 		return ent_id
+
+
+	def _apply_npc_base_stats(self, ent_id, species):
+		null_stats = self.WORLD['stats'][ent_id]
+		null_health= self.WORLD['health'][ent_id]
+
+		# Iterates through specific stats from entity_stats.json and applies it to 
+		# the Entities individual stats
+		for new_stat in self.factory.stats['npc_stats'][species]: 
+			
+			if new_stat == "health":
+				null_health['current'] = self.factory.stats['npc_stats'][species][new_stat]
+				null_health['max'] = self.factory.stats['npc_stats'][species][new_stat]
+			else:
+				null_stats[new_stat] = self.factory.stats['npc_stats'][species][new_stat]

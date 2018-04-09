@@ -1,8 +1,7 @@
 {
 	"npc_stats": {
 		"Human" : {
-			"health" : 20,
-			"damage" : 10,
+			"health" : 8,
 			"str"    : 16,
 			"dex"    : 13,
 			"int"    : 6,
@@ -11,8 +10,7 @@
 			"armor"	 : 4
 		},
 		"Goblin" : {
-			"health" : 20,
-			"damage" : 10,
+			"health" : 8,
 			"str"    : 16,
 			"dex"    : 13,
 			"int"    : 6,
@@ -21,8 +19,7 @@
 			"armor"	 : 5
 		},
 		"Kobold" : {
-			"health" : 20,
-			"damage" : 10,
+			"health" : 8,
 			"str"    : 8,
 			"dex"    : 16,
 			"int"    : 9,
