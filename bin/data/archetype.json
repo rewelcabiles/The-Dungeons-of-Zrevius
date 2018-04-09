@@ -23,7 +23,8 @@
 			"weapon_type": "sword",
 			"main_modifier": "str"
 		},
-		"location"	: null
+		"location"	: null,
+		"applies_modifiers" : null
 	},
 
 	"character" :

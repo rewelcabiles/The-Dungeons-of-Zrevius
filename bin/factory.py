@@ -171,9 +171,52 @@ class Factory():
 
 		return ent_id
 
+class Equipment_Factory:
+	def __init__(self, factory):
+		self.factory = factory
+		self.world = self.factory.world
+		self.WORLD = self.world.WORLD
 
-	def character_creator(self, species=None, name=None, is_npc = True): # Leave parameters empty for random characters
-		return self.npc_factory.create_character(species, name, is_npc)
+	def create_weapon(self, weapon_type=None):
+		ent_id = self.world.assign_entity_id()
+		self.create_from_archetype(ent_id, 'weapon')
+		weapon_type = random.choice(list(self.stats["weapon_info"].keys()))
+		weapon_info = self.stats["weapon_info"][weapon_type]
+		self.WORLD['equippable'][ent_id]['slot'] = weapon_info['slot']
+		self.WORLD['weapon'][ent_id]['damage_type'] = weapon_info['damage_type']
+		self.WORLD['weapon'][ent_id]['main_modifier'] = weapon_info['main_modifier']
+		self.WORLD['weapon'][ent_id]['weapon_type'] = weapon_type
+		if weapon_info['damage_type'] == "ranged":
+			self.create_components('shoots_projectiles', ent_id)
+			self.WORLD['shoots_projectiles'][ent_id]['projectile_type'] = weapon_info['projectile_type']
+		rarity = random.choice(["Common", "Unique"])
+
+		if rarity == "Common":
+			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['common']) + " " + weapon_type
+		elif rarity == "Unique":
+			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['unique'])
+
+		self.WORLD['item'][ent_id]['rarity'] = rarity
+
+		self.WORLD['descriptor'][ent_id]['name'] = name
+
+		if self.WORLD['equippable'][ent_id]['slot'] == "one_hand":
+			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" one-handed "+weapon_type
+		else:
+			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" two-handed "+weapon_type
+
+		return ent_id
+
+	def randomly_create_stats(self, ent_id):
+		power = random.randrange(2,10)
+		if self.world.get_slot_type(ent_id) == 'one_hand':
+			power /= 2
+		self.WORLD['weapon'][ent_id]['damage_power'] = power
+
+		
+
+	def add_modifiers(self, ent_id):
+		pass
 
 class Buff_Factory:
 	# Can be used for modifiers as well
@@ -183,7 +226,7 @@ class Buff_Factory:
 		self.WORLD = self.world.WORLD
 
 
-	def create_modifier(self, name = None, duration = None, source, amount, types):
+	def create_modifier(self, source, amount, types, name = None, duration = None):
 		# Source = where 
 		ent_id = self.world.assign_entity_id()
 		self.factory.create_from_archetype(ent_id, stat_modifier)
