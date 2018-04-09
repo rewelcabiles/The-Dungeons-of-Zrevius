@@ -233,14 +233,13 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 
 	def create_special_hostile_npc(self, species = None, name = None, stat = None):
 		ent_id = self.create_basic_hostile_npc(species, name)
-
 		if stat == None:
-			stat = random.choice(list(self.WORLD['stats'][ent_id]))
-
+			stat = random.choice(list(self.WORLD['stats'][ent_id].keys()))
 		postfix = random.choice(self.factory.descriptors["names"]["Special Postfix"][stat])
-
-		
-
+		addition = int(self.WORLD['stats'][ent_id][stat] * 0.28)
+		self.WORLD['stats'][ent_id][stat] += addition
+		new_name = self.WORLD['descriptor'][ent_id]['name'] + " " + postfix
+		self.WORLD['descriptor'][ent_id]['name'] = new_name
 		return ent_id
 
 	def _apply_npc_base_stats(self, ent_id, species):
