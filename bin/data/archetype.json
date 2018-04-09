@@ -62,8 +62,7 @@
 
 	"stat_modifier":{
 		"descriptor" : null,
-		"is_modifier": null,
-		"additive_modifier" : null
+		"modifier": null
 	}
 }
 

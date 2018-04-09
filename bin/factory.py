@@ -20,6 +20,7 @@ class Factory():
 		self.world = WORLD
 		self.WORLD = self.world.WORLD
 		self.npc_factory = NPC_Factory(self)
+		self.buff_factory= Buff_Factory(self)
 
 	def create_from_archetype(self, ent_id, archetype_name):
 		for component in list(self.archetypes[archetype_name].keys()):
@@ -158,6 +159,7 @@ class Factory():
 			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['common']) + " " + weapon_type
 		elif rarity == "Unique":
 			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['unique'])
+
 		self.WORLD['item'][ent_id]['rarity'] = rarity
 		# Create Name and Stats
 		self.WORLD['descriptor'][ent_id]['name'] = name
@@ -179,6 +181,19 @@ class Buff_Factory:
 		self.factory = factory
 		self.world = self.factory.world
 		self.WORLD = self.world.WORLD
+
+
+	def create_modifier(self, name = None, duration = None, source, amount, types):
+		# Source = where 
+		ent_id = self.world.assign_entity_id()
+		self.factory.create_from_archetype(ent_id, stat_modifier)
+
+		self.WORLD['descriptor'][ent_id]['name']       = name
+		self.WORLD['modifier'][ent_id]['source_id'] = source
+		self.WORLD['modifier'][ent_id]['duration']  = duration
+		self.WORLD['modifier'][ent_id]['value']  	= value
+		self.WORLD['modifier'][ent_id]['type']  	= types
+		return ent_id
 
 class NPC_Factory: # Not going to lie, we probably dont need this in a separate class.
 	def __init__(self, factory):

@@ -45,26 +45,22 @@
 		"exp"    : 0
 	},
 
-	"health" : {
-		"current" : 10,
-		"max"	  : 10
-	},
+	
 
 	"has_modifiers" : [],
 
-	"is_modifier" : {
+	"applies_modifiers" : [],
+
+	"modifier" : {
 	    "source_id" : null,
-	    "affects"   : null,
-	    "duration"  : 5
+	    "duration"  : null,
+	    "value"		: 0,
+	    "type"		: "additive"
 	},
 
-	"additive_modifier" : {
-		"value" : 0
-	},
-
-	"multiplicative_modifier" : {
-		"value" : 0,
-		"type"  : "base"
+	"health" : {
+		"current" : 25,
+		"max"	  : 25
 	},
 
 	"stats":{
@@ -87,6 +83,7 @@
 
 	"weapon": {
 		"damage_type"  : null,
+		"damage_power" : null,
 		"weapon_type"  : null,
 		"main_modifier": "str"
 	},
