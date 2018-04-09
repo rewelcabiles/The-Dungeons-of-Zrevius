@@ -167,15 +167,6 @@ class Factory():
 		else:
 			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" two-handed "+weapon_type
 
-		self.WORLD['modifiers'][ent_id]["damage"] = random.randrange(2, 8)
-		if rarity == "Unique":
-			self.WORLD['modifiers'][ent_id]["damage"] += random.randrange(1,4)
-
-		stat_list = ['str', 'dex', 'int', 'con', 'cha', 'armor']
-
-		for stat in random.sample(stat_list, random.randrange(0, 4)):
-			self.WORLD['modifiers'][ent_id][stat] = random.randrange(1,6)
-
 		return ent_id
 
 

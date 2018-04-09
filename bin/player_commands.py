@@ -178,8 +178,8 @@ class SurfaceNode():
 			new_node.add_new_option("equip", "Equip", {"entity_id":ent_id, "slot":None,"action_user":self.player_id})
 
 		# Has something to identify?
-		if self.world.has_components(ent_id, ["modifiers"]) or self.world.has_components(ent_id, ["buff_refill"]):
-			new_node.add_new_option("identify", "Identify", {"entity_id":ent_id})
+		#if self.world.has_components(ent_id, ["modifiers"]) or self.world.has_components(ent_id, ["buff_refill"]):
+		#new_node.add_new_option("identify", "Identify", {"entity_id":ent_id})
 
 		# Is it a transition object? (AKA, a door or portal.. etc)
 		if self.world.has_components(ent_id, ["transition"]):
