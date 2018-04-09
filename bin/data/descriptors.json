@@ -1,5 +1,31 @@
 {
 	"names" :{
+		"Special Postfix":{
+			"armor" : [
+				"The Armored One", 
+				"The Hardened",
+				"Steel Skinned"
+			],
+			"str" : [
+				"The Strong",
+				"Carrier of Mountains"
+			],
+			"dex" : [
+				"The Nimble",
+				"The Dextrous"
+			],
+			"int" : [
+				"The Wise",
+				"The Intelligent"
+			],
+			"con" : [
+				"The Everlasting",
+				"The Endurer"
+			],
+			"cha" : [
+				"The Charismatic",
+			]
+		},
 		"Goblin" : [
 			"Rurnk",
 			"Bish",
@@ -23,13 +49,13 @@
 			"Rihle"
 		],
 		"Orc": [
-			"Dugok The Mad",
-			"Otrukk The Merciless",
-			"Nagvud The Warped",
-			"Ghogvuk The Gargantuan",
-			"Zhabag The Arrogant",
+			"Dugok",
+			"Otrukk",
+			"Nagvud",
+			"Ghogvuk",
+			"Zhabag",
 			"Amzak Talon Axe",
-			"Bukk The Barbarian",
+			"Bukk",
 			"Bhub Skull Axe"
 		],
 
