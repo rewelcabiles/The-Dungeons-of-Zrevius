@@ -212,9 +212,12 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 		self.WORLD['descriptor'][ent_id]['name'] = name
 		return ent_id
 
-	def create_hostile_npc(self, species = None, name = None):
+	def create_basic_hostile_npc(self, species = None, name = None):
 		ent_id = self.world.assign_entity_id()
 		self.factory.create_from_archetype(ent_id, 'character')
+		self.factory.create_components('npc', ent_id)
+		self.factory.create_components('ai_aggressive', ent_id)
+		self.factory.create_components('ai_retaliates', ent_id)
 
 		if species == None or species not in self.factory.stats['npc_stats'].keys():
 			if species not in self.factory.stats['npc_stats'].keys() and species != None:
@@ -224,14 +227,21 @@ class NPC_Factory: # Not going to lie, we probably dont need this in a separate 
 			name    = random.choice(self.factory.descriptors['names'][species])
 
 		self._apply_npc_base_stats(ent_id, species)
-		self.factory.create_components('npc', ent_id)
-		self.factory.create_components('ai_aggressive', ent_id)
-		self.factory.create_components('ai_retaliates', ent_id)
-
 		self.WORLD['descriptor'][ent_id]['name'] = name
 		
 		return ent_id
 
+	def create_special_hostile_npc(self, species = None, name = None, stat = None):
+		ent_id = self.create_basic_hostile_npc(species, name)
+
+		if stat == None:
+			stat = random.choice(list(self.WORLD['stats'][ent_id]))
+
+		postfix = random.choice(self.factory.descriptors["names"]["Special Postfix"][stat])
+
+		
+
+		return ent_id
 
 	def _apply_npc_base_stats(self, ent_id, species):
 		null_stats = self.WORLD['stats'][ent_id]
