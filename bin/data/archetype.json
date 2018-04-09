@@ -23,31 +23,19 @@
 			"weapon_type": "sword",
 			"main_modifier": "str"
 		},
-		"modifiers" : {},
 		"location"	: null
 	},
 
 	"character" :
 	{
-		"descriptor": null,
-		"level"		: null,
-		"stats"     : null,
-		"inventory" : null,
-		"equipment" : null,
-		"location"  : null
-	},
-
-	"character_monster" :
-	{
+		"health"    	: null,
+		"has_modifiers" : null,
 		"descriptor"	: null,
 		"level"			: null,
 		"stats"     	: null,
 		"inventory" 	: null,
 		"equipment" 	: null,
-		"location"  	: null,
-		"npc"	    	: null,
-		"ai_aggressive"	: null,
-		"ai_retaliates"	: null
+		"location"  	: null
 	},
 
 	"door":
@@ -70,6 +58,12 @@
 		"buff_refill": null,
 		"item"		: null,
 		"location"	: null
+	},
+
+	"stat_modifier":{
+		"descriptor" : null,
+		"is_modifier": null,
+		"additive_modifier" : null
 	}
 }
 

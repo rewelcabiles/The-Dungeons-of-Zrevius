@@ -45,9 +45,29 @@
 		"exp"    : 0
 	},
 
+	"health" : {
+		"current" : 10,
+		"max"	  : 10
+	},
+
+	"has_modifiers" : [],
+
+	"is_modifier" : {
+	    "source_id" : null,
+	    "affects"   : null,
+	    "duration"  : 5
+	},
+
+	"additive_modifier" : {
+		"value" : 0
+	},
+
+	"multiplicative_modifier" : {
+		"value" : 0,
+		"type"  : "base"
+	},
+
 	"stats":{
-		"health" : 20,
-		"damage" : 1,
 		"armor"  : 0,
 		"str"    : 0,
 		"dex"    : 0,
@@ -70,10 +90,6 @@
 		"weapon_type"  : null,
 		"main_modifier": "str"
 	},
-
-	"armor" : {},
-
-	"modifiers" : {},
 
 	"shoots_projectiles" : {
 		"projectile_type" : "arrow"
