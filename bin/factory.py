@@ -21,6 +21,7 @@ class Factory():
 		self.WORLD = self.world.WORLD
 		self.npc_factory = NPC_Factory(self)
 		self.buff_factory= Buff_Factory(self)
+		self.item_factory= Equipment_Factory(self)
 
 	def create_from_archetype(self, ent_id, archetype_name):
 		for component in list(self.archetypes[archetype_name].keys()):
@@ -137,39 +138,7 @@ class Factory():
 		return ent_id
 
 
-	def weapon_creator(self, weapon_type="random", prebuilt=False):
-		# Creates the entity
-		ent_id = self.world.assign_entity_id()
-		self.create_from_archetype(ent_id, 'weapon')
-		if not prebuilt:
-			weapon_type = random.choice(list(self.stats["weapon_info"].keys()))
-			weapon_info = self.stats["weapon_info"][weapon_type]
-		self.WORLD['equippable'][ent_id]['slot'] = weapon_info['slot']
-		self.WORLD['weapon'][ent_id]['damage_type'] = weapon_info['damage_type']
-		self.WORLD['weapon'][ent_id]['main_modifier'] = weapon_info['main_modifier']
-		self.WORLD['weapon'][ent_id]['weapon_type'] = weapon_type
-
-
-		if weapon_info['damage_type'] == "ranged":
-			self.create_components('shoots_projectiles', ent_id)
-			self.WORLD['shoots_projectiles'][ent_id]['projectile_type'] = weapon_info['projectile_type']
-		rarity = random.choice(["Common", "Unique"])
-
-		if rarity == "Common":
-			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['common']) + " " + weapon_type
-		elif rarity == "Unique":
-			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['unique'])
-
-		self.WORLD['item'][ent_id]['rarity'] = rarity
-		# Create Name and Stats
-		self.WORLD['descriptor'][ent_id]['name'] = name
-
-		if self.WORLD['equippable'][ent_id]['slot'] == "one_hand":
-			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" one-handed "+weapon_type
-		else:
-			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" two-handed "+weapon_type
-
-		return ent_id
+	
 
 class Equipment_Factory:
 	def __init__(self, factory):
@@ -179,22 +148,22 @@ class Equipment_Factory:
 
 	def create_weapon(self, weapon_type=None):
 		ent_id = self.world.assign_entity_id()
-		self.create_from_archetype(ent_id, 'weapon')
-		weapon_type = random.choice(list(self.stats["weapon_info"].keys()))
-		weapon_info = self.stats["weapon_info"][weapon_type]
+		self.factory.create_from_archetype(ent_id, 'weapon')
+		weapon_type = random.choice(list(self.factory.stats["weapon_info"].keys()))
+		weapon_info = self.factory.stats["weapon_info"][weapon_type]
 		self.WORLD['equippable'][ent_id]['slot'] = weapon_info['slot']
 		self.WORLD['weapon'][ent_id]['damage_type'] = weapon_info['damage_type']
 		self.WORLD['weapon'][ent_id]['main_modifier'] = weapon_info['main_modifier']
 		self.WORLD['weapon'][ent_id]['weapon_type'] = weapon_type
 		if weapon_info['damage_type'] == "ranged":
-			self.create_components('shoots_projectiles', ent_id)
+			self.factory.create_components('shoots_projectiles', ent_id)
 			self.WORLD['shoots_projectiles'][ent_id]['projectile_type'] = weapon_info['projectile_type']
 		rarity = random.choice(["Common", "Unique"])
 
 		if rarity == "Common":
-			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['common']) + " " + weapon_type
+			name = random.choice(self.factory.descriptors["names"]["objects"][weapon_info['damage_type']]['common']) + " " + weapon_type
 		elif rarity == "Unique":
-			name = random.choice(self.descriptors["names"]["objects"][weapon_info['damage_type']]['unique'])
+			name = random.choice(self.factory.descriptors["names"]["objects"][weapon_info['damage_type']]['unique'])
 
 		self.WORLD['item'][ent_id]['rarity'] = rarity
 
@@ -205,6 +174,7 @@ class Equipment_Factory:
 		else:
 			self.WORLD['descriptor'][ent_id]['desc'] = "It is a "+rarity+" two-handed "+weapon_type
 
+		self.randomly_create_stats(ent_id)
 		return ent_id
 
 	def randomly_create_stats(self, ent_id):
@@ -213,7 +183,20 @@ class Equipment_Factory:
 			power /= 2
 		self.WORLD['weapon'][ent_id]['damage_power'] = power
 
-		
+		possible_stat_modifiers = []
+		possible_stat_modifiers.append("health")
+		for stats in self.factory.stats['npc_stats']["Human"]:
+			possible_stat_modifiers.append(stats)
+
+		for stat in random.sample(possible_stat_modifiers, random.randrange(0, 4)):
+			random_modifier_value = int(random.randrange(1, 6))
+			new_mod = self.factory.buff_factory.create_modifier(
+				ent_id,
+				random_modifier_value,
+				"additive",
+				stat
+				)
+			self.WORLD['applies_modifiers'][ent_id].append(new_mod)
 
 	def add_modifiers(self, ent_id):
 		pass
@@ -226,15 +209,15 @@ class Buff_Factory:
 		self.WORLD = self.world.WORLD
 
 
-	def create_modifier(self, source, amount, types, name = None, duration = None):
-		# Source = where 
+	def create_modifier(self, source, amount, types, affects, name = None, duration = None):
 		ent_id = self.world.assign_entity_id()
-		self.factory.create_from_archetype(ent_id, stat_modifier)
+		self.factory.create_from_archetype(ent_id, "stat_modifier")
 
-		self.WORLD['descriptor'][ent_id]['name']       = name
+		self.WORLD['descriptor'][ent_id]['name']    = name
 		self.WORLD['modifier'][ent_id]['source_id'] = source
 		self.WORLD['modifier'][ent_id]['duration']  = duration
-		self.WORLD['modifier'][ent_id]['value']  	= value
+		self.WORLD['modifier'][ent_id]['affects']   = affects
+		self.WORLD['modifier'][ent_id]['value']  	= amount
 		self.WORLD['modifier'][ent_id]['type']  	= types
 		return ent_id
 

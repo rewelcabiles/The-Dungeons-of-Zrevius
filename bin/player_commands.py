@@ -133,6 +133,18 @@ class PlayerCommands():
 				self.message.add_to_queue(message)
 				self.MenuTree.clear()
 				self.MenuTree.append(self.surface_nodes.look_equipment(self.player_id))
+
+			elif action_type == "identify":
+				ent_id = info['data']["entity_id"]
+				if self.world.has_components(ent_id, ["weapon"]):
+					print("Weapon Stats ||")
+					for stats in self.WORLD["weapon"][ent_id]:
+						value = self.WORLD["weapon"][ent_id][stats]
+						print(stats + " : " + str(value))
+
+					print("Weapon Modifiers || ")
+					
+
 			## COMBAT RELATED
 			elif action_type == "attack":
 				message = {
@@ -177,9 +189,9 @@ class SurfaceNode():
 		if self.world.has_components(ent_id, ["equippable"]) and ent_id in self.WORLD['inventory'][self.player_id]['items']:
 			new_node.add_new_option("equip", "Equip", {"entity_id":ent_id, "slot":None,"action_user":self.player_id})
 
-		# Has something to identify?
-		#if self.world.has_components(ent_id, ["modifiers"]) or self.world.has_components(ent_id, ["buff_refill"]):
-		#new_node.add_new_option("identify", "Identify", {"entity_id":ent_id})
+		# Can modify stats?
+		if self.world.has_components(ent_id, ["applies_modifiers"]):
+			new_node.add_new_option("identify", "Identify", {"entity_id":ent_id})
 
 		# Is it a transition object? (AKA, a door or portal.. etc)
 		if self.world.has_components(ent_id, ["transition"]):
