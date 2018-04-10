@@ -79,9 +79,4 @@ class World():
 		except:
 			return False
 
-	def calculate_modified_stat(self, ent_id, stat):
-		current = self.WORLD['stats'][ent_id][stat]
-		for modifiers in self.WORLD['has_modifiers'][ent_id]:
-			stat   = self.WORLD['modifier'][modifiers]['affects']
-			value  = self.WORLD['modifier'][modifiers]['value']
-			current['stat'] += value
+	

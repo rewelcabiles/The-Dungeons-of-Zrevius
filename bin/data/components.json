@@ -55,7 +55,7 @@
 	    "source_id" : null,
 	    "duration"  : null,
 	    "value"		: 0,
-	    "affects"	: null,
+	    "key"		: null,
 	    "type"		: "additive"
 	},
 

@@ -67,6 +67,73 @@ class Generic_System:
 		self.drop(message)
 
 
+class Modifier_Handler:
+	def __init__(self, sys_master):
+		self.world 		   = sys_master.world
+		self.WORLD		   = sys_master.world.WORLD
+		self.message_board = sys_master.message_board
+
+	def get_modified_stat(self, ent_id, stat):
+		stat_value = self.WORLD['stats'][ent_id][stat]
+
+		base = self.get_base_modifiers(ent_id)
+		add = self.get_add_modifiers(ent_id)
+		mult = self.get_mult_modifiers(ent_id)
+		
+		# Apply Base Multiplicative Modifiers
+		percent_amount = 0
+		for mod_ids in base:
+			mod = self.WORLD['modifier'][mod_ids]
+			if mod['key'] != stat:
+				continue
+			percent_amount += mod['value']
+
+		percentage = percent_amount / 100
+		new_value  = stat_value * percentage
+		stat_value += new_value
+
+		# Add Additive Modifiers
+		for mod_ids in add:
+			mod = self.WORLD['modifier'][mod_ids]
+			if mod['key'] != stat:
+				continue
+			stat_value += mod['value']
+
+		# Add Total Multiplicative Modifiers:
+		percent_amount = 0
+		for mod_ids in mult:
+			mod = self.WORLD['modifier'][mod_ids]
+			if mod['key'] != stat:
+				continue
+			percent_amount += mod['value']
+
+		percentage = percent_amount / 100
+		new_value  = stat_value * percentage
+		stat_value += new_value
+		self.WORLD['stats'][ent_id][stat] = stat_value
+
+		
+	def get_base_modifiers(self, ent_id):
+		base_mods = []
+		for mod_id in self.WORLD['has_modifiers'][ent_id]:
+			if self.WORLD['modifier'][modifiers]['type'] == "base":
+				base_mods.append(mod_id)
+		return base_mods
+
+	def get_mult_modifiers(self, ent_id):
+		mult_mods = []
+		for mod_id in self.WORLD['has_modifiers'][ent_id]:
+			if self.WORLD['modifier'][modifiers]['type'] == "base":
+				mult_mods.append(mod_id)
+		return mult_mods
+
+	def get_add_modifiers(self, ent_id):
+		add_mods = []
+		for mod_id in self.WORLD['has_modifiers'][ent_id]:
+			if self.WORLD['modifier'][modifiers]['type'] == "base":
+				add_mods.append(mod_id)
+		return add_mods
+
 class Combat_Handler:
 	def __init__(self, sys_master):
 		self.world 		   = sys_master.world
