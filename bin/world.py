@@ -85,6 +85,10 @@ class Modifier_Helper:
 		self.world 		   = world
 		self.WORLD		   = world.WORLD
 
+	def get_item_modifier(self, item_id):
+		for mod_id in self.WORLD['applies_modifiers'][item]:
+			pass
+
 	def get_stat(self, ent_id, stat, level = "full"):
 		# Level is the amount of modifiers to add to the requested stat. Ex.
 		# base = returns only base stat
