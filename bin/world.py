@@ -20,6 +20,7 @@ class World():
 			iterator += 1
 		self.entity_id_max = 2500
 		self.factory = factory.Factory(self)
+		self.modifiers = Modifier_Helper(self)
 
 	def assign_entity_id(self):
 		while True:
@@ -79,4 +80,73 @@ class World():
 		except:
 			return False
 
+class Modifier_Helper:
+	def __init__(self, world):
+		self.world 		   = world
+		self.WORLD		   = world.WORLD
+
+	def get_modified_stat(self, ent_id, stat):
+		stat_value = self.WORLD['stats'][ent_id][stat]
+		base = self.get_base_modifiers(ent_id)
+		add = self.get_add_modifiers(ent_id)
+		mult = self.get_mult_modifiers(ent_id)
+		
+		# Apply Base Multiplicative Modifiers
+		percent_amount = 0
+		for mod_ids in base:
+			mod = self.WORLD['modifier'][mod_ids]
+			if mod['key'] != stat:
+				continue
+			percent_amount += mod['value']
+		percentage = percent_amount / 100
+		new_value  = stat_value * percentage
+		stat_value += new_value
+
+		# Add Additive Modifiers
+		for mod_ids in add:
+			mod = self.WORLD['modifier'][mod_ids]
+			if mod['key'] != stat:
+				continue
+					
+			stat_value += mod['value']
+
+		# Add Total Multiplicative Modifiers:
+		percent_amount = 0
+		for mod_ids in mult:
+			mod = self.WORLD['modifier'][mod_ids]
+			if mod['key'] != stat:
+				continue
+			print("Mult_Modifiers Found")				
+			percent_amount += mod['value']
+
+		percentage = percent_amount / 100
+		new_value  = stat_value * percentage
+		stat_value += new_value
 	
+		return stat_value
+
+	def get_modified_amount(self, ent_id, stat):
+		final_amount  = self.get_modified_stat(ent_id, stat)
+		current_amount= self.WORLD['stats'][ent_id][stat]
+		return final_amount - current_amount
+
+	def get_base_modifiers(self, ent_id):
+		base_mods = []
+		for mod_id in self.WORLD['has_modifiers'][ent_id]:
+			if self.WORLD['modifier'][mod_id]['type'] == "base":
+				base_mods.append(mod_id)
+		return base_mods
+
+	def get_mult_modifiers(self, ent_id):
+		mult_mods = []
+		for mod_id in self.WORLD['has_modifiers'][ent_id]:
+			if self.WORLD['modifier'][mod_id]['type'] == "multiplicative":
+				mult_mods.append(mod_id)
+		return mult_mods
+
+	def get_add_modifiers(self, ent_id):
+		add_mods = []
+		for mod_id in self.WORLD['has_modifiers'][ent_id]:
+			if self.WORLD['modifier'][mod_id]['type'] == "additive":
+				add_mods.append(mod_id)
+		return add_mods

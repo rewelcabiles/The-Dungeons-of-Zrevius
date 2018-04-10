@@ -143,7 +143,7 @@ class PlayerCommands():
 						print(stats + " : " + str(value))
 
 					print("Weapon Modifiers || ")
-					
+
 
 			## COMBAT RELATED
 			elif action_type == "attack":
@@ -222,7 +222,10 @@ class SurfaceNode():
 		stat_node = MenuNode()
 		stat_node.set_header("")
 		for stat in self.WORLD['stats'][ent_id]:
-			print("~ "+str(self.WORLD['stats'][ent_id][stat])+"  ->  "+str(stat))
+			modified_stat = self.world.modifiers.get_modified_stat(ent_id, stat)
+			modified_diff = self.world.modifiers.get_modified_amount(ent_id, stat)
+			print(str(modified_stat) + " ("+str(modified_diff)+")  ->  " +str(stat))
+
 		return stat_node
 
 	def look_inventory(self, ent_id):

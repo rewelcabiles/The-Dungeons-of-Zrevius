@@ -216,7 +216,7 @@ class Buff_Factory:
 		self.WORLD['descriptor'][ent_id]['name']    = name
 		self.WORLD['modifier'][ent_id]['source_id'] = source
 		self.WORLD['modifier'][ent_id]['duration']  = duration
-		self.WORLD['modifier'][ent_id]['affects']   = affects
+		self.WORLD['modifier'][ent_id]['key']       = affects
 		self.WORLD['modifier'][ent_id]['value']  	= amount
 		self.WORLD['modifier'][ent_id]['type']  	= types
 		return ent_id

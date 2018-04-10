@@ -18,6 +18,8 @@ class MessageBoard():
 			observer(message)
 
 
+
+
 class Systems_Master:
 	def __init__(self, game_master):
 		self.world  	   = game_master.world
@@ -66,78 +68,6 @@ class Generic_System:
 		self.pick_up(message)
 		self.drop(message)
 
-
-class Modifier_Handler:
-	def __init__(self, sys_master):
-		self.world 		   = sys_master.world
-		self.WORLD		   = sys_master.world.WORLD
-		self.message_board = sys_master.message_board
-
-	def get_modified_stat(self, ent_id, stat):
-		stat_value = self.WORLD['stats'][ent_id][stat]
-
-		base = self.get_base_modifiers(ent_id)
-		add = self.get_add_modifiers(ent_id)
-		mult = self.get_mult_modifiers(ent_id)
-		
-		# Apply Base Multiplicative Modifiers
-		percent_amount = 0
-		for mod_ids in base:
-			mod = self.WORLD['modifier'][mod_ids]
-			if mod['key'] != stat:
-				continue
-			percent_amount += mod['value']
-
-		percentage = percent_amount / 100
-		new_value  = stat_value * percentage
-		stat_value += new_value
-
-		# Add Additive Modifiers
-		for mod_ids in add:
-			mod = self.WORLD['modifier'][mod_ids]
-			if mod['key'] != stat:
-				continue
-			stat_value += mod['value']
-
-		# Add Total Multiplicative Modifiers:
-		percent_amount = 0
-		for mod_ids in mult:
-			mod = self.WORLD['modifier'][mod_ids]
-			if mod['key'] != stat:
-				continue
-			percent_amount += mod['value']
-
-		percentage = percent_amount / 100
-		new_value  = stat_value * percentage
-		stat_value += new_value
-	
-		return stat_value
-
-	def get_modified_amount(self, ent_id, stat):
-		final_amount  = self.get_modified_stat(ent_id, stat)
-		current_amount= self.WORLD['stats'][ent_id][stat]
-		return final_amount - current_amount
-
-	def get_base_modifiers(self, ent_id):
-		base_mods = []
-		for mod_id in self.WORLD['has_modifiers'][ent_id]:
-			if self.WORLD['modifier'][modifiers]['type'] == "base":
-				base_mods.append(mod_id)
-		return base_mods
-
-	def get_mult_modifiers(self, ent_id):
-		mult_mods = []
-		for mod_id in self.WORLD['has_modifiers'][ent_id]:
-			if self.WORLD['modifier'][modifiers]['type'] == "base":
-				mult_mods.append(mod_id)
-		return mult_mods
-
-	def get_add_modifiers(self, ent_id):
-		add_mods = []
-		for mod_id in self.WORLD['has_modifiers'][ent_id]:
-			if self.WORLD['modifier'][modifiers]['type'] == "base":
-				add_mods.append(mod_id)
-		return add_mods
 
 class Combat_Handler:
 	def __init__(self, sys_master):
@@ -230,7 +160,7 @@ class Equipment_Handling:
 
 	def _apply_item_modifiers(self, ent_id, item_id):
 		for mod_id in self.WORLD['applies_modifiers'][item_id]:
-			ent_id.has_modifiers.append(mod_id)
+			self.WORLD['has_modifiers'][ent_id].append(mod_id)
 
 	def _remove_item_modifiers(self, ent_id, item_id):
 		for mod_id in self.WORLD['has_modifiers'][ent_id]:
@@ -243,6 +173,7 @@ class Equipment_Handling:
 		self.WORLD['equipment'][ent_id][slot] = item_id
 		self.WORLD['equippable'][item_id]['equipped_by']   = ent_id
 		self.WORLD['equippable'][item_id]['equipped_slot'] = slot
+		self._apply_item_modifiers(ent_id, item_id)
 		message = {
 			"type" : "notification",
 			"data"  : {
@@ -258,7 +189,7 @@ class Equipment_Handling:
 			item_id = self.WORLD['equipment'][ent_id][slot]
 			self.WORLD['equipment'][ent_id][slot] = None
 			self.WORLD['inventory'][ent_id]['items'].append(item_id)
-
+			self._remove_item_modifiers(ent_id, item_id)
 			message = {
 				"type" : "notification",
 				"data"  : {

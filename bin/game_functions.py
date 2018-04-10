@@ -29,6 +29,7 @@ class GameFunctions:
 	def game_loop(self):
 		while(True):
 			self.command.update()
+			self.save_dungeon()
 
 	def init_world(self):
 		dg = dun_gen()
