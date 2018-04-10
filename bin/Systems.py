@@ -110,9 +110,14 @@ class Modifier_Handler:
 		percentage = percent_amount / 100
 		new_value  = stat_value * percentage
 		stat_value += new_value
-		self.WORLD['stats'][ent_id][stat] = stat_value
+	
+		return stat_value
 
-		
+	def get_modified_amount(self, ent_id, stat):
+		final_amount  = self.get_modified_stat(ent_id, stat)
+		current_amount= self.WORLD['stats'][ent_id][stat]
+		return final_amount - current_amount
+
 	def get_base_modifiers(self, ent_id):
 		base_mods = []
 		for mod_id in self.WORLD['has_modifiers'][ent_id]:
