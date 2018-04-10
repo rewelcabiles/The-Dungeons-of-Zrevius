@@ -156,6 +156,15 @@ class Equipment_Handling:
 					self._unequip(ent_id, 'right_hand')
 					self._equip(ent_id, item_id, slot)
 
+	def _apply_item_modifiers(self, ent_id, item_id):
+		for mod_id in self.WORLD['applies_modifiers'][item_id]:
+			ent_id.has_modifiers.append(mod_id)
+
+	def _remove_item_modifiers(self, ent_id, item_id):
+		for mod_id in self.WORLD['has_modifiers'][ent_id]:
+			if self.WORLD['modifiers'][mod_id]['source_id'] == item_id:
+				self.WORLD['has_modifiers'][ent_id].remove(mod_id)
+
 
 	def _equip(self, ent_id, item_id, slot):
 		self.WORLD['inventory'][ent_id]['items'].remove(item_id)
